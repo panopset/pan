@@ -1,0 +1,48 @@
+<div class="inset">
+
+<h1>Desktop Application Installer Downloads</h1>
+
+<p>
+If you don't see your platform listed, you can grab the
+<a href="https://github.com/panopset/src">source</a>, and run it directly from an IDE.
+You can also modify one of the <a href="/build.html">build</a> scripts,
+so that it will build an installer for your system.
+</p>
+
+<table>
+<tr><th>Platform</th><th>Download</th><th>Bytes</th>
+<th>Version</th>
+<th>Build</th>
+<th>SHA-256</th></tr>
+${downloadsTable}
+</td></tr></table>
+
+<h1>versions</h1>
+
+<p>
+help-&gt;about, from any Panopset JavaFX desktop application, will give you the <a href="https://github.com/panopset/src/blob/main/docs/vh.md">version</a>,
+and yyyyMMddHHmm formatted build number.
+</p>
+<h2>Looking for panopset.jar?</h2>
+<p>
+All-in-one jars were portable, and easy to use. They came with a big drawback, the potential for
+dependency overlaps. For large legacy apps, you need tools like <a href="https://panopset.com/lowerclass.html">
+lowerclass</a> to untangle it all. Since Java 9, we have modular apps, which solve that issue through a more
+definitive dependency management. For desktop applications, you can't just run the jar though. You have to install
+the application, in the particular way that the operating system you happen to be on, prefers. Worse, the way to
+run it is different on each system.
+</p>
+
+<h2>Linux</h2>
+<pre>
+/opt/panopset/bin/flywheel
+</pre>
+<h2>Macintosh</h2>
+<pre>
+
+</pre>
+<h2>Windows</h2>
+<pre>
+</pre>
+
+</div>

@@ -1,0 +1,114 @@
+<div class="inset">
+
+${previewBlurb}
+
+<div class="inset">
+
+  <h1>
+   Applications
+  </h1>
+
+  <table>
+
+   <tr>
+    <th>Utilities</th><th>Web</th>
+    <th><a href="/downloads.html">Desk</a></th><th>Script</th>
+    <th>Description</th>
+   </tr>
+
+
+   <tr>
+    <td><a href="/flywheel.html">Flywheel</a></td>
+    <td>&bull;</td>
+    <td>&bull;</td>
+    <td>&nbsp;</td>
+    <td>Freeform template processing engine.</td>
+   </tr>
+
+
+   <tr>
+    <td>fw</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&bull;</td>
+    <td>Used to execute Flywheel scripts from the command line.
+    </td>
+   </tr>
+
+   <tr>
+    <td><a href="/skyscraper.html">Skyscraper</a> <b>New!</b></td>
+    <td>&nbsp;</td>
+    <td>&bull;</td>
+    <td>&nbsp;</td>
+    <td>Skyscraper API client.</td>
+   </tr>
+
+   <tr>
+    <td><a href="/lowerclass.html">Lowerclass</a></td>
+    <td>&nbsp;</td>
+    <td>&bull;</td>
+    <td>&nbsp;</td>
+    <td>Determine minimum Java Version for a class, jar, or repository.</td>
+   </tr>
+
+   <tr>
+    <th>Security</th><th>Web</th><th><a href="/downloads.html">Desk</a></th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th>
+   </tr>
+
+   <tr>
+    <td><a href="/scrambler.html">Scrambler</a></td>
+    <td>&bull;</td>
+    <td>&bull;</td>
+    <td>&nbsp;</td>
+    <td>Password or pass phrase based text scrambler.</td>
+   </tr>
+
+   <tr>
+    <td><a href="/checksum.html">Checksum</a></td>
+    <td>&nbsp;</td>
+    <td>&bull;</td>
+    <td>&nbsp;</td>
+    <td>File checksum verification.</td>
+   </tr>
+
+   <tr>
+    <th>Games</th><th>&nbsp;</th><th><a href="/downloads.html">Desk</a></th><th><a href="https://play.google.com/store/apps/details?id=com.panopset.droid.games.blackjack">Droid</a></th><th>&nbsp;</th><th>&nbsp;</th>
+   </tr>
+
+   <tr>
+    <td><a href="/blackjack.html">Blackjack</a></td>
+    <td>&nbsp;</td>
+    <td>&bull;</td>
+    <td>&bull;</td>
+    <td>Blackjack simulation, with fast deal option.  Droid version featured on
+     <a href="https://gameskeys.net/hidden-gems-top-card-games-to-play/">
+      gameskeys.net</a>.</td>
+   </tr>
+
+  </table>
+
+  <hr>
+
+  <h2>Featured feature</h2>
+  <ul><li>
+   <a href="https://github.com/panopset/src/blob/main/docs/uses/gblrpl/priorLineCheck.md">Global Replace Prior Line Check</a>.
+  </li></ul>
+  <hr>
+
+
+  <p>
+   <a href="https://github.com/panopset/src">Source</a>&nbsp;<a href="dox/site/index.html">documentation.</a>
+  </p>
+
+  <p>
+   <a href="https://panopset.net">Preview of next release, for those who like to live on the edge.</a>
+  </p>
+<!--
+  <h2>Coming later...</h2>
+  <ul><li>
+   <a href="/denebola">Denebola</a>, an original video game.
+  </li></ul>
+  -->
+
+</div>
+

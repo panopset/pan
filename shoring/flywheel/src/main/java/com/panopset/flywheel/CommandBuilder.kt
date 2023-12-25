@@ -1,0 +1,53 @@
+package com.panopset.flywheel
+
+class CommandBuilder {
+    private lateinit var template: Template
+    private lateinit var templateLine: TemplateLine
+    private var closeDirectiveLoc = 0
+    private var command: Command? = null
+    fun template(commandTemplate: Template): CommandBuilder {
+        template = commandTemplate
+        return this
+    }
+
+    fun source(templateLine: TemplateLine, newCloseDirectiveLoc: Int): CommandBuilder {
+        this.templateLine = templateLine
+        closeDirectiveLoc = newCloseDirectiveLoc
+        return this
+    }
+
+    fun command(newCommand: Command): CommandBuilder {
+        command = newCommand
+        return this
+    }
+
+    fun construct(): Command? {
+        var rtn: Command?
+        val line = templateLine.line
+        val ln = templateLine.templateLineNumber
+        val tci = templateLine.templateCharIndex
+        val innerPiece = line.substring(
+            Syntax.getOpenDirective()
+                .length, closeDirectiveLoc
+        )
+        if (innerPiece.indexOf(Syntax.getDirective()) == 0
+            && innerPiece.length > 1
+        ) {
+            val cmd = innerPiece.substring(1, 2)[0]
+            rtn = when (cmd) {
+                Commands.FILE.charCode -> CommandFile(TemplateLine(line, tci, ln), innerPiece, template)
+                Commands.PUSH.charCode -> CommandPush(templateLine, innerPiece, template)
+                Commands.REPLACE.charCode -> CommandReplace(templateLine, innerPiece, template)
+                Commands.LIST.charCode -> CommandList(templateLine, innerPiece, template)
+                Commands.QUIT.charCode -> CommandQuit(templateLine, template)
+                Commands.TEMPLATE.charCode -> CommandTemplate(templateLine, innerPiece, template)
+                Commands.EXECUTE.charCode -> CommandExecute(templateLine, innerPiece, template)
+                Commands.RAW.charCode -> CommandRaw(templateLine, innerPiece, template)
+                else -> { null } //TODO: maybe an unkown command that will flag the user that they defined an unknown command.
+            }
+        } else {
+            return CommandVariable(templateLine, innerPiece, template)
+        }
+        return rtn
+    }
+}

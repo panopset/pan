@@ -1,0 +1,37 @@
+<div class="inset">
+<div class="dsline">
+
+<h1>Blackjack</h1>
+ <p>
+  ${deskBlurb},
+  or as a 2 dollar <a href="https://play.google.com/store/apps/details?id=com.panopset.droid.games.blackjack">droid</a> app.
+ </p>
+<p>
+As seen on <a href="https://gameskeys.net/hidden-gems-top-card-games-to-play/">
+gameskeys.net</a>!
+</p>
+<p>
+I wrote Panopset Blackjack because none of the simulators
+I could find had a fast deal feature.  When practicing the
+basic strategy, I don't care about the outcome of the hand,
+just whether or not I made the correct decision.
+</p><p>
+It is entirely your responsibility to independently 
+<a href="https://github.com/panopset/src/tree/main/shoring/blackjackEngine">verify</a>
+its accuracy.
+</p><h2>
+The only claim made about this game is that it will only lead you to ruin, whether or not it has any bugs.
+</h2><p>
+That said, a link to 
+<a href="http://gamblersanonymous.com">Gamblers Anonymous</a>
+should serve to provide a far better disclaimer, than the 
+poor words of an old gambler.
+</p>
+
+ <hr/>
+
+
+</div>
+
+</div>
+

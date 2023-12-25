@@ -1,0 +1,75 @@
+package com.panopset.desk.utilities
+
+import com.google.gson.reflect.TypeToken
+import com.panopset.compat.*
+import com.panopset.compat.Stringop.USH
+import com.panopset.flywheel.FlywheelBuilder
+import com.panopset.marin.secure.checksums.ChecksumType
+import java.io.File
+import java.io.StringWriter
+import java.lang.reflect.Type
+import java.util.Collections
+import java.util.TreeMap
+
+
+class GenerateSite {
+
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            GenerateSite().go(args)
+        }
+    }
+
+    private fun go(args: Array<String>) {
+        val panopsetSiteDomainName = DevProps.getSiteDomainName()
+        val blurb = if (panopsetSiteDomainName == "panopset.com") {
+            ""
+        } else {
+            "<h1>Prototype</h1>This is a prototype for the next release of <a href=\"https://panopset.com\">panopset.com</a>."
+        }
+        FlywheelBuilder().file(File(args[0])).targetDirectory(File(args[1]))
+            .map("previewBlurb", blurb)
+            .map("downloadsTable", createDownloadsTable())
+            .map("appVersion", AppVersion.getVersion())
+            .map("buildNumber", AppVersion.getBuildNumber())
+            .construct().exec()
+    }
+
+    private fun createDownloadsTable(): String {
+        val sw = StringWriter()
+        var cil = HashMap<String, String>()
+        val tempDirDownloads = File("$USH/temp/downloads")
+        for (f in tempDirDownloads.listFiles()!!) {
+            if (f.isFile && f.extension == "json") {
+                val jsonStr = Fileop.readTextFile(f)
+                val mapType: Type = object : TypeToken<HashMap<String, String>>() {}.type
+                val rawMap = Jsonop().fromJson(jsonStr, mapType) as HashMap<String, String>
+                val map = Collections.synchronizedSortedMap(TreeMap<String, String>())
+                for (e in rawMap) {
+                    map[e.key] = e.value
+                }
+                val ifn = map["ifn"]
+                val version = map["version"]
+                val platform = map["platform"]
+                val bytes = map["bytes"]
+                val buildNumber = map["buildNumber"]
+                val sha512 = map[ChecksumType.SHA512.key]
+                sw.append("<tr><td nowrap>\n")
+                sw.append(platform)
+                sw.append("</td><td>\n")
+                sw.append("<a href=\"/downloads/$ifn\">$ifn</a>")
+                sw.append("</td><td>\n")
+                sw.append(bytes)
+                sw.append("</td><td>\n")
+                sw.append(version)
+                sw.append("</td><td>\n")
+                sw.append(buildNumber)
+                sw.append("</td><td class=\"dsw99\"><input class=\"output2\" type=\"text\" value=\"\n")
+                sw.append(sha512)
+                sw.append("\"</input></td></tr>")
+            }
+        }
+        return sw.toString()
+    }
+}

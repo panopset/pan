@@ -1,0 +1,2619 @@
+loading deploy.properties
+checking variables...
+FXV = 22-ea+16
+Defining the INSTALLER variables.
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] shoring                                                            [pom]
+[[1;34mINFO[m] compat                                                             [jar]
+[[1;34mINFO[m] fxapp                                                              [jar]
+[[1;34mINFO[m] blackjackEngine                                                    [jar]
+[[1;34mINFO[m] lowerclass                                                         [jar]
+[[1;34mINFO[m] flywheel                                                           [jar]
+[[1;34mINFO[m] desk                                                               [jar]
+[[1;34mINFO[m] panopset                                                           [jar]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------< [0;36mcom.panopset:shoring[0;1m >------------------------[m
+[[1;34mINFO[m] [1mBuilding shoring 1.2.6                                             [1/8][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mshoring[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:compile[m [1m(compile)[m @ [36mshoring[0;1m ---[m
+[[1;33mWARNING[m] No sources found skipping Kotlin compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:test-compile[m [1m(test-compile)[m @ [36mshoring[0;1m ---[m
+[[1;33mWARNING[m] No sources found skipping Kotlin compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mshoring[0;1m ---[m
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/pom.xml to /home/karl/.m2/repository/com/panopset/shoring/1.2.6/shoring-1.2.6.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------< [0;36mcom.panopset:compat[0;1m >-------------------------[m
+[[1;34mINFO[m] [1mBuilding compat 1.2.6                                              [2/8][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mcompat[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:compile[m [1m(compile)[m @ [36mcompat[0;1m ---[m
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/compat/src/main/java/com/panopset/compat/AppVersion.kt: (17, 25) Parameter 'args' is never used
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/compat/src/main/java/com/panopset/compat/PersistentMapFile.kt: (37, 17) Unnecessary non-null assertion (!!) on a non-null receiver of type File
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/compat/src/main/java/com/panopset/compat/Report.kt: (47, 23) Variable 'changed' initializer is redundant
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/compat/src/main/java/com/panopset/compat/Streamop.kt: (63, 41) Parameter 'bis' is never used, could be renamed to _
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mcompat[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/karl/w/src2/shoring/compat/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:compile[m [1m(default-compile)[m @ [36mcompat[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module! :source
+[[1;34mINFO[m] Compiling 28 source files with javac [debug release 17 module-path] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mcompat[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 8 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mcompat[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module! :dependency
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:test-compile[m [1m(test-compile)[m @ [36mcompat[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.1.2:test[m [1m(default-test)[m @ [36mcompat[0;1m ---[m
+[[1;34mINFO[m] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mFileopMockTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s -- in com.panopset.compat.test.[1mFileopMockTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mAniGridTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.panopset.compat.test.[1mAniGridTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mPadopTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.panopset.compat.test.[1mPadopTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mHexopsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in com.panopset.compat.test.[1mHexopsTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mStringopTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m17[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.126 s -- in com.panopset.compat.test.[1mStringopTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mFlagSwitchTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.panopset.compat.test.[1mFlagSwitchTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mJsonopTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.panopset.compat.test.[1mJsonopTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mRegexAndNlsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.panopset.compat.test.[1mRegexAndNlsTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mFileopTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in com.panopset.compat.test.[1mFileopTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mZombieTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.panopset.compat.test.[1mZombieTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mTextScramblerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.322 s -- in com.panopset.compat.test.[1mTextScramblerTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mSysopTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.panopset.compat.test.[1mSysopTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mPropopTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in com.panopset.compat.test.[1mPropopTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mReportTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.panopset.compat.test.[1mReportTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mStreamopTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in com.panopset.compat.test.[1mStreamopTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mLogopTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.145 s -- in com.panopset.compat.test.[1mLogopTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mRandomopTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in com.panopset.compat.test.[1mRandomopTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mFileProcessorTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.panopset.compat.test.[1mFileProcessorTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mRezopTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.panopset.compat.test.[1mRezopTest[m
+[[1;34mINFO[m] Running com.panopset.compat.test.[1mSplitterTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.panopset.compat.test.[1mSplitterTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 59, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mcompat[0;1m ---[m
+[[1;34mINFO[m] Building jar: /home/karl/w/src2/shoring/compat/target/compat.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mcompat[0;1m ---[m
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/compat/target/compat.jar to /home/karl/.m2/repository/com/panopset/compat/1.2.6/compat-1.2.6.jar
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/compat/pom.xml to /home/karl/.m2/repository/com/panopset/compat/1.2.6/compat-1.2.6.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------------< [0;36mcom.panopset:fxapp[0;1m >-------------------------[m
+[[1;34mINFO[m] [1mBuilding fxapp 1.2.6                                               [3/8][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mfxapp[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/karl/w/src2/shoring/fxapp/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:compile[m [1m(compile)[m @ [36mfxapp[0;1m ---[m
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/fxapp/src/main/java/com/panopset/fxapp/DeskApp4FX.kt: (45, 17) Variable 'file' is never used
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/fxapp/src/main/java/com/panopset/fxapp/FontManagerFX.kt: (182, 13) Condition 'logEntry.message == null' is always 'false'
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/fxapp/src/main/java/com/panopset/fxapp/ReflectorFX.kt: (21, 27) Variable 'txt' initializer is redundant
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/fxapp/src/main/java/com/panopset/fxapp/StageManager.kt: (21, 23) Variable 'windims' initializer is redundant
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mfxapp[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:compile[m [1m(default-compile)[m @ [36mfxapp[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module! :dependency
+[[1;34mINFO[m] Compiling 3 source files with javac [debug release 17 module-path] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mfxapp[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/karl/w/src2/shoring/fxapp/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mfxapp[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:test-compile[m [1m(test-compile)[m @ [36mfxapp[0;1m ---[m
+[[1;33mWARNING[m] No sources found skipping Kotlin compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.1.2:test[m [1m(default-test)[m @ [36mfxapp[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mfxapp[0;1m ---[m
+[[1;34mINFO[m] Building jar: /home/karl/w/src2/shoring/fxapp/target/fxapp.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mfxapp[0;1m ---[m
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/fxapp/target/fxapp.jar to /home/karl/.m2/repository/com/panopset/fxapp/1.2.6/fxapp-1.2.6.jar
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/fxapp/pom.xml to /home/karl/.m2/repository/com/panopset/fxapp/1.2.6/fxapp-1.2.6.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36mcom.panopset:blackjackEngine[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding blackjackEngine 1.2.6                                     [4/8][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mblackjackEngine[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/karl/w/src2/shoring/blackjackEngine/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:compile[m [1m(compile)[m @ [36mblackjackEngine[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mblackjackEngine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 2 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:compile[m [1m(default-compile)[m @ [36mblackjackEngine[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module! :dependency
+[[1;34mINFO[m] Compiling 3 source files with javac [debug release 17 module-path] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mblackjackEngine[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/karl/w/src2/shoring/blackjackEngine/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mblackjackEngine[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module! :dependency
+[[1;34mINFO[m] Compiling 3 source files with javac [debug release 17 module-path] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:test-compile[m [1m(test-compile)[m @ [36mblackjackEngine[0;1m ---[m
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/blackjackEngine/src/test/java/com/panopset/tests/blackjackEngine/AutoTest.kt: (70, 30) Variable 'priorHandCount' initializer is redundant
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/blackjackEngine/src/test/java/com/panopset/tests/blackjackEngine/AutoZombieTest.kt: (18, 30) Variable 'priorHandCount' initializer is redundant
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.1.2:test[m [1m(default-test)[m @ [36mblackjackEngine[0;1m ---[m
+[[1;34mINFO[m] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mLeaveTableTest[m
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<ACE_OF_HEARTS<<KING_OF_HEARTS<<TEN_OF_SPADES<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, QUEEN_OF_DIAMONDS]
+Player 0: Player #0: cards:[ACE_OF_HEARTS, TEN_OF_SPADES] value: 21 
+ Bankroll:Chips: 30750, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: QUEEN_OF_DIAMONDS Hand: null
+Strategy line for next action is null.
+<***l
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.145 s -- in com.panopset.tests.blackjackEngine.[1mLeaveTableTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mRecommendedActionTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.046 s -- in com.panopset.tests.blackjackEngine.[1mRecommendedActionTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mBustedHstarTest[m
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, s]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TWO_OF_DIAMONDS<<KING_OF_HEARTS<<ACE_OF_DIAMONDS<<FOUR_OF_HEARTS<<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS
+Strategy line for next action is  13  H  H  H* Dh Dh H  H  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS
+after action 1 h: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS JACK_OF_DIAMONDS
+Strategy line for next action is  13  S  S  S  S  S  H  H  H  H  H .
+<***h
+***>s
+before action 2 s: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS JACK_OF_DIAMONDS
+after action 2 s: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS, QUEEN_OF_DIAMONDS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+before action 0 l: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS, QUEEN_OF_DIAMONDS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TWO_OF_DIAMONDS<<KING_OF_HEARTS<<ACE_OF_DIAMONDS<<FOUR_OF_HEARTS<<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS
+Strategy line for next action is  13  H  H  H* Dh Dh H  H  H  H  H .
+before action 1 h: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS
+after action 1 h: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS JACK_OF_DIAMONDS
+Strategy line for next action is  13  S  S  S  S  S  H  H  H  H  H .
+before action 2 h: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS JACK_OF_DIAMONDS
+after action 2 h: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 23 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_HEARTS Hand: null
+Strategy line for next action is null.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, d]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TWO_OF_DIAMONDS<<KING_OF_HEARTS<<ACE_OF_DIAMONDS<<FOUR_OF_HEARTS<<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS
+Strategy line for next action is  13  H  H  H* Dh Dh H  H  H  H  H .
+<***l
+***>d
+before action 1 d: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS
+after action 1 d: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS, QUEEN_OF_DIAMONDS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 31000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+before action 0 l: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS, QUEEN_OF_DIAMONDS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 31000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TWO_OF_DIAMONDS<<KING_OF_HEARTS<<ACE_OF_DIAMONDS<<FOUR_OF_HEARTS<<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS
+Strategy line for next action is  13  H  H  H* Dh Dh H  H  H  H  H .
+before action 1 h: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS
+after action 1 h: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS JACK_OF_DIAMONDS
+Strategy line for next action is  13  S  S  S  S  S  H  H  H  H  H .
+before action 2 h: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_DIAMONDS JACK_OF_DIAMONDS
+after action 2 h: Dealer: [KING_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 23 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_HEARTS Hand: null
+Strategy line for next action is null.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in com.panopset.tests.blackjackEngine.[1mBustedHstarTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mHdTest[m
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, s]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SEVEN_OF_DIAMONDS<<FOUR_OF_HEARTS<<FOUR_OF_DIAMONDS<<ACE_OF_HEARTS<<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: SEVEN_OF_DIAMONDS FOUR_OF_DIAMONDS
+Strategy line for next action is  11  Dh Dh Dh Dh Dh Dh Dh Dh Dh Hd.
+<***l
+***>h
+before action 1 h: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: SEVEN_OF_DIAMONDS FOUR_OF_DIAMONDS
+after action 1 h: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 21: SEVEN_OF_DIAMONDS FOUR_OF_DIAMONDS JACK_OF_DIAMONDS
+Strategy line for next action is  18+ S  S  S  S  S  S  S  S  S  S .
+<***h
+***>s
+before action 2 s: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 21: SEVEN_OF_DIAMONDS FOUR_OF_DIAMONDS JACK_OF_DIAMONDS
+after action 2 s: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS, QUEEN_OF_DIAMONDS, SIX_OF_DIAMONDS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, d]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SEVEN_OF_DIAMONDS<<FOUR_OF_HEARTS<<FOUR_OF_DIAMONDS<<ACE_OF_HEARTS<<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: SEVEN_OF_DIAMONDS FOUR_OF_DIAMONDS
+Strategy line for next action is  11  Dh Dh Dh Dh Dh Dh Dh Dh Dh Hd.
+<***l
+***>d
+before action 1 d: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: SEVEN_OF_DIAMONDS FOUR_OF_DIAMONDS
+after action 1 d: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS, QUEEN_OF_DIAMONDS, JACK_OF_DIAMONDS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 31000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, d]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SEVEN_OF_DIAMONDS<<FOUR_OF_HEARTS<<FOUR_OF_DIAMONDS<<ACE_OF_HEARTS<<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: SEVEN_OF_DIAMONDS FOUR_OF_DIAMONDS
+Strategy line for next action is  11  Dh Dh Dh Dh Dh Dh Dh Dh Dh Hd.
+<***l
+***>d
+before action 1 d: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: SEVEN_OF_DIAMONDS FOUR_OF_DIAMONDS
+after action 1 d: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS, QUEEN_OF_DIAMONDS, ACE_OF_CLUBS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 31000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, d]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SEVEN_OF_DIAMONDS<<FOUR_OF_HEARTS<<FOUR_OF_DIAMONDS<<ACE_OF_HEARTS<<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: SEVEN_OF_DIAMONDS FOUR_OF_DIAMONDS
+Strategy line for next action is  11  Dh Dh Dh Dh Dh Dh Dh Dh Dh Hd.
+<***l
+***>d
+before action 1 d: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: SEVEN_OF_DIAMONDS FOUR_OF_DIAMONDS
+after action 1 d: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS, QUEEN_OF_DIAMONDS, SEVEN_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 31000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, d]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SEVEN_OF_DIAMONDS<<FOUR_OF_HEARTS<<FOUR_OF_DIAMONDS<<ACE_OF_HEARTS<<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: SEVEN_OF_DIAMONDS FOUR_OF_DIAMONDS
+Strategy line for next action is  11  Dh Dh Dh Dh Dh Dh Dh Dh Dh Hd.
+<***l
+***>d
+before action 1 d: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: SEVEN_OF_DIAMONDS FOUR_OF_DIAMONDS
+after action 1 d: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS, QUEEN_OF_DIAMONDS, FOUR_OF_SPADES]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, FOUR_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 31000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, h, s]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TWO_OF_DIAMONDS<<FOUR_OF_HEARTS<<FOUR_OF_DIAMONDS<<ACE_OF_HEARTS<<FIVE_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 6 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<FIVE_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 6: TWO_OF_DIAMONDS FOUR_OF_DIAMONDS
+Strategy line for next action is   7  H  H  H  H  H  H  H  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 6 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<FIVE_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 6: TWO_OF_DIAMONDS FOUR_OF_DIAMONDS
+after action 1 h: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, FOUR_OF_DIAMONDS, FIVE_OF_DIAMONDS] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: TWO_OF_DIAMONDS FOUR_OF_DIAMONDS FIVE_OF_DIAMONDS
+Strategy line for next action is  11  Dh Dh Dh Dh Dh Dh Dh Dh Dh Hd.
+<***h
+***>h
+before action 2 h: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, FOUR_OF_DIAMONDS, FIVE_OF_DIAMONDS] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: TWO_OF_DIAMONDS FOUR_OF_DIAMONDS FIVE_OF_DIAMONDS
+after action 2 h: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, FOUR_OF_DIAMONDS, FIVE_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 21: TWO_OF_DIAMONDS FOUR_OF_DIAMONDS FIVE_OF_DIAMONDS QUEEN_OF_DIAMONDS
+Strategy line for next action is  18+ S  S  S  S  S  S  S  S  S  S .
+<***h
+***>s
+before action 3 s: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, FOUR_OF_DIAMONDS, FIVE_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 21: TWO_OF_DIAMONDS FOUR_OF_DIAMONDS FIVE_OF_DIAMONDS QUEEN_OF_DIAMONDS
+after action 3 s: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS, TEN_OF_SPADES, KING_OF_DIAMONDS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, FOUR_OF_DIAMONDS, FIVE_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s -- in com.panopset.tests.blackjackEngine.[1mHdTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mCardTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.panopset.tests.blackjackEngine.[1mCardTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mConfigTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in com.panopset.tests.blackjackEngine.[1mConfigTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mShoeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.panopset.tests.blackjackEngine.[1mShoeTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mScenarioTest[m
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, d]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<EIGHT_OF_SPADES<<SIX_OF_SPADES<<THREE_OF_SPADES<<ACE_OF_HEARTS<<TEN_OF_HEARTS<<FOUR_OF_HEARTS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [SIX_OF_SPADES, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, THREE_OF_SPADES] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_HEARTS<<FOUR_OF_HEARTS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: EIGHT_OF_SPADES THREE_OF_SPADES
+Strategy line for next action is  11  Dh Dh Dh Dh Dh Dh Dh Dh Dh Hd.
+<***l
+***>d
+before action 1 d: Dealer: [SIX_OF_SPADES, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, THREE_OF_SPADES] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_HEARTS<<FOUR_OF_HEARTS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: EIGHT_OF_SPADES THREE_OF_SPADES
+after action 1 d: Dealer: [SIX_OF_SPADES, ACE_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, THREE_OF_SPADES, TEN_OF_HEARTS] value: 21 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, s]
+***>l
+before action 0 l: Dealer: [SIX_OF_SPADES, ACE_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, THREE_OF_SPADES, TEN_OF_HEARTS] value: 21 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<ACE_OF_SPADES<<KING_OF_HEARTS<<SEVEN_OF_DIAMONDS<<TEN_OF_HEARTS<<THREE_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 18: ACE_OF_SPADES SEVEN_OF_DIAMONDS
+Strategy line for next action is  18  Hx Ds Ds Ds Ds S  S  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 18: ACE_OF_SPADES SEVEN_OF_DIAMONDS
+after action 1 h: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 21: ACE_OF_SPADES SEVEN_OF_DIAMONDS THREE_OF_DIAMONDS
+Strategy line for next action is  20+ S  S  S  S  S  S  S  S  S  S .
+<***h
+***>s
+before action 2 s: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 21: ACE_OF_SPADES SEVEN_OF_DIAMONDS THREE_OF_DIAMONDS
+after action 2 s: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, s]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_SPADES<<TEN_OF_HEARTS<<THREE_OF_DIAMONDS<<ACE_OF_SPADES<<JACK_OF_HEARTS<<FOUR_OF_DIAMONDS<<NINE_OF_DIAMONDS<<FIVE_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [THREE_OF_DIAMONDS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_SPADES] value: 21 
+Player 1: Player #0: cards:[TEN_OF_HEARTS, JACK_OF_HEARTS] value: 20 
+ Bankroll:Chips: 28000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<NINE_OF_DIAMONDS<<FIVE_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 20: TEN_OF_HEARTS JACK_OF_HEARTS
+Strategy line for next action is  18+ S  S  S  S  S  S  S  S  S  S .
+<***l
+***>s
+before action 1 s: Dealer: [THREE_OF_DIAMONDS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_SPADES] value: 21 
+Player 1: Player #0: cards:[TEN_OF_HEARTS, JACK_OF_HEARTS] value: 20 
+ Bankroll:Chips: 28000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<NINE_OF_DIAMONDS<<FIVE_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 20: TEN_OF_HEARTS JACK_OF_HEARTS
+after action 1 s: Dealer: [THREE_OF_DIAMONDS, FOUR_OF_DIAMONDS, NINE_OF_DIAMONDS, FIVE_OF_DIAMONDS]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_SPADES] value: 21 
+Player 1: Player #0: cards:[TEN_OF_HEARTS, JACK_OF_HEARTS] value: 20 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, s]
+***>l
+before action 0 l: Dealer: [THREE_OF_DIAMONDS, FOUR_OF_DIAMONDS, NINE_OF_DIAMONDS, FIVE_OF_DIAMONDS]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_SPADES] value: 21 
+Player 1: Player #0: cards:[TEN_OF_HEARTS, JACK_OF_HEARTS] value: 20 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_SPADES<<TEN_OF_HEARTS<<THREE_OF_DIAMONDS<<ACE_OF_SPADES<<JACK_OF_HEARTS<<FOUR_OF_DIAMONDS<<NINE_OF_DIAMONDS<<FIVE_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: null
+after action 0 l: Dealer: [THREE_OF_DIAMONDS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_SPADES] value: 21 
+Player 1: Player #0: cards:[TEN_OF_HEARTS, JACK_OF_HEARTS] value: 20 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<NINE_OF_DIAMONDS<<FIVE_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 20: TEN_OF_HEARTS JACK_OF_HEARTS
+Strategy line for next action is  18+ S  S  S  S  S  S  S  S  S  S .
+<***l
+***>s
+before action 1 s: Dealer: [THREE_OF_DIAMONDS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_SPADES] value: 21 
+Player 1: Player #0: cards:[TEN_OF_HEARTS, JACK_OF_HEARTS] value: 20 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<NINE_OF_DIAMONDS<<FIVE_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 20: TEN_OF_HEARTS JACK_OF_HEARTS
+after action 1 s: Dealer: [THREE_OF_DIAMONDS, FOUR_OF_DIAMONDS, NINE_OF_DIAMONDS, FIVE_OF_DIAMONDS]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_SPADES] value: 21 
+Player 1: Player #0: cards:[TEN_OF_HEARTS, JACK_OF_HEARTS] value: 20 
+ Bankroll:Chips: 30750, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_SPADES<<TEN_OF_HEARTS<<ACE_OF_HEARTS<<ACE_OF_SPADES 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [TEN_OF_HEARTS, ACE_OF_SPADES]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_HEARTS] value: 21 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_SPADES Hand: null
+Strategy line for next action is null.
+<***l
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l]
+***>l
+before action 0 l: Dealer: [TEN_OF_HEARTS, ACE_OF_SPADES]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_HEARTS] value: 21 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<FOUR_OF_SPADES<<TEN_OF_SPADES<<THREE_OF_SPADES<<ACE_OF_HEARTS 
+active situation:Dealer up: ACE_OF_SPADES Hand: null
+after action 0 l: Dealer: [TEN_OF_SPADES, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[FOUR_OF_SPADES, THREE_OF_SPADES] value: 7 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***l
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, d]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<EIGHT_OF_SPADES<<KING_OF_HEARTS<<TWO_OF_DIAMONDS<<SIX_OF_HEARTS<<THREE_OF_DIAMONDS<<ACE_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, SIX_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, TWO_OF_DIAMONDS] value: 10 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<ACE_OF_DIAMONDS 
+active situation:Dealer up: SIX_OF_HEARTS Hand: *HAND>>* 10: EIGHT_OF_SPADES TWO_OF_DIAMONDS
+Strategy line for next action is  10  Dh Dh Dh Dh Dh Dh Dh Dh H  H .
+<***l
+***>d
+before action 1 d: Dealer: [KING_OF_HEARTS, SIX_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, TWO_OF_DIAMONDS] value: 10 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<ACE_OF_DIAMONDS 
+active situation:Dealer up: SIX_OF_HEARTS Hand: *HAND>>* 10: EIGHT_OF_SPADES TWO_OF_DIAMONDS
+after action 1 d: Dealer: [KING_OF_HEARTS, SIX_OF_HEARTS, ACE_OF_DIAMONDS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, TWO_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: SIX_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, d]
+***>l
+before action 0 l: Dealer: [KING_OF_HEARTS, SIX_OF_HEARTS, ACE_OF_DIAMONDS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, TWO_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<FIVE_OF_CLUBS<<KING_OF_HEARTS<<THREE_OF_CLUBS<<FIVE_OF_HEARTS<<THREE_OF_CLUBS<<ACE_OF_HEARTS<<TEN_OF_HEARTS 
+active situation:Dealer up: SIX_OF_HEARTS Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS] value: 8 
+ Bankroll:Chips: 28500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_CLUBS<<ACE_OF_HEARTS<<TEN_OF_HEARTS 
+active situation:Dealer up: FIVE_OF_HEARTS Hand: *HAND>>* 8: FIVE_OF_CLUBS THREE_OF_CLUBS
+Strategy line for next action is   8  H  H  H  H* H* H  H  H  H  H .
+<***l
+***>d
+before action 1 d: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS] value: 8 
+ Bankroll:Chips: 28500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_CLUBS<<ACE_OF_HEARTS<<TEN_OF_HEARTS 
+active situation:Dealer up: FIVE_OF_HEARTS Hand: *HAND>>* 8: FIVE_OF_CLUBS THREE_OF_CLUBS
+after action 1 d: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS, ACE_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS, THREE_OF_CLUBS] value: 11 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FIVE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, p]
+***>l
+before action 0 l: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS, ACE_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS, THREE_OF_CLUBS] value: 11 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<ACE_OF_DIAMONDS<<THREE_OF_CLUBS<<ACE_OF_HEARTS<<KING_OF_CLUBS<<THREE_OF_DIAMONDS<<ACE_OF_CLUBS<<QUEEN_OF_DIAMONDS<<SIX_OF_DIAMONDS<<NINE_OF_HEARTS<<JACK_OF_HEARTS<<QUEEN_OF_HEARTS 
+active situation:Dealer up: FIVE_OF_HEARTS Hand: null
+after action 0 l: Dealer: [THREE_OF_CLUBS, KING_OF_CLUBS]
+Player 0: Player #0: cards:[ACE_OF_DIAMONDS, ACE_OF_HEARTS] value: 12 
+ Bankroll:Chips: 28000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<ACE_OF_CLUBS<<QUEEN_OF_DIAMONDS<<SIX_OF_DIAMONDS<<NINE_OF_HEARTS<<JACK_OF_HEARTS<<QUEEN_OF_HEARTS 
+active situation:Dealer up: KING_OF_CLUBS Hand: *HAND>>* 12: ACE_OF_DIAMONDS ACE_OF_HEARTS
+Strategy line for next action is  A,A P  P  P  P  P  P  P  P  P  P .
+<***l
+***>p
+before action 1 p: Dealer: [THREE_OF_CLUBS, KING_OF_CLUBS]
+Player 0: Player #0: cards:[ACE_OF_DIAMONDS, ACE_OF_HEARTS] value: 12 
+ Bankroll:Chips: 28000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<ACE_OF_CLUBS<<QUEEN_OF_DIAMONDS<<SIX_OF_DIAMONDS<<NINE_OF_HEARTS<<JACK_OF_HEARTS<<QUEEN_OF_HEARTS 
+active situation:Dealer up: KING_OF_CLUBS Hand: *HAND>>* 12: ACE_OF_DIAMONDS ACE_OF_HEARTS
+after action 1 p: Dealer: [THREE_OF_CLUBS, KING_OF_CLUBS, QUEEN_OF_DIAMONDS]
+Player 0: Player #0: cards:[ACE_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 14 Player #1: cards:[ACE_OF_HEARTS, ACE_OF_CLUBS] value: 12 
+ Bankroll:Chips: 34000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SIX_OF_DIAMONDS<<NINE_OF_HEARTS<<JACK_OF_HEARTS<<QUEEN_OF_HEARTS 
+active situation:Dealer up: KING_OF_CLUBS Hand: null
+Strategy line for next action is null.
+<***p
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, p, d, p, s, s]
+***>l
+before action 0 l: Dealer: [THREE_OF_CLUBS, KING_OF_CLUBS, QUEEN_OF_DIAMONDS]
+Player 0: Player #0: cards:[ACE_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 14 Player #1: cards:[ACE_OF_HEARTS, ACE_OF_CLUBS] value: 12 
+ Bankroll:Chips: 34000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SIX_OF_SPADES<<KING_OF_HEARTS<<SIX_OF_HEARTS<<THREE_OF_DIAMONDS<<THREE_OF_HEARTS<<SIX_OF_DIAMONDS<<TEN_OF_SPADES<<JACK_OF_HEARTS<<QUEEN_OF_DIAMONDS<<KING_OF_DIAMONDS 
+active situation:Dealer up: KING_OF_CLUBS Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, THREE_OF_DIAMONDS]
+Player 0: Player #0: cards:[SIX_OF_SPADES, SIX_OF_HEARTS] value: 12 
+ Bankroll:Chips: 32000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_HEARTS<<SIX_OF_DIAMONDS<<TEN_OF_SPADES<<JACK_OF_HEARTS<<QUEEN_OF_DIAMONDS<<KING_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_DIAMONDS Hand: *HAND>>* 12: SIX_OF_SPADES SIX_OF_HEARTS
+Strategy line for next action is  6,6 H@ P  P  P  P  H  H  H  H  H .
+<***l
+***>p
+before action 1 p: Dealer: [KING_OF_HEARTS, THREE_OF_DIAMONDS]
+Player 0: Player #0: cards:[SIX_OF_SPADES, SIX_OF_HEARTS] value: 12 
+ Bankroll:Chips: 32000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_HEARTS<<SIX_OF_DIAMONDS<<TEN_OF_SPADES<<JACK_OF_HEARTS<<QUEEN_OF_DIAMONDS<<KING_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_DIAMONDS Hand: *HAND>>* 12: SIX_OF_SPADES SIX_OF_HEARTS
+after action 1 p: Dealer: [KING_OF_HEARTS, THREE_OF_DIAMONDS]
+Player 0: Player #0: cards:[SIX_OF_SPADES, THREE_OF_HEARTS] value: 9 Player #1: cards:[SIX_OF_HEARTS, SIX_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_SPADES<<JACK_OF_HEARTS<<QUEEN_OF_DIAMONDS<<KING_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_DIAMONDS Hand: *HAND>>* 9: SIX_OF_SPADES THREE_OF_HEARTS
+Strategy line for next action is   9  H* Dh Dh Dh Dh H  H  H  H  H .
+<***p
+***>d
+before action 2 d: Dealer: [KING_OF_HEARTS, THREE_OF_DIAMONDS]
+Player 0: Player #0: cards:[SIX_OF_SPADES, THREE_OF_HEARTS] value: 9 Player #1: cards:[SIX_OF_HEARTS, SIX_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_SPADES<<JACK_OF_HEARTS<<QUEEN_OF_DIAMONDS<<KING_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_DIAMONDS Hand: *HAND>>* 9: SIX_OF_SPADES THREE_OF_HEARTS
+after action 2 d: Dealer: [KING_OF_HEARTS, THREE_OF_DIAMONDS]
+Player 0: Player #0: cards:[SIX_OF_SPADES, THREE_OF_HEARTS, TEN_OF_SPADES] value: 19 Player #1: cards:[SIX_OF_HEARTS, SIX_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 28000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_HEARTS<<QUEEN_OF_DIAMONDS<<KING_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_DIAMONDS Hand: *HAND>>* 12: SIX_OF_HEARTS SIX_OF_DIAMONDS
+Strategy line for next action is  6,6 H@ P  P  P  P  H  H  H  H  H .
+<***d
+***>p
+before action 3 p: Dealer: [KING_OF_HEARTS, THREE_OF_DIAMONDS]
+Player 0: Player #0: cards:[SIX_OF_SPADES, THREE_OF_HEARTS, TEN_OF_SPADES] value: 19 Player #1: cards:[SIX_OF_HEARTS, SIX_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 28000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_HEARTS<<QUEEN_OF_DIAMONDS<<KING_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_DIAMONDS Hand: *HAND>>* 12: SIX_OF_HEARTS SIX_OF_DIAMONDS
+after action 3 p: Dealer: [KING_OF_HEARTS, THREE_OF_DIAMONDS]
+Player 0: Player #0: cards:[SIX_OF_SPADES, THREE_OF_HEARTS, TEN_OF_SPADES] value: 19 Player #1: cards:[SIX_OF_HEARTS, JACK_OF_HEARTS] value: 16 Player #2: cards:[SIX_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 26000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<KING_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_DIAMONDS Hand: *HAND>>* 16: SIX_OF_HEARTS JACK_OF_HEARTS
+Strategy line for next action is  16  S  S  S  S  S  H  H  Rh Sh Rh.
+<***p
+***>s
+before action 4 s: Dealer: [KING_OF_HEARTS, THREE_OF_DIAMONDS]
+Player 0: Player #0: cards:[SIX_OF_SPADES, THREE_OF_HEARTS, TEN_OF_SPADES] value: 19 Player #1: cards:[SIX_OF_HEARTS, JACK_OF_HEARTS] value: 16 Player #2: cards:[SIX_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 26000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<KING_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_DIAMONDS Hand: *HAND>>* 16: SIX_OF_HEARTS JACK_OF_HEARTS
+after action 4 s: Dealer: [KING_OF_HEARTS, THREE_OF_DIAMONDS]
+Player 0: Player #0: cards:[SIX_OF_SPADES, THREE_OF_HEARTS, TEN_OF_SPADES] value: 19 Player #1: cards:[SIX_OF_HEARTS, JACK_OF_HEARTS] value: 16 Player #2: cards:[SIX_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 26000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<KING_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_DIAMONDS Hand: *HAND>>* 16: SIX_OF_DIAMONDS QUEEN_OF_DIAMONDS
+Strategy line for next action is  16  S  S  S  S  S  H  H  Rh Sh Rh.
+<***s
+***>s
+before action 5 s: Dealer: [KING_OF_HEARTS, THREE_OF_DIAMONDS]
+Player 0: Player #0: cards:[SIX_OF_SPADES, THREE_OF_HEARTS, TEN_OF_SPADES] value: 19 Player #1: cards:[SIX_OF_HEARTS, JACK_OF_HEARTS] value: 16 Player #2: cards:[SIX_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 26000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<KING_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_DIAMONDS Hand: *HAND>>* 16: SIX_OF_DIAMONDS QUEEN_OF_DIAMONDS
+after action 5 s: Dealer: [KING_OF_HEARTS, THREE_OF_DIAMONDS, KING_OF_DIAMONDS]
+Player 0: Player #0: cards:[SIX_OF_SPADES, THREE_OF_HEARTS, TEN_OF_SPADES] value: 19 Player #1: cards:[SIX_OF_HEARTS, JACK_OF_HEARTS] value: 16 Player #2: cards:[SIX_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 42000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: THREE_OF_DIAMONDS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, s]
+***>l
+before action 0 l: Dealer: [KING_OF_HEARTS, THREE_OF_DIAMONDS, KING_OF_DIAMONDS]
+Player 0: Player #0: cards:[SIX_OF_SPADES, THREE_OF_HEARTS, TEN_OF_SPADES] value: 19 Player #1: cards:[SIX_OF_HEARTS, JACK_OF_HEARTS] value: 16 Player #2: cards:[SIX_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 42000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<ACE_OF_SPADES<<KING_OF_HEARTS<<SEVEN_OF_DIAMONDS<<TEN_OF_HEARTS<<THREE_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_DIAMONDS Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 40000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 18: ACE_OF_SPADES SEVEN_OF_DIAMONDS
+Strategy line for next action is  18  Hx Ds Ds Ds Ds S  S  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 40000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 18: ACE_OF_SPADES SEVEN_OF_DIAMONDS
+after action 1 h: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 40000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 21: ACE_OF_SPADES SEVEN_OF_DIAMONDS THREE_OF_DIAMONDS
+Strategy line for next action is  20+ S  S  S  S  S  S  S  S  S  S .
+<***h
+***>s
+before action 2 s: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 40000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 21: ACE_OF_SPADES SEVEN_OF_DIAMONDS THREE_OF_DIAMONDS
+after action 2 s: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 44000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l]
+***>l
+before action 0 l: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 44000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<FOUR_OF_SPADES<<TEN_OF_SPADES<<THREE_OF_SPADES<<ACE_OF_HEARTS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: null
+after action 0 l: Dealer: [TEN_OF_SPADES, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[FOUR_OF_SPADES, THREE_OF_SPADES] value: 7 
+ Bankroll:Chips: 42000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***l
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, d]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<EIGHT_OF_SPADES<<SIX_OF_SPADES<<THREE_OF_SPADES<<ACE_OF_HEARTS<<JACK_OF_HEARTS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [SIX_OF_SPADES, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, THREE_OF_SPADES] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_HEARTS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: EIGHT_OF_SPADES THREE_OF_SPADES
+Strategy line for next action is  11  Dh Dh Dh Dh Dh Dh Dh Dh Dh Hd.
+<***l
+***>d
+before action 1 d: Dealer: [SIX_OF_SPADES, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, THREE_OF_SPADES] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_HEARTS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 11: EIGHT_OF_SPADES THREE_OF_SPADES
+after action 1 d: Dealer: [SIX_OF_SPADES, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, THREE_OF_SPADES, JACK_OF_HEARTS] value: 21 
+ Bankroll:Chips: 31000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, s]
+***>l
+before action 0 l: Dealer: [SIX_OF_SPADES, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, THREE_OF_SPADES, JACK_OF_HEARTS] value: 21 
+ Bankroll:Chips: 31000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<ACE_OF_SPADES<<KING_OF_HEARTS<<SEVEN_OF_DIAMONDS<<TEN_OF_HEARTS<<THREE_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 18: ACE_OF_SPADES SEVEN_OF_DIAMONDS
+Strategy line for next action is  18  Hx Ds Ds Ds Ds S  S  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 18: ACE_OF_SPADES SEVEN_OF_DIAMONDS
+after action 1 h: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 21: ACE_OF_SPADES SEVEN_OF_DIAMONDS THREE_OF_DIAMONDS
+Strategy line for next action is  20+ S  S  S  S  S  S  S  S  S  S .
+<***h
+***>s
+before action 2 s: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 21: ACE_OF_SPADES SEVEN_OF_DIAMONDS THREE_OF_DIAMONDS
+after action 2 s: Dealer: [KING_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 31500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_SPADES<<FOUR_OF_SPADES<<ACE_OF_HEARTS<<THREE_OF_SPADES 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [FOUR_OF_SPADES, THREE_OF_SPADES]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_HEARTS] value: 21 
+ Bankroll:Chips: 30750, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: THREE_OF_SPADES Hand: null
+Strategy line for next action is null.
+<***l
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_SPADES<<FOUR_OF_SPADES<<ACE_OF_HEARTS<<THREE_OF_SPADES 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [FOUR_OF_SPADES, THREE_OF_SPADES]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_HEARTS] value: 21 
+ Bankroll:Chips: 30600, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: THREE_OF_SPADES Hand: null
+Strategy line for next action is null.
+<***l
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l]
+***>l
+before action 0 l: Dealer: [FOUR_OF_SPADES, THREE_OF_SPADES]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_HEARTS] value: 21 
+ Bankroll:Chips: 30600, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_SPADES<<TEN_OF_HEARTS<<ACE_OF_HEARTS<<ACE_OF_SPADES 
+active situation:Dealer up: THREE_OF_SPADES Hand: null
+after action 0 l: Dealer: [TEN_OF_HEARTS, ACE_OF_SPADES]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_HEARTS] value: 21 
+ Bankroll:Chips: 30600, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_SPADES Hand: null
+Strategy line for next action is null.
+<***l
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_SPADES<<TEN_OF_HEARTS<<ACE_OF_HEARTS<<ACE_OF_SPADES 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [TEN_OF_HEARTS, ACE_OF_SPADES]
+Player 0: Player #0: cards:[TEN_OF_SPADES, ACE_OF_HEARTS] value: 21 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_SPADES Hand: null
+Strategy line for next action is null.
+<***l
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.070 s -- in com.panopset.tests.blackjackEngine.[1mScenarioTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mShTest[m
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, s]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<FOUR_OF_DIAMONDS<<FOUR_OF_HEARTS<<TWO_OF_DIAMONDS<<TEN_OF_HEARTS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[FOUR_OF_DIAMONDS, TWO_OF_DIAMONDS] value: 6 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 6: FOUR_OF_DIAMONDS TWO_OF_DIAMONDS
+Strategy line for next action is   7  H  H  H  H  H  H  H  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[FOUR_OF_DIAMONDS, TWO_OF_DIAMONDS] value: 6 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 6: FOUR_OF_DIAMONDS TWO_OF_DIAMONDS
+after action 1 h: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[FOUR_OF_DIAMONDS, TWO_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 16: FOUR_OF_DIAMONDS TWO_OF_DIAMONDS TEN_OF_DIAMONDS
+Strategy line for next action is  16  S  S  S  S  S  H  H  Rh Sh Rh.
+<***h
+***>s
+before action 2 s: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[FOUR_OF_DIAMONDS, TWO_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 16: FOUR_OF_DIAMONDS TWO_OF_DIAMONDS TEN_OF_DIAMONDS
+after action 2 s: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS, SEVEN_OF_HEARTS]
+Player 0: Player #0: cards:[FOUR_OF_DIAMONDS, TWO_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: TEN_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, s]
+***>l
+before action 0 l: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS, SEVEN_OF_HEARTS]
+Player 0: Player #0: cards:[FOUR_OF_DIAMONDS, TWO_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TWO_OF_DIAMONDS<<FOUR_OF_HEARTS<<FIVE_OF_DIAMONDS<<TEN_OF_HEARTS<<NINE_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: null
+after action 0 l: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, FIVE_OF_DIAMONDS] value: 7 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<NINE_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 7: TWO_OF_DIAMONDS FIVE_OF_DIAMONDS
+Strategy line for next action is   7  H  H  H  H  H  H  H  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, FIVE_OF_DIAMONDS] value: 7 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<NINE_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 7: TWO_OF_DIAMONDS FIVE_OF_DIAMONDS
+after action 1 h: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, FIVE_OF_DIAMONDS, NINE_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 16: TWO_OF_DIAMONDS FIVE_OF_DIAMONDS NINE_OF_DIAMONDS
+Strategy line for next action is  16  S  S  S  S  S  H  H  Rh Sh Rh.
+<***h
+***>s
+before action 2 s: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, FIVE_OF_DIAMONDS, NINE_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 16: TWO_OF_DIAMONDS FIVE_OF_DIAMONDS NINE_OF_DIAMONDS
+after action 2 s: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS, NINE_OF_SPADES]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, FIVE_OF_DIAMONDS, NINE_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: TEN_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h]
+***>l
+before action 0 l: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS, NINE_OF_SPADES]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, FIVE_OF_DIAMONDS, NINE_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SIX_OF_DIAMONDS<<FOUR_OF_HEARTS<<TEN_OF_DIAMONDS<<TEN_OF_HEARTS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: null
+after action 0 l: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[SIX_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 16: SIX_OF_DIAMONDS TEN_OF_DIAMONDS
+Strategy line for next action is  16  S  S  S  S  S  H  H  Rh Sh Rh.
+<***l
+***>h
+before action 1 h: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[SIX_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TEN_OF_HEARTS Hand: *HAND>>* 16: SIX_OF_DIAMONDS TEN_OF_DIAMONDS
+after action 1 h: Dealer: [FOUR_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[SIX_OF_DIAMONDS, TEN_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 26 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: TEN_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***h
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.panopset.tests.blackjackEngine.[1mShTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mDefaultResourcesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.panopset.tests.blackjackEngine.[1mDefaultResourcesTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mAutoZombieTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.206 s -- in com.panopset.tests.blackjackEngine.[1mAutoZombieTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mRsTest[m
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, s]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SEVEN_OF_DIAMONDS<<FOUR_OF_HEARTS<<TEN_OF_DIAMONDS<<ACE_OF_HEARTS<<JACK_OF_HEARTS<<QUEEN_OF_HEARTS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 17 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_HEARTS<<QUEEN_OF_HEARTS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 17: SEVEN_OF_DIAMONDS TEN_OF_DIAMONDS
+Strategy line for next action is  17  S  S  S  S  S  S  S  S  S  Rs.
+<***l
+***>s
+before action 1 s: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 17 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_HEARTS<<QUEEN_OF_HEARTS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 17: SEVEN_OF_DIAMONDS TEN_OF_DIAMONDS
+after action 1 s: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS, JACK_OF_HEARTS, QUEEN_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 17 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, u]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SEVEN_OF_DIAMONDS<<FOUR_OF_HEARTS<<TEN_OF_DIAMONDS<<ACE_OF_HEARTS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 17 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 17: SEVEN_OF_DIAMONDS TEN_OF_DIAMONDS
+Strategy line for next action is  17  S  S  S  S  S  S  S  S  S  Rs.
+<***l
+***>u
+before action 1 u: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 17 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: *HAND>>* 17: SEVEN_OF_DIAMONDS TEN_OF_DIAMONDS
+after action 1 u: Dealer: [FOUR_OF_HEARTS, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 17 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***u
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in com.panopset.tests.blackjackEngine.[1mRsTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mBetAmountStrategyTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.panopset.tests.blackjackEngine.[1mBetAmountStrategyTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mCountingSystemsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.panopset.tests.blackjackEngine.[1mCountingSystemsTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mCycleSnapshotTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.panopset.tests.blackjackEngine.[1mCycleSnapshotTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mDeckPileTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.panopset.tests.blackjackEngine.[1mDeckPileTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mHampTest[m
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SIX_OF_DIAMONDS<<TEN_OF_HEARTS<<SIX_OF_DIAMONDS<<TWO_OF_HEARTS<<TEN_OF_DIAMONDS<<JACK_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [TEN_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SIX_OF_DIAMONDS, SIX_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS<<JACK_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 12: SIX_OF_DIAMONDS SIX_OF_DIAMONDS
+Strategy line for next action is  6,6 H@ P  P  P  P  H  H  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [TEN_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SIX_OF_DIAMONDS, SIX_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS<<JACK_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 12: SIX_OF_DIAMONDS SIX_OF_DIAMONDS
+after action 1 h: Dealer: [TEN_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SIX_OF_DIAMONDS, SIX_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 22 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***h
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, p, s, s]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SIX_OF_DIAMONDS<<TEN_OF_HEARTS<<SIX_OF_DIAMONDS<<TWO_OF_HEARTS<<TEN_OF_DIAMONDS<<JACK_OF_DIAMONDS<<QUEEN_OF_HEARTS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [TEN_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SIX_OF_DIAMONDS, SIX_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS<<JACK_OF_DIAMONDS<<QUEEN_OF_HEARTS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 12: SIX_OF_DIAMONDS SIX_OF_DIAMONDS
+Strategy line for next action is  6,6 H@ P  P  P  P  H  H  H  H  H .
+<***l
+***>p
+before action 1 p: Dealer: [TEN_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SIX_OF_DIAMONDS, SIX_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS<<JACK_OF_DIAMONDS<<QUEEN_OF_HEARTS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 12: SIX_OF_DIAMONDS SIX_OF_DIAMONDS
+after action 1 p: Dealer: [TEN_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SIX_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 16 Player #1: cards:[SIX_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_HEARTS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 16: SIX_OF_DIAMONDS TEN_OF_DIAMONDS
+Strategy line for next action is  16  S  S  S  S  S  H  H  Rh Sh Rh.
+<***p
+***>s
+before action 2 s: Dealer: [TEN_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SIX_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 16 Player #1: cards:[SIX_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_HEARTS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 16: SIX_OF_DIAMONDS TEN_OF_DIAMONDS
+after action 2 s: Dealer: [TEN_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SIX_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 16 Player #1: cards:[SIX_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_HEARTS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 16: SIX_OF_DIAMONDS JACK_OF_DIAMONDS
+Strategy line for next action is  16  S  S  S  S  S  H  H  Rh Sh Rh.
+<***s
+***>s
+before action 3 s: Dealer: [TEN_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SIX_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 16 Player #1: cards:[SIX_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_HEARTS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 16: SIX_OF_DIAMONDS JACK_OF_DIAMONDS
+after action 3 s: Dealer: [TEN_OF_HEARTS, TWO_OF_HEARTS, QUEEN_OF_HEARTS]
+Player 0: Player #0: cards:[SIX_OF_DIAMONDS, TEN_OF_DIAMONDS] value: 16 Player #1: cards:[SIX_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 16 
+ Bankroll:Chips: 31000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: TWO_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.panopset.tests.blackjackEngine.[1mHampTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mMessagesTest[m
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<FOUR_OF_SPADES<<TEN_OF_SPADES<<THREE_OF_SPADES<<ACE_OF_HEARTS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [TEN_OF_SPADES, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[FOUR_OF_SPADES, THREE_OF_SPADES] value: 7 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***l
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, h, s]
+***>l
+before action 0 l: Dealer: [TEN_OF_SPADES, ACE_OF_HEARTS]
+Player 0: Player #0: cards:[FOUR_OF_SPADES, THREE_OF_SPADES] value: 7 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<FIVE_OF_CLUBS<<KING_OF_HEARTS<<THREE_OF_CLUBS<<FIVE_OF_HEARTS<<THREE_OF_CLUBS<<ACE_OF_HEARTS<<TEN_OF_HEARTS 
+active situation:Dealer up: ACE_OF_HEARTS Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS] value: 8 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_CLUBS<<ACE_OF_HEARTS<<TEN_OF_HEARTS 
+active situation:Dealer up: FIVE_OF_HEARTS Hand: *HAND>>* 8: FIVE_OF_CLUBS THREE_OF_CLUBS
+Strategy line for next action is   8  H  H  H  H* H* H  H  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS] value: 8 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_CLUBS<<ACE_OF_HEARTS<<TEN_OF_HEARTS 
+active situation:Dealer up: FIVE_OF_HEARTS Hand: *HAND>>* 8: FIVE_OF_CLUBS THREE_OF_CLUBS
+after action 1 h: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS, THREE_OF_CLUBS] value: 11 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<ACE_OF_HEARTS<<TEN_OF_HEARTS 
+active situation:Dealer up: FIVE_OF_HEARTS Hand: *HAND>>* 11: FIVE_OF_CLUBS THREE_OF_CLUBS THREE_OF_CLUBS
+Strategy line for next action is  11  Dh Dh Dh Dh Dh Dh Dh Dh Dh Hd.
+<***h
+***>h
+before action 2 h: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS, THREE_OF_CLUBS] value: 11 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<ACE_OF_HEARTS<<TEN_OF_HEARTS 
+active situation:Dealer up: FIVE_OF_HEARTS Hand: *HAND>>* 11: FIVE_OF_CLUBS THREE_OF_CLUBS THREE_OF_CLUBS
+after action 2 h: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS, THREE_OF_CLUBS, ACE_OF_HEARTS] value: 12 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_HEARTS 
+active situation:Dealer up: FIVE_OF_HEARTS Hand: *HAND>>* 12: FIVE_OF_CLUBS THREE_OF_CLUBS THREE_OF_CLUBS ACE_OF_HEARTS
+Strategy line for next action is  12  H  H  HT S  S  H  H  H  H  H .
+<***h
+***>s
+before action 3 s: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS, THREE_OF_CLUBS, ACE_OF_HEARTS] value: 12 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_HEARTS 
+active situation:Dealer up: FIVE_OF_HEARTS Hand: *HAND>>* 12: FIVE_OF_CLUBS THREE_OF_CLUBS THREE_OF_CLUBS ACE_OF_HEARTS
+after action 3 s: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS, THREE_OF_CLUBS, ACE_OF_HEARTS] value: 12 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FIVE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+before action 0 l: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS, TEN_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS, THREE_OF_CLUBS, ACE_OF_HEARTS] value: 12 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<FIVE_OF_CLUBS<<KING_OF_HEARTS<<THREE_OF_CLUBS<<FIVE_OF_HEARTS<<THREE_OF_CLUBS<<ACE_OF_HEARTS<<TEN_OF_HEARTS 
+active situation:Dealer up: FIVE_OF_HEARTS Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS] value: 8 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_CLUBS<<ACE_OF_HEARTS<<TEN_OF_HEARTS 
+active situation:Dealer up: FIVE_OF_HEARTS Hand: *HAND>>* 8: FIVE_OF_CLUBS THREE_OF_CLUBS
+Strategy line for next action is   8  H  H  H  H* H* H  H  H  H  H .
+before action 1 h: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS] value: 8 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_CLUBS<<ACE_OF_HEARTS<<TEN_OF_HEARTS 
+active situation:Dealer up: FIVE_OF_HEARTS Hand: *HAND>>* 8: FIVE_OF_CLUBS THREE_OF_CLUBS
+after action 1 h: Dealer: [KING_OF_HEARTS, FIVE_OF_HEARTS]
+Player 0: Player #0: cards:[FIVE_OF_CLUBS, THREE_OF_CLUBS, THREE_OF_CLUBS] value: 11 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<ACE_OF_HEARTS<<TEN_OF_HEARTS 
+active situation:Dealer up: FIVE_OF_HEARTS Hand: *HAND>>* 11: FIVE_OF_CLUBS THREE_OF_CLUBS THREE_OF_CLUBS
+Strategy line for next action is  11  Dh Dh Dh Dh Dh Dh Dh Dh Dh Hd.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in com.panopset.tests.blackjackEngine.[1mMessagesTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mHandWagerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.panopset.tests.blackjackEngine.[1mHandWagerTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mHxTest[m
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, s]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SEVEN_OF_DIAMONDS<<KING_OF_HEARTS<<ACE_OF_DIAMONDS<<TWO_OF_HEARTS<<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS
+Strategy line for next action is  18  Hx Ds Ds Ds Ds S  S  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS
+after action 1 h: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS JACK_OF_DIAMONDS
+Strategy line for next action is  18+ S  S  S  S  S  S  S  S  S  S .
+<***h
+***>s
+before action 2 s: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS JACK_OF_DIAMONDS
+after action 2 s: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS, QUEEN_OF_DIAMONDS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: TWO_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+before action 0 l: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS, QUEEN_OF_DIAMONDS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SEVEN_OF_DIAMONDS<<KING_OF_HEARTS<<ACE_OF_DIAMONDS<<TWO_OF_HEARTS<<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS
+Strategy line for next action is  18  Hx Ds Ds Ds Ds S  S  H  H  H .
+before action 1 h: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS
+after action 1 h: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS JACK_OF_DIAMONDS
+Strategy line for next action is  18+ S  S  S  S  S  S  S  S  S  S .
+before action 2 h: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS JACK_OF_DIAMONDS
+after action 2 h: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 28 
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: TWO_OF_HEARTS Hand: null
+Strategy line for next action is null.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, d]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SEVEN_OF_DIAMONDS<<KING_OF_HEARTS<<ACE_OF_DIAMONDS<<TWO_OF_HEARTS<<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS
+Strategy line for next action is  18  Hx Ds Ds Ds Ds S  S  H  H  H .
+<***l
+***>d
+before action 1 d: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS
+after action 1 d: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS, QUEEN_OF_DIAMONDS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 31000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: TWO_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+before action 0 l: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS, QUEEN_OF_DIAMONDS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 31000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SEVEN_OF_DIAMONDS<<KING_OF_HEARTS<<ACE_OF_DIAMONDS<<TWO_OF_HEARTS<<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS
+Strategy line for next action is  18  Hx Ds Ds Ds Ds S  S  H  H  H .
+before action 1 h: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS<<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS
+after action 1 h: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS JACK_OF_DIAMONDS
+Strategy line for next action is  18+ S  S  S  S  S  S  S  S  S  S .
+before action 2 h: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_DIAMONDS 
+active situation:Dealer up: TWO_OF_HEARTS Hand: *HAND>>* 18: SEVEN_OF_DIAMONDS ACE_OF_DIAMONDS JACK_OF_DIAMONDS
+after action 2 h: Dealer: [KING_OF_HEARTS, TWO_OF_HEARTS]
+Player 0: Player #0: cards:[SEVEN_OF_DIAMONDS, ACE_OF_DIAMONDS, JACK_OF_DIAMONDS, QUEEN_OF_DIAMONDS] value: 28 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: TWO_OF_HEARTS Hand: null
+Strategy line for next action is null.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in com.panopset.tests.blackjackEngine.[1mHxTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mPlayerTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.panopset.tests.blackjackEngine.[1mPlayerTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mSplitNotAllowedTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.panopset.tests.blackjackEngine.[1mSplitNotAllowedTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mSessionTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in com.panopset.tests.blackjackEngine.[1mSessionTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mResetTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.panopset.tests.blackjackEngine.[1mResetTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mHT_Test[m
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, s]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<TEN_OF_HEARTS<<TWO_OF_DIAMONDS<<FOUR_OF_HEARTS<<SEVEN_OF_DIAMONDS<<EIGHT_OF_HEARTS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [TEN_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[THREE_OF_DIAMONDS, TWO_OF_DIAMONDS] value: 5 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SEVEN_OF_DIAMONDS<<EIGHT_OF_HEARTS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 5: THREE_OF_DIAMONDS TWO_OF_DIAMONDS
+Strategy line for next action is   7  H  H  H  H  H  H  H  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [TEN_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[THREE_OF_DIAMONDS, TWO_OF_DIAMONDS] value: 5 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<SEVEN_OF_DIAMONDS<<EIGHT_OF_HEARTS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 5: THREE_OF_DIAMONDS TWO_OF_DIAMONDS
+after action 1 h: Dealer: [TEN_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[THREE_OF_DIAMONDS, TWO_OF_DIAMONDS, SEVEN_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<EIGHT_OF_HEARTS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 12: THREE_OF_DIAMONDS TWO_OF_DIAMONDS SEVEN_OF_DIAMONDS
+Strategy line for next action is  12  H  H  HT S  S  H  H  H  H  H .
+<***h
+***>s
+before action 2 s: Dealer: [TEN_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[THREE_OF_DIAMONDS, TWO_OF_DIAMONDS, SEVEN_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<EIGHT_OF_HEARTS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 12: THREE_OF_DIAMONDS TWO_OF_DIAMONDS SEVEN_OF_DIAMONDS
+after action 2 s: Dealer: [TEN_OF_HEARTS, FOUR_OF_HEARTS, EIGHT_OF_HEARTS]
+Player 0: Player #0: cards:[THREE_OF_DIAMONDS, TWO_OF_DIAMONDS, SEVEN_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, s]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS<<TEN_OF_HEARTS<<TWO_OF_DIAMONDS<<FOUR_OF_HEARTS<<EIGHT_OF_DIAMONDS<<JACK_OF_HEARTS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [TEN_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TEN_OF_DIAMONDS, TWO_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<EIGHT_OF_DIAMONDS<<JACK_OF_HEARTS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 12: TEN_OF_DIAMONDS TWO_OF_DIAMONDS
+Strategy line for next action is  12  H  H  HT S  S  H  H  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [TEN_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TEN_OF_DIAMONDS, TWO_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<EIGHT_OF_DIAMONDS<<JACK_OF_HEARTS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 12: TEN_OF_DIAMONDS TWO_OF_DIAMONDS
+after action 1 h: Dealer: [TEN_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TEN_OF_DIAMONDS, TWO_OF_DIAMONDS, EIGHT_OF_DIAMONDS] value: 20 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_HEARTS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 20: TEN_OF_DIAMONDS TWO_OF_DIAMONDS EIGHT_OF_DIAMONDS
+Strategy line for next action is  18+ S  S  S  S  S  S  S  S  S  S .
+<***h
+***>s
+before action 2 s: Dealer: [TEN_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TEN_OF_DIAMONDS, TWO_OF_DIAMONDS, EIGHT_OF_DIAMONDS] value: 20 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_HEARTS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 20: TEN_OF_DIAMONDS TWO_OF_DIAMONDS EIGHT_OF_DIAMONDS
+after action 2 s: Dealer: [TEN_OF_HEARTS, FOUR_OF_HEARTS, JACK_OF_HEARTS]
+Player 0: Player #0: cards:[TEN_OF_DIAMONDS, TWO_OF_DIAMONDS, EIGHT_OF_DIAMONDS] value: 20 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, s]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<EIGHT_OF_DIAMONDS<<TEN_OF_HEARTS<<FOUR_OF_DIAMONDS<<FOUR_OF_HEARTS<<EIGHT_OF_HEARTS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [TEN_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<EIGHT_OF_HEARTS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 12: EIGHT_OF_DIAMONDS FOUR_OF_DIAMONDS
+Strategy line for next action is  12  H  H  HT S  S  H  H  H  H  H .
+<***l
+***>s
+before action 1 s: Dealer: [TEN_OF_HEARTS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<EIGHT_OF_HEARTS 
+active situation:Dealer up: FOUR_OF_HEARTS Hand: *HAND>>* 12: EIGHT_OF_DIAMONDS FOUR_OF_DIAMONDS
+after action 1 s: Dealer: [TEN_OF_HEARTS, FOUR_OF_HEARTS, EIGHT_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 12 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in com.panopset.tests.blackjackEngine.[1mHT_Test[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mStrategyLinesTest[m
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, p]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<ACE_OF_SPADES<<KING_OF_DIAMONDS<<ACE_OF_CLUBS<<FOUR_OF_DIAMONDS<<TWO_OF_SPADES<<JACK_OF_SPADES<<QUEEN_OF_CLUBS<<QUEEN_OF_SPADES 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [KING_OF_DIAMONDS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, ACE_OF_CLUBS] value: 12 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TWO_OF_SPADES<<JACK_OF_SPADES<<QUEEN_OF_CLUBS<<QUEEN_OF_SPADES 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 12: ACE_OF_SPADES ACE_OF_CLUBS
+Strategy line for next action is  A,A P  P  P  P  P  P  P  P  P  P .
+<***l
+***>p
+before action 1 p: Dealer: [KING_OF_DIAMONDS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, ACE_OF_CLUBS] value: 12 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TWO_OF_SPADES<<JACK_OF_SPADES<<QUEEN_OF_CLUBS<<QUEEN_OF_SPADES 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 12: ACE_OF_SPADES ACE_OF_CLUBS
+after action 1 p: Dealer: [KING_OF_DIAMONDS, FOUR_OF_DIAMONDS, QUEEN_OF_CLUBS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, TWO_OF_SPADES] value: 13 Player #1: cards:[ACE_OF_CLUBS, JACK_OF_SPADES] value: 21 
+ Bankroll:Chips: 31000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<QUEEN_OF_SPADES 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: null
+Strategy line for next action is null.
+<***p
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, s]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TWO_OF_DIAMONDS<<KING_OF_HEARTS<<ACE_OF_CLUBS<<FOUR_OF_DIAMONDS<<JACK_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_CLUBS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_CLUBS
+Strategy line for next action is  13  H  H  H* Dh Dh H  H  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [KING_OF_HEARTS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_CLUBS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_CLUBS
+after action 1 h: Dealer: [KING_OF_HEARTS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_CLUBS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_CLUBS JACK_OF_DIAMONDS
+Strategy line for next action is  13  S  S  S  S  S  H  H  H  H  H .
+<***h
+***>s
+before action 2 s: Dealer: [KING_OF_HEARTS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_CLUBS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_CLUBS JACK_OF_DIAMONDS
+after action 2 s: Dealer: [KING_OF_HEARTS, FOUR_OF_DIAMONDS, SEVEN_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_CLUBS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, d]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TWO_OF_DIAMONDS<<KING_OF_HEARTS<<ACE_OF_CLUBS<<FOUR_OF_DIAMONDS<<JACK_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_CLUBS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_CLUBS
+Strategy line for next action is  13  H  H  H* Dh Dh H  H  H  H  H .
+<***l
+***>d
+before action 1 d: Dealer: [KING_OF_HEARTS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_CLUBS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_CLUBS
+after action 1 d: Dealer: [KING_OF_HEARTS, FOUR_OF_DIAMONDS, FOUR_OF_SPADES]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_CLUBS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: null
+Strategy line for next action is null.
+<***d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, d]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TWO_OF_DIAMONDS<<KING_OF_HEARTS<<ACE_OF_CLUBS<<FOUR_OF_DIAMONDS<<JACK_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_CLUBS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_CLUBS
+Strategy line for next action is  13  H  H  H* Dh Dh H  H  H  H  H .
+<***l
+***>d
+before action 1 d: Dealer: [KING_OF_HEARTS, FOUR_OF_DIAMONDS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_CLUBS] value: 13 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<JACK_OF_DIAMONDS 
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: *HAND>>* 13: TWO_OF_DIAMONDS ACE_OF_CLUBS
+after action 1 d: Dealer: [KING_OF_HEARTS, FOUR_OF_DIAMONDS, FOUR_OF_HEARTS]
+Player 0: Player #0: cards:[TWO_OF_DIAMONDS, ACE_OF_CLUBS, JACK_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 29000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_DIAMONDS Hand: null
+Strategy line for next action is null.
+<***d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in com.panopset.tests.blackjackEngine.[1mStrategyLinesTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mDsTest[m
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, d]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<ACE_OF_SPADES<<KING_OF_HEARTS<<SEVEN_OF_DIAMONDS<<THREE_OF_HEARTS<<THREE_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, THREE_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_HEARTS Hand: *HAND>>* 18: ACE_OF_SPADES SEVEN_OF_DIAMONDS
+Strategy line for next action is  18  Hx Ds Ds Ds Ds S  S  H  H  H .
+<***l
+***>d
+before action 1 d: Dealer: [KING_OF_HEARTS, THREE_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_HEARTS Hand: *HAND>>* 18: ACE_OF_SPADES SEVEN_OF_DIAMONDS
+after action 1 d: Dealer: [KING_OF_HEARTS, THREE_OF_HEARTS, TEN_OF_DIAMONDS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, SEVEN_OF_DIAMONDS, THREE_OF_DIAMONDS] value: 21 
+ Bankroll:Chips: 31000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: THREE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+***************Verify and execute:  [l, h, s]
+***>l
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<ACE_OF_SPADES<<KING_OF_HEARTS<<THREE_OF_DIAMONDS<<THREE_OF_HEARTS<<FOUR_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, THREE_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, THREE_OF_DIAMONDS] value: 14 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<FOUR_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_HEARTS Hand: *HAND>>* 14: ACE_OF_SPADES THREE_OF_DIAMONDS
+Strategy line for next action is  14  H  H  H* Dh Dh H  H  H  H  H .
+<***l
+***>h
+before action 1 h: Dealer: [KING_OF_HEARTS, THREE_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, THREE_OF_DIAMONDS] value: 14 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<FOUR_OF_DIAMONDS<<TEN_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_HEARTS Hand: *HAND>>* 14: ACE_OF_SPADES THREE_OF_DIAMONDS
+after action 1 h: Dealer: [KING_OF_HEARTS, THREE_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, THREE_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_HEARTS Hand: *HAND>>* 18: ACE_OF_SPADES THREE_OF_DIAMONDS FOUR_OF_DIAMONDS
+Strategy line for next action is  18  Hx Ds Ds Ds Ds S  S  H  H  H .
+<***h
+***>s
+before action 2 s: Dealer: [KING_OF_HEARTS, THREE_OF_HEARTS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, THREE_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<TEN_OF_DIAMONDS 
+active situation:Dealer up: THREE_OF_HEARTS Hand: *HAND>>* 18: ACE_OF_SPADES THREE_OF_DIAMONDS FOUR_OF_DIAMONDS
+after action 2 s: Dealer: [KING_OF_HEARTS, THREE_OF_HEARTS, TEN_OF_DIAMONDS]
+Player 0: Player #0: cards:[ACE_OF_SPADES, THREE_OF_DIAMONDS, FOUR_OF_DIAMONDS] value: 18 
+ Bankroll:Chips: 30500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: THREE_OF_HEARTS Hand: null
+Strategy line for next action is null.
+<***s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.panopset.tests.blackjackEngine.[1mDsTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mAutoTest[m
+Stake: $1,815.00, Chips: $1,615.00 Hands: 90 
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.413 s -- in com.panopset.tests.blackjackEngine.[1mAutoTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mFastDealTest[m
+before action 0 l: Dealer: []
+ Bankroll:Chips: 30000, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<EIGHT_OF_SPADES<<KING_OF_HEARTS<<TWO_OF_DIAMONDS<<SIX_OF_HEARTS<<THREE_OF_DIAMONDS<<ACE_OF_DIAMONDS 
+active situation:Dealer up: null Hand: null
+after action 0 l: Dealer: [KING_OF_HEARTS, SIX_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, TWO_OF_DIAMONDS] value: 10 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<ACE_OF_DIAMONDS 
+active situation:Dealer up: SIX_OF_HEARTS Hand: *HAND>>* 10: EIGHT_OF_SPADES TWO_OF_DIAMONDS
+Strategy line for next action is  10  Dh Dh Dh Dh Dh Dh Dh Dh H  H .
+before action 1 d: Dealer: [KING_OF_HEARTS, SIX_OF_HEARTS]
+Player 0: Player #0: cards:[EIGHT_OF_SPADES, TWO_OF_DIAMONDS] value: 10 
+ Bankroll:Chips: 29500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining: <<THREE_OF_DIAMONDS<<ACE_OF_DIAMONDS 
+active situation:Dealer up: SIX_OF_HEARTS Hand: *HAND>>* 10: EIGHT_OF_SPADES TWO_OF_DIAMONDS
+after action 1 d: Dealer: [ACE_OF_CLUBS, FOUR_OF_SPADES]
+Player 0: Player #0: cards:[EIGHT_OF_HEARTS, FIVE_OF_DIAMONDS] value: 13 
+ Bankroll:Chips: 28500, reloadAmount: 30000, reloadCount: 1
+ stacked deck remaining:  
+active situation:Dealer up: FOUR_OF_SPADES Hand: *HAND>>* 13: EIGHT_OF_HEARTS FIVE_OF_DIAMONDS
+Strategy line for next action is  13  S  S  S  S  S  H  H  H  H  H .
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.113 s -- in com.panopset.tests.blackjackEngine.[1mFastDealTest[m
+[[1;34mINFO[m] Running com.panopset.tests.blackjackEngine.[1mBankrollTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.panopset.tests.blackjackEngine.[1mBankrollTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 62, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mblackjackEngine[0;1m ---[m
+[[1;34mINFO[m] Building jar: /home/karl/w/src2/shoring/blackjackEngine/target/blackjackEngine.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mblackjackEngine[0;1m ---[m
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/blackjackEngine/target/blackjackEngine.jar to /home/karl/.m2/repository/com/panopset/blackjackEngine/1.2.6/blackjackEngine-1.2.6.jar
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/blackjackEngine/pom.xml to /home/karl/.m2/repository/com/panopset/blackjackEngine/1.2.6/blackjackEngine-1.2.6.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------------< [0;36mcom.panopset:lowerclass[0;1m >-----------------------[m
+[[1;34mINFO[m] [1mBuilding lowerclass 1.2.6                                          [5/8][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mlowerclass[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/karl/w/src2/shoring/lowerclass/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:compile[m [1m(compile)[m @ [36mlowerclass[0;1m ---[m
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/lowerclass/src/main/java/com/panopset/lowerclass/VersionMakeup.kt: (105, 30) Parameter 'fileName' is never used
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/lowerclass/src/main/java/com/panopset/lowerclass/VersionMakeup.kt: (127, 33) Condition 'cv != null' is always 'true'
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/lowerclass/src/main/java/com/panopset/lowerclass/VersionMakeup.kt: (158, 25) Condition 'cv != null' is always 'true'
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mlowerclass[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/karl/w/src2/shoring/lowerclass/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:compile[m [1m(default-compile)[m @ [36mlowerclass[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module! :dependency
+[[1;34mINFO[m] Compiling 2 source files with javac [debug release 17 module-path] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mlowerclass[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/karl/w/src2/shoring/lowerclass/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mlowerclass[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:test-compile[m [1m(test-compile)[m @ [36mlowerclass[0;1m ---[m
+[[1;33mWARNING[m] No sources found skipping Kotlin compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.1.2:test[m [1m(default-test)[m @ [36mlowerclass[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mlowerclass[0;1m ---[m
+[[1;34mINFO[m] Building jar: /home/karl/w/src2/shoring/lowerclass/target/lowerclass.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mlowerclass[0;1m ---[m
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/lowerclass/target/lowerclass.jar to /home/karl/.m2/repository/com/panopset/lowerclass/1.2.6/lowerclass-1.2.6.jar
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/lowerclass/pom.xml to /home/karl/.m2/repository/com/panopset/lowerclass/1.2.6/lowerclass-1.2.6.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------------------< [0;36mcom.panopset:flywheel[0;1m >------------------------[m
+[[1;34mINFO[m] [1mBuilding flywheel 1.2.6                                            [6/8][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mflywheel[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/karl/w/src2/shoring/flywheel/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:compile[m [1m(compile)[m @ [36mflywheel[0;1m ---[m
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/main/java/com/panopset/flywheel/CommandPush.kt: (23, 26) The corresponding parameter in the supertype 'MatchableCommand' is named 'sw'. This may cause problems when calling this function with named arguments.
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/main/java/com/panopset/flywheel/CommandReplace.kt: (36, 26) The corresponding parameter in the supertype 'MatchableCommand' is named 'sw'. This may cause problems when calling this function with named arguments.
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/main/java/com/panopset/flywheel/CommandVariable.kt: (52, 49) Unnecessary non-null assertion (!!) on a non-null receiver of type String
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/main/java/com/panopset/flywheel/Commands.kt: (7, 25) Parameter 'commandName' is never used
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/main/java/com/panopset/flywheel/Flywheel.kt: (602, 43) Variable 'flywheel' initializer is redundant
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/main/java/com/panopset/flywheel/FlywheelBuilder.kt: (209, 17) Variable 'file' is never used
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/main/java/com/panopset/flywheel/Hello.kt: (3, 10) Parameter 'args' is never used
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/main/java/com/panopset/flywheel/Max.kt: (3, 10) Parameter 'args' is never used
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/main/java/com/panopset/flywheel/RawCommandLoader.kt: (17, 14) Unnecessary non-null assertion (!!) on a non-null receiver of type Template
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/main/java/com/panopset/flywheel/RawCommandLoader.kt: (43, 22) Unnecessary non-null assertion (!!) on a non-null receiver of type Template
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/main/java/com/panopset/flywheel/SourceFile.kt: (99, 25) The corresponding parameter in the supertype 'Any' is named 'other'. This may cause problems when calling this function with named arguments.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mflywheel[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 31 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:compile[m [1m(default-compile)[m @ [36mflywheel[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module! :dependency
+[[1;34mINFO[m] Compiling 19 source files with javac [debug release 17 module-path] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mflywheel[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 52 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mflywheel[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module! :dependency
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:test-compile[m [1m(test-compile)[m @ [36mflywheel[0;1m ---[m
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/test/java/com/panopset/tests/transformer/GlobalReplaceTransformerTest.kt: (29, 9) Visibility modifiers are redundant in getter
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/test/java/com/panopset/tests/transformer/StandardPackagePath.kt: (8, 9) Visibility modifiers are redundant in getter
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/flywheel/src/test/java/com/panopset/tests/transformer/TransformerTest.kt: (31, 91) Unnecessary non-null assertion (!!) on a non-null receiver of type ResultsDataSupplier
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.1.2:test[m [1m(default-test)[m @ [36mflywheel[0;1m ---[m
+[[1;34mINFO[m] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mSourceFileTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.111 s -- in com.panopset.tests.flywheel.[1mSourceFileTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mBufferTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s -- in com.panopset.tests.flywheel.[1mBufferTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mDepthTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in com.panopset.tests.flywheel.[1mDepthTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mDeepListTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in com.panopset.tests.flywheel.[1mDeepListTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mEscapeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.panopset.tests.flywheel.[1mEscapeTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mExecuteTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.258 s -- in com.panopset.tests.flywheel.[1mExecuteTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mDoubleFileTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.panopset.tests.flywheel.[1mDoubleFileTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mSimpleTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.panopset.tests.flywheel.[1mSimpleTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mSplitColumnListTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.panopset.tests.flywheel.[1mSplitColumnListTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mReplacementsTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.panopset.tests.flywheel.[1mReplacementsTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mVariableNamedFilesTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in com.panopset.tests.flywheel.[1mVariableNamedFilesTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mListAuditTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.panopset.tests.flywheel.[1mListAuditTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mComplexTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.panopset.tests.flywheel.[1mComplexTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mFlywheelSamplesTest[m
+Comparing expected, to value:
+${@p replaceme}textToReplaceWithCommandPrefix${@q}${@p pfx}${@${@q}${@r replaceme}${pfx}${@q}${l}
+${@p replaceme}textToReplaceWithCommandPrefix${@q}${@p pfx}${@${@q}${@r replaceme}${pfx}${@q}${l}
+values are identical
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.panopset.tests.flywheel.[1mFlywheelSamplesTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mLineFeedTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.panopset.tests.flywheel.[1mLineFeedTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mListTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in com.panopset.tests.flywheel.[1mListTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mCommandRawTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.panopset.tests.flywheel.[1mCommandRawTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mBracketTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.panopset.tests.flywheel.[1mBracketTest[m
+[[1;34mINFO[m] Running com.panopset.tests.flywheel.[1mReplacementTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 s -- in com.panopset.tests.flywheel.[1mReplacementTest[m
+[[1;34mINFO[m] Running com.panopset.tests.gr.[1mPipeTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.panopset.tests.gr.[1mPipeTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 31, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mflywheel[0;1m ---[m
+[[1;34mINFO[m] Building jar: /home/karl/w/src2/shoring/flywheel/target/flywheel.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mflywheel[0;1m ---[m
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/flywheel/target/flywheel.jar to /home/karl/.m2/repository/com/panopset/flywheel/1.2.6/flywheel-1.2.6.jar
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/flywheel/pom.xml to /home/karl/.m2/repository/com/panopset/flywheel/1.2.6/flywheel-1.2.6.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------------< [0;36mcom.panopset:desk[0;1m >--------------------------[m
+[[1;34mINFO[m] [1mBuilding desk 1.2.6                                                [7/8][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mdesk[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/karl/w/src2/shoring/desk/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:compile[m [1m(compile)[m @ [36mdesk[0;1m ---[m
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/desk/src/main/java/com/panopset/desk/utilities/fwtabs/TabGlobalReplace.kt: (81, 13) Variable 's' is never used
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/desk/src/main/java/com/panopset/marin/apps/fw/FlywheelExec.kt: (41, 17) Parameter 'bw' is never used
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/desk/src/main/java/com/panopset/marin/apps/fw/FlywheelExec.kt: (70, 9) Visibility modifiers are redundant in getter
+[[1;33mWARNING[m] /home/karl/w/src2/shoring/desk/src/main/java/com/panopset/marin/bootstrap/VersionClassGenerator.kt: (94, 39) Condition 'args == null' is always 'false'
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mdesk[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 236 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:compile[m [1m(default-compile)[m @ [36mdesk[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module! :dependency
+[[1;34mINFO[m] Compiling 22 source files with javac [debug release 17 module-path] to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mdesk[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/karl/w/src2/shoring/desk/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mdesk[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module! :dependency
+[[1;34mINFO[m] Compiling 1 source file with javac [debug release 17 module-path] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:test-compile[m [1m(test-compile)[m @ [36mdesk[0;1m ---[m
+[[1;33mWARNING[m] No sources found skipping Kotlin compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.1.2:test[m [1m(default-test)[m @ [36mdesk[0;1m ---[m
+[[1;34mINFO[m] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.panopset.tests.marin.[1mRegexParserTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s -- in com.panopset.tests.marin.[1mRegexParserTest[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 1, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mdesk[0;1m ---[m
+[[1;34mINFO[m] Building jar: /home/karl/w/src2/shoring/desk/target/desk.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mdesk[0;1m ---[m
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/desk/target/desk.jar to /home/karl/.m2/repository/com/panopset/desk/1.2.6/desk-1.2.6.jar
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/desk/pom.xml to /home/karl/.m2/repository/com/panopset/desk/1.2.6/desk-1.2.6.pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------------------< [0;36mcom.panopset:panopset[0;1m >------------------------[m
+[[1;34mINFO[m] [1mBuilding panopset 1.2.6                                            [8/8][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mpanopset[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/karl/w/src2/shoring/panopset/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:compile[m [1m(compile)[m @ [36mpanopset[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mpanopset[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/karl/w/src2/shoring/panopset/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:compile[m [1m(default-compile)[m @ [36mpanopset[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module! :dependency
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mpanopset[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/karl/w/src2/shoring/panopset/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36mpanopset[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mkotlin-maven-plugin:1.9.10:test-compile[m [1m(test-compile)[m @ [36mpanopset[0;1m ---[m
+[[1;33mWARNING[m] No sources found skipping Kotlin compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.1.2:test[m [1m(default-test)[m @ [36mpanopset[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mpanopset[0;1m ---[m
+[[1;34mINFO[m] Building jar: /home/karl/w/src2/shoring/panopset/target/panopset.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-install-plugin:2.4:install[m [1m(default-install)[m @ [36mpanopset[0;1m ---[m
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/panopset/target/panopset.jar to /home/karl/.m2/repository/com/panopset/panopset/1.2.6/panopset-1.2.6.jar
+[[1;34mINFO[m] Installing /home/karl/w/src2/shoring/panopset/pom.xml to /home/karl/.m2/repository/com/panopset/panopset/1.2.6/panopset-1.2.6.pom
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for shoring 1.2.6:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] shoring ............................................ [1;32mSUCCESS[m [  0.371 s]
+[[1;34mINFO[m] compat ............................................. [1;32mSUCCESS[m [ 15.424 s]
+[[1;34mINFO[m] fxapp .............................................. [1;32mSUCCESS[m [  3.500 s]
+[[1;34mINFO[m] blackjackEngine .................................... [1;32mSUCCESS[m [ 10.373 s]
+[[1;34mINFO[m] lowerclass ......................................... [1;32mSUCCESS[m [  0.569 s]
+[[1;34mINFO[m] flywheel ........................................... [1;32mSUCCESS[m [  5.107 s]
+[[1;34mINFO[m] desk ............................................... [1;32mSUCCESS[m [  4.817 s]
+[[1;34mINFO[m] panopset ........................................... [1;32mSUCCESS[m [  0.300 s]
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  40.572 s
+[[1;34mINFO[m] Finished at: 2023-12-17T19:06:13-08:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+checking variables...
+FXV = 22-ea+16
+Defining the INSTALLER variables.
+Repository base is /home/karl/.m2/repository 
+PV is 1.2.6
+jpackage -n panopset -p /usr/lib/jvm/java-1.19.0-openjdk-amd64/jmods:/home/karl/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.10/kotlin-stdlib-1.9.10.jar:/home/karl/.m2/repository/org/jetbrains/kotlin/kotlin-reflect/1.9.10/kotlin-reflect-1.9.10.jar:/home/karl/.m2/repository/org/openjfx/javafx-base/22-ea+16/javafx-base-22-ea+16-linux.jar:/home/karl/.m2/repository/org/openjfx/javafx-graphics/22-ea+16/javafx-graphics-22-ea+16-linux.jar:/home/karl/.m2/repository/org/openjfx/javafx-controls/22-ea+16/javafx-controls-22-ea+16-linux.jar:/home/karl/.m2/repository/org/openjfx/javafx-web/22-ea+16/javafx-web-22-ea+16-linux.jar:/home/karl/.m2/repository/org/openjfx/javafx-media/22-ea+16/javafx-media-22-ea+16-linux.jar:/home/karl/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/karl/.m2/repository/com/panopset/compat/1.2.6/compat-1.2.6.jar:/home/karl/.m2/repository/com/panopset/desk/1.2.6/desk-1.2.6.jar:/home/karl/.m2/repository/com/panopset/blackjackEngine/1.2.6/blackjackEngine-1.2.6.jar:/home/karl/.m2/repository/com/panopset/skyscraper/1.2.6/skyscraper-1.2.6.jar:/home/karl/.m2/repository/com/panopset/flywheel/1.2.6/flywheel-1.2.6.jar:/home/karl/.m2/repository/com/panopset/lowerclass/1.2.6/lowerclass-1.2.6.jar:/home/karl/.m2/repository/com/panopset/fxapp/1.2.6/fxapp-1.2.6.jar -m com.panopset.compat/com.panopset.compat.AppVersion --vendor Panopset --copyright 1996-2024 Karl Dinwiddie --license-file LICENSE --description Panopset desktop applications. --add-launcher fw=launchers/fw.properties --add-launcher flywheel=launchers/flywheel.properties --add-launcher blackjack=launchers/blackjack.properties --add-launcher skyscraper=launchers/skyscraper.properties --add-launcher checksum=launchers/checksum.properties --add-launcher scrambler=launchers/scrambler.properties --add-launcher lowerclass=launchers/lowerclass.properties --app-version 1.2.6 --dest target --linux-deb-maintainer karldinwiddie@gmail.com --linux-shortcut --resource-dir shoring/desk/src/main/resources
+[19:06:13.975] Running dpkg
+[19:06:13.985] Command [PID: 53837]:
+    dpkg --print-architecture
+[19:06:13.985] Output:
+    amd64
+[19:06:13.986] Returned: 0
+
+[19:06:13.994] Running dpkg
+[19:06:14.014] Command [PID: 53839]:
+    dpkg -s coreutils
+[19:06:14.015] Output:
+    Package: coreutils
+    Essential: yes
+    Status: install ok installed
+    Priority: required
+    Section: utils
+    Installed-Size: 7112
+    Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+    Architecture: amd64
+    Multi-Arch: foreign
+    Version: 8.32-4.1ubuntu1
+    Pre-Depends: libacl1 (>= 2.2.23), libattr1 (>= 1:2.4.44), libc6 (>= 2.34), libgmp10 (>= 2:6.2.1+dfsg), libselinux1 (>= 3.1~)
+    Description: GNU core utilities
+     This package contains the basic file, shell and text manipulation
+     utilities which are expected to exist on every operating system.
+     .
+     Specifically, this package includes:
+     arch base64 basename cat chcon chgrp chmod chown chroot cksum comm cp
+     csplit cut date dd df dir dircolors dirname du echo env expand expr
+     factor false flock fmt fold groups head hostid id install join link ln
+     logname ls md5sum mkdir mkfifo mknod mktemp mv nice nl nohup nproc numfmt
+     od paste pathchk pinky pr printenv printf ptx pwd readlink realpath rm
+     rmdir runcon sha*sum seq shred sleep sort split stat stty sum sync tac
+     tail tee test timeout touch tr true truncate tsort tty uname unexpand
+     uniq unlink users vdir wc who whoami yes
+    Homepage: http://gnu.org/software/coreutils
+    Original-Maintainer: Michael Stone <mstone@debian.org>
+[19:06:14.015] Returned: 0
+
+[19:06:14.016] Running dpkg-deb
+[19:06:14.115] Running dpkg-deb
+[19:06:14.116] Running dpkg
+[19:06:14.118] Running fakeroot
+[19:06:14.121] Running dpkg
+[19:06:14.142] Command [PID: 53849]:
+    dpkg -s coreutils
+[19:06:14.142] Output:
+    Package: coreutils
+    Essential: yes
+    Status: install ok installed
+    Priority: required
+    Section: utils
+    Installed-Size: 7112
+    Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+    Architecture: amd64
+    Multi-Arch: foreign
+    Version: 8.32-4.1ubuntu1
+    Pre-Depends: libacl1 (>= 2.2.23), libattr1 (>= 1:2.4.44), libc6 (>= 2.34), libgmp10 (>= 2:6.2.1+dfsg), libselinux1 (>= 3.1~)
+    Description: GNU core utilities
+     This package contains the basic file, shell and text manipulation
+     utilities which are expected to exist on every operating system.
+     .
+     Specifically, this package includes:
+     arch base64 basename cat chcon chgrp chmod chown chroot cksum comm cp
+     csplit cut date dd df dir dircolors dirname du echo env expand expr
+     factor false flock fmt fold groups head hostid id install join link ln
+     logname ls md5sum mkdir mkfifo mknod mktemp mv nice nl nohup nproc numfmt
+     od paste pathchk pinky pr printenv printf ptx pwd readlink realpath rm
+     rmdir runcon sha*sum seq shred sleep sort split stat stty sum sync tac
+     tail tee test timeout touch tr true truncate tsort tty uname unexpand
+     uniq unlink users vdir wc who whoami yes
+    Homepage: http://gnu.org/software/coreutils
+    Original-Maintainer: Michael Stone <mstone@debian.org>
+[19:06:14.143] Returned: 0
+
+[19:06:14.143] Running ldd
+[19:06:18.072] Command [PID: -1]:
+    jlink --output /tmp/jdk.jpackage16568200104243073541/images/src/panopset/lib/runtime --module-path /usr/lib/jvm/java-1.19.0-openjdk-amd64/jmods:/home/karl/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.10/kotlin-stdlib-1.9.10.jar:/home/karl/.m2/repository/org/jetbrains/kotlin/kotlin-reflect/1.9.10/kotlin-reflect-1.9.10.jar:/home/karl/.m2/repository/org/openjfx/javafx-base/22-ea+16/javafx-base-22-ea+16-linux.jar:/home/karl/.m2/repository/org/openjfx/javafx-graphics/22-ea+16/javafx-graphics-22-ea+16-linux.jar:/home/karl/.m2/repository/org/openjfx/javafx-controls/22-ea+16/javafx-controls-22-ea+16-linux.jar:/home/karl/.m2/repository/org/openjfx/javafx-web/22-ea+16/javafx-web-22-ea+16-linux.jar:/home/karl/.m2/repository/org/openjfx/javafx-media/22-ea+16/javafx-media-22-ea+16-linux.jar:/home/karl/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/karl/.m2/repository/com/panopset/compat/1.2.6/compat-1.2.6.jar:/home/karl/.m2/repository/com/panopset/desk/1.2.6/desk-1.2.6.jar:/home/karl/.m2/repository/com/panopset/blackjackEngine/1.2.6/blackjackEngine-1.2.6.jar:/home/karl/.m2/repository/com/panopset/skyscraper/1.2.6/skyscraper-1.2.6.jar:/home/karl/.m2/repository/com/panopset/flywheel/1.2.6/flywheel-1.2.6.jar:/home/karl/.m2/repository/com/panopset/lowerclass/1.2.6/lowerclass-1.2.6.jar:/home/karl/.m2/repository/com/panopset/fxapp/1.2.6/fxapp-1.2.6.jar --add-modules com.panopset.compat --strip-native-commands --strip-debug --no-man-pages --no-header-files
+[19:06:18.072] Output:
+    
+[19:06:18.072] Returned: 0
+
+[19:06:18.080] Using default package resource JavaApp.png [icon] (add panopset.png to the resource-dir to customize).
+[19:06:18.135] Using default package resource JavaApp.png [icon] (add fw.png to the resource-dir to customize).
+[19:06:18.176] Using custom package resource [icon] (loaded from flywheel.png).
+[19:06:18.208] Using custom package resource [icon] (loaded from blackjack.png).
+[19:06:18.236] Using custom package resource [icon] (loaded from skyscraper.png).
+[19:06:18.265] Using custom package resource [icon] (loaded from checksum.png).
+[19:06:18.287] Using custom package resource [icon] (loaded from scrambler.png).
+[19:06:18.309] Using custom package resource [icon] (loaded from lowerclass.png).
+[19:06:18.353] Running ldd
+[19:06:18.359] Command [PID: 53866]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/jspawnhelper
+[19:06:18.359] Output:
+    	linux-vdso.so.1 (0x00007fffdffcb000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f662ca9a000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007f662ccdc000)
+[19:06:18.359] Returned: 0
+
+[19:06:18.359] Running ldd
+[19:06:18.364] Command [PID: 53873]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/libnio.so
+[19:06:18.365] Output:
+    	linux-vdso.so.1 (0x00007fff6717d000)
+    	libjava.so => /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/libjava.so (0x00007f987d16c000)
+    	libnet.so => /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/libnet.so (0x00007f987d15c000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f987cf21000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007f987d1ae000)
+    	libjvm.so => not found
+    	libjvm.so => not found
+[19:06:18.365] Returned: 0
+
+[19:06:18.365] Running ldd
+[19:06:18.370] Command [PID: 53880]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/libjsig.so
+[19:06:18.370] Output:
+    	linux-vdso.so.1 (0x00007fffdbf9a000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fc6478a8000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007fc647aec000)
+[19:06:18.370] Returned: 0
+
+[19:06:18.370] Running ldd
+[19:06:18.374] Command [PID: 53887]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/libjava.so
+[19:06:18.375] Output:
+    	linux-vdso.so.1 (0x00007ffccf3d8000)
+    	libjvm.so => not found
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f6fa4b9a000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007f6fa4e00000)
+[19:06:18.375] Returned: 0
+
+[19:06:18.375] Running ldd
+[19:06:18.380] Command [PID: 53894]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/libzip.so
+[19:06:18.380] Output:
+    	linux-vdso.so.1 (0x00007fff89dbc000)
+    	libjvm.so => not found
+    	libjava.so => /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/libjava.so (0x00007f244a161000)
+    	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007f244a145000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f2449f1d000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007f244a1a9000)
+    	libjvm.so => not found
+[19:06:18.380] Returned: 0
+
+[19:06:18.380] Running ldd
+[19:06:18.385] Command [PID: 53901]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/libsyslookup.so
+[19:06:18.385] Output:
+    	linux-vdso.so.1 (0x00007ffcc93f1000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f0d318f2000)
+    	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f0d3180b000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007f0d31b34000)
+[19:06:18.385] Returned: 0
+
+[19:06:18.385] Running ldd
+[19:06:18.390] Command [PID: 53908]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/jexec
+[19:06:18.390] Output:
+    	linux-vdso.so.1 (0x00007fff1bf7f000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f0e186b7000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007f0e188f9000)
+[19:06:18.390] Returned: 0
+
+[19:06:18.390] Running ldd
+[19:06:18.395] Command [PID: 53915]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/libnet.so
+[19:06:18.395] Output:
+    	linux-vdso.so.1 (0x00007ffedd7e7000)
+    	libjvm.so => not found
+    	libjava.so => /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/libjava.so (0x00007fe68712b000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fe686f03000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007fe687179000)
+    	libjvm.so => not found
+[19:06:18.395] Returned: 0
+
+[19:06:18.395] Running ldd
+[19:06:18.400] Command [PID: 53922]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/libjli.so
+[19:06:18.400] Output:
+    	linux-vdso.so.1 (0x00007fff0eab4000)
+    	libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007f94fb26f000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f94fb047000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007f94fb2b1000)
+[19:06:18.400] Returned: 0
+
+[19:06:18.400] Running ldd
+[19:06:18.405] Command [PID: 53929]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/libjimage.so
+[19:06:18.405] Output:
+    	linux-vdso.so.1 (0x00007ffd52181000)
+    	libjvm.so => not found
+    	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007ff9ddccd000)
+    	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007ff9ddcad000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ff9dda85000)
+    	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007ff9dd99e000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007ff9ddf15000)
+[19:06:18.405] Returned: 0
+
+[19:06:18.406] Running ldd
+[19:06:18.410] Command [PID: 53936]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/libverify.so
+[19:06:18.410] Output:
+    	linux-vdso.so.1 (0x00007fffa8b5b000)
+    	libjvm.so => not found
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007efeaa350000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007efeaa59d000)
+[19:06:18.410] Returned: 0
+
+[19:06:18.410] Running ldd
+[19:06:18.415] Command [PID: 53943]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/server/libjsig.so
+[19:06:18.415] Output:
+    	linux-vdso.so.1 (0x00007ffbac440000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ffbac1f8000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007ffbac442000)
+[19:06:18.415] Returned: 0
+
+[19:06:18.415] Running ldd
+[19:06:18.420] Command [PID: 53950]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/runtime/lib/server/libjvm.so
+[19:06:18.420] Output:
+    	linux-vdso.so.1 (0x00007fff5dc3c000)
+    	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fb058b38000)
+    	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007fb058a51000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fb058829000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007fb05a160000)
+    	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fb058809000)
+[19:06:18.420] Returned: 0
+
+[19:06:18.420] Running ldd
+[19:06:18.424] Command [PID: 53957]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/lib/libapplauncher.so
+[19:06:18.425] Output:
+    	linux-vdso.so.1 (0x00007ffdfe786000)
+    	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fb70929a000)
+    	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fb70927a000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fb709052000)
+    	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007fb708f6b000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007fb7094f8000)
+[19:06:18.425] Returned: 0
+
+[19:06:18.425] Running ldd
+[19:06:18.429] Command [PID: 53964]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/bin/flywheel
+[19:06:18.429] Output:
+    	linux-vdso.so.1 (0x00007ffd5dfa0000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ff4e34f6000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007ff4e3739000)
+[19:06:18.429] Returned: 0
+
+[19:06:18.429] Running ldd
+[19:06:18.435] Command [PID: 53971]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/bin/fw
+[19:06:18.435] Output:
+    	linux-vdso.so.1 (0x00007ffdaf925000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f4ff3e6c000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007f4ff40af000)
+[19:06:18.435] Returned: 0
+
+[19:06:18.435] Running ldd
+[19:06:18.439] Command [PID: 53978]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/bin/checksum
+[19:06:18.439] Output:
+    	linux-vdso.so.1 (0x00007ffd9677f000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f0eef069000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007f0eef2ac000)
+[19:06:18.440] Returned: 0
+
+[19:06:18.440] Running ldd
+[19:06:18.444] Command [PID: 53985]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/bin/panopset
+[19:06:18.444] Output:
+    	linux-vdso.so.1 (0x00007ffed22fb000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f57fd848000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007f57fda8b000)
+[19:06:18.444] Returned: 0
+
+[19:06:18.444] Running ldd
+[19:06:18.449] Command [PID: 53992]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/bin/skyscraper
+[19:06:18.449] Output:
+    	linux-vdso.so.1 (0x00007ffdf1fa4000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f971c02e000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007f971c271000)
+[19:06:18.449] Returned: 0
+
+[19:06:18.449] Running ldd
+[19:06:18.454] Command [PID: 53999]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/bin/scrambler
+[19:06:18.454] Output:
+    	linux-vdso.so.1 (0x00007fff9dba0000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f094d2e4000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007f094d527000)
+[19:06:18.454] Returned: 0
+
+[19:06:18.454] Running ldd
+[19:06:18.458] Command [PID: 54006]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/bin/lowerclass
+[19:06:18.458] Output:
+    	linux-vdso.so.1 (0x00007ffcd957d000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fab83014000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007fab83257000)
+[19:06:18.458] Returned: 0
+
+[19:06:18.458] Running ldd
+[19:06:18.463] Command [PID: 54013]:
+    ldd /tmp/jdk.jpackage16568200104243073541/images/opt/panopset/bin/blackjack
+[19:06:18.463] Output:
+    	linux-vdso.so.1 (0x00007ffdc0d3a000)
+    	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f85a1e0e000)
+    	/lib64/ld-linux-x86-64.so.2 (0x00007f85a2051000)
+[19:06:18.463] Returned: 0
+
+[19:06:18.464] Running dpkg
+[19:06:18.751] Command [PID: 54020]:
+    dpkg -S /lib/x86_64-linux-gnu/libz.so.1
+[19:06:18.751] Output:
+    zlib1g:amd64: /lib/x86_64-linux-gnu/libz.so.1
+[19:06:18.751] Returned: 0
+
+[19:06:18.752] /lib/x86_64-linux-gnu/libz.so.1 is provided by [zlib1g]
+[19:06:18.752] Running dpkg
+[19:06:19.041] Command [PID: 54021]:
+    dpkg -S /lib/x86_64-linux-gnu/libm.so.6
+[19:06:19.041] Output:
+    libc6:amd64: /lib/x86_64-linux-gnu/libm.so.6
+[19:06:19.041] Returned: 0
+
+[19:06:19.041] /lib/x86_64-linux-gnu/libm.so.6 is provided by [libc6]
+[19:06:19.041] Running dpkg
+[19:06:19.326] Command [PID: 54022]:
+    dpkg -S /lib/x86_64-linux-gnu/libc.so.6
+[19:06:19.326] Output:
+    libc6:amd64: /lib/x86_64-linux-gnu/libc.so.6
+[19:06:19.327] Returned: 0
+
+[19:06:19.327] /lib/x86_64-linux-gnu/libc.so.6 is provided by [libc6]
+[19:06:19.327] Running dpkg
+[19:06:19.613] Command [PID: 54023]:
+    dpkg -S /lib/x86_64-linux-gnu/libgcc_s.so.1
+[19:06:19.613] Output:
+    libgcc-s1:amd64: /lib/x86_64-linux-gnu/libgcc_s.so.1
+[19:06:19.613] Returned: 0
+
+[19:06:19.613] /lib/x86_64-linux-gnu/libgcc_s.so.1 is provided by [libgcc-s1]
+[19:06:19.613] Running dpkg
+[19:06:19.902] Command [PID: 54024]:
+    dpkg -S /lib/x86_64-linux-gnu/libstdc++.so.6
+[19:06:19.902] Output:
+    dpkg-query: no path found matching pattern /lib/x86_64-linux-gnu/libstdc++.so.6
+[19:06:19.902] Returned: 1
+
+[19:06:19.902] java.io.IOException: Command [dpkg, -S, /lib/x86_64-linux-gnu/libstdc++.so.6] exited with 1 code
+	at jdk.jpackage/jdk.jpackage.internal.Executor.executeExpectSuccess(Executor.java:90)
+	at jdk.jpackage/jdk.jpackage.internal.LinuxDebBundler.lambda$initLibProvidersLookup$14(LinuxDebBundler.java:250)
+	at jdk.jpackage/jdk.jpackage.internal.LibProvidersLookup.lambda$execute$1(LibProvidersLookup.java:73)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1715)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575)
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622)
+	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627)
+	at jdk.jpackage/jdk.jpackage.internal.LibProvidersLookup.execute(LibProvidersLookup.java:84)
+	at jdk.jpackage/jdk.jpackage.internal.LinuxPackageBundler.getListOfNeededPackages(LinuxPackageBundler.java:195)
+	at jdk.jpackage/jdk.jpackage.internal.LinuxPackageBundler.createDefaultReplacementData(LinuxPackageBundler.java:222)
+	at jdk.jpackage/jdk.jpackage.internal.LinuxPackageBundler.execute(LinuxPackageBundler.java:155)
+	at jdk.jpackage/jdk.jpackage.internal.Arguments.generateBundle(Arguments.java:700)
+	at jdk.jpackage/jdk.jpackage.internal.Arguments.processArguments(Arguments.java:565)
+	at jdk.jpackage/jdk.jpackage.main.Main.execute(Main.java:91)
+	at jdk.jpackage/jdk.jpackage.main.Main.main(Main.java:52)
+[19:06:19.903] Required packages: [libc6, libgcc-s1, xdg-utils, zlib1g]
+[19:06:19.903] Using default package resource JavaApp.png [icon] (add panopset.png to the resource-dir to customize).
+[19:06:19.904] Using default package resource template.desktop [Menu shortcut descriptor] (add panopset.desktop to the resource-dir to customize).
+[19:06:19.906] Using default package resource JavaApp.png [icon] (add fw.png to the resource-dir to customize).
+[19:06:19.906] Using default package resource template.desktop [Menu shortcut descriptor] (add fw.desktop to the resource-dir to customize).
+[19:06:19.907] Using custom package resource [icon] (loaded from flywheel.png).
+[19:06:19.907] Using default package resource template.desktop [Menu shortcut descriptor] (add flywheel.desktop to the resource-dir to customize).
+[19:06:19.907] Using custom package resource [icon] (loaded from blackjack.png).
+[19:06:19.907] Using default package resource template.desktop [Menu shortcut descriptor] (add blackjack.desktop to the resource-dir to customize).
+[19:06:19.908] Using custom package resource [icon] (loaded from skyscraper.png).
+[19:06:19.908] Using default package resource template.desktop [Menu shortcut descriptor] (add skyscraper.desktop to the resource-dir to customize).
+[19:06:19.908] Using custom package resource [icon] (loaded from checksum.png).
+[19:06:19.908] Using default package resource template.desktop [Menu shortcut descriptor] (add checksum.desktop to the resource-dir to customize).
+[19:06:19.909] Using custom package resource [icon] (loaded from scrambler.png).
+[19:06:19.909] Using default package resource template.desktop [Menu shortcut descriptor] (add scrambler.desktop to the resource-dir to customize).
+[19:06:19.909] Using custom package resource [icon] (loaded from lowerclass.png).
+[19:06:19.910] Using default package resource template.desktop [Menu shortcut descriptor] (add lowerclass.desktop to the resource-dir to customize).
+[19:06:19.914] Using default package resource template.control [DEB control file] (add control to the resource-dir to customize).
+[19:06:19.915] Using default package resource template.preinst [DEB preinstall script] (add preinst to the resource-dir to customize).
+[19:06:19.916] Using default package resource template.prerm [DEB prerm script] (add prerm to the resource-dir to customize).
+[19:06:19.916] Using default package resource template.postinst [DEB postinstall script] (add postinst to the resource-dir to customize).
+[19:06:19.917] Using default package resource template.postrm [DEB postrm script] (add postrm to the resource-dir to customize).
+[19:06:19.917] Using default package resource template.copyright [Copyright file] (add copyright to the resource-dir to customize).
+[19:06:19.923] Generating DEB for installer to: /home/karl/w/src2/target/panopset_1.2.6_amd64.deb.
+[19:06:19.924] Running fakeroot
+[19:06:39.252] Command [PID: 54026]:
+    fakeroot dpkg-deb --verbose -b /tmp/jdk.jpackage16568200104243073541/images /home/karl/w/src2/target/panopset_1.2.6_amd64.deb
+[19:06:39.252] Output:
+    dpkg-deb: building package 'panopset' in '/home/karl/w/src2/target/panopset_1.2.6_amd64.deb'.
+[19:06:39.252] Returned: 0
+
+[19:06:39.252] Package (.deb) saved to: /home/karl/w/src2/target/panopset_1.2.6_amd64.deb.
+[19:06:39.252] Running dpkg-deb
+[19:06:39.256] Command [PID: 54126]:
+    dpkg-deb -f target/panopset_1.2.6_amd64.deb Package Version Architecture
+[19:06:39.256] Output:
+    Package: panopset
+    Version: 1.2.6
+    Architecture: amd64
+[19:06:39.256] Returned: 0
+
+[19:06:39.257] Succeeded in building DEB Bundle package

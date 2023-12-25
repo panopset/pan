@@ -1,0 +1,116 @@
+package com.panopset.flywheel
+
+import com.panopset.compat.Fileop.getCanonicalPath
+import com.panopset.compat.Fileop.readLines
+import java.io.File
+
+/**
+ * Flywheel source file, all paths relative to the primary script file.
+ */
+class SourceFile {
+    val relativePath: String
+    val file: File
+    private val canonicalPath: String
+    private var sourceLines: List<String>? = null
+
+    /**
+     * Directory depth relative to driver template.
+     */
+    var depth: Int? = null
+        /**
+         * Get depth relative to driver template.
+         *
+         * @return Directory depth relative to driver template
+         */
+        get() {
+            if (field == null) {
+                field = 0
+                var temp = relativePath
+                var idx = temp.indexOf("/")
+                while (idx > -1) {
+                    field = field!! + 1
+                    temp = temp.substring(idx + 1)
+                    idx = temp.indexOf("/")
+                }
+            }
+            return field
+        }
+        private set
+
+    /**
+     * Reset source lines, for list processing.
+     */
+    fun reset() {
+        sourceLines = null
+    }
+
+    /**
+     * Get source lines.
+     *
+     * @return Source lines.
+     */
+    fun getSourceLines(): List<String> {
+        if (sourceLines == null) {
+            sourceLines = readLines(file)
+        }
+        return sourceLines!!
+    }
+
+    /**
+     * SourceFile constructor.
+     *
+     * @param sourceFile Source file.
+     * @param basePath Base directory path.
+     */
+    constructor(sourceFile: File, basePath: String) {
+        file = sourceFile
+        canonicalPath = getCanonicalPath(file)
+        relativePath = canonicalPath.substring(basePath.length + 1)
+    }
+
+    /**
+     * SourceFile constructor.
+     *
+     * @param sourceFileRelativePath Source file relative path.
+     * @param flywheel Flywheel.
+     */
+    constructor(flywheel: Flywheel, sourceFileRelativePath: String) {
+        relativePath = sourceFileRelativePath
+        file = File(flywheel.getBaseDirectoryPath() + "/" + relativePath)
+        canonicalPath = getCanonicalPath(file)
+    }
+
+    val isValid: Boolean
+        /**
+         * Check to see if source file exists, and can be read.
+         *
+         * @return true if source file exists.
+         */
+        get() = file.exists() && file.canRead()
+
+    /**
+     * Override equals method. From
+     * [
+ * http://www.geocities.com/technofundo/tech/java/equalhash.html ](http://www.geocities.com/technofundo/tech/java/equalhash.html)
+     *
+     * @param obj Object.
+     * @return true if obj is equal to this.
+     */
+    override fun equals(obj: Any?): Boolean {
+        if (this === obj) {
+            return true
+        }
+        if (obj == null || obj.javaClass != this.javaClass) {
+            return false
+        }
+        val test = obj as SourceFile
+        return canonicalPath == test.canonicalPath && relativePath == test.relativePath
+    }
+
+    /**
+     * @return hash code for this object.
+     */
+    override fun hashCode(): Int {
+        return file.hashCode()
+    }
+}

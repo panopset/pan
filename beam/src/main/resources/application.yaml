@@ -1,0 +1,4 @@
+server:
+  servlet:
+      contextPath: /beam
+  port: 8080
