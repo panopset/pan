@@ -5,21 +5,21 @@ import com.panopset.blackjackEngine.*
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
-open class SessionTest : SessionData {
+open class SessionTest {
     var bge = BlackjackGameEngine(BlackjackConfigDefault())
     @Test
     fun testBlackjack() {
-        bge.getShoe().stackTheDeckFromArray(SessionData.BLACKJACK_WWCD)
+        bge.getShoe().stackTheDeckFromArray(BLACKJACK_WWCD)
         bge.shuffle()
         Assertions.assertEquals("Shuffled and stacked deck for debugging", bge.dealerMessage)
         doRecommendedAction(CMD_DEAL)
         Assertions.assertFalse(bge.getCycle().isActive)
         Assertions.assertEquals(750L, bge.getTotalValue())
-        bge.getShoe().stackTheDeckFromArray(SessionData.SPLITACES_DLRBLACKJACK)
+        bge.getShoe().stackTheDeckFromArray(SPLITACES_DLRBLACKJACK)
         doRecommendedAction(CMD_DEAL)
         Assertions.assertFalse(bge.getCycle().isActive)
         Assertions.assertEquals(250L, bge.getTotalValue())
-        bge.getShoe().stackTheDeckFromArray(SessionData.SPLITACES_DLRHIT_TO_21)
+        bge.getShoe().stackTheDeckFromArray(SPLITACES_DLRHIT_TO_21)
         doRecommendedAction(CMD_DEAL)
         Assertions.assertTrue(bge.getCycle().isActive)
         Assertions.assertEquals("p", doRecommendedAction(CMD_SPLIT))
@@ -37,7 +37,7 @@ open class SessionTest : SessionData {
 
     @Test
     fun splitAcesPlayerBlackjackFirstHand() {
-        bge.getShoe().stackTheDeckFromArray(SessionData.SPLITACES_FIRST_HAND_PLAYER_BLACKJACK)
+        bge.getShoe().stackTheDeckFromArray(SPLITACES_FIRST_HAND_PLAYER_BLACKJACK)
         bge.shuffle()
         doRecommendedAction(CMD_DEAL)
         Assertions.assertTrue(bge.getCycle().isActive)
