@@ -4,7 +4,7 @@
 
 <p>
 If you don't see your platform listed, you can grab the
-<a href="https://github.com/panopset/src">source</a>, and run it directly from an IDE.
+<a href="https://github.com/panopset/pan">source</a>, and run it directly from an IDE.
 You can also modify one of the <a href="/build.html">build</a> scripts,
 so that it will build an installer for your system.
 </p>

@@ -6,7 +6,7 @@ import java.util.Properties
 
 object DeployProperties {
     private const val PATH = deployPropertiesFileName
-    lateinit var props: Properties
+    var props: Properties
 
     init {
         var file = File(PATH)

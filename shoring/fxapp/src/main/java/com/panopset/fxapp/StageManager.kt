@@ -1,7 +1,6 @@
 package com.panopset.fxapp
 
 import com.panopset.compat.KEY_WINDOW_DIMS
-import com.panopset.compat.MathDefaults
 import com.panopset.compat.Stringop
 import com.panopset.compat.parseDelimToDoubleArray
 import com.panopset.fxapp.AnchorFactory.removeAnchor
@@ -10,7 +9,7 @@ import javafx.geometry.Point2D
 import javafx.scene.Scene
 import javafx.stage.Screen
 
-object StageManager : MathDefaults, StageIcon {
+object StageManager : StageIcon {
     var DEFAULT_WIDTH = 1000
     var DEFAULT_HEIGHT = 900
     fun assembleAndShow(deskApp4FX: DeskApp4FX, fxDoc: FxDoc) {
@@ -56,6 +55,13 @@ object StageManager : MathDefaults, StageIcon {
         stage.onHiding = EventHandler { fxDoc.saveWindow() }
         stage.onCloseRequest = EventHandler { removeAnchor(fxDoc) }
         stage.show()
+    }
+
+    private fun notNull(d: Double?, dft: Double): Double {
+        if (d == null) {
+            return dft
+        }
+        return d
     }
 }
 

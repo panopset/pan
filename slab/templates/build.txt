@@ -1,7 +1,7 @@
 <div class="inset">
 <h1>Build</h1>
 <p>
-You may build a platform installer from the <a href="https://github.com/panopset/src">source code</a>.
+You may build a platform installer from the <a href="https://github.com/panopset/pan">source code</a>.
 Run
 </p>
 <ul><li>

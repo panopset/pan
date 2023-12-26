@@ -91,13 +91,13 @@ ${previewBlurb}
 
   <h2>Featured feature</h2>
   <ul><li>
-   <a href="https://github.com/panopset/src/blob/main/docs/uses/gblrpl/priorLineCheck.md">Global Replace Prior Line Check</a>.
+   <a href="https://github.com/panopset/pan/blob/main/docs/uses/gblrpl/priorLineCheck.md">Global Replace Prior Line Check</a>.
   </li></ul>
   <hr>
 
 
   <p>
-   <a href="https://github.com/panopset/src">Source</a>&nbsp;<a href="dox/site/index.html">documentation.</a>
+   <a href="https://github.com/panopset/pan">Source</a>&nbsp;<a href="dox/site/index.html">documentation.</a>
   </p>
 
   <p>

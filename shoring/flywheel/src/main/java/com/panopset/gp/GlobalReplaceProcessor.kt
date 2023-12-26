@@ -2,7 +2,6 @@ package com.panopset.gp
 
 import com.panopset.compat.*
 import java.io.File
-import java.io.IOException
 
 class GlobalReplaceProcessor(
     private val file: File,
@@ -14,7 +13,6 @@ class GlobalReplaceProcessor(
     var priorLineMustContain: String = ""
     var replacementLineMustContain: String = ""
 
-    @Throws(IOException::class)
     fun process() {
         if (!Stringop.isPopulated(searchStr)) {
             Logop.warn("No replacement specified, exiting.")
@@ -63,14 +61,14 @@ class GlobalReplaceProcessor(
     }
 }
 
-private fun doReplacements(searchStrs: List<String>, replacementStrs: List<String>, fromStr: String): String {
+fun doReplacements(searchStrs: List<String>, replacementStrs: List<String>, fromStr: String): String {
     var rtn = fromStr
     for (i in searchStrs.indices) {
-        rtn = doReplacment(searchStrs[i], replacementStrs[i], rtn)
+        rtn = doReplacement(searchStrs[i], replacementStrs[i], rtn)
     }
     return rtn
 }
 
-fun doReplacment(searchStr: String, replacementStr: String, fromStr: String): String {
+private fun doReplacement(searchStr: String, replacementStr: String, fromStr: String): String {
     return fromStr.replace(searchStr, replacementStr)
 }
