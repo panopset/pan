@@ -20,7 +20,6 @@ internal class VersionMakeup {
         classReport = StringWriter()
     }
 
-    @Throws(IOException::class)
     fun analyze(file: File, printDetails: Boolean) {
         clear()
         genRpt(file.getName(), file, printDetails)
@@ -52,7 +51,6 @@ internal class VersionMakeup {
             return tp.toString()
         }
 
-    @Throws(IOException::class)
     private fun genRpt(fileName: String, file: File?, printDetails: Boolean) {
         if (file == null) {
             warn("No file selected.")
@@ -69,7 +67,7 @@ internal class VersionMakeup {
             if ("class" == ext) {
                 genClassReport(fileName, file, printDetails)
             } else if ("jar" == ext) {
-                genJarReport(fileName, file, printDetails)
+                genJarReport(file, printDetails)
             } else {
                 warn("Selected file is not a jar or class.")
                 return
@@ -89,7 +87,7 @@ internal class VersionMakeup {
                     if ("class" == ext) {
                         genClassReport(fileName, f, printDetails)
                     } else if ("jar" == ext) {
-                        genJarReport(fileName, f, printDetails)
+                        genJarReport(f, printDetails)
                     }
                 }
             }
@@ -100,13 +98,13 @@ internal class VersionMakeup {
         updateReportMap(fileName, updateStatsForClass(fileName, file, printDetails))
     }
 
-    private fun genJarReport(fileName: String, file: File, printDetails: Boolean) {
+    private fun genJarReport(file: File, printDetails: Boolean) {
         green(String.format("Processing jar: %s", file.getName()))
         updateReportMap(file.getName(), updateStatsForJar(file, printDetails))
     }
 
     private fun updateReportMap(name: String, jvs: Map<MajorVersion, Int>?) {
-        if (jvs != null && !jvs.isEmpty()) {
+        if (!jvs.isNullOrEmpty()) {
             map[name] = jvs
         }
     }

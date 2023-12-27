@@ -4,13 +4,14 @@ import java.io.*
 import java.util.ArrayList
 
 class Transformer {
-    fun addByLineFilter(lf: ByLineFilter) {
+    fun withByLineFilter(lf: ByLineFilter): Transformer {
         byLineFilters.add(lf)
+        return this
     }
 
     var byLineFilters: MutableList<ByLineFilter> = ArrayList()
 
-    fun process(isr: InputStreamReader, writer: Writer): Boolean {
+    fun process(isr: Reader, writer: Writer): Boolean {
         var changed = false
         BufferedReader(isr).use { br ->
         BufferedWriter(writer).use { bw ->

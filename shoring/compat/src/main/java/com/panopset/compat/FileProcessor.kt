@@ -19,7 +19,7 @@ class FileProcessor(private val targetFile: File, private val isRecursive: Boole
                     }
                 }
             } else {
-                Report(targetFile, transformer).exec()
+                ReportFileTransformer(targetFile, transformer).exec()
             }
         }
     }
@@ -40,7 +40,7 @@ class FileProcessor(private val targetFile: File, private val isRecursive: Boole
                 return
             }
         }
-        Report(rFile, transformer).exec()
+        ReportFileTransformer(rFile, transformer).exec()
     }
 
 

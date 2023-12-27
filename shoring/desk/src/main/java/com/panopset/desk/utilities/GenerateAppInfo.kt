@@ -41,7 +41,7 @@ fun generateJsonFor(file: File) {
         if (name == platform.artifactName) {
             val targetFile = File("/var/www/html/downloads/pci_$name.json")
             checkParent(targetFile)
-            val json = Jsonop().toJson(createList(platform.platformName, file))
+            val json = Jsonop<Map<String, String>>().toJson(createList(platform.platformName, file))
             Fileop.write(json, targetFile)
         }
     }

@@ -47,6 +47,10 @@ class PanFileOrDirSelectorPanel(fxDoc: FxDoc, fxId: String) {
         return File(Stringop.USH)
     }
 
+    fun isPopulated(): Boolean {
+        return inputFile.text.isNotEmpty()
+    }
+
     init {
         inputFile.textProperty()
             .addListener { _: ObservableValue<out String?>?, _: String?, _: String? -> triggerUpdate() }

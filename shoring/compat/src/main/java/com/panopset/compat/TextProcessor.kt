@@ -10,7 +10,7 @@ class TextProcessor {
         listeners.add(listener)
     }
 
-    fun append(value: String?) {
+    fun append(value: String) {
         for (listener in listeners) {
             listener.append(value)
         }

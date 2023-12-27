@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Test
 import java.io.File
 import java.io.IOException
 
-class ReportTest {
+class ReportFileTransformerTest {
     @Test
     @Throws(IOException::class)
     fun test() {
         Fileop.write(Stringop.FOO, temp)
         var result = Fileop.readTextFile(temp)
         Assertions.assertEquals(FOOEOL, result)
-        Report(temp, temp0, Transformer()).withByLineFilters(barFilter).exec()
+        ReportFileTransformer(temp, temp0, Transformer()).withByLineFilters(barFilter).exec()
         result = Fileop.readTextFile(temp)
         Assertions.assertEquals(FOOEOL, result)
         result = Fileop.readTextFile(temp0)
@@ -27,7 +27,7 @@ class ReportTest {
         Fileop.write(Stringop.FOO, temp)
         var result = Fileop.readTextFile(temp)
         Assertions.assertEquals(Stringop.appendEol(Stringop.FOO), result)
-        Report(temp, Transformer()).withByLineFilters(barFilter).exec()
+        ReportFileTransformer(temp, Transformer()).withByLineFilters(barFilter).exec()
         result = Fileop.readTextFile(temp)
         Assertions.assertEquals(Stringop.appendEol(Stringop.BAR), result)
         cleanup()
@@ -39,7 +39,7 @@ class ReportTest {
         Fileop.write(Stringop.FOO, temp)
         var result = Fileop.readTextFile(temp)
         Assertions.assertEquals(Stringop.appendEol(Stringop.FOO), result)
-        Report(temp, Transformer()).withByLineFilters(fooFilter).exec()
+        ReportFileTransformer(temp, Transformer()).withByLineFilters(fooFilter).exec()
         result = Fileop.readTextFile(temp)
         Assertions.assertEquals(Stringop.appendEol(Stringop.FOO), result)
         cleanup()

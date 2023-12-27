@@ -38,13 +38,12 @@ class GenerateSite {
 
     private fun createDownloadsTable(): String {
         val sw = StringWriter()
-        var cil = HashMap<String, String>()
         val tempDirDownloads = File("$USH/temp/downloads")
         for (f in tempDirDownloads.listFiles()!!) {
             if (f.isFile && f.extension == "json") {
                 val jsonStr = Fileop.readTextFile(f)
                 val mapType: Type = object : TypeToken<HashMap<String, String>>() {}.type
-                val rawMap = Jsonop().fromJson(jsonStr, mapType) as HashMap<String, String>
+                val rawMap = Jsonop<HashMap<String, String>>().fromJson(jsonStr, mapType)
                 val map = Collections.synchronizedSortedMap(TreeMap<String, String>())
                 for (e in rawMap) {
                     map[e.key] = e.value

@@ -36,26 +36,26 @@ private fun getDigestOf(file: File, algorithm: String): String {
     }
 }
 
-fun byteCount(file: File): String? {
+fun byteCount(file: File): String {
     return String.format("%,d", file.length())
 }
 
-fun md5(file: File): String? {
+fun md5(file: File): String {
     return getDigestOf(file, "MD5")
 }
 
-fun sha1(file: File): String? {
+fun sha1(file: File): String {
     return getDigestOf(file, "SHA-1")
 }
 
-fun sha256(file: File): String? {
+fun sha256(file: File): String {
     return getDigestOf(file, "SHA-256")
 }
 
-fun sha384(file: File): String? {
+fun sha384(file: File): String {
     return getDigestOf(file, "SHA-384")
 }
 
-fun sha512(file: File): String? {
+fun sha512(file: File): String {
     return getDigestOf(file, "SHA-512")
 }

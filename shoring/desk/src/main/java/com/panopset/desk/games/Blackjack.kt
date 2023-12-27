@@ -11,7 +11,7 @@ import javafx.scene.layout.BorderPane
 import javafx.scene.layout.Pane
 
 class Blackjack : PanopsetBrandedAppTran() {
-    lateinit var ctls: BlackjackFxControls
+    private lateinit var ctls: BlackjackFxControls
 
     val BLACKJACK_STAKE_KEY = "blackjackStake"
     override fun createDynapane(fxDoc: FxDoc): Pane {

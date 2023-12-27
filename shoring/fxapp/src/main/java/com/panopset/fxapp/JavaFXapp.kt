@@ -142,7 +142,8 @@ object JavaFXapp {
         )
         alert.headerText = DeskApp4XFactory.panApplication.getDescription()
         alert.contentText = "Version ${getVersion()} build ${getBuildNumber()}." +
-                "\n\n \u00a9 1996-2024 Karl Dinwiddie."
+                "\n\n " +
+                "\u00a9 1996-2024 Karl Dinwiddie."
         val stage = alert.dialogPane.scene.window as Stage
         stage.icons.add(dds!!.createFaviconImage())
 
