@@ -27,7 +27,7 @@ and yyyyMMddHHmm formatted build number.
 <p>
 All-in-one jars were portable, and easy to use. They came with a big drawback, the potential for
 dependency overlaps. For large legacy apps, you need tools like <a href="https://panopset.com/lowerclass.html">
-lowerclass</a> to untangle it all. Since Java 9, we have modular apps, which solve that issue through a more
+lowerclass</a> to untangle it all. Since Java 9, we have modular apps, which solve that issue, by using more
 definitive dependency management. For desktop applications, you can't just run the jar though. You have to install
 the application, in the particular way that the operating system you happen to be on, prefers. Worse, the way to
 run it is different on each system.
