@@ -76,7 +76,7 @@ ${previewBlurb}
    </tr>
 
    <tr>
-    <td><a href="/blackjack.html">Blackjack</a></td>
+    <td><a href="/blackjack.html">blackjack</a></td>
     <td>&nbsp;</td>
     <td>&bull;</td>
     <td>&bull;</td>
