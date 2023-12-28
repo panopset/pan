@@ -46,7 +46,7 @@ class TextScrambler {
     }
 
     private var secretKeyFactory: SecretKeyFactory? = null
-        private get() {
+        get() {
             if (field == null) {
                 field = try {
                     SecretKeyFactory.getInstance(keyAlgorithm)

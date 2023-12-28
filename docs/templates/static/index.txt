@@ -1,4 +1,4 @@
 <!DOCTYPE html>
-<html><head><title>${PANOPSET_SITE_DN}</title></head>
+<html><head><title>${SITE_DN}</title></head>
  <body>under construction</body>
 </html>

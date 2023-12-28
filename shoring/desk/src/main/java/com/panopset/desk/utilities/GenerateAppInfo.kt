@@ -53,8 +53,8 @@ fun createList(platformName: String, installerFile: File): Map<String, String> {
     map["platform"] = platformName
     map["version"] = AppVersion.getVersion()
     map["buildNumber"] = AppVersion.getBuildNumber()
-    map["bytes"] = byteCount(installerFile) ?: ""
-    map[ChecksumType.SHA512.key] = sha512(installerFile) ?: ""
+    map["bytes"] = byteCount(installerFile)
+    map[ChecksumType.SHA512.key] = sha512(installerFile)
     map["ifn"] = installerFile.name
     return map
 }

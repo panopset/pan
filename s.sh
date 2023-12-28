@@ -1,2 +1,3 @@
-ssh $PANOPSET_SITE_NAME
-
+#!/bin/bash
+. ./checkProps4Linux.sh
+ssh $SITE_NAME

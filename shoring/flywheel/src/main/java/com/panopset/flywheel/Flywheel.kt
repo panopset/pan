@@ -603,7 +603,7 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
 
          */
         @JvmStatic
-        fun main(vararg args: String?) {
+        fun main(vararg args: String) {
 
             // Logop.turnOnDebugging();
             if (args.isEmpty() || args.size > 2) {

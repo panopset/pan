@@ -20,11 +20,11 @@ class CommandPush(
     templateLine: TemplateLine, innerPiece: String,
     template: Template
 ) : MatchableCommand(templateLine, innerPiece, template), UserMatchableCommand {
-    override fun resolve(notUsed: StringWriter) {
-        val sw = StringWriter()
-        resolveMatchedCommands(sw)
-        template.flywheel.put(getParams(), sw.toString())
-        Logop.info("Push command defined ${getParams()} as $sw.")
+    override fun resolve(sw: StringWriter) {
+        val tsw = StringWriter()
+        resolveMatchedCommands(tsw)
+        template.flywheel.put(getParams(), tsw.toString())
+        Logop.info("Push command defined ${getParams()} as $tsw.")
     }
 
     companion object {

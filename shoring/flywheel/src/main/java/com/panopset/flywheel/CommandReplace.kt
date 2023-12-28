@@ -33,16 +33,16 @@ class CommandReplace(
     templateLine: TemplateLine, innerPiece: String,
     template: Template
 ) : MatchableCommand(templateLine, innerPiece, template), UserMatchableCommand {
-    override fun resolve(notUsed: StringWriter) {
-        val sw = StringWriter()
-        resolveMatchedCommands(sw)
+    override fun resolve(sw: StringWriter) {
+        val tsw = StringWriter()
+        resolveMatchedCommands(tsw)
         val toReplace = template.flywheel[getParams()]
         var key = getParams()
         if (Stringop.isPopulated(toReplace)) {
             key = toReplace
         }
         template.flywheel.replacements
-            .add(arrayOf(key, sw.toString()))
+            .add(arrayOf(key, tsw.toString()))
     }
 
     companion object {

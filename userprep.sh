@@ -5,4 +5,4 @@ rm -rf temp
 mkdir temp
 /opt/panopset/bin/fw ./docs/templates/crtusr.txt ./temp
 chmod +x ./temp/*.sh
-scp ./temp/* root@$PANOPSET_SITE_NAME:/root/
+scp ./temp/* root@$SITE_NAME:/root/

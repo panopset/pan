@@ -81,7 +81,8 @@ Make sure your $user.home/Documents/panopset/dev.properties is correct, then:
     ./vc.sh
 
 
-config file again, replacing root with your username, as defined in $PANOPSET_SITE_USR. Then:
+config file again, replacing root with your username, as defined as $SITE_USR, 
+in your ${user.home}/Documents/panopset/dev.properties file. Then:
 
 
     ./s.sh

@@ -9,10 +9,10 @@ import java.io.IOException
 class VersionParser : StatusListener {
     constructor()
 
-    constructor(pathToJar_or_directoryToTraverse: String) : this(File(pathToJar_or_directoryToTraverse))
+    constructor(pathtojarOrDirectorytotraverse: String) : this(File(pathtojarOrDirectorytotraverse))
 
-    constructor(jar_or_directoryToTraverse: File) {
-        file = jar_or_directoryToTraverse
+    constructor(jarOrDirectorytotraverse: File) {
+        file = jarOrDirectorytotraverse
     }
 
     private var mavenHome: String = ""
@@ -55,21 +55,18 @@ class VersionParser : StatusListener {
     @Throws(IOException::class)
     private fun createReport(printDetails: Boolean): String {
         val vm = VersionMakeup()
-        vm.analyze(file!!, printDetails)
+        vm.analyze(file, printDetails)
         return vm.report
     }
 
     companion object {
         var DEFAULT_MAVEN_HOME: String = "$USH/.m2"
-        private var PANOPSET_JAR: String = "$USH/panopset.jar"
 
         @Throws(IOException::class)
         @JvmStatic
         fun main(args: Array<String>) {
             dspmsg("*** Entire repository example:")
             dspmsg(VersionParser().summaryReport)
-            dspmsg("*** Single jar example:")
-            dspmsg(VersionParser(PANOPSET_JAR).detailedReport)
         }
     }
 

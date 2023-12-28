@@ -1,39 +1,39 @@
 # https://stackoverflow.com/questions/2150882
-${@f crtusr.sh}adduser --gecos "" --disabled-password ${PANOPSET_SITE_USR}
-chpasswd <<<"${PANOPSET_SITE_USR}:${PANOPSET_SITE_PWD}"
-usermod -aG sudo ${PANOPSET_SITE_USR}
-rsync --archive --chown=${PANOPSET_SITE_USR}:${PANOPSET_SITE_USR} ~/.ssh /home/${PANOPSET_SITE_USR}
-chown -R ${PANOPSET_SITE_USR}:${PANOPSET_SITE_USR} /var/www
-ls /home/${PANOPSET_SITE_USR}/.ssh
-mv ${PANOPSET_SITE_DN} /home/${PANOPSET_SITE_USR}/
-mv index.html /home/${PANOPSET_SITE_USR}/
-mv createDomain.sh /home/${PANOPSET_SITE_USR}/
-chown -R ${PANOPSET_SITE_USR}:${PANOPSET_SITE_USR} /home/${PANOPSET_SITE_USR}
-chmod +x /home/${PANOPSET_SITE_USR}/*.sh
+${@f crtusr.sh}adduser --gecos "" --disabled-password ${SITE_USR}
+chpasswd <<<"${SITE_USR}:${SITE_PWD}"
+usermod -aG sudo ${SITE_USR}
+rsync --archive --chown=${SITE_USR}:${SITE_USR} ~/.ssh /home/${SITE_USR}
+chown -R ${SITE_USR}:${SITE_USR} /var/www
+ls /home/${SITE_USR}/.ssh
+mv ${SITE_DN} /home/${SITE_USR}/
+mv index.html /home/${SITE_USR}/
+mv createDomain.sh /home/${SITE_USR}/
+chown -R ${SITE_USR}:${SITE_USR} /home/${SITE_USR}
+chmod +x /home/${SITE_USR}/*.sh
 
-${@f PANOPSET_SITE_DN}server {
+${@f SITE_DN}server {
  listen 80;
  listen [::]:80;
 
- root /var/www/${PANOPSET_SITE_DN}/html;
+ root /var/www/${SITE_DN}/html;
  index index.html index.htm index.nginx-debian.html;
 
- server_name ${PANOPSET_SITE_DN} www.${PANOPSET_SITE_DN};
+ server_name ${SITE_DN} www.${SITE_DN};
 
  location / {
   try_files $uri $uri/ =404;
  }
 }
 
-${@f createDomain.sh}sudo mkdir -p /var/www/${PANOPSET_SITE_DN}/html/downloads
-sudo chown -R ${PANOPSET_SITE_USR}:${PANOPSET_SITE_USR} /var/www/${PANOPSET_SITE_DN}/html
-sudo chmod -R 755 /var/www/${PANOPSET_SITE_DN}
-sudo mv ${PANOPSET_SITE_DN} /etc/nginx/sites-available/
-mv index.html /var/www/${PANOPSET_SITE_DN}/html/
-sudo ln -s /etc/nginx/sites-available/${PANOPSET_SITE_DN} /etc/nginx/sites-enabled/
+${@f createDomain.sh}sudo mkdir -p /var/www/${SITE_DN}/html/downloads
+sudo chown -R ${SITE_USR}:${SITE_USR} /var/www/${SITE_DN}/html
+sudo chmod -R 755 /var/www/${SITE_DN}
+sudo mv ${SITE_DN} /etc/nginx/sites-available/
+mv index.html /var/www/${SITE_DN}/html/
+sudo ln -s /etc/nginx/sites-available/${SITE_DN} /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo apt install certbot python3-certbot-nginx
-sudo certbot --nginx -d ${PANOPSET_SITE_DN} -d www.${PANOPSET_SITE_DN}
+sudo certbot --nginx -d ${SITE_DN} -d www.${SITE_DN}
 sudo nginx -t
 
 ${@f index.html}${@t static/index.txt}

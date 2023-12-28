@@ -72,23 +72,23 @@ class Checksum : PanopsetBrandedAppTran() {
         val types = getSelectedTypes()
         if (types.isEmpty()) {
             Logop.warn("Nothing selected.")
-            csOut.setText("Nothing selected.")
+            csOut.text = "Nothing selected."
             return
         }
         Logop.clear()
-        csOut.setText("")
+        csOut.text = ""
         createReport(types)
     }
 
     private fun createReport(types: List<ChecksumType>) {
         val tp = TextProcessor()
         tp.addProcessListener(object : ProcessListener {
-            override fun setText(s: String) {
-                csOut.setText(s)
+            override fun setText(value: String) {
+                csOut.text = value
             }
 
-            override fun append(s: String) {
-                csOut.appendText(s)
+            override fun append(value: String) {
+                csOut.appendText(value)
             }
 
             override fun reset() {
