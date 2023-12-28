@@ -12,7 +12,6 @@ so that it will build an installer for your system.
 <table>
 <tr><th>Platform</th><th>Download</th><th>Bytes</th>
 <th>Version</th>
-<th>Build</th>
 <th>SHA-256</th></tr>
 ${downloadsTable}
 </td></tr></table>
@@ -21,7 +20,7 @@ ${downloadsTable}
 
 <p>
 help-&gt;about, from any Panopset JavaFX desktop application, will give you the <a href="https://github.com/panopset/src/blob/main/docs/vh.md">version</a>,
-and yyyyMMddHHmm formatted build number.
+Note that builds downloaded from the preview site, panopset.net, are not final.
 </p>
 <h2>Looking for panopset.jar?</h2>
 <p>

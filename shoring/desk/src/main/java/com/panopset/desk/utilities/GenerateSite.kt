@@ -52,7 +52,6 @@ class GenerateSite {
                 val version = map["version"]
                 val platform = map["platform"]
                 val bytes = map["bytes"]
-                val buildNumber = map["buildNumber"]
                 val sha512 = map[ChecksumType.SHA512.key]
                 sw.append("<tr><td nowrap>\n")
                 sw.append(platform)
@@ -62,8 +61,6 @@ class GenerateSite {
                 sw.append(bytes)
                 sw.append("</td><td>\n")
                 sw.append(version)
-                sw.append("</td><td>\n")
-                sw.append(buildNumber)
                 sw.append("</td><td class=\"dsw99\"><input class=\"output2\" type=\"text\" value=\"\n")
                 sw.append(sha512)
                 sw.append("\"</input></td></tr>")

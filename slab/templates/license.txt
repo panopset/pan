@@ -2,7 +2,7 @@
 
 <h1>Desktop Application License</h1>
 <p>
-Panopset desktop software is currently free, for anyone who can't afford it, and <a href="https://github.com/panopset/src">open source</a>.
+Panopset desktop software is currently free, for anyone who can't afford it, and <a href="https://github.com/panopset/pan">open source</a>.
 </p><p>
 If you and/or your business is doing fine, it is $25.00 per year.  Proof of <a href="mailto:karldinwiddie@gmail.com">payment</a> is the license.
 </p><p>
