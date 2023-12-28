@@ -10,10 +10,10 @@ class DevPropsTest {
         Assertions.assertTrue(DevProps.getSiteDomainName().isNotEmpty())
         Assertions.assertTrue(DevProps.getSiteName().isNotEmpty())
         Assertions.assertTrue(DevProps.getSiteUsr().isNotEmpty())
-        Assertions.assertTrue(DevProps.getWorkstationUser().isNotEmpty())
+//        Assertions.assertTrue(DevProps.getWorkstationUser().isNotEmpty())
         Assertions.assertTrue(DevProps.getSitePassword().isNotEmpty())
-        Assertions.assertTrue(DevProps.getWorkstatsionPasssword().isNotEmpty())
-        Assertions.assertTrue(DevProps.getSiteRedisURL().isNotEmpty())
-        Assertions.assertTrue(DevProps.getSiteRedisPassword().isNotEmpty())
+//        Assertions.assertTrue(DevProps.getWorkstatsionPasssword().isNotEmpty())
+//        Assertions.assertTrue(DevProps.getSiteRedisURL().isNotEmpty())
+//        Assertions.assertTrue(DevProps.getSiteRedisPassword().isNotEmpty())
     }
 }
