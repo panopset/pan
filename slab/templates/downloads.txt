@@ -42,6 +42,6 @@ run it is different on each system.
 </pre>
 <h2>Windows</h2>
 <pre>
+&quot;c:\Program Files\panopset\flywheel.exe&quot;
 </pre>
-
 </div>
