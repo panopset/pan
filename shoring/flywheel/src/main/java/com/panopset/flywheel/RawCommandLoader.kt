@@ -67,12 +67,12 @@ internal class RawCommandLoader(template: Template) {
         val endOfDirective = closeDirectiveLoc + Syntax.getCloseDirective().length
         if (openDirectiveLoc == 0) {
             val command = CommandBuilder().template(tmplt).source(templateLine, closeDirectiveLoc).construct()
-            if (command == null) {
+            if (command is CommandUnkown) {
                 skipTo(templateLine, 1)
             } else {
                 val remainder = line.substring(endOfDirective)
                 loadCommand(command)
-                if (remainder.length > 0) {
+                if (remainder.isNotEmpty()) {
                     queue.push(
                         TemplateLine(
                             remainder,

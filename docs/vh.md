@@ -3,6 +3,7 @@
 # History
 # 1.2.7 (TBD)
 * In development, preview of work in progress may (or may not) be found on [panopset.net](https://panopset.net).
+* Introduce new Flywheel m command.
 
 # 1.2.6 (2023.12.21)
 * Skyscraper added, because I don't want my API credentials in the cloudy clouds.

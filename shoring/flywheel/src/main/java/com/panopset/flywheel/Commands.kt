@@ -14,6 +14,7 @@ enum class Commands(
     QUIT('q', "q:Quit", "\${@q}"),
     TEMPLATE('t', "t:Template", "\${@t ?}"),
     RAW('a', "a:Raw", "\${@a ?}, \${@a}\${@q}"),
-    EXECUTE('e', "e:Execute", "\${@e ?}")
+    EXECUTE('e', "e:Execute", "\${@e ?}"),
+    MAP('m', "m:Map", "\${@m ?}")
 
 }

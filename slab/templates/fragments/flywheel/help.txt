@@ -99,6 +99,10 @@ the variable is 1, which is the first word in the <a href="https://github.com/pa
 <pre>ReflectionInvoker.defineTemplateAllowedReflection("getVersion", "com.panopset.compat.AppVersion.getVersion");</pre>
 <p>Once it is defined, it may be executed with any String parameters comma separated in the parentheses:</p>
 <pre>${@e getVersion()}</pre>
+<h3>Map</h3>
+<p>Include any properties file in the general Flywheel map, using the map command. Define a variable with the Push
+command, which contains the path to the map. For example:</p>
+<pre>${p PATH_TO_MAP}${user.home}/Documents/panopset/dev.properties}${@m PATH_TO_MAP}</pre>
 
 <h2>Use case</h2>
 <p>

@@ -21,8 +21,8 @@ class CommandBuilder {
         return this
     }
 
-    fun construct(): Command? {
-        var rtn: Command?
+    fun construct(): Command {
+        val rtn: Command
         val line = templateLine.line
         val ln = templateLine.templateLineNumber
         val tci = templateLine.templateCharIndex
@@ -43,7 +43,8 @@ class CommandBuilder {
                 Commands.TEMPLATE.charCode -> CommandTemplate(templateLine, innerPiece, template)
                 Commands.EXECUTE.charCode -> CommandExecute(templateLine, innerPiece, template)
                 Commands.RAW.charCode -> CommandRaw(templateLine, innerPiece, template)
-                else -> { null } //TODO: maybe an unkown command that will flag the user that they defined an unknown command.
+                Commands.MAP.charCode -> CommandMap(templateLine, innerPiece, template)
+                else -> CommandUnkown(templateLine, innerPiece, template)
             }
         } else {
             return CommandVariable(templateLine, innerPiece, template)

@@ -1,4 +1,4 @@
-${@f panopsetweb.service}[Unit]
+${@p DP}${user.home}/Documents/panopset/dev.properties${@q}${@m DP}${@f panopsetweb.service}[Unit]
 Description=Panopset Web Spring boot application
 
 [Service]
@@ -13,6 +13,7 @@ WantedBy=multi-user.target
 ${@f panopsetweb.conf}
 SITE_REDIS_URL="${SITE_REDIS_URL}"
 SITE_REDIS_PWD="${SITE_REDIS_PWD}"
+DP=${DP}
 
 ${@p sudo}echo ${WKSN_PWD} | sudo -S ${@q}${@f installservice.sh}${sudo} mv panopsetweb.service /etc/systemd/system/
 ${sudo} mkdir -p /etc/panopsetweb
