@@ -22,14 +22,10 @@ ${downloadsTable}
 help-&gt;about, from any Panopset JavaFX desktop application, will give you the <a href="https://github.com/panopset/src/blob/main/docs/vh.md">version</a>,
 Note that builds downloaded from the preview site, panopset.net, are not final.
 </p>
-<h2>Looking for panopset.jar?</h2>
+<h2>Running Panopset Applications</h2>
 <p>
-All-in-one jars were portable, and easy to use. They came with a big drawback, the potential for
-dependency overlaps. For large legacy apps, you need tools like <a href="https://panopset.com/lowerclass.html">
-lowerclass</a> to untangle it all. Since Java 9, we have modular apps, which solve that issue, by using more
-definitive dependency management. For desktop applications, you can't just run the jar though. You have to install
-the application, in the particular way that the operating system you happen to be on, prefers. Worse, the way to
-run it, is different on each system. Fortunately, you can specify your own installation directory. Here are some of the
+Substitute flywheel, with the <a href="https://panopset.com">Panopset</a> application name of your choice.
+Here are some of the
 default paths to the Panopset Flywheel application:
 </p>
 

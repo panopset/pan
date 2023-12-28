@@ -18,7 +18,7 @@ ${previewBlurb}
 
 
    <tr>
-    <td><a href="/flywheel.html">Flywheel</a></td>
+    <td><a href="/flywheel.html">flywheel</a></td>
     <td>&bull;</td>
     <td>&bull;</td>
     <td>&nbsp;</td>
@@ -36,7 +36,7 @@ ${previewBlurb}
    </tr>
 
    <tr>
-    <td><a href="/skyscraper.html">Skyscraper</a> <b>New!</b></td>
+    <td><a href="/skyscraper.html">skyscraper</a> <b>New!</b></td>
     <td>&nbsp;</td>
     <td>&bull;</td>
     <td>&nbsp;</td>
@@ -44,7 +44,7 @@ ${previewBlurb}
    </tr>
 
    <tr>
-    <td><a href="/lowerclass.html">Lowerclass</a></td>
+    <td><a href="/lowerclass.html">lowerclass</a></td>
     <td>&nbsp;</td>
     <td>&bull;</td>
     <td>&nbsp;</td>
@@ -56,7 +56,7 @@ ${previewBlurb}
    </tr>
 
    <tr>
-    <td><a href="/scrambler.html">Scrambler</a></td>
+    <td><a href="/scrambler.html">scrambler</a></td>
     <td>&bull;</td>
     <td>&bull;</td>
     <td>&nbsp;</td>
@@ -64,7 +64,7 @@ ${previewBlurb}
    </tr>
 
    <tr>
-    <td><a href="/checksum.html">Checksum</a></td>
+    <td><a href="/checksum.html">checksum</a></td>
     <td>&nbsp;</td>
     <td>&bull;</td>
     <td>&nbsp;</td>
