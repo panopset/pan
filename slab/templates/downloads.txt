@@ -40,4 +40,5 @@ default paths to the Panopset Flywheel application:
 <pre>
 &quot;c:\Program Files\panopset\flywheel.exe&quot;
 </pre>
+&nbsp;
 </div>
