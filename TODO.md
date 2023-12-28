@@ -1,12 +1,5 @@
-* fix version check.
+* downloads sha-256 needs to be monospaced.
 * make sure all documents are in ${user.home}/Documents/panopset base path.
-* fix license.
-* Synch all downloads to temp
-  * use temp/downloads to generate jsons.
-******************************************************
-* sync downloads.html text.
-******************************************************
-
 * Log messages should only go to one window.
 * auto complete
 * logop update
