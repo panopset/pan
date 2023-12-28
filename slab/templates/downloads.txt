@@ -29,7 +29,8 @@ dependency overlaps. For large legacy apps, you need tools like <a href="https:/
 lowerclass</a> to untangle it all. Since Java 9, we have modular apps, which solve that issue, by using more
 definitive dependency management. For desktop applications, you can't just run the jar though. You have to install
 the application, in the particular way that the operating system you happen to be on, prefers. Worse, the way to
-run it is different on each system.
+run it, is different on each system. Fortunately, you can specify your own installation directory. Here are some of the
+default paths to the Panopset Flywheel application:
 </p>
 
 <h2>Linux</h2>
