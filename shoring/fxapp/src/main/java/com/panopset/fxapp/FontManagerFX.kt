@@ -184,9 +184,6 @@ object FontManagerFX {
             return
         }
         this.logEntry = logEntry
-        if (logEntry.message == null) {
-            return
-        }
         Platform.runLater {
             menubarStatusMessage.style = getCurrentMessageStyle(logEntry)
             menubarStatusMessage.text = logEntry.message

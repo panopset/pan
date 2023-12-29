@@ -17,8 +17,7 @@ object StageManager : StageIcon {
         setFavIcon(stage, DeskApp4XFactory.appDDSFX)
         var isNew = true
         val dims = arrayOfNulls<Double>(4)
-        var windims = ""
-        windims = fxDoc.persistentMapFile[KEY_WINDOW_DIMS]
+        var windims: String = fxDoc.persistentMapFile[KEY_WINDOW_DIMS]
         if (Stringop.isPopulated(windims)) {
             isNew = false
             var i = 0

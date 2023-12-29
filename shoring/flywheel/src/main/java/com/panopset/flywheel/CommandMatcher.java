@@ -21,7 +21,7 @@ final class CommandMatcher {
    * @throws FlywheelException
    *           Thrown if there is an unmatched quit.
    */
-  protected static List<Command> matchQuitCommands(final List<Command> commands)
+  static List<Command> matchQuitCommands(final List<Command> commands)
       throws FlywheelException {
     FlywheelException fwe = null; 
     final List<MatchableCommand> matchedCommandsForDebugging = new ArrayList<>();

@@ -120,13 +120,11 @@ internal class VersionMakeup {
                     try {
                         DataInputStream(`is`).use { dis ->
                             val cv = readClassVersion(entry.name, dis, printDetails)
-                            if (cv != null) {
-                                val count = jvs[cv.majorVersion]
-                                if (count == null) {
-                                    jvs[cv.majorVersion] = 1
-                                } else {
-                                    jvs[cv.majorVersion] = count + 1
-                                }
+                            val count = jvs[cv.majorVersion]
+                            if (count == null) {
+                                jvs[cv.majorVersion] = 1
+                            } else {
+                                jvs[cv.majorVersion] = count + 1
                             }
                         }
                     } catch (ex: IOException) {
@@ -151,9 +149,7 @@ internal class VersionMakeup {
             FileInputStream(dirFile).use { fis ->
                 DataInputStream(fis).use { dis ->
                     val cv = readClassVersion(name, dis, printDetails)
-                    if (cv != null) {
-                        jvs[cv.majorVersion] = 1
-                    }
+                    jvs[cv.majorVersion] = 1
                 }
             }
         } catch (ex: IOException) {

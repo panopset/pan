@@ -604,13 +604,10 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
          */
         @JvmStatic
         fun main(vararg args: String) {
-
-            // Logop.turnOnDebugging();
             if (args.isEmpty() || args.size > 2) {
                 dspmsg("Params are script and target directory.")
             } else {
-                var flywheel: Flywheel? = null
-                flywheel = if (args.size == 1) {
+                val flywheel: Flywheel = if (args.size == 1) {
                     FlywheelBuilder().properties(File(args[0])).construct()
                 } else {
                     val scriptFileName = args[0]

@@ -14,7 +14,7 @@ internal class RawCommandLoader(template: Template) {
     }
 
     fun load(): List<Command> {
-        tmplt!!.templateSource.reset()
+        tmplt.templateSource.reset()
         var templateIndex = 0
         var lineNumber = 0
         while (!tmplt.templateSource.isDone) {
@@ -36,11 +36,10 @@ internal class RawCommandLoader(template: Template) {
         return commands
     }
 
-    @Throws(FlywheelException::class)
     private fun flushQueue() {
         while (!queue.isEmpty()) {
             process(queue.pop())
-            if (tmplt!!.flywheel.isStopped) {
+            if (tmplt.flywheel.isStopped) {
                 return
             }
         }
@@ -51,7 +50,6 @@ internal class RawCommandLoader(template: Template) {
         Logop.debug("Loading command: $command")
     }
 
-    @Throws(FlywheelException::class)
     private fun process(templateLine: TemplateLine) {
         val line = templateLine.line
         val openDirectiveLoc = line.indexOf(Syntax.getOpenDirective())

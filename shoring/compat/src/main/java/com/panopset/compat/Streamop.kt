@@ -51,7 +51,7 @@ object Streamop {
     }
 
     fun streamToWriter(inpStr: InputStream, w: Writer) {
-        BufferedInputStream(inpStr).use { bis ->
+        BufferedInputStream(inpStr).use {
             BufferedWriter(w).use { bw ->
                 var byt: Int
                 while (inpStr.read().also { byt = it } != -1) {

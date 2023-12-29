@@ -210,12 +210,7 @@ class FlywheelBuilder {
                 sls = TemplateInputStream(inputStream!!)
                 return sls
             }
-            val file = getScriptFile()
-            //if (file.exists()) { TODO: Investigate.
-                sls = TemplateFile(getScriptFile())
-            //} else {
-            //  invalidate()
-            //}
+            sls = TemplateFile(getScriptFile())
         }
         return sls
     }

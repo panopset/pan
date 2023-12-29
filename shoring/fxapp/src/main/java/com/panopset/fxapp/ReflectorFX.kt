@@ -18,8 +18,7 @@ fun bindBundle(controller: Any, resources: ResourceBundle?) {
                 if (Stringop.isEmpty(key)) {
                     continue
                 }
-                var txt = ""
-                txt = try {
+                val txt: String = try {
                     resources.getString(key)
                 } catch (mre: MissingResourceException) {
                     continue

@@ -22,10 +22,10 @@ class PersistentMapFile(newFile: File) : PersistentMap {
         return getProps()!!.entries
     }
 
-    override fun get(key: String, defaultValue: String): String {
+    override fun get(key: String, dft: String): String {
         return if (!Stringop.isPopulated(key)) {
-            defaultValue
-        } else getProps()!!.getProperty(key) ?: return defaultValue
+            dft
+        } else getProps()!!.getProperty(key) ?: return dft
     }
 
     override fun get(key: String): String {
