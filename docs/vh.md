@@ -1,9 +1,9 @@
 [![Panopset](https://panopset.com/images/panopset.png)](https://panopset.com) ~ [home](../README.md) ~ version history
 
 # History
-# 1.2.7 (TBD)
-* In development, preview of work in progress may (or may not) be found on [panopset.net](https://panopset.net).
+# 1.2.7 (2023.12.28)
 * Introduce new Flywheel m command.
+* Fix version check https bug.
 
 # 1.2.6 (2023.12.21)
 * Skyscraper added, because I don't want my API credentials in the cloudy clouds.

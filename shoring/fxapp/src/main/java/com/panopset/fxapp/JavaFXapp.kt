@@ -25,16 +25,6 @@ import java.nio.charset.StandardCharsets
 import java.util.*
 
 object JavaFXapp {
-
-    private var isCreated = false
-    init {
-        if (isCreated) {
-            throw RuntimeException("Can only have one JavaFXapp")
-        } else {
-            isCreated = true
-        }
-    }
-
     val zombie = Zombie()
 
     private fun findActiveStage(): Stage? {
@@ -43,7 +33,7 @@ object JavaFXapp {
     }
 
     fun launch(stage: Stage) {
-        var rawFiles = globalPropsGet(DeskApp4XFactory.panApplication.filesKey)
+        val rawFiles = globalPropsGet(DeskApp4XFactory.panApplication.filesKey)
         if (Stringop.isPopulated(rawFiles)) {
             val files = rawFiles.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
             val sortedFileSet = Collections.synchronizedSortedSet(TreeSet<String>())
@@ -164,15 +154,17 @@ object JavaFXapp {
 
         val logTa = TextArea() // TODO: Rename
         logTa.promptText = "Click refresh to load log from file."
-        val clearLog = Button("Clear")
-        val refreshLog = Button("Refresh")
+        val clearLog = createPanButton({
+            Logop.clear()
+            logTa.text = ""},
+            "Clear", false, "Clear logs.")
+        val refreshLog = createPanButton({update(logTa)},
+            "Refresh", false, "Refresh log.")
 
         val debugMode = CheckBox("Debug")
         debugMode.tooltip = Tooltip("Sets the debug level to DEBUG.")
 
         FontManagerFX.register(logTa)
-        FontManagerFX.register(clearLog)
-        FontManagerFX.register(refreshLog)
         FontManagerFX.register(debugMode)
 
         val topFlow = FlowPane()
@@ -180,6 +172,9 @@ object JavaFXapp {
         topFlow.children.add(refreshLog)
         topFlow.children.add(clearLog)
         topFlow.children.add(debugMode)
+        topFlow.children.add(createPanButton({
+            logTa.text = SysInfo.toString()
+        },"System", false, ""))
         borderPane.top = topFlow
 
 
@@ -197,11 +192,6 @@ object JavaFXapp {
             } else {
                 Logop.turnOffDebugging()
             }
-        }
-        refreshLog.onAction = EventHandler { update(logTa) }
-        clearLog.onAction = EventHandler {
-            Logop.clear()
-            logTa.text = ""
         }
         update(logTa)
         zombie.addStopAction {
@@ -222,11 +212,9 @@ object JavaFXapp {
         if (!logStage!!.isShowing) {
             logStage!!.scene.root.style = fxDoc.scene.root.style
             logStage!!.show()
-            if (!logStage!!.isFocused) {
-                logStage!!.requestFocus()
-                logStage!!.toFront()
-            }
         }
+        logStage!!.toFront()
+        logStage!!.requestFocus()
     }
 
     @Synchronized

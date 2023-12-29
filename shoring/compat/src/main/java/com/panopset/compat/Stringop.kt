@@ -17,7 +17,7 @@ object Stringop {
      */
     const val TAB = "\t"
     const val JAVA_RTN = "\n"
-    val LINE_SEPARATOR = System.getProperty("line.separator")
+    val LINE_SEPARATOR: String = System.lineSeparator()
     const val LINE_FEED_VALUE = 10
     const val LINE_FEED = "\n"
     const val CARRIAGE_RETURN_VALUE = 13
@@ -55,7 +55,7 @@ object Stringop {
     }
 
     fun capund(str: String?): String {
-        if (str != null && str.length > 0) {
+        if (!str.isNullOrEmpty()) {
             var rtn = str.replace("()([A-Z])".toRegex(), "$1_$2").uppercase(Locale.getDefault())
             if (rtn[0] == '_') {
                 rtn = rtn.substring(1)
