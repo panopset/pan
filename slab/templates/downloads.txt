@@ -19,7 +19,7 @@ ${downloadsTable}
 <h1>versions</h1>
 
 <p>
-help-&gt;about, from any Panopset JavaFX desktop application, will give you the <a href="https://github.com/panopset/src/blob/main/docs/vh.md">version</a>.
+help-&gt;about, from any Panopset JavaFX desktop application, will give you the <a href="https://github.com/panopset/pan/blob/main/docs/vh.md">version</a>.
 </p>
 <h2>Running Panopset Applications</h2>
 <p>

@@ -17,7 +17,7 @@ basic strategy, I don't care about the outcome of the hand,
 just whether or not I made the correct decision.
 </p><p>
 It is entirely your responsibility to independently 
-<a href="https://github.com/panopset/src/tree/main/shoring/blackjackEngine">verify</a>
+<a href="https://github.com/panopset/pan/tree/main/shoring/blackjackEngine">verify</a>
 its accuracy.
 </p><h2>
 The only claim made about this game is that it will only lead you to ruin, whether or not it has any bugs.
