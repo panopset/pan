@@ -5,7 +5,6 @@ git pull
 . ./push.sh
 . ./checkProps4Linux.sh
 
-rm -rf /var/www/html/*
 . ./bwl.sh
 . ./dwl.sh
 . ./pwl.sh
