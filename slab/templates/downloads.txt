@@ -34,7 +34,7 @@ default paths to the Panopset Flywheel application:
 </pre>
 <h2>Macintosh</h2>
 <pre>
-
+/Applications/panopset.app/Contents/MacOS/flywheel
 </pre>
 <h2>Windows</h2>
 <pre>
