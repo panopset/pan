@@ -1,4 +1,3 @@
-* downloads sha-256 needs to be monospaced.
 * make sure all documents are in ${user.home}/Documents/panopset base path.
 * Log messages should only go to one window.
 * auto complete
@@ -7,15 +6,7 @@
 * flywheel list substitution abstraction.
 
 * nj can't be deployed to p, because p is obsolete.
--- finish n to p panopset.com.
 -- deploy nj to p.
-
-* Tests on all platforms:
-** publish4Platform
-** deploy4Platform
-
-
-* move global properties to Documents/panopset
 
 
 * load balancer?
@@ -55,6 +46,7 @@ Low priority:
 * Clean up/verify <pre> in https://panopset.net/dox/site/flywheel/flywheel/com.panopset.flywheel/-flywheel/main.html
 
 * dokka can't find modules error.
+* dokka cannot be found in the module graph error messages.
 
 * for some new faq section: 
   * if your env menu is stuck, check to see if it is selected in another open window.
@@ -64,12 +56,10 @@ Low priority:
 * option to apply fonts to single window or globally
   * global preferences  
 
-* dokka cannot be found in the module graph error messages.
 * investigate deprecated gradle build warnings in beam.
 * PersistentMapFile warnings.
 * Hyperlinks in about box, may have to convert from Alert: https://docs.oracle.com/javafx/2/ui_controls/hyperlink.htm.
 * a.js only needed for scrambler and flywheel web versions.
 * Rewrite LayoutDealer
 * platform specific launchers, to get the ico or png.
-* bcm.sh is obsolete, but document how to call Panopset apps on a mac, using the last line there.
 * fix privacy policy broken link.

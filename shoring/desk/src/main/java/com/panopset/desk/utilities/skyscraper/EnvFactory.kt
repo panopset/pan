@@ -1,8 +1,10 @@
 package com.panopset.desk.utilities.skyscraper
 
 import com.panopset.compat.Fileop
+import com.panopset.compat.HiddenFolder
 import com.panopset.compat.Logop
 import com.panopset.compat.Stringop
+import com.panopset.compat.Stringop.FSP
 import java.io.BufferedInputStream
 import java.io.File
 import java.io.FileInputStream
@@ -60,7 +62,7 @@ fun establishBaseDirectory(): File {
                 Logop.warn(
                     "$PANOPSET_SKYSCRAPER_ENVS defined directory " +
                             Fileop.getCanonicalPath(userDir4envs) +
-                            " is not a diretory. Reverting to default."
+                            " is not a directory. Reverting to default."
                 )
             }
         } else {
@@ -76,4 +78,4 @@ fun establishBaseDirectory(): File {
 
 const val PANOPSET_SKYSCRAPER_ENVS = "PANOPSET_SKYSCRAPER_ENVS"
 
-val defaultBaseDir = File("${Stringop.USH}/Documents/panopset/skyscraper/envs")
+val defaultBaseDir = File(HiddenFolder.getFullPathRelativeTo("skyscraper${FSP}envs"))

@@ -35,13 +35,12 @@ class SampleApp: BrandedApp() {
     }
 
     override fun getCompanyName(): String {
-        return "ACME Anvils"
+        return "ACME Anvils corporation"
     }
 
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            HiddenFolder.setHiddenFolderName("sample")
             SampleApp().go()
         }
     }

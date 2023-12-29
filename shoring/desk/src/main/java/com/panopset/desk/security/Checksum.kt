@@ -18,13 +18,6 @@ import javafx.scene.layout.Pane
 import javafx.scene.layout.VBox
 
 class Checksum : PanopsetBrandedAppTran() {
-    private val csCheckBoxesHBox = HBox()
-    private var isAllOn = true
-    private lateinit var csChecksum: Button
-    private lateinit var csOut: TextArea
-    private lateinit var csAll: Button
-    private lateinit var csFileSelect: PanFileOrDirSelectorPanel
-    private lateinit var csCheckBoxes: ArrayList<CheckBox>
 
     override fun getApplicationDisplayName(): String {
         return "Checksum"
@@ -35,32 +28,46 @@ class Checksum : PanopsetBrandedAppTran() {
     }
 
     override fun createDynapane(fxDoc: FxDoc): Pane {
-        csChecksum = createPanButton({ Platform.runLater(::doProcess) }, "_Checksum", true,
+        val csCheckBoxesHBox = HBox()
+        var isAllOn = true
+        val csOut = createPanTextArea()
+        val csCheckBoxes = ArrayList<CheckBox>()
+        for (cst in ChecksumType.entries) {
+            val cb = createPanCheckBox(fxDoc, "id_cb${cst.name}", cst.name)
+            cb.id = "cs_algbtn_" + cst.name
+            if ("BYTES" == cst.name) {
+                cb.tooltip = Tooltip(
+                    "This is just the byte count for the file, not any kind of checksum."
+                )
+            }
+            csCheckBoxesHBox.children.add(cb)
+            csCheckBoxes.add(cb)
+        }
+        val csFileSelect = PanFileOrDirSelectorPanel(fxDoc, "csFileOrDirSelect")
+        val csChecksum: Button = createPanButton({
+            Platform.runLater {
+                doProcess(csOut, csFileSelect, csCheckBoxes)
+            }
+        }, "_Checksum", true,
             "Run checkbox specified checksums on selected file.")
-        csOut = createPanTextArea()
-        createCsCheckBoxes(fxDoc)
-        csFileSelect = PanFileOrDirSelectorPanel(fxDoc, "csFileOrDirSelect")
-        csAll = createPanButton({
+
+        val csAll = createPanButton({
             for (cb in csCheckBoxes) {
                 cb.isSelected = isAllOn
             }
             isAllOn = !isAllOn
         }, "_All", true, "Toggle select/deselect all checkboxes.")
         val b: BorderPane = createStandardMenubarBorderPane(fxDoc)
-        b.center = createCenter()
+        val bp = BorderPane()
+        val topControls = VBox()
+        topControls.children.addAll(createPanHBox(csChecksum, csAll, csFileSelect.pane), createCsCheckBoxesHBox(csCheckBoxes))
+        bp.top = topControls
+        bp.center = createPanScrollPane(csOut)
+        b.center = bp
         return b
     }
 
-    private fun createCenter(): BorderPane {
-        val bp = BorderPane()
-        val topControls = VBox()
-        topControls.children.addAll(createPanHBox(csChecksum, csAll, csFileSelect.pane), createCsCheckBoxesHBox())
-        bp.top = topControls
-        bp.center = createPanScrollPane(csOut)
-        return bp
-    }
-
-    private fun createCsCheckBoxesHBox(): HBox {
+    private fun createCsCheckBoxesHBox(csCheckBoxes: ArrayList<CheckBox>): HBox {
         val rtn = HBox()
         for (cb in csCheckBoxes) {
             rtn.children.add(cb)
@@ -68,8 +75,8 @@ class Checksum : PanopsetBrandedAppTran() {
         return rtn
     }
 
-    private fun doProcess() {
-        val types = getSelectedTypes()
+    private fun doProcess(csOut: TextArea, csFileSelect: PanFileOrDirSelectorPanel, csCheckBoxes: ArrayList<CheckBox>) {
+        val types = getSelectedTypes(csCheckBoxes)
         if (types.isEmpty()) {
             Logop.warn("Nothing selected.")
             csOut.text = "Nothing selected."
@@ -77,10 +84,10 @@ class Checksum : PanopsetBrandedAppTran() {
         }
         Logop.clear()
         csOut.text = ""
-        createReport(types)
+        createReport(types, csFileSelect, csOut)
     }
 
-    private fun createReport(types: List<ChecksumType>) {
+    private fun createReport(types: List<ChecksumType>, csFileSelect: PanFileOrDirSelectorPanel, csOut: TextArea) {
         val tp = TextProcessor()
         tp.addProcessListener(object : ProcessListener {
             override fun setText(value: String) {
@@ -97,7 +104,7 @@ class Checksum : PanopsetBrandedAppTran() {
         })
         ChecksumReport().generateReport(csFileSelect.createFile(), types, tp)
     }
-    private fun getSelectedTypes(): List<ChecksumType> {
+    private fun getSelectedTypes(csCheckBoxes: ArrayList<CheckBox>): List<ChecksumType> {
         val rtn: MutableList<ChecksumType> = ArrayList()
         for (cb in csCheckBoxes) {
             if (cb.isSelected) {
@@ -108,21 +115,6 @@ class Checksum : PanopsetBrandedAppTran() {
             }
         }
         return rtn
-    }
-
-    private fun createCsCheckBoxes(fxDoc: FxDoc) {
-        csCheckBoxes = ArrayList()
-            for (cst in ChecksumType.entries) {
-                val cb = createPanCheckBox(fxDoc, "id_cb${cst.name}", cst.name)
-                cb.id = "cs_algbtn_" + cst.name
-                if ("BYTES" == cst.name) {
-                    cb.tooltip = Tooltip(
-                        "This is just the byte count for the file, not any kind of checksum."
-                    )
-                }
-                csCheckBoxesHBox.children.add(cb)
-                csCheckBoxes.add(cb)
-            }
     }
 
     companion object {

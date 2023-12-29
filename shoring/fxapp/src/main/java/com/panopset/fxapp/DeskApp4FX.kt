@@ -12,10 +12,8 @@ import java.util.logging.*
 
 class DeskApp4FX: Application() {
     override fun start(stage: Stage) {
-        HiddenFolder.setRootLogFileName(DeskApp4XFactory.panApplication.applicationShortName)
-        HiddenFolder.setHiddenFolderName(DeskApp4XFactory.panApplication.getCompanyName())
-
         try {
+            HiddenFolder.rootLogFileName = DeskApp4XFactory.panApplication.applicationShortName
             provideLogLocation()
             setUserAgentStylesheet(STYLESHEET_MODENA)
             JavaFXapp.launch(stage)
@@ -42,7 +40,6 @@ class DeskApp4FX: Application() {
             val tempDir = System.getProperty("java.io.tmpdir")
             val logFileName = "panopset.log"
             val logFilePath = Stringop.appendFilePath(tempDir, logFileName)
-            val file = File(logFilePath)
             val fh: Handler = FileHandler(logFilePath)
             fh.formatter = SimpleFormatter()
             Logger.getLogger("").addHandler(fh)

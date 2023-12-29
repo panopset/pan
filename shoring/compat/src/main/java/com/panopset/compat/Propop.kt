@@ -39,7 +39,12 @@ object Propop {
         if (!file.exists()) {
             touch(file)
         }
-        FileReader(file).use { fr -> rtn.load(fr) }
+        try {
+            FileReader(file).use { fr -> rtn.load(fr) }
+        } catch(rte: RuntimeException) {
+            Logop.errorMsg(file, rte)
+            return rtn
+        }
         return rtn
     }
 

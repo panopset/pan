@@ -1,5 +1,6 @@
 package com.panopset.fxapp
 
+import com.panopset.compat.HiddenFolder
 import com.panopset.compat.LogEntry
 import com.panopset.compat.LogListener
 import com.panopset.compat.Logop
@@ -23,6 +24,7 @@ abstract class BrandedApp: PanApplication, AppDDSFX {
     abstract fun updateVersionMessage()
 
     fun go() {
+        HiddenFolder.companyName = getCompanyName().trim().lowercase().replace(" ", "_")
         DeskApp4XFactory
             .withPanApplication(this)
             .withBrandedApp(this)

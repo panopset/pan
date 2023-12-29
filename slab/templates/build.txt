@@ -12,7 +12,7 @@ Run
  <b>baw.cmd</b> on Microsoft Windows x86 64 bit systems.
 </li></ul>
 <p>
-That will put an installer in the src project target directory.
+That will put an installer in the pan project target directory.
 You may need to modify the above scripts for your system. As long as JavaFX applications can be built on your system,
 that should just involve modifying the app&lt;Platform&gt;.properties file.
 </p>

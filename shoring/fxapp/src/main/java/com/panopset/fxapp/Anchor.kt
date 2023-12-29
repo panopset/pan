@@ -1,6 +1,7 @@
 package com.panopset.fxapp
 
 import com.panopset.compat.*
+import com.panopset.compat.Stringop.FSP
 import javafx.application.Platform
 import javafx.scene.control.*
 import java.io.File
@@ -30,11 +31,7 @@ abstract class Anchor(val application: PanApplication) {
     fun setBoltValues() {
         for ((key, value1) in bolts) {
             val value: String = persistentMapFile[key!!]
-            if (Stringop.isPopulated(value)) {
-                value1.setBoltValue(value)
-            } else {
-                value1.setBoltValue(value)
-            }
+            value1.setBoltValue(value)
         }
         updateTitle()
     }
@@ -77,21 +74,8 @@ abstract class Anchor(val application: PanApplication) {
     private var path = ""
     fun getPath(): String? {
         if (path.isEmpty()) {
-            path = Fileop
-                .combinePaths(
-                    Stringop.USH,
-                    java.lang.String
-                        .join(
-                            Stringop.FSP, "temp",
-                            java.lang.String.join(
-                                ".", String.format(
-                                    "%s_Untitled%s",
-                                    application.applicationShortName, Stringop.getNextJvmUniqueIDstr()
-                                ),
-                                "properties"
-                            )
-                        )
-                )
+            val untitledFileName = "${application.applicationShortName}_Untitled${Stringop.getNextJvmUniqueIDstr()}.properties"
+            path = HiddenFolder.getFullPathRelativeTo("temp${FSP}$untitledFileName")
             while (path.isEmpty() || File(path).exists()) {
                 path = ""
                 getPath()
