@@ -35,10 +35,10 @@ class GenerateAppInfo {
 
 
 
-fun generateJsonFor(file: File) {
+private fun generateJsonFor(file: File) {
     val name = file.name
     for (platform in PlatformMap.map.values) {
-        if (name == platform.artifactName) {
+        if (file.extension == File(platform.artifactName).extension) {
             val targetFile = File("/var/www/html/downloads/pci_$name.json")
             checkParent(targetFile)
             val json = Jsonop<Map<String, String>>().toJson(createList(platform.platformName, file))
