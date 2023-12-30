@@ -21,7 +21,7 @@ ${downloadsTable}
 <p>
 help-&gt;about, from any Panopset JavaFX desktop application, will give you the <a href="https://github.com/panopset/pan/blob/main/docs/vh.md">version</a>.
 </p>
-<h2>Running Panopset Applications</h2>
+<h2>Running Panopset Desktop Applications</h2>
 <p>
 Substitute flywheel, with the <a href="https://panopset.com">Panopset</a> application name of your choice.
 Here are some of the

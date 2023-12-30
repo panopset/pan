@@ -1,15 +1,19 @@
 [![Panopset](https://panopset.com/images/panopset.png)](https://panopset.com) ~ [home](../README.md) ~ version history
 
 # History
-# 1.2.8 (2023.12.29)
+
+## 1.2.9 (2023.12.30)
+* Minor bug fixes.
+
+## 1.2.8 (2023.12.29)
 * Move default documents from ${user.home}/temp to ${user.home}/Documents/panopset/temp.
 * Fix open document bleed-over issues.
 
-# 1.2.7 (2023.12.28)
+## 1.2.7 (2023.12.28)
 * Introduce new Flywheel m command.
 * Fix version check https bug.
 
-# 1.2.6 (2023.12.21)
+## 1.2.6 (2023.12.21)
 * Skyscraper added, because I don't want my API credentials in the cloudy clouds.
 * Dependency updates.
 * Kotlin conversion continues.
@@ -20,13 +24,13 @@
   * Most people will use a platform installer.
   * You may still run it as Java code, from an IDE.
 
-# 1.2.5 (2023.07.15)
+## 1.2.5 (2023.07.15)
 * Dependency updates
 * Kotlin conversion continues.
 * Bug fixes.
   * Version check not working.
 
-# 1.2.4 (2023.06.15)
+## 1.2.4 (2023.06.15)
 * Global replace
   * New feature
     * Line separated multiple replacements.
@@ -39,37 +43,37 @@
 Detailed version history only kept for a few months, so you can see recent bug fixes.
 ## ****************************
 
-# 1.0.1 (2021.08.07)
+## 1.0.1 (2021.08.07)
 
 * Switched version designations to be consistent with
 [Microsoft standards](https://msdn.microsoft.com/en-us/library/aa370859%28v=VS.85%29.aspx), 
 with the publication of panopset-1.0.1.msi.  Apple doesn't like 0 in the major version, so starting with 1.0.1.
 
-# 2021.07.31
+## 2021.07.31
 
 * Fix missing Choose item in Flywheel Samples drop down list.
 
-# 2021.07.03
+## 2021.07.03
 
 * Consistency in tokens, escape character handling.
 * Introduce platform installers.
 
-# 2021.06.05
+## 2021.06.05
 
 * Version verification broke in version 2021.05.30.
 
-# 2021.05.30
+## 2021.05.30
 
 * Entire project restructured, and set up as Java 9 modules.
 
-# 2021.04.17
+## 2021.04.17
 
 * Flywheel enhancements.
 
-# 2000 something
+## 2000 something
 
 * Flywheel was moved to Java.
 
-# 1996
+## 1996
 
 * First version of Flywheel was written as an MPW tool on the Apple Macintosh Platform.

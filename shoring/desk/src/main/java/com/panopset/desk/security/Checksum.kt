@@ -1,7 +1,6 @@
 package com.panopset.desk.security
 
 import com.panopset.compat.Logop
-import com.panopset.compat.ProcessListener
 import com.panopset.compat.TextProcessor
 import com.panopset.fxapp.*
 import com.panopset.marin.fx.PanopsetBrandedAppTran
@@ -44,12 +43,12 @@ class Checksum : PanopsetBrandedAppTran() {
             csCheckBoxes.add(cb)
         }
         val csFileSelect = PanFileOrDirSelectorPanel(fxDoc, "csFileOrDirSelect")
-        val csChecksum: Button = createPanButton({
-            Platform.runLater {
+        val csChecksum: Button = createPanButton(
+            {
                 doProcess(csOut, csFileSelect, csCheckBoxes)
-            }
-        }, "_Checksum", true,
-            "Run checkbox specified checksums on selected file.")
+            }, "_Checksum", true,
+            "Run checkbox specified checksums on selected file."
+        )
 
         val csAll = createPanButton({
             for (cb in csCheckBoxes) {
@@ -60,7 +59,10 @@ class Checksum : PanopsetBrandedAppTran() {
         val b: BorderPane = createStandardMenubarBorderPane(fxDoc)
         val bp = BorderPane()
         val topControls = VBox()
-        topControls.children.addAll(createPanHBox(csChecksum, csAll, csFileSelect.pane), createCsCheckBoxesHBox(csCheckBoxes))
+        topControls.children.addAll(
+            createPanHBox(csChecksum, csAll, csFileSelect.pane),
+            createCsCheckBoxesHBox(csCheckBoxes)
+        )
         bp.top = topControls
         bp.center = createPanScrollPane(csOut)
         b.center = bp
@@ -88,22 +90,19 @@ class Checksum : PanopsetBrandedAppTran() {
     }
 
     private fun createReport(types: List<ChecksumType>, csFileSelect: PanFileOrDirSelectorPanel, csOut: TextArea) {
-        val tp = TextProcessor()
-        tp.addProcessListener(object : ProcessListener {
-            override fun setText(value: String) {
-                csOut.text = value
-            }
+        ChecksumReport(
+            object: TextProcessor {
+                override fun clear() {
+                    Platform.runLater { csOut.text = "" }
+                }
 
-            override fun append(value: String) {
-                csOut.appendText(value)
+                override fun append(value: String) {
+                    Platform.runLater { csOut.appendText(value) }
+                }
             }
-
-            override fun reset() {
-                csOut.text = ""
-            }
-        })
-        ChecksumReport().generateReport(csFileSelect.createFile(), types, tp)
+        ).generateReport(csFileSelect.createFile(), types)
     }
+
     private fun getSelectedTypes(csCheckBoxes: ArrayList<CheckBox>): List<ChecksumType> {
         val rtn: MutableList<ChecksumType> = ArrayList()
         for (cb in csCheckBoxes) {

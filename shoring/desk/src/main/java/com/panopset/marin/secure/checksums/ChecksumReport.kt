@@ -7,23 +7,20 @@ import com.panopset.compat.Logop.warn
 import com.panopset.compat.Stringop.getEol
 import java.io.File
 
-class ChecksumReport {
+class ChecksumReport(private val textProcessor: TextProcessor) {
     private var firstTime = true
-    fun generateReport(file: File?, types: List<ChecksumType>, textProcessor: TextProcessor) {
-        if (file == null) {
-            warn(Nls.xlate("File is null, no checksum report generated."))
-            return
-        }
+    fun generateReport(file: File, types: List<ChecksumType>) {
+        textProcessor.clear()
         if (!file.exists()) {
             warn(
                 java.lang.String.join(":", Nls.xlate("File doesn't exist"), getCanonicalPath(file))
             )
             return
         }
-        if (file.isDirectory()) {
-            generateDirectoryReport(file, types, textProcessor)
+        if (file.isDirectory) {
+            generateDirectoryReport(file, types)
         } else {
-            generateFileReport(file, types, textProcessor)
+            generateFileReport(file, types)
         }
     }
 
@@ -40,12 +37,11 @@ class ChecksumReport {
     }
 
     private fun generateFileReport(
-        file: File, types: List<ChecksumType>,
-        textProcessor: TextProcessor
+        file: File, types: List<ChecksumType>
     ) {
         green(java.lang.String.join(": ", Nls.xlate("Processing"), getCanonicalPath(file)))
         if (types.size > 1) {
-            textProcessor.append(file.getName())
+            textProcessor.append(file.name)
             textProcessor.append("\n")
         } else if (types.size == 1) {
             if (firstTime) {
@@ -70,31 +66,30 @@ class ChecksumReport {
             if (types.size > 1) {
                 textProcessor.append("\n")
             } else {
-                textProcessor.append(" ")
-                textProcessor.append(file.name)
+                textProcessor.append(" ${file.name}\n")
             }
         }
         green(String.format("%s: %s", Nls.xlate("Completed"), getCanonicalPath(file)))
     }
 
     private fun generateDirectoryReport(
-        file: File, types: List<ChecksumType>,
-        textProcessor: TextProcessor
+        file: File, types: List<ChecksumType>
     ) {
-        if (!file.isDirectory()) {
+        var fount = false
+        if (!file.isDirectory) {
             return
         }
         val fileList = file.listFiles() ?: return
         for (f in fileList) {
-            if (f.isFile()) {
-                generateFileReport(f, types, textProcessor)
-                textProcessor.append(getEol())
+            if (f.isFile) {
+                fount = true
+                generateFileReport(f, types)
             }
         }
-        if (textProcessor.text.isEmpty()) {
-            warn(String.format(Stringop.CS, Nls.xlate("No files found in"), getCanonicalPath(file)))
-        } else {
+        if (fount) {
             green(Nls.xlate("Completed."))
+        } else {
+            warn(String.format(Stringop.CS, Nls.xlate("No files found in"), getCanonicalPath(file)))
         }
     }
 }
