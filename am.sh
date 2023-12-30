@@ -2,6 +2,9 @@
 git pull
 . ./checkProps4Mac.sh
 
+rm -rf target
+mkdir target
+
 # Build Application Macintosh.
 . ./bam.sh
 
