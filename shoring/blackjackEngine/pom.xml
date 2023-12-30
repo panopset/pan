@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.panopset</groupId>
 		<artifactId>shoring</artifactId>
-		<version>1.2.8</version>
+		<version>1.2.9</version>
 	</parent>
 	<artifactId>blackjackEngine</artifactId>
 	<packaging>jar</packaging>
