@@ -12,7 +12,7 @@ object AppVersion {
     }
 
     fun getBuildNumber(): String {
-        return "202312291730"
+        return "202312291859"
     }
 
     @JvmStatic
