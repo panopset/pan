@@ -3,11 +3,9 @@ package com.panopset.tests.flywheel
 import com.panopset.flywheel.FlywheelBuilder
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
-import java.io.IOException
 
 class ComplexTest {
     @Test
-    @Throws(IOException::class)
     fun testVariableDefinition() {
         val script = FlywheelBuilder().construct()
         script.put(FOO, BAR)
@@ -15,7 +13,7 @@ class ComplexTest {
         Assertions.assertEquals(BAR, script.getEntry(FOO))
     }
 
-    @Throws(IOException::class)
+    @Test
     fun testScript() {
         SimpleTest().comparisonTest(TEMPLATE, "outdir/complexOut.html", EXPECTED)
     }

@@ -12,19 +12,10 @@ import java.util.logging.Logger
 
 object Logop {
     val logger: Logger = Logger.getGlobal()
-    private var logListener: LogListener
     var isDebugging = false
     val clearLogEntry = LogEntry(LogopAlert.GREEN, Level.INFO, "")
-    const val PAN_STANDARD_LOGIC_ERROR_MSG =
+    const val standardWierdErrorMessage =
         "Unexpected error, if your pull request is accepted, we'll send you 1000 currently worthless Panopset shares."
-
-    init {
-        logListener = object: LogListener {
-            override fun log(logEntry: LogEntry) {
-
-            }
-        }
-    }
 
     /**
      * Keeping this around, because of the System/38 &amp; AS/400 DSPMSG CLP command. Identical to
@@ -127,26 +118,24 @@ object Logop {
             }
         }
     }
-    @JvmStatic
+
     fun errorMsg(file: File, ex: Exception) {
         info(Fileop.getCanonicalPath(file))
         errorEx(ex)
     }
-    @JvmStatic
+
     fun handleException(ex: Throwable) {
         logger.log(Level.SEVERE, ex.message, ex)
         ex.printStackTrace()
         val logEntry = LogEntry(
             LogopAlert.RED, Level.SEVERE,
-            ex.message!!
+            ex.message?: standardWierdErrorMessage
         )
-        logListener.log(logEntry)
         logalog(logEntry)
     }
     @JvmStatic
     fun report(logRecord: LogEntry) {
         logger.log(logRecord.level, logRecord.message)
-        logListener.log(logRecord)
         logalog(logRecord)
     }
 
@@ -170,15 +159,6 @@ object Logop {
 
     fun clear() {
         stack.clear()
-        clearListeners()
-    }
-
-    private fun clearListeners() {
-        logListener.log(clearLogEntry)
-    }
-
-    fun standardWierdErrorMessage() {
-        errorMsg(PAN_STANDARD_LOGIC_ERROR_MSG)
     }
 
     val stack: Deque<LogEntry> = ConcurrentLinkedDeque()
@@ -193,16 +173,10 @@ object Logop {
     }
 
     fun logalog(logEntry: LogEntry) {
-        if (stack.size > 999) {
-            for (i in 0..99) {
-                stack.removeFirst()
-            }
+        if (stack.size > 10) {
+            stack.removeLast()
         }
-        stack.add(logEntry)
-    }
-
-    fun setLogListener(value: LogListener) {
-        logListener = value
+        stack.push(logEntry)
     }
 
     fun getStackTraceAndCauses(throwable: Throwable): String {

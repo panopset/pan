@@ -114,8 +114,6 @@ class FileopTest {
         val tempBar = Fileop.createTempFile(Stringop.BAR)
         Fileop.touch(tempFoo)
         Assertions.assertTrue(tempFoo.exists())
-        Fileop.write(arrayOf(Stringop.FOO, Stringop.BAR), null)
-        Assertions.assertEquals("Can't write to a null file", Logop.stack.last.message)
         Fileop.write(arrayOf(Stringop.FOO, Stringop.BAR), tempFoo)
         checkIsFooBarFile(tempFoo)
         Fileop.moveFile(tempFoo, tempBar)

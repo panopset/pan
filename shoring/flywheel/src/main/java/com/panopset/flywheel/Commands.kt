@@ -4,8 +4,8 @@ package com.panopset.flywheel
  * Enumeration of all commands.
  */
 enum class Commands(
-    val charCode: Char, commandName: String,
-    val prototype: String
+    val charCode: Char, private val commandName: String,
+    private val prototype: String
 ) {
     REPLACE('r', "r:Replace", "\${@r ?}"),
     FILE('f', "f:File", "\${@f ?}"),
@@ -15,6 +15,9 @@ enum class Commands(
     TEMPLATE('t', "t:Template", "\${@t ?}"),
     RAW('a', "a:Raw", "\${@a ?}, \${@a}\${@q}"),
     EXECUTE('e', "e:Execute", "\${@e ?}"),
-    MAP('m', "m:Map", "\${@m ?}")
+    MAP('m', "m:Map", "\${@m ?}");
 
+    override fun toString(): String {
+        return "$commandName syntax: $prototype"
+    }
 }

@@ -9,10 +9,8 @@ import java.io.IOException
 class VersionParser : StatusListener {
     constructor()
 
-    constructor(pathtojarOrDirectorytotraverse: String) : this(File(pathtojarOrDirectorytotraverse))
-
-    constructor(jarOrDirectorytotraverse: File) {
-        file = jarOrDirectorytotraverse
+    constructor(jarOrDirectoryToTraverse: File) {
+        file = jarOrDirectoryToTraverse
     }
 
     private var mavenHome: String = ""
@@ -70,7 +68,7 @@ class VersionParser : StatusListener {
         }
     }
 
-    override fun update(message: String?) {
+    override fun update(message: String) {
         dspmsg(message)
     }
 }

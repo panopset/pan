@@ -208,7 +208,7 @@ open class BlackjackGameEngine(val config: BlackjackConfiguration) {
 
     private fun split(player: Player, handPlayer: HandPlayer): Boolean {
         if (!handPlayer.isCardFacesSplittableIncludeMessage) {
-            dealerMessage = Logop.stack.last.message
+            dealerMessage = Logop.stack.peek().message
             return false
         }
         bankroll.subtract(handPlayer.wager.initialBet)

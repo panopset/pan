@@ -46,19 +46,15 @@ object Fileop {
         }
     }
 
-    fun dirExists(dir: File?): Boolean {
-        return if (dir == null) {
-            false
-        } else {
-            dir.exists() && dir.isDirectory() && dir.canRead()
-        }
+    fun dirExists(dir: File): Boolean {
+        return dir.exists() && dir.isDirectory && dir.canRead()
     }
 
     fun createTempFile(fileName: String): File {
         return File(combinePaths(Stringop.TEMP_DIR_PATH, fileName))
     }
 
-    fun write(strs: Array<String?>, file: File?) {
+    fun write(strs: Array<String>, file: File) {
         if (!prepFileForWriting(file)) {
             return
         }
@@ -76,7 +72,7 @@ object Fileop {
         }
     }
 
-    fun write(strs: List<String?>, file: File?) {
+    fun write(strs: List<String>, file: File) {
         if (!prepFileForWriting(file)) {
             return
         }

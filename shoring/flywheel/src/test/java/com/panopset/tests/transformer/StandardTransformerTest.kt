@@ -16,7 +16,7 @@ abstract class StandardTransformerTest//		this.fromFileRezPath = fromFileRezPath
 //		//new File(		Fileop.combinePaths(new StandardPackagePath(packageName).getPackagePath(), expectedFileRezPath))
 //	}
     (//	private File fromFile;
-    val packageName: String?
+    val packageName: String
 ) : TransformerTest() {
 
     fun getPackagePath(fileName: String): File {

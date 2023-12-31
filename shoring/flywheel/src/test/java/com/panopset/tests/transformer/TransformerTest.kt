@@ -3,9 +3,11 @@ package com.panopset.tests.transformer
 import org.junit.jupiter.api.Assertions
 
 abstract class TransformerTest {
-    protected abstract fun createResultsDataSupplier(): ResultsDataSupplier?
-    private var rds: ResultsDataSupplier? = null
-    private val resultsDataSupplier  = createResultsDataSupplier()
+    protected abstract fun createResultsDataSupplier(): ResultsDataSupplier
+    private val resultsDataSupplier: ResultsDataSupplier
+        get() = createResultsDataSupplier()
+
+
 
     //	public TransformerTest(final String expectedResults) {
     //		this(new ResultsDataSupplier() {
@@ -27,9 +29,6 @@ abstract class TransformerTest {
     //		});
     //	}
     fun test() {
-        init()
-        Assertions.assertEquals(resultsDataSupplier!!.expectedResults, resultsDataSupplier!!.actualResults)
+        Assertions.assertEquals(resultsDataSupplier.expectedResults, resultsDataSupplier.actualResults)
     }
-
-    protected fun init() {}
 }

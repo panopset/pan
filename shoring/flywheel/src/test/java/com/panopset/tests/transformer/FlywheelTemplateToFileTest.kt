@@ -7,7 +7,7 @@ import com.panopset.tests.TEST_DIRECTORY
 import java.io.File
 
 class FlywheelTemplateToFileTest(
-    packageRelPath: String?, fromFileRezPath: String, private val tempFileName: String,
+    packageRelPath: String, fromFileRezPath: String, private val tempFileName: String,
     private val expectedFileRezPath: String
 ) : StandardTransformerTest(packageRelPath) {
     override fun createResultsDataSupplier(): ResultsDataSupplier {
