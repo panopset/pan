@@ -301,7 +301,7 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
         control.isReplacementsSuppressed = value.toBoolean()
     }
 
-    override operator fun get(key: String): String {
+    override fun getEntry(key: String): String {
         if (mapStack.isEmpty()) {
             stop("mapStack empty, this should be an impossible condition.")
             return ""

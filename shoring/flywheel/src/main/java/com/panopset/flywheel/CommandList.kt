@@ -85,8 +85,8 @@ class CommandList(
         if (lines == null || lines.isEmpty()) {
             return
         }
-        val tokens = template.flywheel[ReservedWords.TOKENS]
-        val splits = template.flywheel[ReservedWords.SPLITS]
+        val tokens = template.flywheel.getEntry(ReservedWords.TOKENS)
+        val splits = template.flywheel.getEntry(ReservedWords.SPLITS)
         template
             .flywheel
             .mapStack

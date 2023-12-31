@@ -36,7 +36,7 @@ class CommandReplace(
     override fun resolve(sw: StringWriter) {
         val tsw = StringWriter()
         resolveMatchedCommands(tsw)
-        val toReplace = template.flywheel[getParams()]
+        val toReplace = template.flywheel.getEntry(getParams())
         var key = getParams()
         if (Stringop.isPopulated(toReplace)) {
             key = toReplace

@@ -19,7 +19,7 @@ abstract class TemplateCommand internal constructor(
         if (parms.length > Syntax.getDirective().length
             && parms.indexOf(Syntax.getDirective()) == 0
         ) {
-            return template.flywheel[parms.substring(Syntax.getDirective().length)]
+            return template.flywheel.getEntry(parms.substring(Syntax.getDirective().length))
         }
         return parms
     }

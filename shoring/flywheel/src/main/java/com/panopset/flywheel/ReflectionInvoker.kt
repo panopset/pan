@@ -23,7 +23,7 @@ class ReflectionInvoker {
             val key = st.nextToken()
             var valx = key
             if (pmapProvider != null) {
-                val str = pmapProvider!![key]
+                val str = pmapProvider!!.getEntry(key)
                 if (Stringop.isPopulated(str)) {
                     valx = str
                 }

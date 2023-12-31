@@ -37,7 +37,7 @@ class CommandVariable(templateLine: TemplateLine, innerPiece: String, template: 
             if (parms == ReservedWords.TEMPLATE) {
                 sw.append(template.relativePath)
             } else {
-                var tmplt = template.flywheel[getParams()]
+                var tmplt = template.flywheel.getEntry(getParams())
                 if (!template.flywheel.isReplacementsSuppressed) {
                     for (s in template.flywheel.replacements) {
                         tmplt = tmplt.replace(s[0], s[1])
@@ -63,7 +63,7 @@ class CommandVariable(templateLine: TemplateLine, innerPiece: String, template: 
     private fun resolveCombiner(sw: StringWriter, combineStr: String) {
         val combineLines = Stringop.parseInt(combineStr)
         if (combineLines > 0) {
-            CombineLineManager.INSTANCE.combine(sw, combineLines, template.flywheel[getParams()])
+            CombineLineManager.INSTANCE.combine(sw, combineLines, template.flywheel.getEntry(getParams()))
         }
     }
 

@@ -12,7 +12,7 @@ class ComplexTest {
         val script = FlywheelBuilder().construct()
         script.put(FOO, BAR)
         script.exec()
-        Assertions.assertEquals(BAR, script[FOO])
+        Assertions.assertEquals(BAR, script.getEntry(FOO))
     }
 
     @Throws(IOException::class)
