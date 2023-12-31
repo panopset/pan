@@ -32,7 +32,7 @@ class LogopTest {
         Assertions.assertTrue(Logop.stack.size > 0)
         FileopTest.cleanup()
         Logop.clear()
-        Logop.addLogListener(listener)
+        Logop.setLogListener(listener)
         Logop.dspmsg(Stringop.FOO)
         Assertions.assertEquals(Stringop.FOO, lr.message)
         Assertions.assertEquals(Level.INFO, lr.level)

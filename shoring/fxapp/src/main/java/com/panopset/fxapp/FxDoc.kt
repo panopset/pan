@@ -3,11 +3,13 @@ package com.panopset.fxapp
 import com.panopset.compat.KEY_WINDOW_DIMS
 import com.panopset.compat.combineDelim
 import javafx.scene.Scene
+import javafx.scene.control.TextField
 import javafx.stage.Stage
 import java.io.File
 
 class FxDoc : Anchor {
     val stage: Stage
+    lateinit var menuBarStatusMessage: TextField
     lateinit var scene: Scene
 
     constructor(panApplication: PanApplication, stage: Stage, file: File) : super(panApplication, file) {

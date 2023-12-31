@@ -60,11 +60,26 @@ abstract class BrandedApp: PanApplication, AppDDSFX {
     }
 
     final override fun createPane(fxDoc: FxDoc, deskApp4FX: DeskApp4FX): Pane {
+        val rtn = DeskApp4XFactory.brandedApp.createDynapane(fxDoc)
+        setLogLis(fxDoc)
 
         //val baseClass: Class<out PanApplication?> = fxDoc.application.javaClass
         // TODO: val i8nBundle = baseClass.getPackage().name + ".bundles." + baseClass.simpleName
-        return DeskApp4XFactory.brandedApp.createDynapane(fxDoc)
+        return rtn
     }
+
+
+    fun setLogLis(fxDoc: FxDoc) {
+        Logop.setLogListener(object: LogListener {
+            override fun log(logEntry: LogEntry) {
+                FontManagerFX.setMenubarLogRecord(
+                    logEntry,
+                    fxDoc.menuBarStatusMessage
+                )
+            }
+        })
+    }
+
 
     final override fun createFaviconImage(): Image? {
         val logoName = "/${this.javaClass.simpleName.lowercase(Locale.getDefault())}.png"
@@ -90,9 +105,9 @@ abstract class BrandedApp: PanApplication, AppDDSFX {
     private fun createMenuBar(fxDoc: FxDoc): HBox {
         val panMenuBar = HBox()
         panMenuBar.children.add(createMenuBarFx(fxDoc))
-        val menuBarStatusMessage = createPanOutputTextField()
-        panMenuBar.children.add(ThemeButtonWrapper(fxDoc, menuBarStatusMessage).button)
-        panMenuBar.children.add(createMenuBarStatusPane(menuBarStatusMessage))
+        fxDoc.menuBarStatusMessage = createPanOutputTextField()
+        panMenuBar.children.add(ThemeButtonWrapper(fxDoc, fxDoc.menuBarStatusMessage).button)
+        panMenuBar.children.add(createMenuBarStatusPane(fxDoc.menuBarStatusMessage))
         updateVersionMessage()
         return panMenuBar
     }
@@ -106,14 +121,6 @@ abstract class BrandedApp: PanApplication, AppDDSFX {
         HBox.setHgrow(menuBarStatusPane, Priority.ALWAYS)
         HBox.setHgrow(menuBarStatusMessage, Priority.ALWAYS)
         menuBarStatusPane.children.add(menuBarStatusMessage)
-        Logop.addLogListener(object: LogListener {
-            override fun log(logEntry: LogEntry) {
-                FontManagerFX.setMenubarLogRecord(
-                    logEntry,
-                    menuBarStatusMessage
-                )
-            }
-        })
         return menuBarStatusPane
     }
 

@@ -4,7 +4,6 @@ import com.panopset.compat.*
 import com.panopset.compat.Fileop.getCanonicalPath
 import com.panopset.compat.Logop.green
 import com.panopset.compat.Logop.warn
-import com.panopset.compat.Stringop.getEol
 import java.io.File
 
 class ChecksumReport(private val textProcessor: TextProcessor) {

@@ -11,13 +11,20 @@ import java.util.logging.Level
 import java.util.logging.Logger
 
 object Logop {
-    val logger = Logger.getGlobal()
-    val lozLiseners = ArrayList<LogListener>()
+    val logger: Logger = Logger.getGlobal()
+    private var logListener: LogListener
     var isDebugging = false
     val clearLogEntry = LogEntry(LogopAlert.GREEN, Level.INFO, "")
     const val PAN_STANDARD_LOGIC_ERROR_MSG =
         "Unexpected error, if your pull request is accepted, we'll send you 1000 currently worthless Panopset shares."
 
+    init {
+        logListener = object: LogListener {
+            override fun log(logEntry: LogEntry) {
+
+            }
+        }
+    }
 
     /**
      * Keeping this around, because of the System/38 &amp; AS/400 DSPMSG CLP command. Identical to
@@ -133,17 +140,13 @@ object Logop {
             LogopAlert.RED, Level.SEVERE,
             ex.message!!
         )
-        for (listener in lozLiseners) {
-            listener.log(logEntry)
-        }
+        logListener.log(logEntry)
         logalog(logEntry)
     }
     @JvmStatic
     fun report(logRecord: LogEntry) {
         logger.log(logRecord.level, logRecord.message)
-        for (listener in lozLiseners) {
-            listener.log(logRecord)
-        }
+        logListener.log(logRecord)
         logalog(logRecord)
     }
 
@@ -174,9 +177,7 @@ object Logop {
     }
 
     private fun clearListeners() {
-        for (listener in lozLiseners) {
-            listener.log(clearLogEntry)
-        }
+        logListener.log(clearLogEntry)
     }
 
     @JvmStatic
@@ -218,8 +219,8 @@ object Logop {
     }
 
     @JvmStatic
-    fun addLogListener(logListener: LogListener) {
-        lozLiseners.add(logListener)
+    fun setLogListener(value: LogListener) {
+        logListener = value
     }
 
     fun getStackTraceAndCauses(throwable: Throwable): String {
