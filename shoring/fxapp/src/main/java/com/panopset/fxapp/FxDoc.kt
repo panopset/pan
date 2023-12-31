@@ -1,7 +1,6 @@
 package com.panopset.fxapp
 
-import com.panopset.compat.KEY_WINDOW_DIMS
-import com.panopset.compat.combineDelim
+import com.panopset.compat.*
 import javafx.scene.Scene
 import javafx.scene.control.TextField
 import javafx.stage.Stage
@@ -22,6 +21,7 @@ class FxDoc : Anchor {
 
     override fun updateTitle() {
         stage.title = createWindowTitle()
+        //setLogLis()
     }
 
     fun closeWindow() {
@@ -36,6 +36,16 @@ class FxDoc : Anchor {
         )
         saveDataToFile()
     }
+//    fun setLogLis() {
+//        Logop.setLogListener(object: LogListener {
+//            override fun log(logEntry: LogEntry) {
+//                FontManagerFX.setMenubarLogRecord(
+//                    logEntry,
+//                    menuBarStatusMessage
+//                )
+//            }
+//        })
+//    }
 }
 
 

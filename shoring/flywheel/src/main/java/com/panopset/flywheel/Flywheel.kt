@@ -6,7 +6,6 @@ import com.panopset.compat.Logop.dspmsg
 import com.panopset.compat.Logop.errorEx
 import com.panopset.compat.Logop.errorMsg
 import com.panopset.compat.Logop.info
-import com.panopset.compat.Logop.isDebugging
 import com.panopset.compat.Logop.warn
 import com.panopset.compat.Rezop
 import com.panopset.compat.Stringop.getEol
@@ -344,29 +343,23 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
     }
 
     fun getTemplate(): Template {
-         if (daTemplate == null) {
-             daTemplate = Template(this, sls!!, lineFeedRules!!)
-         }
+        if (daTemplate == null) {
+            daTemplate = Template(this, sls!!, lineFeedRules!!)
+        }
         return daTemplate as Template
     }
 
     fun stop(message: String?) {
         errorMsg(message)
-        if (isDebugging) {
-            if (resolvingCommand != null) {
-                debug(" at: " + resolvingCommand.toString())
-            }
-            debug(Javop.dump(mapStack.peek().map))
-            warn(Nls.xlate("Template parsing stopped.  More information was dumped in the log."))
-        } else {
-            warn(
-                Nls
-                    .xlate("Template parsing stopped.  Check debug in help->Show log, for more information")
-            )
-        }
         if (resolvingCommand != null) {
-            warn(Nls.xlate("Stopped while executing line") + " " + resolvingCommand.toString())
+            warn(Nls.xlate("Stopped while executing line") + " $resolvingCommand")
+            debug(" at: $resolvingCommand")
         }
+        debug(Javop.dump(mapStack.peek().map))
+        warn(
+            Nls
+                .xlate("Template parsing stopped.  Check debug in help->Show log, for more information")
+        )
         control.stop(message)
     }
 
@@ -520,6 +513,7 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
 
     companion object {
         private var defined = false
+
         @JvmStatic
         @Synchronized
         fun defineAllowedScriptCalls() {
@@ -590,15 +584,15 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
          *
 
         <pre>
-          [0] = script file name, args[1] = target directory name.
-          or
-          [0] = properties file name where these properties are required:
-          com.panopset.flywheel.script=&lt;your script file name&gt;
-          com.panopset.flywheel.target=&lt;your target file name&gt;
+        [0] = script file name, args[1] = target directory name.
+        or
+        [0] = properties file name where these properties are required:
+        com.panopset.flywheel.script=&lt;your script file name&gt;
+        com.panopset.flywheel.target=&lt;your target file name&gt;
 
-          and then any other properties that are needed by the scripts.
+        and then any other properties that are needed by the scripts.
 
-          See site.properties in this project for details.
+        See site.properties in this project for details.
         </pre>
 
          */

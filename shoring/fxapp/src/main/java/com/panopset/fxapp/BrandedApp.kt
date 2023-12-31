@@ -61,25 +61,11 @@ abstract class BrandedApp: PanApplication, AppDDSFX {
 
     final override fun createPane(fxDoc: FxDoc, deskApp4FX: DeskApp4FX): Pane {
         val rtn = DeskApp4XFactory.brandedApp.createDynapane(fxDoc)
-        setLogLis(fxDoc)
 
         //val baseClass: Class<out PanApplication?> = fxDoc.application.javaClass
         // TODO: val i8nBundle = baseClass.getPackage().name + ".bundles." + baseClass.simpleName
         return rtn
     }
-
-
-    fun setLogLis(fxDoc: FxDoc) {
-        Logop.setLogListener(object: LogListener {
-            override fun log(logEntry: LogEntry) {
-                FontManagerFX.setMenubarLogRecord(
-                    logEntry,
-                    fxDoc.menuBarStatusMessage
-                )
-            }
-        })
-    }
-
 
     final override fun createFaviconImage(): Image? {
         val logoName = "/${this.javaClass.simpleName.lowercase(Locale.getDefault())}.png"

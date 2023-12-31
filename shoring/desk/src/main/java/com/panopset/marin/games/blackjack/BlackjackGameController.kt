@@ -3,6 +3,7 @@ package com.panopset.marin.games.blackjack
 import com.panopset.blackjackEngine.CycleSnapshot
 import com.panopset.desk.games.bj.BlackjackFxControls
 import com.panopset.fxapp.FontManagerFX
+import com.panopset.fxapp.FxDoc
 import javafx.animation.AnimationTimer
 import javafx.application.Platform
 import javafx.event.EventHandler

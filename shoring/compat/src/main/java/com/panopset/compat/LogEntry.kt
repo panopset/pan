@@ -12,5 +12,4 @@ class LogEntry(val alert: LogopAlert, val level: Level, val message: String) {
     }
 }
 
-@JvmField
 val timestampFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS ~ ")

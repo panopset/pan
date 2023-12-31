@@ -161,17 +161,12 @@ object JavaFXapp {
         val refreshLog = createPanButton({update(logTa)},
             "Refresh", false, "Refresh log.")
 
-        val debugMode = CheckBox("Debug")
-        debugMode.tooltip = Tooltip("Sets the debug level to DEBUG.")
-
         FontManagerFX.register(logTa)
-        FontManagerFX.register(debugMode)
 
         val topFlow = FlowPane()
 
         topFlow.children.add(refreshLog)
         topFlow.children.add(clearLog)
-        topFlow.children.add(debugMode)
         topFlow.children.add(createPanButton({
             logTa.text = SysInfo.toString()
         },"System", false, ""))
@@ -183,16 +178,6 @@ object JavaFXapp {
         scrollPane.fitToWidthProperty().value = true
         scrollPane.content = logTa
         borderPane.center = scrollPane
-
-        debugMode.isSelected = Logop.isDebugging
-        debugMode.onAction = EventHandler { event: ActionEvent ->
-            val cb = event.source as CheckBox
-            if (cb.isSelected) {
-                Logop.turnOnDebugging()
-            } else {
-                Logop.turnOffDebugging()
-            }
-        }
         update(logTa)
         zombie.addStopAction {
             logStage?.close()

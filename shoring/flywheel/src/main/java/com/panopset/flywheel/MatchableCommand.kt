@@ -18,8 +18,7 @@ abstract class MatchableCommand internal constructor(
     /**
      * Commands.
      */
-    @JvmField
-    val commands: List<Command> = ArrayList()
+    val commands: ArrayList<Command> = ArrayList()
     /**
      * @return Command quit for this matchable command.
      */
@@ -32,7 +31,6 @@ abstract class MatchableCommand internal constructor(
     /**
      * Command quit.
      */
-    @JvmField
     var commandQuit: CommandQuit? = null
 
     /**

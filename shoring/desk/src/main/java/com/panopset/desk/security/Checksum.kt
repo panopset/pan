@@ -45,7 +45,6 @@ class Checksum : PanopsetBrandedAppTran() {
         val csFileSelect = PanFileOrDirSelectorPanel(fxDoc, "csFileOrDirSelect")
         val csChecksum: Button = createPanButton(
             {
-                setLogLis(fxDoc)
                 doProcess(csOut, csFileSelect, csCheckBoxes)
             }, "_Checksum", true,
             "Run checkbox specified checksums on selected file."
@@ -53,7 +52,6 @@ class Checksum : PanopsetBrandedAppTran() {
 
         val csAll = createPanButton({
             for (cb in csCheckBoxes) {
-                setLogLis(fxDoc)
                 cb.isSelected = isAllOn
             }
             isAllOn = !isAllOn

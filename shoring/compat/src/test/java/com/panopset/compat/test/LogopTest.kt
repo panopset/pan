@@ -42,7 +42,6 @@ class LogopTest {
         Assertions.assertEquals(Level.FINE, lr.level)
         Logop.warn(Stringop.FOO)
         Assertions.assertEquals(Level.WARNING, lr.level)
-        Logop.turnOnDebugging()
         Logop.warn(Stringop.FOO)
         Assertions.assertEquals(Stringop.FOO, lr.message)
         Assertions.assertEquals(Level.WARNING, lr.level)
@@ -57,11 +56,7 @@ class LogopTest {
         val ex2 = Exception(ex)
         stackTrace = getStackTraceAndCauses(ex2)
         Assertions.assertTrue(12 < stackTrace.length)
-        Assertions.assertFalse(Logop.isDebugging)
-        Logop.turnOnDebugging()
-        Assertions.assertTrue(Logop.isDebugging)
         Logop.clear()
-        Assertions.assertFalse(Logop.isDebugging)
         for (i in 0..1000) {
             Logop.dspmsg(String.format("%s:%d", Stringop.FOO, i))
         }
