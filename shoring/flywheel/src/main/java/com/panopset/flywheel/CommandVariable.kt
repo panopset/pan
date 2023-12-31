@@ -49,7 +49,7 @@ class CommandVariable(templateLine: TemplateLine, innerPiece: String, template: 
                 } else {
                     for (fl in findLines) {
                         if (Stringop.isPopulated(fl)) {
-                            if (tmplt.indexOf(fl!!) > -1) {
+                            if (tmplt.indexOf(fl) > -1) {
                                 sw.append(tmplt)
                                 continue
                             }

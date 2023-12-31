@@ -93,17 +93,17 @@ class SourceFile {
      * [
  * http://www.geocities.com/technofundo/tech/java/equalhash.html ](http://www.geocities.com/technofundo/tech/java/equalhash.html)
      *
-     * @param obj Object.
+     * @param other Object.
      * @return true if obj is equal to this.
      */
-    override fun equals(obj: Any?): Boolean {
-        if (this === obj) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) {
             return true
         }
-        if (obj == null || obj.javaClass != this.javaClass) {
+        if (other == null || other.javaClass != this.javaClass) {
             return false
         }
-        val test = obj as SourceFile
+        val test = other as SourceFile
         return canonicalPath == test.canonicalPath && relativePath == test.relativePath
     }
 

@@ -164,15 +164,12 @@ object Logop {
     //  }
     //  public static String logAndReturnError(String msg) {
 
-    @JvmStatic
     fun getEntryStackAsText(): String {
         return printHistory()
     }
 
-    @JvmStatic
     fun clear() {
         stack.clear()
-        turnOffDebugging()
         clearListeners()
     }
 
@@ -180,24 +177,11 @@ object Logop {
         logListener.log(clearLogEntry)
     }
 
-    @JvmStatic
-    fun turnOnDebugging() {
-        isDebugging = true
-    }
-
-    @JvmStatic
-    fun turnOffDebugging() {
-        isDebugging = false
-    }
-
-    @JvmStatic
     fun standardWierdErrorMessage() {
         errorMsg(PAN_STANDARD_LOGIC_ERROR_MSG)
     }
 
-    @JvmStatic
     val stack: Deque<LogEntry> = ConcurrentLinkedDeque()
-    @JvmStatic
     fun printHistory(): String {
         val sw = StringWriter()
         for (lr in stack) {
@@ -208,7 +192,6 @@ object Logop {
         return sw.toString()
     }
 
-    @JvmStatic
     fun logalog(logEntry: LogEntry) {
         if (stack.size > 999) {
             for (i in 0..99) {
@@ -218,7 +201,6 @@ object Logop {
         stack.add(logEntry)
     }
 
-    @JvmStatic
     fun setLogListener(value: LogListener) {
         logListener = value
     }
