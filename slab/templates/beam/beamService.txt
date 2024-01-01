@@ -32,4 +32,7 @@ ${@f SITE_DN}server {
  location / {
   try_files $uri $uri/ =404;
  }
+
+ error_page 404 =200 /error.html;
+
 }
