@@ -1,9 +1,9 @@
 package com.panopset.marin.games.blackjack
 
 import com.panopset.blackjackEngine.CycleSnapshot
+import com.panopset.compat.Zombie
 import com.panopset.desk.games.bj.BlackjackFxControls
 import com.panopset.fxapp.FontManagerFX
-import com.panopset.fxapp.FxDoc
 import javafx.animation.AnimationTimer
 import javafx.application.Platform
 import javafx.event.EventHandler
@@ -18,7 +18,7 @@ class BlackjackGameController(ctls: BlackjackFxControls) {
     var felt = Canvas()
 
     init {
-        bge.zombie.addStopAction { timer.stop() }
+        Zombie.addStopAction { timer.stop() }
         if (bge.bankroll.reloadAmount == 0) {
             bge.frontEndPreInitCheck()
         }
@@ -85,7 +85,7 @@ class BlackjackGameController(ctls: BlackjackFxControls) {
 //            g.fill = Color.DARKGREEN
 //            g.fillText("diags", 100.0, 100.0)
 
-        if (!bge.isActive()) {
+        if (!Zombie.isActive) {
             g.fill = Color.DARKRED
             g.fillRect(0.0, 0.0, layoutWidth.toDouble(), layoutHeight.toDouble())
             return null
