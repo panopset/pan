@@ -1,6 +1,6 @@
 package com.panopset.compat
 
-class Zombie {
+object Zombie {
     var isActive = true
         private set
 

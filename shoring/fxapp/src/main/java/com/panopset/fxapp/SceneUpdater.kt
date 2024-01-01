@@ -1,7 +1,7 @@
 package com.panopset.fxapp
 
 import com.panopset.compat.Logop
-import com.panopset.fxapp.JavaFXapp.isActive
+import com.panopset.compat.Zombie
 
 /**
  *
@@ -41,7 +41,7 @@ abstract class SceneUpdater {
             return
         }
         updater = Thread {
-            while (isActive) {
+            while (Zombie.isActive) {
                 try {
                     if (needsUpdate) {
                         submitUpdate()

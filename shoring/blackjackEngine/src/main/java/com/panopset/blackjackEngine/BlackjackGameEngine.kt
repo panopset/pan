@@ -13,7 +13,6 @@ open class BlackjackGameEngine(val config: BlackjackConfiguration) {
     var strategy = Strategy(config)
     var countingSystems = CountingSystems(config)
     private val msg: BlackjackMessages = config.messages
-    var zombie: Zombie = Zombie()
 
     val bankroll = Bankroll()
 
@@ -368,7 +367,7 @@ open class BlackjackGameEngine(val config: BlackjackConfiguration) {
     }
 
     private fun doAutomatic() {
-        while (isAutomaticRunning() && zombie.isActive) {
+        while (isAutomaticRunning() && Zombie.isActive) {
             val ra: String = getCycle().getRecommendedAction()
             if (CMD_DEAL == ra) {
                 val targetStake: Int = config.targetStakeInWholeDollars * 100
@@ -528,18 +527,6 @@ open class BlackjackGameEngine(val config: BlackjackConfiguration) {
 
     fun resetStreak() {
         streak = 0
-    }
-
-    fun stop() {
-        zombie.stop()
-    }
-
-    fun resume() {
-        zombie.resume()
-    }
-
-    fun isActive(): Boolean {
-        return zombie.isActive
     }
 
     fun getTotalValue(): Long {

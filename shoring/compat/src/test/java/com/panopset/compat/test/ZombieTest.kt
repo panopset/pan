@@ -8,21 +8,20 @@ class ZombieTest {
     var foo = "bar"
     @Test
     fun test() {
-        val zombie = Zombie()
-        Assertions.assertTrue(zombie.isActive)
+        Assertions.assertTrue(Zombie.isActive)
         Assertions.assertEquals("bar", foo)
-        zombie.addStopAction { foo = "bat" }
+        Zombie.addStopAction { foo = "bat" }
         Assertions.assertEquals("bar", foo)
-        Assertions.assertTrue(zombie.isActive)
+        Assertions.assertTrue(Zombie.isActive)
         Assertions.assertEquals("bar", foo)
-        Assertions.assertTrue(zombie.isActive)
-        zombie.stop()
-        Assertions.assertFalse(zombie.isActive)
+        Assertions.assertTrue(Zombie.isActive)
+        Zombie.stop()
+        Assertions.assertFalse(Zombie.isActive)
         Assertions.assertEquals("bat", foo)
-        zombie.stop()
-        Assertions.assertFalse(zombie.isActive)
+        Zombie.stop()
+        Assertions.assertFalse(Zombie.isActive)
         Assertions.assertEquals("bat", foo)
-        zombie.resume()
-        Assertions.assertTrue(zombie.isActive)
+        Zombie.resume()
+        Assertions.assertTrue(Zombie.isActive)
     }
 }

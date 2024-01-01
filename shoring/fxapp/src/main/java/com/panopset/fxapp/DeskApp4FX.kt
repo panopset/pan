@@ -3,10 +3,10 @@ package com.panopset.fxapp
 import com.panopset.compat.HiddenFolder
 import com.panopset.compat.Logop
 import com.panopset.compat.Stringop
+import com.panopset.compat.Zombie
 import javafx.application.Application
 import javafx.application.Platform
 import javafx.stage.Stage
-import java.io.File
 import java.io.IOException
 import java.util.logging.*
 
@@ -20,7 +20,7 @@ class DeskApp4FX: Application() {
         } catch (eiie: ExceptionInInitializerError) {
             Logop.dspmsg(DeskApp4XFactory.panApplication.getApplicationDisplayName() + " Already running, exiting.")
             Platform.runLater {
-                JavaFXapp.zombie.stop()
+                Zombie.stop()
                 stage.close()
             }
             throw eiie
@@ -43,7 +43,7 @@ class DeskApp4FX: Application() {
             val fh: Handler = FileHandler(logFilePath)
             fh.formatter = SimpleFormatter()
             Logger.getLogger("").addHandler(fh)
-            Logger.getLogger("com.panopset").setLevel(Level.WARNING)
+            Logger.getLogger("com.panopset").level = Level.WARNING
         } catch (e: IOException) {
             Logop.errorEx(e)
         }

@@ -2,6 +2,7 @@ package com.panopset.tests.blackjackEngine
 
 import com.panopset.blackjackEngine.*
 import com.panopset.compat.Stringop
+import com.panopset.compat.Zombie
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
@@ -47,7 +48,7 @@ class AutoTest {
         bge.exec(CMD_AUTO)
         synchronized(bge) {
             var paintedSnapshot: CycleSnapshot? = null
-            while (bge.isAutomaticRunning() && bge.isActive()) {
+            while (bge.isAutomaticRunning() && Zombie.isActive) {
                 bge.waitMillis(200)
                 val cycleSnapshot = bge.getCurrentSnapshot()
                 if (cycleSnapshot != paintedSnapshot) {

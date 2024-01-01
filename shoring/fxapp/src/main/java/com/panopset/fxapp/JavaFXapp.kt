@@ -8,8 +8,6 @@ import com.panopset.fxapp.AnchorFactory.findAnchor
 import com.panopset.fxapp.AnchorFactory.getAnchors
 import com.panopset.fxapp.AnchorFactory.removeAnchor
 import javafx.application.Platform
-import javafx.event.ActionEvent
-import javafx.event.EventHandler
 import javafx.scene.Scene
 import javafx.scene.control.*
 import javafx.scene.control.Alert.AlertType
@@ -25,7 +23,6 @@ import java.nio.charset.StandardCharsets
 import java.util.*
 
 object JavaFXapp {
-    val zombie = Zombie()
 
     private fun findActiveStage(): Stage? {
         val fxDoc = findAnchor() as FxDoc? ?: return null
@@ -179,7 +176,7 @@ object JavaFXapp {
         scrollPane.content = logTa
         borderPane.center = scrollPane
         update(logTa)
-        zombie.addStopAction {
+        Zombie.addStopAction {
             logStage?.close()
         }
         rtn.scene = Scene(borderPane, 600.0, 400.0)
@@ -220,7 +217,7 @@ object JavaFXapp {
     }
 
     fun doExit() {
-        zombie.stop()
+        Zombie.stop()
         saveOpenWindowStateGlobally()
         for (anchor in getAnchors()) {
             (anchor as FxDoc).closeWindow()
@@ -228,7 +225,7 @@ object JavaFXapp {
     }
 
 
-        val GLOBAL_LAST_PARENT_DIR = "com.panopset.global_last_parent_dir"
+        const val GLOBAL_LAST_PARENT_DIR = "com.panopset.global_last_parent_dir"
 
         fun findStage(): Stage? {
             return findActiveStage()
@@ -272,8 +269,4 @@ object JavaFXapp {
             fxDoc.closeWindow()
             removeAnchor(fxDoc)
         }
-
-        val isActive: Boolean
-            get() = zombie.isActive
-
 }
