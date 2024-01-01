@@ -1,6 +1,7 @@
 package com.panopset.flywheel
 
 import com.panopset.compat.Logop
+import com.panopset.compat.Panop
 import java.io.StringWriter
 
 /**
@@ -16,15 +17,15 @@ import java.io.StringWriter
  * command is reached.
  *
  */
-class CommandPush(
+class CommandPush(panop: Panop,
     templateLine: TemplateLine, innerPiece: String,
     template: Template
-) : MatchableCommand(templateLine, innerPiece, template), UserMatchableCommand {
+) : MatchableCommand(panop, templateLine, innerPiece, template), UserMatchableCommand {
     override fun resolve(sw: StringWriter) {
         val tsw = StringWriter()
         resolveMatchedCommands(tsw)
         template.flywheel.put(getParams(), tsw.toString())
-        Logop.info("Push command defined ${getParams()} as $tsw.")
+        Logop.info(panop, "Push command defined ${getParams()} as $tsw.")
     }
 
     companion object {

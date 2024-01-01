@@ -2,7 +2,6 @@ package com.panopset.compat
 
 import com.panopset.compat.Stringop.getEol
 import java.io.File
-import java.io.IOException
 import java.io.PrintWriter
 import java.io.StringWriter
 import java.util.*
@@ -12,9 +11,8 @@ import java.util.logging.Logger
 
 object Logop {
     val logger: Logger = Logger.getGlobal()
-    var isDebugging = false
-    val clearLogEntry = LogEntry(LogopAlert.GREEN, Level.INFO, "")
-    const val standardWierdErrorMessage =
+    private val clearLogEntry = LogEntry(LogopAlert.GREEN, Level.INFO, "")
+    private const val STANDARD_WIERD_ERROR_MESSAGE =
         "Unexpected error, if your pull request is accepted, we'll send you 1000 currently worthless Panopset shares."
 
     /**
@@ -23,92 +21,62 @@ object Logop {
      *
      * @param msg Message to log at Level.INFO.
      */
-    @JvmStatic
-    fun dspmsg(msg: String?) {
-        info(msg)
+    fun dspmsg(panop: Panop, msg: String) {
+        info(panop, msg)
     }
 
-    @JvmStatic
-    fun info(msg: String?) {
-        report(
+    fun info(panop: Panop, msg: String) {
+        report(panop,
             LogEntry(
                 LogopAlert.GREEN, Level.INFO,
-                audit(msg)!!
+                audit(msg)
             )
         )
     }
 
-    @JvmStatic
-    fun warn(msg: String?) {
-        report(
+    fun warn(panop: Panop, msg: String) {
+        report(panop,
             LogEntry(
                 LogopAlert.YELLOW, Level.WARNING,
-                audit(msg)!!
+                audit(msg)
             )
         )
     }
 
-    @JvmStatic
-    fun debug(msg: String?) {
-        report(
-            LogEntry(
-                LogopAlert.ORANGE, Level.FINE,
-                audit(msg)!!
-            )
-        )
-    }
-
-    @JvmStatic
-    fun errorMsg(msg: String?) {
-        report(
+    fun errorMsg(panop: Panop, msg: String?) {
+        report(panop,
             LogEntry(
                 LogopAlert.RED, Level.SEVERE,
-                audit(msg)!!
+                audit(msg?: STANDARD_WIERD_ERROR_MESSAGE)
             )
         )
     }
 
-    @JvmStatic
-    private fun audit(msg: String?): String? {
+    private fun audit(msg: String): String {
         return msg
     }
 
-    @JvmStatic
-    fun warn(ex: Exception) {
-        warn(ex.message)
+    fun warn(panop: Panop, ex: Exception) {
+        warn(panop, ex.message?: STANDARD_WIERD_ERROR_MESSAGE)
     }
 
-    @JvmStatic
-    fun errorEx(ex: Exception?) {
-        handleException(ex!!)
+    fun errorEx(panop: Panop, ex: Exception) {
+        handleException(panop, ex)
     }
 
-    @JvmStatic
-    fun errorMsg(msg: String?, ex: Throwable?) {
-        errorMsg(msg)
-        handleException(ex!!)
+    fun errorMsg(panop: Panop, msg: String, ex: Throwable) {
+        errorMsg(panop, msg)
+        handleException(panop, ex)
     }
 
-    @JvmStatic
-    fun green(msg: String?) {
-        dspmsg(msg)
+    fun green(panop: Panop, msg: String) {
+        dspmsg(panop, msg)
     }
 
-    @JvmStatic
-    fun handle(e: Exception?) {
-        handleException(e!!)
+    fun errorMsg(panop: Panop, message: String, file: File) {
+        errorMsg(panop, "$message: ${Fileop.getCanonicalPath(file)}")
     }
 
-    @JvmStatic
-    fun errorMsg(message: String?, file: File?) {
-        if (file == null) {
-            errorMsg("Null file.")
-            return
-        }
-        errorMsg("$message: ${Fileop.getCanonicalPath(file)}")
-    }
-    @JvmStatic
-    @Throws(IOException::class)
     fun getStackTrace(throwable: Throwable): String {
         StringWriter().use { sw ->
             PrintWriter(sw).use { pw ->
@@ -119,50 +87,46 @@ object Logop {
         }
     }
 
-    fun errorMsg(file: File, ex: Exception) {
-        info(Fileop.getCanonicalPath(file))
-        errorEx(ex)
+    fun errorMsg(panop: Panop, file: File, ex: Exception) {
+        info(panop, Fileop.getCanonicalPath(file))
+        errorEx(panop, ex)
     }
 
-    fun handleException(ex: Throwable) {
+    fun handleException(panop: Panop, message: String, ex: Throwable) {
+        logger.log(Level.SEVERE, message, ex)
+        ex.printStackTrace()
+        val logEntry = LogEntry(
+            LogopAlert.RED, Level.SEVERE,
+            message)
+        logalog(panop, logEntry)
+    }
+
+    fun handleException(panop: Panop, ex: Throwable) {
         logger.log(Level.SEVERE, ex.message, ex)
         ex.printStackTrace()
         val logEntry = LogEntry(
             LogopAlert.RED, Level.SEVERE,
-            ex.message?: standardWierdErrorMessage
+            ex.message?: STANDARD_WIERD_ERROR_MESSAGE
         )
-        logalog(logEntry)
-    }
-    @JvmStatic
-    fun report(logRecord: LogEntry) {
-        logger.log(logRecord.level, logRecord.message)
-        logalog(logRecord)
+        logalog(panop, logEntry)
     }
 
-    //  public static String logAndReturnError(String msg) {
-    //    Logop.errorMsg(msg);
-    //    return msg;
-    //  }
-    //  public static String logAndReturnExceptionError(Exception ex) {
-    //    String rtn = ex.getMessage();
-    //    if (!Stringop.isPopulated(ex.getMessage())) {
-    //      rtn = PAN_STANDARD_LOGIC_ERROR_MSG;
-    //    }
-    //    errorMsg(rtn);
-    //    return rtn;
-    //  }
-    //  public static String logAndReturnError(String msg) {
+    fun report(panop: Panop, logRecord: LogEntry) {
+        logger.log(logRecord.level, logRecord.message)
+        logalog(panop, logRecord)
+    }
 
     fun getEntryStackAsText(): String {
         return printHistory()
     }
 
-    fun clear() {
+    fun clear(panop: Panop) {
         stack.clear()
+        logalog(panop, clearLogEntry)
     }
 
     val stack: Deque<LogEntry> = ConcurrentLinkedDeque()
-    fun printHistory(): String {
+    private fun printHistory(): String {
         val sw = StringWriter()
         for (lr in stack) {
             sw.append(timestampFormat.format(lr.timestamp))
@@ -172,7 +136,7 @@ object Logop {
         return sw.toString()
     }
 
-    fun logalog(logEntry: LogEntry) {
+    private fun logalog(panop: Panop, logEntry: LogEntry) {
         if (stack.size > 10) {
             stack.removeLast()
         }
@@ -198,5 +162,9 @@ object Logop {
             cause = cause.cause
         }
         return sw.toString()
+    }
+
+    fun errorDevLogOnly(ex: Throwable) {
+        logger.log(Level.SEVERE, ex.message, ex)
     }
 }

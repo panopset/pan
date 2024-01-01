@@ -1,5 +1,6 @@
 package com.panopset.flywheel
 
+import com.panopset.compat.Panop
 import com.panopset.compat.Stringop
 import java.io.StringWriter
 
@@ -19,8 +20,8 @@ import java.io.StringWriter
 </pre> *
  *
  */
-class CommandVariable(templateLine: TemplateLine, innerPiece: String, template: Template) : TemplateCommand(
-    templateLine, innerPiece, template
+class CommandVariable(panop: Panop, templateLine: TemplateLine, innerPiece: String, template: Template) : TemplateCommand(
+    panop, templateLine, innerPiece, template
 ) {
     init {
         parms = innerPiece
@@ -61,7 +62,7 @@ class CommandVariable(templateLine: TemplateLine, innerPiece: String, template: 
     }
 
     private fun resolveCombiner(sw: StringWriter, combineStr: String) {
-        val combineLines = Stringop.parseInt(combineStr)
+        val combineLines = Stringop.parseInt(panop, combineStr)
         if (combineLines > 0) {
             CombineLineManager.INSTANCE.combine(sw, combineLines, template.flywheel.getEntry(getParams()))
         }

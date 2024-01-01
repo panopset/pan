@@ -8,8 +8,6 @@ import com.panopset.fxapp.AnchorFactory.findAnchor
 import com.panopset.fxapp.AnchorFactory.getAnchors
 import com.panopset.fxapp.AnchorFactory.removeAnchor
 import javafx.application.Platform
-import javafx.event.ActionEvent
-import javafx.event.EventHandler
 import javafx.scene.Scene
 import javafx.scene.control.*
 import javafx.scene.control.Alert.AlertType
@@ -84,7 +82,7 @@ object JavaFXapp {
 
     private fun doSave(fxDoc: FxDoc) {
         fxDoc.saveDataToFile()
-        Logop.green("Saved to " + fxDoc.fileName)
+        Logop.green(fxDoc.panop, "Saved to " + fxDoc.fileName)
     }
 
     private fun doSaveAs(fxDoc: FxDoc) {
@@ -96,14 +94,14 @@ object JavaFXapp {
         }
         val file = fileChooser.showSaveDialog(findStage())
         if (file == null) {
-            Logop.warn("New file not set.")
+            Logop.warn(fxDoc.panop, "New file not set.")
             return
         }
         fxDoc.setFile(file)
         doSave(fxDoc)
     }
 
-    private fun doOpen() {
+    private fun doOpen(fxDoc: FxDoc) {
         val fileChooser = FileChooser()
         fileChooser.title = ("Open a previously saved "
                 + DeskApp4XFactory.panApplication.applicationShortName
@@ -112,13 +110,9 @@ object JavaFXapp {
         if (Stringop.isPopulated(lpd)) {
             fileChooser.initialDirectory = File(lpd)
         }
-        val file = fileChooser.showOpenDialog(findStage())
-        if (file == null) {
-            Logop.warn("No file selected.")
-            return
-        }
+        val file = fileChooser.showOpenDialog(findStage()) ?: return
         if (!file.exists()) {
-            Logop.warn("File ${Fileop.getCanonicalPath(file)} does not exist.")
+            Logop.warn(fxDoc.panop, "File ${Fileop.getCanonicalPath(file)} does not exist.")
             return
         }
         show(DeskApp4XFactory.assemblerFxDoc(Stage(), file))
@@ -147,6 +141,9 @@ object JavaFXapp {
 
     private fun createLogStage(): Stage {
 
+        val maybeSomeKindOfLogDspMsgWhatjacall = object: Panop {
+
+        }
         val rtn = Stage()
         rtn.title = "Logs"
 
@@ -155,7 +152,7 @@ object JavaFXapp {
         val logTa = TextArea() // TODO: Rename
         logTa.promptText = "Click refresh to load log from file."
         val clearLog = createPanButton({
-            Logop.clear()
+            Logop.clear(maybeSomeKindOfLogDspMsgWhatjacall)
             logTa.text = ""},
             "Clear", false, "Clear logs.")
         val refreshLog = createPanButton({update(logTa)},
@@ -168,7 +165,7 @@ object JavaFXapp {
         topFlow.children.add(refreshLog)
         topFlow.children.add(clearLog)
         topFlow.children.add(createPanButton({
-            logTa.text = SysInfo.toString()
+            logTa.text = SysInfo(maybeSomeKindOfLogDspMsgWhatjacall).toString()
         },"System", false, ""))
         borderPane.top = topFlow
 
@@ -255,8 +252,8 @@ object JavaFXapp {
             doSaveAs(fxDoc)
         }
 
-        fun openWindowFromFile() {
-            doOpen()
+        fun openWindowFromFile(fxDoc: FxDoc) {
+            doOpen(fxDoc)
         }
 
         fun panExit() {

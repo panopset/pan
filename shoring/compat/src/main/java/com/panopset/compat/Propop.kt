@@ -9,9 +9,9 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 object Propop {
-    fun loadPropsFromFile(file: File?): Map<String, String> {
+    fun loadPropsFromFile(panop: Panop, file: File?): Map<String, String> {
         val props = Properties()
-        load(props, file)
+        load(panop, props, file)
         return loadMapFromProperties(props)
     }
 
@@ -31,18 +31,18 @@ object Propop {
      *
      * @throws IOException exception.
      */
-    fun load(props: Properties?, file: File?): Properties {
+    fun load(panop: Panop, props: Properties?, file: File?): Properties {
         val rtn: Properties = props ?: Properties()
         if (file == null) {
             return rtn
         }
         if (!file.exists()) {
-            touch(file)
+            touch(panop, file)
         }
         try {
             FileReader(file).use { fr -> rtn.load(fr) }
         } catch(rte: RuntimeException) {
-            Logop.errorMsg(file, rte)
+            Logop.errorMsg(panop, file, rte)
             return rtn
         }
         return rtn
@@ -53,8 +53,8 @@ object Propop {
      *
      * @param file File to load properties from.
      */
-    fun load(file: File?): Properties {
-        return load(Properties(), file)
+    fun load(panop: Panop, file: File?): Properties {
+        return load(panop, Properties(), file)
     }
 
     /**

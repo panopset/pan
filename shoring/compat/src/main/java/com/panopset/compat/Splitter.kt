@@ -53,16 +53,16 @@ class Splitter {
         }
 
     companion object {
-        fun fixedLengths(commaSeparatedLineSplitWidths: String): Splitter {
+        fun fixedLengths(panop: Panop, commaSeparatedLineSplitWidths: String): Splitter {
             if (commaSeparatedLineSplitWidths.contains(",")) {
                 val splitWidths: MutableList<Int> = ArrayList()
                 for (splitWidthStr in commaSeparatedLineSplitWidths.split(",".toRegex()).dropLastWhile { it.isEmpty() }
                     .toTypedArray()) {
-                    splitWidths.add(parseInt(splitWidthStr))
+                    splitWidths.add(parseInt(panop, splitWidthStr))
                 }
                 return Splitter(splitWidths)
             }
-            return Splitter(parseInt(commaSeparatedLineSplitWidths))
+            return Splitter(parseInt(panop, commaSeparatedLineSplitWidths))
         }
 
         fun fixedLength(lineSplitWidth: Int): Splitter {

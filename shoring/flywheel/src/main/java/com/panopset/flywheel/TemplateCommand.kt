@@ -1,13 +1,16 @@
 package com.panopset.flywheel
 
+import com.panopset.compat.Panop
+
 /**
  * A template command is specified in a script, and has a source.
  */
 abstract class TemplateCommand internal constructor(
+    panop: Panop,
     templateLine: TemplateLine,
     val innerPiece: String,
     template: Template
-) : Command(
+) : Command(panop,
     template, templateLine
 ) {
     var parms = ""

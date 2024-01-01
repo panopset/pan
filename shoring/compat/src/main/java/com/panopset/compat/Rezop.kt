@@ -8,9 +8,9 @@ import java.io.InputStream
 import java.io.StringWriter
 
 object Rezop {
-    fun textStreamToList(`is`: InputStream?): List<String> {
-        val lines = getTextFromStream(`is`!!)
-        return stringToList(lines)
+    fun textStreamToList(panop: Panop, inpstr: InputStream): List<String> {
+        val lines = getTextFromStream(panop, inpstr)
+        return stringToList(panop, lines)
     }
 
     fun getPackageResourcePath(pkg: Package): String {
@@ -24,12 +24,22 @@ object Rezop {
         return dotName.replace(".", "/")
     }
 
-    fun copyTextResourceToFile(clazz: Class<*>, resourcePath: String?, file: File?) {
-        copyInputStreamToFile(clazz.getResourceAsStream(resourcePath), file)
+    fun copyTextResourceToFile(panop: Panop, clazz: Class<*>, resourcePath: String, file: File) {
+        val inputStream = clazz.getResourceAsStream(resourcePath)
+        if (inputStream == null) {
+            Logop.warn(panop, "Couldn't find $resourcePath")
+            return
+        }
+        copyInputStreamToFile(panop, inputStream, file)
     }
 
-    fun copyTextResourceToFile(clazz: Class<*>, resourcePath: String?, fileName: String?) {
-        copyInputStreamToFile(clazz.getResourceAsStream(resourcePath), fileName)
+    fun copyTextResourceToFile(panop: Panop, clazz: Class<*>, resourcePath: String, fileName: String) {
+        val inputStream = clazz.getResourceAsStream(resourcePath)
+        if (inputStream == null) {
+            Logop.warn(panop, "Couldn't find $resourcePath")
+            return
+        }
+        copyInputStreamToFile(panop, inputStream, fileName)
     }
 
     fun pkg2resourcePath(clazz: Class<*>): String {

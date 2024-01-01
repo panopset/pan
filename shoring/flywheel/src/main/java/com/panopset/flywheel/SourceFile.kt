@@ -2,12 +2,14 @@ package com.panopset.flywheel
 
 import com.panopset.compat.Fileop.getCanonicalPath
 import com.panopset.compat.Fileop.readLines
+import com.panopset.compat.Panop
 import java.io.File
 
 /**
  * Flywheel source file, all paths relative to the primary script file.
  */
 class SourceFile {
+    val panopz: Panop
     val relativePath: String
     val file: File
     private val canonicalPath: String
@@ -51,7 +53,7 @@ class SourceFile {
      */
     fun getSourceLines(): List<String> {
         if (sourceLines == null) {
-            sourceLines = readLines(file)
+            sourceLines = readLines(panopz, file)
         }
         return sourceLines!!
     }
@@ -62,7 +64,8 @@ class SourceFile {
      * @param sourceFile Source file.
      * @param basePath Base directory path.
      */
-    constructor(sourceFile: File, basePath: String) {
+    constructor(panop: Panop, sourceFile: File, basePath: String) {
+        panopz = panop
         file = sourceFile
         canonicalPath = getCanonicalPath(file)
         relativePath = canonicalPath.substring(basePath.length + 1)
@@ -74,7 +77,8 @@ class SourceFile {
      * @param sourceFileRelativePath Source file relative path.
      * @param flywheel Flywheel.
      */
-    constructor(flywheel: Flywheel, sourceFileRelativePath: String) {
+    constructor(panop: Panop, flywheel: Flywheel, sourceFileRelativePath: String) {
+        panopz = panop
         relativePath = sourceFileRelativePath
         file = File(flywheel.getBaseDirectoryPath() + "/" + relativePath)
         canonicalPath = getCanonicalPath(file)

@@ -6,7 +6,7 @@ import javafx.event.EventHandler
 import javafx.scene.control.ToggleGroup
 import javafx.scene.control.Tooltip
 
-class ReturnCharTitledPane(fxDoc: FxDoc) {
+class ReturnCharTitledPane(val fxDoc: FxDoc) {
     val pane = createPanTitledPane("Return Characters")
 
     private val tg = ToggleGroup()
@@ -35,7 +35,7 @@ class ReturnCharTitledPane(fxDoc: FxDoc) {
 
     private fun showUpdate() {
         Stringop.setEol(getSelectedReturnCharacter())
-        Logop.info("Selected return character is now ${getSelectionDescription()}")
+        Logop.info(fxDoc.panop,"Selected return character is now ${getSelectionDescription()}")
     }
 
     private fun getSelectedReturnCharacter(): String {
@@ -44,7 +44,7 @@ class ReturnCharTitledPane(fxDoc: FxDoc) {
         } else if (tg.selectedToggle === windowsToUnix) {
             return "\n"
         } else if (tg.selectedToggle === unixToWindows) {
-            return Stringop.DOS_RTN
+            return DOS_RTN
         }
         return getEol()
     }

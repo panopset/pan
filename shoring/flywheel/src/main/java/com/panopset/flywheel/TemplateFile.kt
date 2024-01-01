@@ -1,12 +1,9 @@
 package com.panopset.flywheel
 
 import com.panopset.compat.Fileop
+import com.panopset.compat.Panop
 import java.io.File
 
-class TemplateFile(file: File) : TemplateArray(Fileop.readLines(file)) {
-    override val name: String
-
-    init {
-        name = Fileop.getCanonicalPath(file)
-    }
+class TemplateFile(val panop: Panop, file: File) : TemplateArray(Fileop.readLines(panop, file)) {
+    override val name: String = Fileop.getCanonicalPath(file)
 }

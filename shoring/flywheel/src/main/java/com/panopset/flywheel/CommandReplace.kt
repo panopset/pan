@@ -1,5 +1,6 @@
 package com.panopset.flywheel
 
+import com.panopset.compat.Panop
 import com.panopset.compat.Stringop
 import java.io.StringWriter
 
@@ -30,9 +31,10 @@ import java.io.StringWriter
  *
  */
 class CommandReplace(
+    panop: Panop,
     templateLine: TemplateLine, innerPiece: String,
     template: Template
-) : MatchableCommand(templateLine, innerPiece, template), UserMatchableCommand {
+) : MatchableCommand(panop, templateLine, innerPiece, template), UserMatchableCommand {
     override fun resolve(sw: StringWriter) {
         val tsw = StringWriter()
         resolveMatchedCommands(tsw)

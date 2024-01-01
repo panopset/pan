@@ -1,5 +1,6 @@
 package com.panopset.flywheel
 
+import com.panopset.compat.Panop
 import java.io.StringWriter
 
 /**
@@ -7,9 +8,10 @@ import java.io.StringWriter
  * this class.
  */
 abstract class MatchableCommand internal constructor(
+    panop: Panop,
     templateLine: TemplateLine, innerPiece: String,
     template: Template
-) : TemplateDirectiveCommand(
+) : TemplateDirectiveCommand(panop,
     templateLine, innerPiece, template
 ) {
     /**

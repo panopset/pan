@@ -3,45 +3,48 @@ package com.panopset.compat
 import java.io.File
 import java.io.IOException
 
-/**
- *
- * Some things, like a font size, should persist for all applications.
- *
- */
-val pmf = PersistentMapFile(File(HiddenFolder.getFullPathRelativeTo("global.properties")))
 
-private fun saveToFile() {
-    pmf.flush()
-}
+class GlobalProperties(val panop: Panop) {
+    /**
+     *
+     * Some things, like a font size, should persist for all applications.
+     *
+     */
+    val pmf = PersistentMapFile(panop, File(HiddenFolder.getFullPathRelativeTo("global.properties")))
 
-private fun putValue(key: String, value: String) {
-    pmf.put(key, value)
-}
-
-fun globalPropsFlush() {
-    try {
-        saveToFile()
-    } catch (ex: IOException) {
-        Logop.errorEx(ex)
+    private fun saveToFile() {
+        pmf.flush()
     }
-}
 
-fun globalPropsPut(key: String, value: String) {
-    try {
-        putValue(key, value)
-    } catch (ex: IOException) {
-        Logop.errorEx(ex)
+    private fun putValue(key: String, value: String) {
+        pmf.put(key, value)
     }
-}
 
-fun globalPropsGet(key: String?): String {
-    return try {
-        if (key == null) {
-            return ""
+    fun globalPropsFlush(panop: Panop) {
+        try {
+            saveToFile()
+        } catch (ex: IOException) {
+            Logop.errorEx(panop, ex)
         }
-        pmf[key]
-    } catch (e: IOException) {
-        Logop.debug(String.format("%s not found, %s", key, e.message))
-        ""
+    }
+
+    fun globalPropsPut(panop: Panop, key: String, value: String) {
+        try {
+            putValue(key, value)
+        } catch (ex: IOException) {
+            Logop.errorEx(panop, ex)
+        }
+    }
+
+    fun globalPropsGet(panop: Panop, key: String?): String {
+        return try {
+            if (key == null) {
+                return ""
+            }
+            pmf[key]
+        } catch (e: IOException) {
+            Logop.warn(panop, String.format("%s not found, %s", key, e.message))
+            ""
+        }
     }
 }

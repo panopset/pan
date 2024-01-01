@@ -6,11 +6,11 @@ import com.panopset.compat.Stringop
 import javafx.application.Application
 import javafx.application.Platform
 import javafx.stage.Stage
-import java.io.File
 import java.io.IOException
 import java.util.logging.*
 
 class DeskApp4FX: Application() {
+    val panop = DeskApp4XFactory.panApplication.getPanop()
     override fun start(stage: Stage) {
         try {
             HiddenFolder.rootLogFileName = DeskApp4XFactory.panApplication.applicationShortName
@@ -18,7 +18,7 @@ class DeskApp4FX: Application() {
             setUserAgentStylesheet(STYLESHEET_MODENA)
             JavaFXapp.launch(stage)
         } catch (eiie: ExceptionInInitializerError) {
-            Logop.dspmsg(DeskApp4XFactory.panApplication.getApplicationDisplayName() + " Already running, exiting.")
+            Logop.dspmsg(panop, DeskApp4XFactory.panApplication.getApplicationDisplayName() + " Already running, exiting.")
             Platform.runLater {
                 JavaFXapp.zombie.stop()
                 stage.close()
@@ -45,7 +45,7 @@ class DeskApp4FX: Application() {
             Logger.getLogger("").addHandler(fh)
             Logger.getLogger("com.panopset").setLevel(Level.WARNING)
         } catch (e: IOException) {
-            Logop.errorEx(e)
+            Logop.errorEx(panop, e)
         }
 // TODO:
 //    LoggerContext ctx = (LoggerContext) LogManager.getContext(false);

@@ -1,12 +1,8 @@
 package com.panopset.compat.test
 
+import com.panopset.compat.*
 import com.panopset.compat.Numberop.isInteger
 import com.panopset.compat.Numberop.isNumber
-import com.panopset.compat.Randomop
-import com.panopset.compat.Stringop.CARRIAGE_RETURN_VALUE
-import com.panopset.compat.Stringop.DOS_RTN
-import com.panopset.compat.Stringop.FOO
-import com.panopset.compat.Stringop.LINE_FEED_VALUE
 import com.panopset.compat.Stringop.arrayToList
 import com.panopset.compat.Stringop.capitalize
 import com.panopset.compat.Stringop.capund
@@ -65,14 +61,14 @@ class StringopTest {
         Assertions.assertEquals(0, countReturns(""))
         Assertions.assertEquals(0, countReturns(null))
         setEol(DOS_RTN)
-        Assertions.assertEquals(emptyList, stringToList(null))
-        Assertions.assertEquals(listOf(*fooBarArray), stringToList("foo\r\nbar\r\n"))
-        Assertions.assertEquals(listOf(*fooBarArray), stringToList("foo\r\nbar"))
-        Assertions.assertEquals(listOf(*fooBarArray), stringToList("foo\r\nbar"))
-        Assertions.assertEquals(listOf(*fooBarArrayWithEOL), stringToListWithEol("foo\r\nbar"))
-        Assertions.assertEquals(listOf(*fooBarArrayWithEOL), stringToListWithEol("foo\r\nbar\r\n"))
-        Assertions.assertEquals(listOf("\r\n", "bar\r\n"), stringToListWithEol("\r\nbar"))
-        Assertions.assertEquals(emptyList, stringToListWithEol(null))
+        Assertions.assertEquals(emptyList, stringToList(PanopTest, null))
+        Assertions.assertEquals(listOf(*fooBarArray), stringToList(PanopTest, "foo\r\nbar\r\n"))
+        Assertions.assertEquals(listOf(*fooBarArray), stringToList(PanopTest, "foo\r\nbar"))
+        Assertions.assertEquals(listOf(*fooBarArray), stringToList(PanopTest, "foo\r\nbar"))
+        Assertions.assertEquals(listOf(*fooBarArrayWithEOL), stringToListWithEol(PanopTest, "foo\r\nbar"))
+        Assertions.assertEquals(listOf(*fooBarArrayWithEOL), stringToListWithEol(PanopTest, "foo\r\nbar\r\n"))
+        Assertions.assertEquals(listOf("\r\n", "bar\r\n"), stringToListWithEol(PanopTest, "\r\nbar"))
+        Assertions.assertEquals(emptyList, stringToListWithEol(PanopTest, null))
         setEol("\n")
     }
 
@@ -90,13 +86,13 @@ class StringopTest {
 
     @Test
     fun linesToListTest() {
-        Assertions.assertEquals(emptyList, stringToList(null))
-        Assertions.assertEquals(emptyList, stringToList(""))
-        Assertions.assertEquals(listOf("foo"), stringToList("foo"))
-        Assertions.assertEquals(listOf("foo"), stringToList("foo\n"))
-        Assertions.assertEquals(listOf("foo"), stringToList("foo\r\n"))
-        Assertions.assertEquals(listOf("foo", "bar"), stringToList("foo\r\nbar"))
-        Assertions.assertEquals(listOf("foo", "bar"), stringToList("foo\nbar"))
+        Assertions.assertEquals(emptyList, stringToList(PanopTest, null))
+        Assertions.assertEquals(emptyList, stringToList(PanopTest, ""))
+        Assertions.assertEquals(listOf("foo"), stringToList(PanopTest, "foo"))
+        Assertions.assertEquals(listOf("foo"), stringToList(PanopTest, "foo\n"))
+        Assertions.assertEquals(listOf("foo"), stringToList(PanopTest, "foo\r\n"))
+        Assertions.assertEquals(listOf("foo", "bar"), stringToList(PanopTest, "foo\r\nbar"))
+        Assertions.assertEquals(listOf("foo", "bar"), stringToList(PanopTest, "foo\nbar"))
     }
 
     @Test
@@ -124,23 +120,23 @@ class StringopTest {
         Assertions.assertTrue(isNumber("2"))
         Assertions.assertFalse(isNumber("-1"))
         Assertions.assertFalse(isNumber("-999"))
-        Assertions.assertEquals(0, parseInt(null))
-        Assertions.assertEquals(0, parseInt(""))
-        Assertions.assertEquals(0, parseInt("x"))
-        Assertions.assertEquals(5323, parseInt("5,323"))
-        Assertions.assertEquals(5, parseInt("5"))
+        Assertions.assertEquals(0, parseInt(PanopTest, null))
+        Assertions.assertEquals(0, parseInt(PanopTest, ""))
+        Assertions.assertEquals(0, parseInt(PanopTest, "x"))
+        Assertions.assertEquals(5323, parseInt(PanopTest, "5,323"))
+        Assertions.assertEquals(5, parseInt(PanopTest, "5"))
         Assertions.assertEquals("$5.00", getDollarString(500))
         Assertions.assertEquals("$5.95", getDollarString(595))
         Assertions.assertEquals("$1,002.05", getDollarString(100205))
-        Assertions.assertEquals(5, parseInt("5", 0))
-        Assertions.assertEquals(5, parseInt("5", 5))
-        Assertions.assertEquals(0, parseInt("", null))
-        Assertions.assertEquals(5, parseInt("5", null))
-        Assertions.assertEquals(0, parseInt(null, null))
-        Assertions.assertEquals(5, parseInt(null, 5))
-        Assertions.assertEquals(0, parseInt("x", null))
-        Assertions.assertEquals(5, parseInt("x", 5))
-        Assertions.assertEquals(5, parseInt("+5"))
+        Assertions.assertEquals(5, parseInt(PanopTest, "5", 0))
+        Assertions.assertEquals(5, parseInt(PanopTest, "5", 5))
+        Assertions.assertEquals(0, parseInt(PanopTest, "", null))
+        Assertions.assertEquals(5, parseInt(PanopTest, "5", null))
+        Assertions.assertEquals(0, parseInt(PanopTest, null, null))
+        Assertions.assertEquals(5, parseInt(PanopTest, null, 5))
+        Assertions.assertEquals(0, parseInt(PanopTest, "x", null))
+        Assertions.assertEquals(5, parseInt(PanopTest, "x", 5))
+        Assertions.assertEquals(5, parseInt(PanopTest, "+5"))
     }
 
     @Test

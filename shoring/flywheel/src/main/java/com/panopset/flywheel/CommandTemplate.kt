@@ -1,6 +1,7 @@
 package com.panopset.flywheel
 
 import com.panopset.compat.Logop
+import com.panopset.compat.Panop
 import java.io.StringWriter
 
 /**
@@ -31,9 +32,10 @@ import java.io.StringWriter
  *
  */
 class CommandTemplate(
+    panop: Panop,
     templateLine: TemplateLine, innerPiece: String,
     template: Template
-) : TemplateDirectiveCommand(templateLine, innerPiece, template) {
+) : TemplateDirectiveCommand(panop, templateLine, innerPiece, template) {
     /**
      * Get last command.
      *
@@ -52,7 +54,7 @@ class CommandTemplate(
     override fun resolve(sw: StringWriter) {
         val ts = template.templateSource
         val templateFileName = mapValueFirstThenExplicit(getParams())
-        Logop.info(
+        Logop.info(panop,
             String.format(
                 "Template %s executing template %s at line %4d.",
                 ts.name,
@@ -60,8 +62,8 @@ class CommandTemplate(
                 ts.line
             )
         )
-        val template = Template(
-            template.flywheel, SourceFile(template.flywheel, templateFileName), template.templateRules
+        val template = Template(panop,
+            template.flywheel, SourceFile(panop, template.flywheel, templateFileName), template.templateRules
         )
 
 

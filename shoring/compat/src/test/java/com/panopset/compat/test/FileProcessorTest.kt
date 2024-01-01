@@ -4,25 +4,23 @@ import com.panopset.compat.*
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import java.io.File
-import java.io.IOException
 
 class FileProcessorTest {
     val file: File = tempFile
     @Test
-    @Throws(IOException::class)
     fun test() {
-        Fileop.delete(file)
-        Fileop.write(Stringop.FOO, file)
-        val fp = FileProcessor(file).withLineFilter(MyLineFilter())
+        Fileop.delete(PanopTest, file)
+        Fileop.write(PanopTest, FOO, file)
+        val fp = FileProcessor(PanopTest, file).withLineFilter(MyLineFilter())
         fp.exec()
-        val result = Fileop.readTextFile(file)
-        Assertions.assertEquals(Stringop.appendEol(Stringop.BAR), result)
+        val result = Fileop.readTextFile(PanopTest, file)
+        Assertions.assertEquals(Stringop.appendEol(BAR), result)
         FileopTest.cleanup()
     }
 }
 
 class MyLineFilter: ByLineFilter {
     override fun filter(str: String): FilteredString {
-        return FilteredString(Stringop.BAR)
+        return FilteredString(BAR)
     }
 }

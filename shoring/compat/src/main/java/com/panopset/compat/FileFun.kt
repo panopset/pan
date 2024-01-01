@@ -2,12 +2,12 @@ package com.panopset.compat
 
 import java.io.File
 
-fun deleteLines(file: File, searchCriteria: String) {
-    val targets = Stringop.stringToList(searchCriteria)
+fun deleteLines(panop: Panop, file: File, searchCriteria: String) {
+    val targets = Stringop.stringToList(panop, searchCriteria)
     if (targets.isEmpty()) {
         return
     }
-    FileProcessor(file).withLineFilter(DeleteLinesLineFilter(targets)).exec()
+    FileProcessor(panop, file).withLineFilter(DeleteLinesLineFilter(targets)).exec()
 }
 
 class DeleteLinesLineFilter(private val targets: List<String>) : ByLineFilter {

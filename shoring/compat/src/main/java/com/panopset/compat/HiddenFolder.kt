@@ -1,8 +1,5 @@
 package com.panopset.compat
 
-import com.panopset.compat.Stringop.FSP
-import com.panopset.compat.Stringop.USH
-
 object HiddenFolder {
 
     var companyName = "should_have_been_replaced_by_BrandedApp"

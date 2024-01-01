@@ -1,14 +1,15 @@
 package com.panopset.flywheel
 
 import com.panopset.compat.Logop.errorEx
+import com.panopset.compat.Panop
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream
 import java.io.InputStreamReader
 
-class TemplateInputStream(inputStream: InputStream) : TemplateArray(inputStream2list(inputStream)) {
+class TemplateInputStream(val panop: Panop, inputStream: InputStream) : TemplateArray(inputStream2list(panop, inputStream)) {
     companion object {
-        private fun inputStream2list(inputStream: InputStream): List<String> {
+        private fun inputStream2list(panop: Panop, inputStream: InputStream): List<String> {
             val rtn: MutableList<String> = ArrayList()
             try {
                 BufferedReader(InputStreamReader(inputStream)).use { br ->
@@ -19,7 +20,7 @@ class TemplateInputStream(inputStream: InputStream) : TemplateArray(inputStream2
                     }
                 }
             } catch (ex: IOException) {
-                errorEx(ex)
+                errorEx(panop, ex)
             }
             return rtn
         }

@@ -1,6 +1,7 @@
 package com.panopset.flywheel
 
 import com.panopset.compat.Logop
+import com.panopset.compat.Panop
 
 /**
  * <h1>q - Quit</h1>
@@ -16,8 +17,8 @@ import com.panopset.compat.Logop
  *
  *
  */
-open class CommandQuit(templateLine: TemplateLine, template: Template) : TemplateDirectiveCommand(
-    templateLine, "", template
+open class CommandQuit(panop: Panop, templateLine: TemplateLine, template: Template) : TemplateDirectiveCommand(
+    panop, templateLine, "", template
 ) {
     /**
      * Get matchable command.
@@ -36,7 +37,7 @@ open class CommandQuit(templateLine: TemplateLine, template: Template) : Templat
     protected fun match(matchableCommand: MatchableCommand) {
         matchableCommand.commandQuit = this
         this.matchableCommand = matchableCommand
-        Logop.info(String.format("%s successfully matched with Quit.", matchableCommand.getDescription()))
+        Logop.info(panop, String.format("%s successfully matched with Quit.", matchableCommand.getDescription()))
     }
 
     companion object {

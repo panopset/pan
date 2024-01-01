@@ -1,7 +1,5 @@
 package com.panopset.compat
 
-object UrlHelper {
-    fun getTextFromURL(urlStr: String): String {
-        return doGetHttp(urlStr).text
-    }
+fun getTextFromURL(panop: Panop, urlStr: String): String {
+    return doGetHttp(panop, urlStr).text
 }

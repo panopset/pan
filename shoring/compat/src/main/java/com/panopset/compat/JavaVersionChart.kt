@@ -4,7 +4,7 @@ import com.panopset.compat.Logop.dspmsg
 import com.panopset.compat.Stringop.getEol
 import java.io.StringWriter
 
-class JavaVersionChart {
+class JavaVersionChart() {
     private fun print(): String {
         val sw = StringWriter()
         for (mv in MajorVersion.entries) {
@@ -17,10 +17,11 @@ class JavaVersionChart {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            dspmsg(chart)
+            dspmsg(object: Panop {
+
+            }, chart)
         }
 
-        val chart: String
-            get() = JavaVersionChart().print()
+        private val chart = JavaVersionChart().print()
     }
 }

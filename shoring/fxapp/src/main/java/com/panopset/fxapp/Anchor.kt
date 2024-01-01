@@ -1,7 +1,6 @@
 package com.panopset.fxapp
 
 import com.panopset.compat.*
-import com.panopset.compat.Stringop.FSP
 import javafx.application.Platform
 import javafx.scene.control.*
 import java.io.File
@@ -14,6 +13,7 @@ abstract class Anchor(val application: PanApplication) {
     constructor(anchorManager: PanApplication, file: File) : this(anchorManager) {
         setPersistentMapFile(file)
     }
+    val panop: Panop = application.getPanop()
 
     fun setDefaultValue(key: String, value: String) {
         boltDefaults[key] = value
@@ -61,13 +61,13 @@ abstract class Anchor(val application: PanApplication) {
     val persistentMapFile: PersistentMapFile
         get() {
             if (pmf == null) {
-                pmf = PersistentMapFile(File(getPath()))
+                pmf = PersistentMapFile(panop, File(getPath()))
             }
             return pmf as PersistentMapFile
         }
 
     private fun setPersistentMapFile(file: File) {
-        pmf = PersistentMapFile(file)
+        pmf = PersistentMapFile(panop, file)
         path = Fileop.getCanonicalPath(file)
     }
 
@@ -97,7 +97,7 @@ abstract class Anchor(val application: PanApplication) {
             }
 
             override fun setBoltValue(value: String) {
-                val i = Stringop.parseInt(value, 10)
+                val i = Stringop.parseInt(panop, value, 10)
                 if (i > -1) {
                     cb.selectionModel.select(i)
                 }
@@ -218,7 +218,7 @@ abstract class Anchor(val application: PanApplication) {
                         val i = value.toInt()
                         tabPane.selectionModel.select(i)
                     } catch (ex: NumberFormatException) {
-                        Logop.errorEx(ex)
+                        Logop.errorEx(panop, ex)
                     }
                 }
             }

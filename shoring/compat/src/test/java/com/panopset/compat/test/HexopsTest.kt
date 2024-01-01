@@ -1,6 +1,6 @@
 package com.panopset.compat.test
 
-import com.panopset.compat.Stringop
+import com.panopset.compat.DOS_RTN
 import com.panopset.compat.panStringToBackSlashes
 import com.panopset.compat.panStringToHex
 import org.junit.jupiter.api.Assertions
@@ -14,6 +14,6 @@ class HexopsTest {
 
     @Test
     fun testBackSlashes() {
-        Assertions.assertEquals("\\r\\n", panStringToBackSlashes(Stringop.DOS_RTN))
+        Assertions.assertEquals("\\r\\n", panStringToBackSlashes(DOS_RTN))
     }
 }

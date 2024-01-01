@@ -1,6 +1,7 @@
 package com.panopset.flywheel
 
 import com.panopset.compat.Logop
+import com.panopset.compat.Panop
 import java.io.StringWriter
 
 /**
@@ -40,11 +41,11 @@ import java.io.StringWriter
  *
 </pre> *
  */
-class CommandExecute(
+class CommandExecute(panop: Panop,
     templateLine: TemplateLine, innerPiece: String,
     template: Template
 ) : TemplateDirectiveCommand(
-    templateLine, innerPiece, template
+    panop, templateLine, innerPiece, template
 ) {
     override fun resolve(sw: StringWriter) {
         flywheel = template.flywheel
@@ -56,24 +57,24 @@ class CommandExecute(
                 val obj = template.flywheel.registeredObjects[key]
                 if (obj != null) {
                     sw.append(
-                        ReflectionInvoker.Builder(template.flywheel).objx(obj)
+                        ReflectionInvoker.Builder(panop, template.flywheel).objx(obj)
                             .methodAndParms(str.substring(incr + 1))
                             .mapProvider(template.flywheel).construct().exec(template.flywheel)
                     )
                     return
                 }
             }
-            val rtn = ReflectionInvoker.Builder(template.flywheel)
+            val rtn = ReflectionInvoker.Builder(panop, template.flywheel)
                 .classMethodAndParms(getParams())
                 .mapProvider(template.flywheel).construct().exec(template.flywheel)
-            Logop.debug(String.format("%s %s: %s", template.templateSource.name, templateLine.toString(), rtn))
+            Logop.warn(panop, String.format("%s %s: %s", template.templateSource.name, templateLine.toString(), rtn))
             sw.append(rtn)
         } catch (ex: FlywheelException) {
-            Logop.errorEx(ex)
-            Logop.warn(template.relativePath)
+            Logop.errorEx(panop, ex)
+            Logop.warn(panop, template.relativePath)
             if (template.commandFile != null) {
-                Logop.warn("Output file: " + template.commandFile)
-                Logop.warn("source: $templateLine")
+                Logop.warn(panop, "Output file: " + template.commandFile)
+                Logop.warn(panop, "source: $templateLine")
             }
             template.flywheel.stop(ex.message)
             val errorMessage = String.format("Failure executing %s.", templateLine)

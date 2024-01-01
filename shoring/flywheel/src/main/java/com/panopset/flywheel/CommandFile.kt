@@ -2,6 +2,7 @@ package com.panopset.flywheel
 
 import com.panopset.compat.Fileop
 import com.panopset.compat.Logop
+import com.panopset.compat.Panop
 import java.io.File
 import java.io.StringWriter
 
@@ -32,8 +33,8 @@ import java.io.StringWriter
  *
  *
  */
-class CommandFile(templateLine: TemplateLine, innerPiece: String, template: Template) :
-    MatchableCommand(templateLine, innerPiece, template) {
+class CommandFile(panop: Panop, templateLine: TemplateLine, innerPiece: String, template: Template) :
+    MatchableCommand(panop, templateLine, innerPiece, template) {
     override fun resolve(sw: StringWriter) {
         if (template.flywheel.isOutputEnabled) {
             val newStringWriter = StringWriter()
@@ -41,8 +42,8 @@ class CommandFile(templateLine: TemplateLine, innerPiece: String, template: Temp
             resolveMatchedCommands(newStringWriter)
             val outputFilePath = String.format("%s/%s",
                 template.flywheel.targetDirectory, mapValueFirstThenExplicit(getParams()))
-            Fileop.write(newStringWriter.toString(), File(outputFilePath))
-            Logop.info("File command wrote to $outputFilePath.")
+            Fileop.write(panop, newStringWriter.toString(), File(outputFilePath))
+            Logop.info(panop,"File command wrote to $outputFilePath.")
         } else {
             resolveMatchedCommands(sw)
         }

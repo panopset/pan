@@ -1,7 +1,7 @@
 package com.panopset.fxapp
 
 import com.panopset.compat.Fileop
-import com.panopset.compat.Stringop
+import com.panopset.compat.USH
 import javafx.beans.value.ObservableValue
 import javafx.scene.control.Tooltip
 import javafx.scene.layout.HBox
@@ -44,7 +44,7 @@ class PanFileOrDirSelectorPanel(fxDoc: FxDoc, fxId: String) {
                 }
             }
         }
-        return File(Stringop.USH)
+        return File(USH)
     }
 
     fun isPopulated(): Boolean {

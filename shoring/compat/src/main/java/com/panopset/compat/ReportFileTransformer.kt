@@ -2,8 +2,8 @@ package com.panopset.compat
 
 import java.io.*
 
-class ReportFileTransformer(private val ff: File, private val tf: File, val transformer: Transformer) {
-    constructor(ff: File, transformer: Transformer) : this(ff, ff, transformer)
+class ReportFileTransformer(private val panop: Panop, private val ff: File, private val tf: File, val transformer: Transformer) {
+    constructor(panop: Panop, ff: File, transformer: Transformer) : this(panop, ff, ff, transformer)
 
     fun withByLineFilters(vararg byLineFilters: ByLineFilter): ReportFileTransformer {
         for (lf in byLineFilters) {
@@ -24,7 +24,7 @@ class ReportFileTransformer(private val ff: File, private val tf: File, val tran
         val sw = StringWriter()
         val hasChanged = processToWriter(sw)
         if (hasChanged) {
-            Fileop.write(sw.toString(), ff)
+            Fileop.write(panop, sw.toString(), ff)
         }
     }
 
@@ -32,7 +32,7 @@ class ReportFileTransformer(private val ff: File, private val tf: File, val tran
         try {
             FileWriter(tf).use { fw -> processToWriter(fw) }
         } catch (e: IOException) {
-            Logop.errorMsg(tf, e)
+            Logop.errorMsg(panop, tf, e)
         }
     }
 

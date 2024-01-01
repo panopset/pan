@@ -27,15 +27,17 @@ fun panStringToBackSlashes(str: String): String {
 }
 
 fun loadStringToDumpTruck(
+    panop: Panop,
     text: String?, start: Int, max: Int, width: Int,
     isSpace: Boolean
 ): DumpTruck {
     val baisInp = text ?: ""
     val bais = ByteArrayInputStream(baisInp.toByteArray())
-    return loadInputStreamToDumpTruck(bais, start, max, width, isSpace, baisInp.length)
+    return loadInputStreamToDumpTruck(panop, bais, start, max, width, isSpace, baisInp.length)
 }
 
 fun loadInputStreamToDumpTruck(
+    panop: Panop,
     ip: InputStream, start: Int, max: Int, requestedWidth: Int,
     isSpaces: Boolean, streamLength: Int
 ): DumpTruck {
@@ -57,15 +59,15 @@ fun loadInputStreamToDumpTruck(
         var lineByteCount = 0
         if (start > 0) {
             if (start.toLong() > streamLength) {
-                return toDumpTruck("File length of $streamLength is smaller than the start position")
+                return toDumpTruck(panop,"File length of $streamLength is smaller than the start position")
             }
             bis.skip(start.toLong())
         }
         var c = bis.read()
         while (hasMore(i++, max, c)) {
-            var srcLineBuffer = StringWriter()
-            var chrLineBuffer = StringWriter()
-            var hexLineBuffer = StringWriter()
+            val srcLineBuffer = StringWriter()
+            val chrLineBuffer = StringWriter()
+            val hexLineBuffer = StringWriter()
             do {
                 if (lineByteCount > 0 && isSpaces) {
                     srcLineBuffer.append(" ")
@@ -89,17 +91,18 @@ fun loadInputStreamToDumpTruck(
     for (i in srcLineList.indices) {
         sw.append()
     }
-    return DumpTruck(srcLineList, chrLineList, hexLineList)
+    return DumpTruck(panop, srcLineList, chrLineList, hexLineList)
 }
 
-fun toDumpTruck(s: String): DumpTruck {
-    return DumpTruck(s, "", "")
+fun toDumpTruck(panop: Panop, s: String): DumpTruck {
+    return DumpTruck(panop, s, "", "")
 }
 
-data class DumpTruck(val src: List<String>, val charRep: List<String>, val hexRep: List<String>) {
-    constructor(src: String, charRep: String, hexRep: String) : this(
-        Stringop.stringToList(src),
-        Stringop.stringToList(charRep), Stringop.stringToList(hexRep)
+data class DumpTruck(private val panop: Panop, val src: List<String>, val charRep: List<String>, val hexRep: List<String>) {
+    constructor(panop: Panop, src: String, charRep: String, hexRep: String) : this(
+        panop,
+        Stringop.stringToList(panop, src),
+        Stringop.stringToList(panop, charRep), Stringop.stringToList(panop, hexRep)
     )
 }
 

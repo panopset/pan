@@ -1,5 +1,5 @@
 package com.panopset.compat
 
 interface StatusListener {
-    fun update(message: String)
+    fun update(panop: Panop, message: String)
 }

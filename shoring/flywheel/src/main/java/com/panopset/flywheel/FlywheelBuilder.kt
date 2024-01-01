@@ -4,6 +4,7 @@ import com.panopset.compat.Fileop
 import com.panopset.compat.Logop.errorEx
 import com.panopset.compat.Logop.warn
 import com.panopset.compat.Nls
+import com.panopset.compat.Panop
 import com.panopset.compat.Propop
 import com.panopset.compat.Stringop.isPopulated
 import com.panopset.gp.TextFileProcessor
@@ -13,7 +14,7 @@ import java.io.InputStream
 import java.io.StringWriter
 import java.util.*
 
-class FlywheelBuilder {
+class FlywheelBuilder(val panop: Panop) {
     private var inputStream: InputStream? = null
     private var isOutputEnabled = true
     private var lineFeedRules: LineFeedRules? = null
@@ -46,7 +47,7 @@ class FlywheelBuilder {
      * @return Panopset Flywheel Script object.
      */
     fun construct(): Flywheel {
-        val flywheel = Flywheel(getStringLineSupplier())
+        val flywheel = Flywheel(panop, getStringLineSupplier())
         flywheel.setBaseDirectoryPath(getBaseDirectoryPath())
         flywheel.mergeMap(map)
         flywheel.replacements = replacements
@@ -297,10 +298,10 @@ class FlywheelBuilder {
     @Throws(IOException::class)
     fun properties(propertiesFile: File?): FlywheelBuilder {
         if (propertiesFile != null && propertiesFile.exists()) {
-            return map(Propop.loadPropsFromFile(propertiesFile))
+            return map(Propop.loadPropsFromFile(panop, propertiesFile))
         }
         if (propertiesFile != null) {
-            warn(Fileop.getCanonicalPath(propertiesFile) + " " + Nls.xlate("does not exist, skipping."))
+            warn(panop, Fileop.getCanonicalPath(propertiesFile) + " " + Nls.xlate("does not exist, skipping."))
         }
         return this
     }
@@ -335,7 +336,7 @@ class FlywheelBuilder {
                 replacement(r)
             }
         } catch (ex: IOException) {
-            errorEx(ex)
+            errorEx(panop, ex)
         }
         return this
     }

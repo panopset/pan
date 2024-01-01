@@ -1,15 +1,16 @@
 package com.panopset.flywheel
 
+import com.panopset.compat.Panop
 import com.panopset.compat.Stringop
 import java.io.StringWriter
 
 /**
  * Command that is created from a directive.
  */
-open class TemplateDirectiveCommand(
+open class TemplateDirectiveCommand(panop: Panop,
     templateLine: TemplateLine, innerPiece: String,
     template: Template
-) : TemplateCommand(templateLine, innerPiece, template) {
+) : TemplateCommand(panop, templateLine, innerPiece, template) {
 
 
     init {

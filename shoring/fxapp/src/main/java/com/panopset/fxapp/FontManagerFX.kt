@@ -27,7 +27,7 @@ object FontManagerFX {
             }
             FontSize.findFromValue(savedFontSizeValue)
         } catch (ex: NumberFormatException) {
-            Logop.errorEx(ex)
+            Logop.errorDevLogOnly(ex)
             FontSize.DEFAULT_SIZE
         }
     }
@@ -119,26 +119,26 @@ object FontManagerFX {
         }
     }
 
-    fun registerTabPane(tabPane: TabPane) {
+    fun registerTabPane(panop: Panop, tabPane: TabPane) {
         if (tabPanes.contains(tabPane)) {
-            Logop.debug("Ignoring duplicate FontManagerFX registration of tabPane " + tabPane.id)
+            Logop.warn(panop, "Ignoring duplicate FontManagerFX registration of tabPane ${tabPane.id}")
         } else {
             tabPanes.add(tabPane)
         }
     }
 
-    fun registerTab(tab: Tab): Tab {
+    fun registerTab(panop: Panop, tab: Tab): Tab {
         if (tabs.contains(tab)) {
-            Logop.debug("Ignoring duplicate FontManagerFX registration of tab " + tab.id)
+            Logop.warn(panop, "Ignoring duplicate FontManagerFX registration of tab ${tab.id}")
         } else {
             tabs.add(tab)
         }
         return tab
     }
 
-    fun registerMenubar(menuBar: MenuBar) {
+    fun registerMenubar(panop: Panop, menuBar: MenuBar) {
         if (mbs.contains(menuBar)) {
-            Logop.debug("Ignoring duplicate FontManagerFX registration of menubar " + menuBar.id)
+            Logop.warn(panop, "Ignoring duplicate FontManagerFX registration of menubar ${menuBar.id}")
         } else {
             mbs.add(menuBar)
         }
@@ -157,7 +157,7 @@ object FontManagerFX {
     val svgRatio: Double
         get() = fontSize.svgRatio
 
-    fun getCurrentMessageStyle(logEntry: LogEntry): String {
+    private fun getCurrentMessageStyle(logEntry: LogEntry): String {
         var colorStyle = FONT_GREEN
         if (logEntry.alert == LogopAlert.PURPLE) {
             colorStyle = FONT_PURPLE

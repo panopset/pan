@@ -6,7 +6,7 @@ import java.io.*
 
 object Streamop {
 
-    fun getTextFromStream(inpStr: InputStream?): String {
+    fun getTextFromStream(panop: Panop, inpStr: InputStream?): String {
         if (inpStr == null) {
             return ""
         }
@@ -21,7 +21,7 @@ object Streamop {
                 return sw.toString()
             }
         } catch (ex: IOException) {
-            errorEx(ex)
+            errorEx(panop, ex)
             return ""
         }
     }
@@ -50,18 +50,22 @@ object Streamop {
         }
     }
 
-    fun streamToWriter(inpStr: InputStream, w: Writer) {
-        BufferedInputStream(inpStr).use {
-            BufferedWriter(w).use { bw ->
-                var byt: Int
-                while (inpStr.read().also { byt = it } != -1) {
-                    bw.write(byt)
+    fun streamToWriter(panop: Panop, inpStr: InputStream, w: Writer) {
+        try {
+            BufferedInputStream(inpStr).use {
+                BufferedWriter(w).use { bw ->
+                    var byt: Int
+                    while (inpStr.read().also { byt = it } != -1) {
+                        bw.write(byt)
+                    }
                 }
             }
+        } catch (ex: IOException) {
+            errorEx(panop, ex)
         }
     }
 
-    fun getLinesFromReader(reader: Reader?): ArrayList<String> {
+    fun getLinesFromReader(panop: Panop, reader: Reader): ArrayList<String> {
         val rtn = ArrayList<String>()
         try {
             BufferedReader(reader).use { br ->
@@ -72,12 +76,12 @@ object Streamop {
                 }
             }
         } catch (ex: IOException) {
-            errorEx(ex)
+            errorEx(panop, ex)
         }
         return rtn
     }
 
-    fun getLinesFromReaderWithEol(reader: Reader): ArrayList<String> {
+    fun getLinesFromReaderWithEol(panop: Panop, reader: Reader): ArrayList<String> {
         val rtn = ArrayList<String>()
         try {
             BufferedReader(reader).use { br ->
@@ -88,7 +92,7 @@ object Streamop {
                 }
             }
         } catch (ex: IOException) {
-            errorEx(ex)
+            errorEx(panop, ex)
         }
         return rtn
     }

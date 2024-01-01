@@ -1,14 +1,14 @@
 package com.panopset.flywheel
 
-import com.panopset.compat.Logop.debug
 import com.panopset.compat.Logop.errorMsg
 import com.panopset.compat.MapProvider
+import com.panopset.compat.Panop
 import com.panopset.compat.Stringop
 import java.util.*
 import kotlin.reflect.KClass
 import kotlin.reflect.full.createInstance
 
-class ReflectionInvoker {
+class ReflectionInvoker(val panop: Panop) {
     private var pmapProvider: MapProvider? = null
     private var pobject: Any? = null
     private var pclazz: KClass<*>? = null
@@ -48,7 +48,7 @@ class ReflectionInvoker {
         }
     }
 
-    class Builder(val flywheel: Flywheel) {
+    class Builder(val panop: Panop, val flywheel: Flywheel) {
         private var bobject: Any? = null
         private var bclassName: String? = null
         private var bclazz: KClass<*>? = null
@@ -57,7 +57,7 @@ class ReflectionInvoker {
         private var bmapProvider: MapProvider? = null
         @Throws(FlywheelException::class)
         fun construct(): ReflectionInvoker {
-            val rtn = ReflectionInvoker()
+            val rtn = ReflectionInvoker(panop)
             rtn.pobject = bobject
             if (bobject == null) {
                 if (bclazz == null) {
@@ -165,7 +165,7 @@ class ReflectionInvoker {
         fun methodAndParms(methodAndParms: String): Builder {
             val paramsStart = methodAndParms.indexOf("(")
             if (paramsStart < 2) {
-                errorMsg(String.format("Format should be function(parms), found: %s", methodAndParms))
+                errorMsg(panop, String.format("Format should be function(parms), found: %s", methodAndParms))
             }
             bmethod = methodAndParms.substring(0, paramsStart)
             bparms = methodAndParms.substring(paramsStart + 1, methodAndParms.length - 1)

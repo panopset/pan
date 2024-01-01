@@ -3,19 +3,17 @@ package com.panopset.compat.test
 import com.panopset.compat.Fileop
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
-import java.io.IOException
 
 class FileopMockTest {
     @Test
-    @Throws(IOException::class)
     fun testTouch() {
-        Fileop.delete(tempFile)
+        Fileop.delete(PanopTest, tempFile)
         Assertions.assertFalse(tempFile.exists())
-        Fileop.touch(tempFile)
+        Fileop.touch(PanopTest, tempFile)
         Assertions.assertTrue(tempFile.exists())
-        Fileop.delete(deepFile)
+        Fileop.delete(PanopTest, deepFile)
         Assertions.assertFalse(deepFile.exists())
-        Fileop.touch(deepFile)
+        Fileop.touch(PanopTest, deepFile)
         Assertions.assertTrue(deepFile.exists())
     }
 }

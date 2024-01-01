@@ -9,7 +9,7 @@ import java.io.File
 import java.io.InputStream
 
 class FileopTest {
-    private val fooWithReturnChar = String.format("%s%s", Stringop.FOO, Stringop.getEol())
+    private val fooWithReturnChar = String.format("%s%s", FOO, Stringop.getEol())
     @BeforeEach
     fun beforeEach() {
         cleanup()
@@ -17,19 +17,19 @@ class FileopTest {
 
     @Test
     fun test() {
-        Assertions.assertEquals(Stringop.USH, Fileop.getCanonicalPath(Fileop.userHome))
-        Fileop.delete(tempFile)
+        Assertions.assertEquals(USH, Fileop.getCanonicalPath(Fileop.userHome))
+        Fileop.delete(PanopTest, tempFile)
         Assertions.assertFalse(tempFile.exists())
-        Fileop.touch(tempFile)
+        Fileop.touch(PanopTest, tempFile)
         Assertions.assertTrue(tempFile.exists())
-        Fileop.touch(deepFile)
+        Fileop.touch(PanopTest, deepFile)
         Assertions.assertTrue(tempFile.exists())
         Assertions.assertEquals("txt", Fileop.getExtension(tempFile))
-        Assertions.assertEquals("", Fileop.getExtension(File(Stringop.FOO)))
+        Assertions.assertEquals("", Fileop.getExtension(File(FOO)))
         var parentDir = Fileop.getParentDirectory(deepFile)
-        Assertions.assertEquals("temp", parentDir.substring(parentDir.lastIndexOf(Stringop.FSP) + 1))
+        Assertions.assertEquals("temp", parentDir.substring(parentDir.lastIndexOf(FSP) + 1))
         parentDir = Fileop.getParentDirectory(File("foo/temp.txt"))
-        Assertions.assertEquals("foo", parentDir.substring(parentDir.lastIndexOf(Stringop.FSP) + 1))
+        Assertions.assertEquals("foo", parentDir.substring(parentDir.lastIndexOf(FSP) + 1))
         Assertions.assertFalse(Fileop.fileExists(File("foo.txt")))
         Assertions.assertEquals("temp", Fileop.removeExtension("temp.txt"))
         Assertions.assertEquals("", Fileop.removeExtension(""))
@@ -41,11 +41,11 @@ class FileopTest {
     @Test
     fun combinePathsTest() {
         val file = File(Fileop.combinePaths("./temp", "temp.txt"))
-        Assertions.assertEquals("", Fileop.readTextFile(file))
+        Assertions.assertEquals("", Fileop.readTextFile(PanopTest, file))
         Assertions.assertEquals(Fileop.getCanonicalPath(deepFile), Fileop.getCanonicalPath(file))
-        Fileop.write(Stringop.FOO, file)
-        Assertions.assertEquals(fooWithReturnChar, Fileop.readTextFile(file))
-        Assertions.assertEquals(fooWithReturnChar, Fileop.readTextFile("./temp/temp.txt"))
+        Fileop.write(PanopTest, FOO, file)
+        Assertions.assertEquals(fooWithReturnChar, Fileop.readTextFile(PanopTest, file))
+        Assertions.assertEquals(fooWithReturnChar, Fileop.readTextFile(PanopTest, "./temp/temp.txt"))
     }
 
     @Test
@@ -55,49 +55,49 @@ class FileopTest {
         Assertions.assertTrue(tempDir.exists())
         cleanup()
         Assertions.assertFalse(tempDir.exists())
-        Fileop.touch(deepFile)
+        Fileop.touch(PanopTest, deepFile)
         Assertions.assertTrue(tempDir.exists())
         Assertions.assertTrue(Fileop.checkParent(deepFile))
         cleanup()
         Assertions.assertFalse(tempDir.exists())
-        Fileop.mkdirs(tempDir)
+        Fileop.mkdirs(PanopTest, tempDir)
         Assertions.assertTrue(tempDir.exists())
-        Fileop.delete(tempDir)
+        Fileop.delete(PanopTest, tempDir)
         Assertions.assertFalse(tempDir.exists())
-        Fileop.touch(tempDir)
-        Logop.clear()
-        Fileop.mkdirs(tempDir)
+        Fileop.touch(PanopTest, tempDir)
+        Logop.clear(PanopTest)
+        Fileop.mkdirs(PanopTest, tempDir)
         Assertions.assertEquals(1, Logop.stack.size)
     }
 
     @Test
     fun copyInputStreamToFileTest() {
         Assertions.assertFalse(tempFile.exists())
-        val inp: InputStream = ByteArrayInputStream(Stringop.FOO.toByteArray())
-        Fileop.copyInputStreamToFile(inp, "./temp.txt")
-        Assertions.assertEquals(fooWithReturnChar, Fileop.readTextFile(tempFile))
+        val inp: InputStream = ByteArrayInputStream(FOO.toByteArray())
+        Fileop.copyInputStreamToFile(PanopTest, inp, "./temp.txt")
+        Assertions.assertEquals(fooWithReturnChar, Fileop.readTextFile(PanopTest, tempFile))
     }
 
     @Test
     fun deleteLinesTest() {
-        Stringop.setEol(Stringop.DOS_RTN)
-        Fileop.write("foo\r\nbar\r\nbat", tempFile)
-        deleteLines(tempFile, "bar")
-        Assertions.assertEquals("foo\r\nbat\r\n", Fileop.readTextFile(tempFile))
-        Fileop.write("foo\r\nbar\r\nbat", tempFile)
-        Assertions.assertEquals("foo\r\nbar\r\nbat\r\n", Fileop.readTextFile(tempFile))
-        Fileop.write("foo\r\nbar\r\nbat", deepFile)
-        deleteLines(tempDir, "bar")
-        Assertions.assertEquals("foo\r\nbat\r\n", Fileop.readTextFile(deepFile))
-        Fileop.write("foo\r\nbar\r\nbat", tempFile)
-        deleteLines(tempFile, "")
-        Assertions.assertEquals("foo\r\nbar\r\nbat\r\n", Fileop.readTextFile(tempFile))
+        Stringop.setEol(DOS_RTN)
+        Fileop.write(PanopTest, "foo\r\nbar\r\nbat", tempFile)
+        deleteLines(PanopTest, tempFile, "bar")
+        Assertions.assertEquals("foo\r\nbat\r\n", Fileop.readTextFile(PanopTest, tempFile))
+        Fileop.write(PanopTest, "foo\r\nbar\r\nbat", tempFile)
+        Assertions.assertEquals("foo\r\nbar\r\nbat\r\n", Fileop.readTextFile(PanopTest, tempFile))
+        Fileop.write(PanopTest, "foo\r\nbar\r\nbat", deepFile)
+        deleteLines(PanopTest, tempDir, "bar")
+        Assertions.assertEquals("foo\r\nbat\r\n", Fileop.readTextFile(PanopTest, deepFile))
+        Fileop.write(PanopTest, "foo\r\nbar\r\nbat", tempFile)
+        deleteLines(PanopTest, tempFile, "")
+        Assertions.assertEquals("foo\r\nbar\r\nbat\r\n", Fileop.readTextFile(PanopTest, tempFile))
         Stringop.setEol("\n")
     }
 
     @Test
     fun testGetCanonicalPath() {
-        Assertions.assertTrue(Stringop.isPopulated(Fileop.getCanonicalPath(File(Stringop.USH))))
+        Assertions.assertTrue(Stringop.isPopulated(Fileop.getCanonicalPath(File(USH))))
         Assertions.assertTrue(Fileop.getCanonicalPath(tempFile).indexOf("temp.txt") > 0)
     }
 
@@ -109,30 +109,30 @@ class FileopTest {
 
     @Test
     fun createTempFileTest() {
-        Assertions.assertEquals(0, Fileop.readLines(tempFile).size)
-        val tempFoo = Fileop.createTempFile(Stringop.FOO)
-        val tempBar = Fileop.createTempFile(Stringop.BAR)
-        Fileop.touch(tempFoo)
+        Assertions.assertEquals(0, Fileop.readLines(PanopTest, tempFile).size)
+        val tempFoo = Fileop.createTempFile(FOO)
+        val tempBar = Fileop.createTempFile(BAR)
+        Fileop.touch(PanopTest, tempFoo)
         Assertions.assertTrue(tempFoo.exists())
-        Fileop.write(arrayOf(Stringop.FOO, Stringop.BAR), tempFoo)
+        Fileop.write(PanopTest, arrayOf(FOO, BAR), tempFoo)
         checkIsFooBarFile(tempFoo)
         Fileop.moveFile(tempFoo, tempBar)
         checkIsFooBarFile(tempBar)
         Assertions.assertFalse(tempFoo.exists())
-        Fileop.copyFile(tempBar, tempFoo)
+        Fileop.copyFile(PanopTest, tempBar, tempFoo)
         checkIsFooBarFile(tempFoo)
         checkIsFooBarFile(tempBar)
-        Fileop.delete(tempFoo)
-        Fileop.delete(tempBar)
+        Fileop.delete(PanopTest, tempFoo)
+        Fileop.delete(PanopTest, tempBar)
         Assertions.assertFalse(tempFoo.exists())
         Assertions.assertFalse(tempBar.exists())
     }
 
     private fun checkIsFooBarFile(file: File) {
-        val lines = Fileop.readLines(file)
+        val lines = Fileop.readLines(PanopTest, file)
         Assertions.assertEquals(2, lines.size)
-        Assertions.assertEquals(Stringop.FOO, lines[0])
-        Assertions.assertEquals(Stringop.BAR, lines[1])
+        Assertions.assertEquals(FOO, lines[0])
+        Assertions.assertEquals(BAR, lines[1])
     }
 
     companion object {
@@ -142,7 +142,7 @@ class FileopTest {
         }
 
         fun cleanup(f: File) {
-            Fileop.delete(f)
+            Fileop.delete(PanopTest, f)
             Assertions.assertFalse(f.exists())
         }
     }
@@ -151,4 +151,3 @@ class FileopTest {
 val tempFile = File("./temp.txt")
 val tempDir = File("./temp")
 val deepFile = File("./temp/temp.txt")
-val badFile = File("\u0000")

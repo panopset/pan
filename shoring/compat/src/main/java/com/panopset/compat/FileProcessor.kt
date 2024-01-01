@@ -3,7 +3,7 @@ package com.panopset.compat
 import java.io.File
 import java.util.*
 
-class FileProcessor(private val targetFile: File, private val isRecursive: Boolean = true) {
+class FileProcessor(private val panop: Panop, private val targetFile: File, private val isRecursive: Boolean = true) {
 
     val transformer = Transformer()
     var byFileFilters: MutableList<ByFileFilter> = ArrayList()
@@ -19,7 +19,7 @@ class FileProcessor(private val targetFile: File, private val isRecursive: Boole
                     }
                 }
             } else {
-                ReportFileTransformer(targetFile, transformer).exec()
+                ReportFileTransformer(panop, targetFile, transformer).exec()
             }
         }
     }
@@ -40,7 +40,7 @@ class FileProcessor(private val targetFile: File, private val isRecursive: Boole
                 return
             }
         }
-        ReportFileTransformer(rFile, transformer).exec()
+        ReportFileTransformer(panop, rFile, transformer).exec()
     }
 
 

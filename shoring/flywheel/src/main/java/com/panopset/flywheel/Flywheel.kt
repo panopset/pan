@@ -1,7 +1,6 @@
 package com.panopset.flywheel
 
 import com.panopset.compat.*
-import com.panopset.compat.Logop.debug
 import com.panopset.compat.Logop.dspmsg
 import com.panopset.compat.Logop.errorEx
 import com.panopset.compat.Logop.errorMsg
@@ -116,7 +115,7 @@ import java.util.*
  *
 </pre> *
  */
-class Flywheel(val sls: TemplateSource?) : MapProvider {
+class Flywheel(val panop: Panop, val sls: TemplateSource?) : MapProvider {
     private var daTemplate: Template? = null
     var targetDirectory: File? = null
         private set
@@ -192,7 +191,7 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
             if (targetDirectory == null) {
                 return
             }
-            Rezop.copyTextResourceToFile(
+            Rezop.copyTextResourceToFile(panop,
                 this.javaClass, resourcePath,
                 Fileop.getCanonicalPath(targetDirectory!!) + "/" + targetPath
             )
@@ -214,7 +213,7 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
             sw.append("Line: ")
             sw.append("" + template.templateSource.line)
             sw.append(getEol())
-            warn(sw.toString())
+            warn(panop, sw.toString())
             throw ex
         }
     }
@@ -227,7 +226,7 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
          */
         get() {
             if (targetDirectory != null && !targetDirectory!!.exists()) {
-                Fileop.mkdirs(targetDirectory!!)
+                Fileop.mkdirs(panop, targetDirectory!!)
             }
             return (targetDirectory != null && targetDirectory!!.isDirectory() && targetDirectory!!.exists()
                     && targetDirectory!!.canWrite())
@@ -256,13 +255,13 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
         val props = Properties()
         if (!file.exists()) {
             try {
-                Rezop.copyTextResourceToFile(this.javaClass, relativePath, file)
+                Rezop.copyTextResourceToFile(panop, this.javaClass, relativePath, file)
             } catch (ex: IOException) {
-                warn("relativePath: $relativePath")
-                errorEx(ex)
+                warn(panop, "relativePath: $relativePath")
+                errorEx(panop, ex)
             }
         }
-        Propop.load(props, file)
+        Propop.load(panop, props, file)
         for (k in props.keys) {
             put(k.toString(), props.getProperty(k.toString()))
         }
@@ -344,19 +343,18 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
 
     fun getTemplate(): Template {
         if (daTemplate == null) {
-            daTemplate = Template(this, sls!!, lineFeedRules!!)
+            daTemplate = Template(panop,this, sls!!, lineFeedRules!!)
         }
         return daTemplate as Template
     }
 
     fun stop(message: String?) {
-        errorMsg(message)
+        errorMsg(panop, message)
         if (resolvingCommand != null) {
-            warn(Nls.xlate("Stopped while executing line") + " $resolvingCommand")
-            debug(" at: $resolvingCommand")
+            warn(panop, Nls.xlate("Stopped while executing line") + " $resolvingCommand")
         }
-        debug(Javop.dump(mapStack.peek().map))
-        warn(
+        info(panop, Javop.dump(mapStack.peek().map))
+        warn(panop,
             Nls
                 .xlate("Template parsing stopped.  Check debug in help->Show log, for more information")
         )
@@ -379,7 +377,7 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
                 try {
                     file!!.getParentFile().getCanonicalPath()
                 } catch (e: IOException) {
-                    errorEx(e)
+                    errorEx(panop, e)
                     return ""
                 }
             } else {
@@ -505,7 +503,7 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
             try {
                 Thread.sleep(400)
             } catch (e: InterruptedException) {
-                warn(e)
+                warn(panop, e)
                 Thread.currentThread().interrupt()
             }
         }
@@ -598,38 +596,41 @@ class Flywheel(val sls: TemplateSource?) : MapProvider {
          */
         @JvmStatic
         fun main(vararg args: String) {
+            val panopFlywheelCommandLine = object: Panop {
+
+            }
             if (args.isEmpty() || args.size > 2) {
-                dspmsg("Params are script and target directory.")
+                dspmsg(panopFlywheelCommandLine, "Params are script and target directory.")
             } else {
                 val flywheel: Flywheel = if (args.size == 1) {
-                    FlywheelBuilder().properties(File(args[0])).construct()
+                    FlywheelBuilder(panopFlywheelCommandLine).properties(File(args[0])).construct()
                 } else {
                     val scriptFileName = args[0]
                     val targetDirectoryName = args[1]
                     val scriptFile = File(scriptFileName)
                     val targetDirectory = File(targetDirectoryName)
                     if (!scriptFile.exists()) {
-                        errorMsg("File does not exist.", scriptFile)
+                        errorMsg(panopFlywheelCommandLine, "File does not exist.", scriptFile)
                         return
                     }
                     if (!scriptFile.canRead()) {
-                        errorMsg("Can not read.", scriptFile)
+                        errorMsg(panopFlywheelCommandLine, "Can not read.", scriptFile)
                         return
                     }
-                    info(
+                    info(panopFlywheelCommandLine,
                         String.format(
-                            Stringop.CS,
+                            CS,
                             "Script file",
                             Fileop.getCanonicalPath(scriptFile)
                         )
                     )
-                    info(
+                    info(panopFlywheelCommandLine,
                         String.format(
-                            Stringop.CS, "Target directory",
+                            CS, "Target directory",
                             Fileop.getCanonicalPath(targetDirectory)
                         )
                     )
-                    FlywheelBuilder().file(scriptFile).targetDirectory(targetDirectory).construct()
+                    FlywheelBuilder(panopFlywheelCommandLine).file(scriptFile).targetDirectory(targetDirectory).construct()
                 }
                 flywheel.exec()
             }

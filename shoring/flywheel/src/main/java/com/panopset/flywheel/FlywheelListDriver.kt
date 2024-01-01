@@ -1,12 +1,14 @@
 package com.panopset.flywheel
 
+import com.panopset.compat.Panop
 import com.panopset.compat.Splitter
 import com.panopset.compat.Stringop
 import java.io.IOException
 import java.io.StringWriter
 import java.util.*
 
-class FlywheelListDriver private constructor(
+class FlywheelListDriver(
+    val panop: Panop,
     private var inputList: MutableList<String>,
     val templateStr: String) {
     var splitz: String = ""
@@ -31,7 +33,7 @@ class FlywheelListDriver private constructor(
         get() = if (hasSplitz()) {
             val sw = StringWriter()
             for (s in getInputList()) {
-                val chunks: Iterable<String> = Splitter.fixedLengths(splitz).split(s)
+                val chunks: Iterable<String> = Splitter.fixedLengths(panop, splitz).split(s)
                 val chunky: MutableList<String> = ArrayList()
                 for (chunk in chunks) {
                     chunky.add(chunk)
@@ -52,8 +54,8 @@ class FlywheelListDriver private constructor(
             if (s.isBlank()) {
                 continue
             }
-            val flywheel = FlywheelBuilder().map(createInputMapFrom(s))
-                .inputList(Stringop.stringToList(templateStr)).withLineFeedRules(lineFeedRules)
+            val flywheel = FlywheelBuilder(panop).map(createInputMapFrom(s))
+                .inputList(Stringop.stringToList(panop, templateStr)).withLineFeedRules(lineFeedRules)
                 .withWriter(sw).construct()
             flywheel.exec()
             if (flywheel.isStopped) {
@@ -79,37 +81,37 @@ class FlywheelListDriver private constructor(
         }
         return rtn
     }
-
-    class Builder {
-        constructor(inputList: MutableList<String>, templateStr: String) {
-            fp = FlywheelListDriver(inputList, templateStr)
-        }
-
-        constructor(inputArray: Array<String?>, templateStr: String) {
-            fp = FlywheelListDriver(Arrays.asList(*inputArray), templateStr)
-        }
-
-        val fp: FlywheelListDriver
-        fun build(): FlywheelListDriver {
-            if (fp.inputList.isEmpty()) {
-                fp.inputList.add("")
-            }
-            return fp
-        }
-
-        fun withLineFeedRules(lineFeedRules: LineFeedRules): Builder {
-            fp.lineFeedRules = lineFeedRules
-            return this
-        }
-
-        fun withSplitz(value: String): Builder {
-            fp.splitz = value
-            return this
-        }
-
-        fun withTokens(value: String): Builder {
-            fp.tokens = value
-            return this
-        }
-    }
+//
+//    class Builder {
+//        constructor(panop: Panop, inputList: MutableList<String>, templateStr: String) {
+//            fp = FlywheelListDriver(panop, inputList, templateStr)
+//        }
+//
+//        constructor(panop: Panop, inputArray: Array<String?>, templateStr: String) {
+//            fp = FlywheelListDriver(panop, Arrays.asList(*inputArray), templateStr)
+//        }
+//
+//        val fp: FlywheelListDriver
+//        fun build(): FlywheelListDriver {
+//            if (fp.inputList.isEmpty()) {
+//                fp.inputList.add("")
+//            }
+//            return fp
+//        }
+//
+//        fun withLineFeedRules(lineFeedRules: LineFeedRules): Builder {
+//            fp.lineFeedRules = lineFeedRules
+//            return this
+//        }
+//
+//        fun withSplitz(value: String): Builder {
+//            fp.splitz = value
+//            return this
+//        }
+//
+//        fun withTokens(value: String): Builder {
+//            fp.tokens = value
+//            return this
+//        }
+//    }
 }

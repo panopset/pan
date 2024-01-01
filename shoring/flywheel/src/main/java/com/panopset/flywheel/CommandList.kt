@@ -1,6 +1,7 @@
 package com.panopset.flywheel
 
 import com.panopset.compat.Logop
+import com.panopset.compat.Panop
 import com.panopset.compat.Rezop
 import com.panopset.compat.Stringop
 import java.io.StringWriter
@@ -65,11 +66,13 @@ import java.util.*
  *
  */
 class CommandList(
+    panop: Panop,
     templateLine: TemplateLine, innerPiece: String,
     template: Template
-) : MatchableCommand(templateLine, innerPiece, template), UserMatchableCommand {
+) : MatchableCommand(panop, templateLine, innerPiece, template), UserMatchableCommand {
     override fun resolve(sw: StringWriter) {
         val sourceFile = SourceFile(
+            panop,
             template.flywheel,
             getParams()
         )
@@ -77,9 +80,9 @@ class CommandList(
         if (sourceFile.isValid) {
             lines = sourceFile.getSourceLines()
         } else {
-            val `is` = this.javaClass.getResourceAsStream(getParams())
-            if (`is` != null) {
-                lines = Rezop.textStreamToList(`is`)
+            val rezStream = this.javaClass.getResourceAsStream(getParams())
+            if (rezStream != null) {
+                lines = Rezop.textStreamToList(panop, rezStream)
             }
         }
         if (lines == null || lines.isEmpty()) {
@@ -97,7 +100,7 @@ class CommandList(
             if (!Stringop.isPopulated(s)) {
                 continue
             }
-            Logop.debug(String.format("CommandList line:%s", s))
+            Logop.info(panop, String.format("CommandList line:%s", s))
             TokenVariableFactory().addTokensToMap(template.flywheel.topMap, s, tokens, template)
             if (Stringop.isPopulated(splits)) {
                 val st = StringTokenizer(splits, ",")
@@ -137,7 +140,7 @@ class CommandList(
      */
     private fun processValue(str: String): String {
         val sw = StringWriter()
-        Template(template.flywheel, TemplateArray(arrayOf(str)), LFR_FLATTEN).exec(sw)
+        Template(panop, template.flywheel, TemplateArray(arrayOf(str)), LFR_FLATTEN).exec(sw)
         return sw.toString()
     }
 

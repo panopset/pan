@@ -1,6 +1,7 @@
 package com.panopset.flywheel
 
 import com.panopset.compat.Logop
+import com.panopset.compat.Panop
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.StringReader
@@ -9,8 +10,8 @@ import java.io.StringWriter
 /**
  * Command to handle normal text entry.
  */
-class CommandText(template: Template, templateLine: TemplateLine, private val text: String) : Command(
-    template, templateLine
+class CommandText(panop: Panop, template: Template, templateLine: TemplateLine, private val text: String) : Command(
+    panop, template, templateLine
 ) {
     override fun getDescription(): String {
         val sr = StringReader(text)
@@ -22,7 +23,7 @@ class CommandText(template: Template, templateLine: TemplateLine, private val te
                 } else "CommandText:$str"
             }
         } catch (ex: IOException) {
-            Logop.errorEx(ex)
+            Logop.errorEx(panop, ex)
             return ex.message!!
         }
     }
@@ -35,7 +36,7 @@ class CommandText(template: Template, templateLine: TemplateLine, private val te
             }
         }
         sw.append(rtn)
-        Logop.debug(
+        Logop.info(panop,
             String.format(
                 "%s %4d: %s", template.templateSource.name,
                 template.templateSource.line, rtn

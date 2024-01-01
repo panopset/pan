@@ -1,9 +1,8 @@
 package com.panopset.fxapp
 
 import com.panopset.compat.HiddenFolder
-import com.panopset.compat.LogEntry
-import com.panopset.compat.LogListener
 import com.panopset.compat.Logop
+import com.panopset.compat.Panop
 import javafx.collections.ObservableList
 import javafx.event.EventHandler
 import javafx.scene.control.*
@@ -23,6 +22,14 @@ abstract class BrandedApp: PanApplication, AppDDSFX {
 
     abstract fun updateVersionMessage()
 
+    private val panopz = object: Panop {
+
+    }
+
+    override fun getPanop(): Panop {
+        return panopz
+    }
+
     fun go() {
         HiddenFolder.companyName = getCompanyName().trim().lowercase().replace(" ", "_")
         DeskApp4XFactory
@@ -33,7 +40,7 @@ abstract class BrandedApp: PanApplication, AppDDSFX {
         JavaFXapp.doLaunch()
     }
 
-    class ThemeButtonWrapper(fxDoc: FxDoc, val menuBarStatusMessage: TextField) {
+    class ThemeButtonWrapper(fxDoc: FxDoc, private val menuBarStatusMessage: TextField) {
         val button = Button()
         private fun setDarkTheme(fxDoc: FxDoc, button: Button) {
             button.text = "printer"
@@ -74,7 +81,7 @@ abstract class BrandedApp: PanApplication, AppDDSFX {
             inputStream = javaClass.getResourceAsStream("/logo16.png")
         }
         if (inputStream == null) {
-            Logop.errorMsg("Could not find image $logoName")
+            Logop.errorMsg(getPanop(), "Could not find image $logoName")
             return null
         } else {
             return Image(inputStream)
@@ -116,7 +123,7 @@ abstract class BrandedApp: PanApplication, AppDDSFX {
         addAppMenus(fxDoc, menuBar.menus)
         menuBar.menus.add(createFontMenu())
         menuBar.menus.add(createHelpMenu(fxDoc))
-        FontManagerFX.registerMenubar(menuBar)
+        FontManagerFX.registerMenubar(getPanop(), menuBar)
         return menuBar
     }
 
@@ -127,7 +134,7 @@ abstract class BrandedApp: PanApplication, AppDDSFX {
     private fun createFileMenu(fxDoc: FxDoc): Menu {
         val menu = Menu("_File")
         menu.items.add(createFileMenuItem(fxDoc, { JavaFXapp.newWindow() }, "_New"))
-        menu.items.add(createFileMenuItem(fxDoc, { JavaFXapp.openWindowFromFile() }, "_Open"))
+        menu.items.add(createFileMenuItem(fxDoc, { JavaFXapp.openWindowFromFile(fxDoc) }, "_Open"))
         menu.items.add(createFileMenuItem(fxDoc, { JavaFXapp.saveWindow(fxDoc) }, "_Save"))
         menu.items.add(createFileMenuItem(fxDoc, { JavaFXapp.saveWindowAs(fxDoc) }, "Save as"))
         menu.items.add(createFileMenuItem(fxDoc, { JavaFXapp.closeWindow(fxDoc) }, "_Close"))

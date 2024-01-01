@@ -1,12 +1,12 @@
 package com.panopset.compat
 
-import com.panopset.compat.Stringop.FSP
-import com.panopset.compat.Stringop.USH
 import java.io.File
 
 object DevProps {
     val path = "$USH${FSP}Documents${FSP}panopset${FSP}dev.properties"
-    val props = Fileop.loadProps(File(path))
+    val props = Fileop.loadProps(object: Panop{
+        // TODO: This is only called from dev scripts, so can have its own Panop.
+    }, File(path))
 
     fun getSiteDomainName(): String {
         return props.getProperty("SITE_DN")

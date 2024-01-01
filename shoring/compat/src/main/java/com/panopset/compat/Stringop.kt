@@ -12,26 +12,6 @@ import java.util.*
 object Stringop {
     private var lineTerminator: String? = null
 
-    /**
-     * StandardCharsets.UTF_8.name();
-     */
-    const val TAB = "\t"
-    const val JAVA_RTN = "\n"
-    val LINE_SEPARATOR: String = System.lineSeparator()
-    const val LINE_FEED_VALUE = 10
-    const val LINE_FEED = "\n"
-    const val CARRIAGE_RETURN_VALUE = 13
-    const val CARRIAGE_RETURN = "\r"
-    const val DOS_RTN = "\r\n"
-	val USH: String = System.getProperty("user.home")
-	val FSP: String = FileSystems.getDefault().separator
-	val TEMP_DIR_PATH = USH + FSP + "tmp"
-    const val LAST_MODIFIED_FORMAT = "EEEE, MMMM dd, yyyy, h:mm a(zz)"
-    const val TEST = "test"
-    const val FOO = "foo"
-    const val BAR = "bar"
-    const val BAT = "bat"
-    const val CS = "%s:%s"
     fun isRegexFound(regex: String, value: String): Boolean {
         return RegexValidator(regex).matches(value)
     }
@@ -104,12 +84,10 @@ object Stringop {
         return value?.lowercase(Locale.getDefault()) ?: ""
     }
 
-    @JvmStatic
 	fun isPopulated(str: String?): Boolean {
         return !isEmpty(str)
     }
 
-    @JvmStatic
 	fun isEmpty(str: String?): Boolean {
         return str == null || "" == str.trim { it <= ' ' }
     }
@@ -127,7 +105,6 @@ object Stringop {
         } else str.substring(i + searchStr.length)
     }
 
-    @JvmStatic
 	fun getEol(): String {
         if (lineTerminator == null) {
             lineTerminator = "\n"
@@ -136,7 +113,6 @@ object Stringop {
     }
 
 
-    @JvmStatic
     fun setEol(value: String) {
         lineTerminator = value
     }
@@ -217,19 +193,18 @@ object Stringop {
         return sw.toString()
     }
 
-    @JvmStatic
-	fun stringToList(str: String?): ArrayList<String> {
+	fun stringToList(panop: Panop, str: String?): ArrayList<String> {
         val rtn: ArrayList<String> = ArrayList()
         return if (str == null) {
             rtn
-        } else Streamop.getLinesFromReader(StringReader(str))
+        } else Streamop.getLinesFromReader(panop, StringReader(str))
     }
 
-    fun stringToListWithEol(str: String?): ArrayList<String> {
+    fun stringToListWithEol(panop: Panop, str: String?): ArrayList<String> {
         val rtn: ArrayList<String> = ArrayList()
         return if (str == null) {
             rtn
-        } else Streamop.getLinesFromReaderWithEol(StringReader(str))
+        } else Streamop.getLinesFromReaderWithEol(panop, StringReader(str))
     }
 
     fun getDollarString(pennies: Long): String {
@@ -239,16 +214,15 @@ object Stringop {
         )
     }
 
-    @JvmStatic
-	fun parseInt(value: String?): Int {
+	fun parseInt(panop: Panop, value: String?): Int {
         return if (!isPopulated(value)) {
             0
         } else {
-            parseInt(value?:"", 0)
+            parseInt(panop, value?: "", 0)
         }
     }
 
-    fun parseInt(value: String?, defaultValue: Int?): Int {
+    fun parseInt(panop: Panop, value: String?, defaultValue: Int?): Int {
         if (value == null) {
             return defaultValue?:0
         }
@@ -262,8 +236,8 @@ object Stringop {
                     str.toInt()
                 }
             } catch (nfe: NumberFormatException) {
-                errorMsg(value)
-                errorMsg(nfe.message)
+                errorMsg(panop, value)
+                errorMsg(panop, nfe.message)
                 defaultValue ?: 0
             }
         } else {
@@ -279,7 +253,6 @@ object Stringop {
         return value.matches("-?\\d+".toRegex())
     }
 
-    @JvmStatic
 	fun isBlank(value: String?): Boolean {
         return value == null || "".contentEquals(value.trim { it <= ' ' })
     }
@@ -296,8 +269,6 @@ object Stringop {
         return String.format("%d", Randomop.nextLong())
     }
 
-    @JvmStatic
-	@JvmOverloads
     fun parseBoolean(value: String?, defaultValue: Boolean = false): Boolean {
         if (value == null) {
             return defaultValue
@@ -394,7 +365,6 @@ object Stringop {
         return sw.toString()
     }
 
-    @JvmStatic
 	fun firstHexDiff(expected: String?, value: String?): String {
         if (value == null) {
             return "value is null"
@@ -453,3 +423,24 @@ object Stringop {
         return s
     }
 }
+
+/**
+ * StandardCharsets.UTF_8.name();
+ */
+const val TAB = "\t"
+const val JAVA_RTN = "\n"
+val LINE_SEPARATOR: String = System.lineSeparator()
+const val LINE_FEED_VALUE = 10
+const val LINE_FEED = "\n"
+const val CARRIAGE_RETURN_VALUE = 13
+const val CARRIAGE_RETURN = "\r"
+const val DOS_RTN = "\r\n"
+val USH: String = System.getProperty("user.home")
+val FSP: String = FileSystems.getDefault().separator
+val TEMP_DIR_PATH = USH + FSP + "tmp"
+const val LAST_MODIFIED_FORMAT = "EEEE, MMMM dd, yyyy, h:mm a(zz)"
+const val TEST = "test"
+const val FOO = "foo"
+const val BAR = "bar"
+const val BAT = "bat"
+const val CS = "%s:%s"

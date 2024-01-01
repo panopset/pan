@@ -1,40 +1,40 @@
 package com.panopset.compat
 
 import com.panopset.compat.Logop.dspmsg
-import com.panopset.compat.Logop.handle
+import com.panopset.compat.Logop.handleException
 import com.panopset.compat.Stringop.isPopulated
 
 object Numberop {
-    fun parseInt(value: String): Int {
+    fun parseInt(panop: Panop, value: String): Int {
         if (!isPopulated(value)) {
             return 0
         } else {
             val str = value.replace(",", "")
             try {
                 return str.toInt()
-            } catch (var3: NumberFormatException) {
-                dspmsg(value)
-                handle(var3)
+            } catch (nfe: NumberFormatException) {
+                dspmsg(panop, value)
+                handleException(panop, nfe)
                 return 0
             }
         }
     }
 
-    fun parse(value: String, base: Int?, defaultValue: Int): Int {
+    fun parse(panop: Panop, value: String, base: Int?, defaultValue: Int): Int {
         if (!isPopulated(value)) {
             return defaultValue
         } else {
             val str = value.replace(",", "")
             try {
                 return str.toInt(base!!)
-            } catch (var4: NumberFormatException) {
-                handle(var4)
+            } catch (nfe: NumberFormatException) {
+                handleException(panop, nfe)
                 return defaultValue
             }
         }
     }
 
-    fun parse(value: String, base: Int?): Int {
+    fun parse(panop: Panop, value: String, base: Int?): Int {
         if (!isPopulated(value)) {
             return -1
         } else {
@@ -42,8 +42,8 @@ object Numberop {
 
             try {
                 return str.toInt(base!!)
-            } catch (var4: NumberFormatException) {
-                handle(var4)
+            } catch (nfe: NumberFormatException) {
+                handleException(panop, nfe)
                 return -1
             }
         }

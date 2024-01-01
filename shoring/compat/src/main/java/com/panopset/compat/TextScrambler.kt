@@ -30,7 +30,7 @@ import javax.crypto.spec.SecretKeySpec
  * new TextScrambler().withKeyObtentionIterations(5000).encrypt(pwd, msg);
 </pre> *
  */
-class TextScrambler {
+class TextScrambler(val panop: Panop) {
     private var wrapWidth = DEFAULT_WRAP_WIDTH
     private var keygenAlgorithm = DEFAULT_KEYGEN_ALGORITHM
     private var cipherAlgorithm = DEFAULT_CIPHER_ALGORITHM
@@ -40,23 +40,12 @@ class TextScrambler {
         return try {
             Cipher.getInstance(cipherAlgorithm)
         } catch (e: Exception) {
-            errorEx(e)
+            errorEx(panop, e)
             throw RuntimeException(e)
         }
     }
 
-    private var secretKeyFactory: SecretKeyFactory? = null
-        get() {
-            if (field == null) {
-                field = try {
-                    SecretKeyFactory.getInstance(keyAlgorithm)
-                } catch (e: NoSuchAlgorithmException) {
-                    errorEx(e)
-                    throw RuntimeException(e)
-                }
-            }
-            return field
-        }
+    private var secretKeyFactory = SecretKeyFactory.getInstance(keyAlgorithm)
 
     /**
      * Encrypt a message.
@@ -66,9 +55,8 @@ class TextScrambler {
      * @return Base64 encoded encrypted message.
      * @throws Exception Exception.
      */
-    @Throws(Exception::class)
     fun encrypt(password: String, msg: String): String {
-        clear()
+        clear(panop)
         return if (isPopulated(password)) {
             val pkgStr = String(Base64.getUrlEncoder().encode(encrypt2bytes(password, msg)))
             wrapFixedWidth(pkgStr, wrapWidth)
@@ -84,8 +72,7 @@ class TextScrambler {
      * @param msg Message to encrypt.
      * @return byte array for easy transmission and storage.
      */
-    @Throws(Exception::class)
-    fun encrypt2bytes(password: String, msg: String): ByteArray {
+    private fun encrypt2bytes(password: String, msg: String): ByteArray {
         val salt = ByteArray(8)
         nextBytes(salt)
         val spec: KeySpec = PBEKeySpec(password.toCharArray(), salt, iters, 128)
@@ -111,19 +98,17 @@ class TextScrambler {
      * @return Decrypted message.
      * @throws Exception Exception.
      */
-    @Throws(Exception::class)
     fun decrypt(password: String, msg: String): String {
-        clear()
+        clear(panop)
         return try {
             val msgTrim = msg.trim { it <= ' ' }
-                .replace(Stringop.CARRIAGE_RETURN, "").replace(Stringop.LINE_FEED, "")
+                .replace(CARRIAGE_RETURN, "").replace(LINE_FEED, "")
             val pkgBytes = Base64.getUrlDecoder().decode(msgTrim)
             decryptFromBytes(password, pkgBytes)
         } catch (ex: IllegalArgumentException) {
-            throw Exception(
-                Nls.xlate("Likely wrong password, or not an encrypted message, because")
-                        + ": " + ex.message
-            )
+            Logop.handleException(panop, ex)
+            Nls.xlate("Likely wrong password, or not an encrypted message, because") +
+            ": ${ex.message}"
         }
     }
 
@@ -135,8 +120,7 @@ class TextScrambler {
      * @return Decrypted message.
      * @throws Exception Exception.
      */
-    @Throws(Exception::class)
-    fun decryptFromBytes(password: String, bytes: ByteArray): String {
+    private fun decryptFromBytes(password: String, bytes: ByteArray): String {
         if (bytes.size < 25) {
             throw Exception(Nls.xlate("Not an encrypted message."))
         }
@@ -209,11 +193,11 @@ class TextScrambler {
         init {
             Security.setProperty("crypto.policy", "unlimited")
         }
-
-        const val DEFAULT_WRAP_WIDTH = 80
-        const val DEFAULT_KEYGEN_ALGORITHM = "AES"
-        const val DEFAULT_CIPHER_ALGORITHM = "AES/CBC/PKCS5PADDING"
-        const val DEFAULT_KEY_ALGORITHM = "PBKDF2WithHmacSHA512"
-        const val DEFAULT_KEY_OBTENTION_ITERATIONS = 10000
     }
 }
+
+const val DEFAULT_WRAP_WIDTH = 80
+const val DEFAULT_KEYGEN_ALGORITHM = "AES"
+const val DEFAULT_CIPHER_ALGORITHM = "AES/CBC/PKCS5PADDING"
+const val DEFAULT_KEY_ALGORITHM = "PBKDF2WithHmacSHA512"
+const val DEFAULT_KEY_OBTENTION_ITERATIONS = 10000

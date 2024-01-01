@@ -1,7 +1,7 @@
 package com.panopset.fxapp
 
 import com.panopset.compat.Fileop.getCanonicalPath
-import com.panopset.compat.Stringop.USH
+import com.panopset.compat.USH
 import javafx.scene.control.Tooltip
 import javafx.scene.layout.HBox
 import javafx.scene.layout.Priority

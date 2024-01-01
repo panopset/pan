@@ -1,10 +1,10 @@
 package com.panopset.lowerclass
 
 import com.panopset.compat.Logop.dspmsg
+import com.panopset.compat.Panop
 import com.panopset.compat.StatusListener
-import com.panopset.compat.Stringop.USH
+import com.panopset.compat.USH
 import java.io.File
-import java.io.IOException
 
 class VersionParser : StatusListener {
     constructor()
@@ -29,46 +29,29 @@ class VersionParser : StatusListener {
 
     private var file: File = File(mavenHome)
 
-    @get:Throws(IOException::class)
-    var summaryReport: String? = null
-        get() {
-            if (field == null) {
-                field = createReport(false)
-            }
-            return field
-        }
-        private set
+    var summaryReport: String = createReport(panop, false)
+    var detailReport: String = createReport(panop, true)
 
-    private var detailReport: String? = null
-
-    @get:Throws(IOException::class)
-    val detailedReport: String?
-        get() {
-            if (detailReport == null) {
-                detailReport = createReport(true)
-            }
-            return detailReport
-        }
-
-    @Throws(IOException::class)
-    private fun createReport(printDetails: Boolean): String {
+    private fun createReport(panop: Panop, printDetails: Boolean): String {
         val vm = VersionMakeup()
-        vm.analyze(file, printDetails)
+        vm.analyze(panop, file, printDetails)
         return vm.report
     }
 
     companion object {
         var DEFAULT_MAVEN_HOME: String = "$USH/.m2"
 
-        @Throws(IOException::class)
+        private val panop = object: Panop {
+
+        }
         @JvmStatic
         fun main(args: Array<String>) {
-            dspmsg("*** Entire repository example:")
-            dspmsg(VersionParser().summaryReport)
+            dspmsg(panop, "*** Entire repository example:")
+            dspmsg(panop, VersionParser().summaryReport)
         }
     }
 
-    override fun update(message: String) {
-        dspmsg(message)
+    override fun update(panop: Panop, message: String) {
+        dspmsg(panop, message)
     }
 }

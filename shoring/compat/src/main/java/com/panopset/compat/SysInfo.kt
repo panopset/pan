@@ -10,7 +10,12 @@ import java.util.*
  * General system information.
  *
  */
-object SysInfo {
+
+fun createCurrentSysInfoReport(panop: Panop): String {
+    return SysInfo(panop).toString()
+}
+
+class SysInfo(panop: Panop) {
     val map: SortedMap<String, String> = Collections.synchronizedSortedMap(TreeMap())
 
     init {
@@ -18,7 +23,7 @@ object SysInfo {
         try {
             name = InetAddress.getLocalHost().canonicalHostName
         } catch (e: UnknownHostException) {
-            errorEx(e)
+            errorEx(panop, e)
         }
         val runtime = Runtime.getRuntime()
         addValueToMapIfExists(map, "HostName", name)
@@ -40,18 +45,18 @@ object SysInfo {
     }
 }
 
-fun addSysPropValueToMapIfExists(map: SortedMap<String, String>, key: String) {
+private fun addSysPropValueToMapIfExists(map: SortedMap<String, String>, key: String) {
     addValueToMapIfExists(map, key, System.getProperty(key)?: "")
 }
 
-fun addValueToMapIfExists(map: SortedMap<String, String>, key: String, value: String) {
+private fun addValueToMapIfExists(map: SortedMap<String, String>, key: String, value: String) {
     if (value.isBlank()) {
         return
     }
     map[key] = value
 }
 
-fun map2string(map: Map<String, String>): String {
+private fun map2string(map: Map<String, String>): String {
     val sw = StringWriter()
     for (entry in map) {
         sw.append(entry.key)

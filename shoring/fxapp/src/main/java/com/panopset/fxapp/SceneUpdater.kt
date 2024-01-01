@@ -9,7 +9,7 @@ import com.panopset.fxapp.JavaFXapp.isActive
  * override doUpdate to do the update.
  *
  */
-abstract class SceneUpdater {
+abstract class SceneUpdater(val fxDoc: FxDoc) {
     protected abstract fun doUpdate()
     protected fun triggerAnUpdate() {
         needsUpdate = true
@@ -48,7 +48,7 @@ abstract class SceneUpdater {
                     }
                     Thread.sleep(1000)
                 } catch (e: InterruptedException) {
-                    Logop.warn(e)
+                    Logop.warn(fxDoc.panop, e)
                     Thread.currentThread().interrupt()
                 }
             }

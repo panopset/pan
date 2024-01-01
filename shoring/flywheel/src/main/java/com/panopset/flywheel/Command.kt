@@ -1,8 +1,9 @@
 package com.panopset.flywheel
 
+import com.panopset.compat.Panop
 import java.io.StringWriter
 
-abstract class Command(val template: Template, val templateLine: TemplateLine) {
+abstract class Command(val panop: Panop, val template: Template, val templateLine: TemplateLine) {
     var next: Command? = null
     var prev: Command? = null
 

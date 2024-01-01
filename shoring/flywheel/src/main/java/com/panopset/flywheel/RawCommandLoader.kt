@@ -1,17 +1,14 @@
 package com.panopset.flywheel
 
 import com.panopset.compat.Logop
+import com.panopset.compat.Panop
 import com.panopset.compat.Stringop
 import java.util.*
 
-internal class RawCommandLoader(template: Template) {
-    private val tmplt: Template
+internal class RawCommandLoader(val panop: Panop, template: Template) {
+    private val tmplt: Template = template
     private val queue: Deque<TemplateLine> = ArrayDeque()
     private val commands: MutableList<Command> = ArrayList()
-
-    init {
-        tmplt = template
-    }
 
     fun load(): List<Command> {
         tmplt.templateSource.reset()
@@ -47,7 +44,7 @@ internal class RawCommandLoader(template: Template) {
 
     private fun loadCommand(command: Command) {
         commands.add(command)
-        Logop.debug("Loading command: $command")
+        Logop.info(panop, "Loading command: $command")
     }
 
     private fun process(templateLine: TemplateLine) {
@@ -55,7 +52,7 @@ internal class RawCommandLoader(template: Template) {
         val openDirectiveLoc = line.indexOf(Syntax.getOpenDirective())
         val closeDirectiveLoc = line.indexOf(Syntax.getCloseDirective())
         if (closeDirectiveLoc == -1 || openDirectiveLoc == -1) {
-            loadCommand(CommandText(tmplt, templateLine, line))
+            loadCommand(CommandText(panop, tmplt, templateLine, line))
             return
         }
         if (closeDirectiveLoc < openDirectiveLoc) {
@@ -92,6 +89,7 @@ internal class RawCommandLoader(template: Template) {
         val skippedTextLine = line.substring(0, pos)
         loadCommand(
             CommandText(
+                panop,
                 tmplt,
                 TemplateLine(skippedTextLine, templateCharIndex, templateLineNumber),
                 skippedTextLine

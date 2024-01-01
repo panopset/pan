@@ -4,7 +4,7 @@ import java.io.File
 import java.io.IOException
 import java.util.*
 
-class PersistentMapFile(newFile: File) : PersistentMap {
+class PersistentMapFile(private val panop: Panop, newFile: File) : PersistentMap {
 
     fun setNewFile(newFile: File) {
         file = newFile
@@ -14,7 +14,7 @@ class PersistentMapFile(newFile: File) : PersistentMap {
         try {
             getProps()!!.setProperty(key, value)
         } catch (ex: IOException) {
-            Logop.errorEx(ex)
+            Logop.errorEx(panop, ex)
         }
     }
 
@@ -42,13 +42,13 @@ class PersistentMapFile(newFile: File) : PersistentMap {
         try {
             Propop.save(getProps(), file)
         } catch (ex: IOException) {
-            Logop.errorEx(ex)
+            Logop.errorEx(panop, ex)
         }
     }
 
     private fun getProps(): Properties? {
         if (props == null) {
-            props = Propop.load(file)
+            props = Propop.load(panop, file)
         }
         return props
     }

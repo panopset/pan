@@ -1,7 +1,7 @@
 package com.panopset.compat.test
 
+import com.panopset.compat.DOS_RTN
 import com.panopset.compat.Randomop
-import com.panopset.compat.Stringop
 import com.panopset.compat.TextScrambler
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
@@ -13,7 +13,7 @@ class TextScramblerTest {
     @Test
     @Throws(Exception::class)
     fun testScrambler() {
-        ts = TextScrambler()
+        ts = TextScrambler(PanopTest)
         testScramblerOn(txtShort)
         testScramblerOn(txtLong)
         testScramblerOn(txtRandom)
@@ -41,6 +41,6 @@ class TextScramblerTest {
         private const val TEST_PWD = "4traN"
         private const val TEN_MILES = "ten miles"
         private const val MANY_HAPPY_RETURNS = ("FRqy4hq6gPqAWnN-D-gQ3wQG"
-                + Stringop.DOS_RTN + "pPsEzqGA7yu7F8sczbGBMM8_wmeBZg==\n" + Stringop.DOS_RTN)
+                + DOS_RTN + "pPsEzqGA7yu7F8sczbGBMM8_wmeBZg==\n" + DOS_RTN)
     }
 }

@@ -1,6 +1,5 @@
 package com.panopset.sample
 
-import com.panopset.compat.HiddenFolder
 import com.panopset.compat.Logop
 import com.panopset.fxapp.BrandedApp
 import com.panopset.fxapp.FxDoc
@@ -11,11 +10,13 @@ import javafx.scene.control.Tab
 
 class SampleApp: BrandedApp() {
 
+
+
     override fun updateVersionMessage() {
-        Logop.info("Green log entry.")
-        Logop.debug("Yellow log entry.")
-        Logop.warn("Orange log entry.")
-        Logop.errorMsg("Red log entry.")
+        Logop.info(getPanop(), "Green log entry.")
+        Logop.warn(getPanop(), "Yellow log entry.")
+        Logop.warn(getPanop(), "Orange log entry.")
+        Logop.errorMsg(getPanop(), "Red log entry.")
     }
 
     override fun createDynapane(fxDoc: FxDoc): Pane {

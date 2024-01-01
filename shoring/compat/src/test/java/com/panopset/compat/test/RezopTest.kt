@@ -7,22 +7,21 @@ import java.io.IOException
 
 class RezopTest {
     @Test
-    @Throws(IOException::class)
     fun test() {
         Assertions.assertEquals(
             "x",
-            Rezop.textStreamToList(this.javaClass.getResourceAsStream(REZPATH))[0]
+            Rezop.textStreamToList(PanopTest, this.javaClass.getResourceAsStream(REZPATH))[0]
         )
         Assertions.assertEquals("/com/panopset/compat/test/", Rezop.pkg2resourcePath(this.javaClass))
-        Rezop.copyTextResourceToFile(this.javaClass, REZPATH, Fileop.getCanonicalPath(tempFile))
+        Rezop.copyTextResourceToFile(PanopTest, this.javaClass, REZPATH, Fileop.getCanonicalPath(tempFile))
         Assertions.assertEquals(
             String.format("x%s", Stringop.getEol()),
-            Fileop.readTextFile(tempFile)
+            Fileop.readTextFile(PanopTest, tempFile)
         )
-        Rezop.copyTextResourceToFile(this.javaClass, REZPATH, tempFile)
+        Rezop.copyTextResourceToFile(PanopTest, this.javaClass, REZPATH, tempFile)
         Assertions.assertEquals(
             String.format("x%s", Stringop.getEol()),
-            Fileop.readTextFile(tempFile)
+            Fileop.readTextFile(PanopTest, tempFile)
         )
         Assertions.assertEquals("com/panopset/foo", Rezop.pkg2path("com.panopset.foo"))
         Assertions.assertEquals("/com/panopset/compat/test", Rezop.getPackageResourcePath(this.javaClass.getPackage()))
@@ -30,15 +29,15 @@ class RezopTest {
 
     @Test
     fun testLoadFromRez() {
-        val rslt = Streamop.getTextFromStream(this.javaClass.getResourceAsStream(REZPATH)).replace("\r\n", "\n")
+        val rslt = Streamop.getTextFromStream(PanopTest, this.javaClass.getResourceAsStream(REZPATH)).replace("\r\n", "\n")
         Assertions.assertEquals(String.format("x%s", "\n"), rslt)
-        Assertions.assertEquals("x", Rezop.textStreamToList(this.javaClass.getResourceAsStream(REZPATH))[0])
-        Assertions.assertEquals("x", Rezop.textStreamToList(this.javaClass.getResourceAsStream(REZPATH))[0])
+        Assertions.assertEquals("x", Rezop.textStreamToList(PanopTest, this.javaClass.getResourceAsStream(REZPATH))[0])
+        Assertions.assertEquals("x", Rezop.textStreamToList(PanopTest, this.javaClass.getResourceAsStream(REZPATH))[0])
     }
 
     @Test
     fun testNotFound() {
-        val rslt = Streamop.getTextFromStream(this.javaClass.getResourceAsStream("foo.txt"))
+        val rslt = Streamop.getTextFromStream(PanopTest, this.javaClass.getResourceAsStream("foo.txt"))
         Assertions.assertEquals("", rslt)
     }
 

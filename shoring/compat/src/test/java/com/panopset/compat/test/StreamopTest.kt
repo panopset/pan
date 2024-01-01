@@ -19,20 +19,20 @@ class StreamopTest {
         Assertions.assertEquals(rand, bos.toString())
         Assertions.assertEquals(
             rand,
-            Streamop.getTextFromStream(ByteArrayInputStream(rand.toByteArray()))
+            Streamop.getTextFromStream(PanopTest, ByteArrayInputStream(rand.toByteArray()))
         )
     }
 
     @Test
     fun testErrors() {
-        val rslt = Streamop.getTextFromStream(object : InputStream() {
+        val rslt = Streamop.getTextFromStream(PanopTest, object : InputStream() {
             @Throws(IOException::class)
             override fun read(): Int {
                 throw IOException("Make sure exception returns blank.")
             }
         })
         Assertions.assertEquals("", rslt)
-        var list = Streamop.getLinesFromReader(object : Reader() {
+        var list = Streamop.getLinesFromReader(PanopTest, object : Reader() {
             override fun close() {}
             @Throws(IOException::class)
             override fun read(arg0: CharArray, arg1: Int, arg2: Int): Int {
@@ -40,7 +40,7 @@ class StreamopTest {
             }
         })
         Assertions.assertEquals(ArrayList<String>(), list)
-        list = Streamop.getLinesFromReaderWithEol(object : Reader() {
+        list = Streamop.getLinesFromReaderWithEol(PanopTest, object : Reader() {
             override fun close() {}
             @Throws(IOException::class)
             override fun read(arg0: CharArray, arg1: Int, arg2: Int): Int {

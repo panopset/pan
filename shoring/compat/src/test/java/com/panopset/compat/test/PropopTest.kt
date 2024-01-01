@@ -1,8 +1,6 @@
 package com.panopset.compat.test
 
-import com.panopset.compat.Fileop
-import com.panopset.compat.Propop
-import com.panopset.compat.Stringop
+import com.panopset.compat.*
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -21,41 +19,39 @@ class PropopTest {
     fun test() {
         val file: File = tempFile
         createSampleData(file)
-        var map = Propop.loadPropsFromFile(tempFile)
-        Assertions.assertEquals(Stringop.BAR, map[Stringop.FOO])
-        map = Propop.loadPropsFromFile(null)
+        var map = Propop.loadPropsFromFile(PanopTest, tempFile)
+        Assertions.assertEquals(BAR, map[FOO])
+        map = Propop.loadPropsFromFile(PanopTest, null)
         Assertions.assertEquals(0, map.size)
-        var props = Propop.load(null)
+        var props = Propop.load(PanopTest, null)
         Assertions.assertEquals(0, props.size)
-        props = Propop.load(file)
+        props = Propop.load(PanopTest, file)
         Assertions.assertEquals(1, props.size)
-        Propop.load(props, null)
+        Propop.load(PanopTest, props, null)
         Assertions.assertEquals(1, props.size)
         props.clear()
         props["bar"] = "foo"
-        Propop.load(null, file)
-        Propop.load(props, file)
-        Propop.load(props, null)
-        Propop.load(null, null)
+        Propop.load(PanopTest, null, file)
+        Propop.load(PanopTest, props, file)
+        Propop.load(PanopTest, props, null)
+        Propop.load(PanopTest, null, null)
         Assertions.assertEquals(2, props.size)
         Propop.save(null, file)
         Propop.save(props, null)
         Propop.save(null, null)
         Propop.save(props, file)
-        props = Propop.load(file)
+        props = Propop.load(PanopTest, file)
         Assertions.assertEquals(2, props.size)
     }
 
     @Test
-    @Throws(IOException::class)
     fun emptyTest() {
-        val map = Propop.loadPropsFromFile(tempFile)
+        val map = Propop.loadPropsFromFile(PanopTest, tempFile)
         Assertions.assertEquals(0, map.size)
     }
 
-    @Throws(IOException::class)
     private fun createSampleData(file: File) {
         val sampleProp = "foo=bar"
-        Fileop.write(sampleProp, file)
+        Fileop.write(PanopTest, sampleProp, file)
     }
 }

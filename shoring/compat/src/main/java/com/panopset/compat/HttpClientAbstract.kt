@@ -7,16 +7,16 @@ import java.net.URL
 
 var timeout = 5000
 
-fun doGetHttp(urlStr: String): HttpResponsePackage {
+fun doGetHttp(panop: Panop, urlStr: String): HttpResponsePackage {
     return try {
-        doGetHttp(URI(urlStr).toURL())
+        doGetHttp(panop, URI(urlStr).toURL())
     } catch (t: Throwable) {
-        Logop.errorMsg(urlStr, t)
+        Logop.errorMsg(panop, urlStr, t)
         HttpResponsePackage(400, Logop.getStackTrace(t), t.localizedMessage)
     }
 }
 
-fun doGetHttp(newURL: URL): HttpResponsePackage {
+fun doGetHttp(panop: Panop, newURL: URL): HttpResponsePackage {
     val rtn: MutableList<String> = ArrayList()
     val con = establishGetConnection(newURL)
     var conResponseCode = -1
@@ -37,7 +37,7 @@ fun doGetHttp(newURL: URL): HttpResponsePackage {
         }
         closeConnection(con)
     } catch (ex: Throwable) {
-        Logop.warn("Error getting response: $newURL, ${ex.message}")
+        Logop.warn(panop, "Error getting response: $newURL, ${ex.message}")
         return HttpResponsePackage(conResponseCode, Logop.getStackTrace(ex), ex.localizedMessage)
     }
     return HttpResponsePackage(conResponseCode, Stringop.listToString(rtn))
@@ -48,18 +48,18 @@ fun constrain(s: String): String {
     return "$s \n\n This is not a browser, response was too big to handle."
 }
 
-fun doPostHttp(urlStr: String, body: String): HttpResponsePackage {
+fun doPostHttp(panop: Panop, urlStr: String, body: String): HttpResponsePackage {
     return try {
-        doPostHttp(URI(urlStr).toURL(), body)
+        doPostHttp(panop, URI(urlStr).toURL(), body)
     } catch (t: Throwable) {
-        Logop.errorMsg(urlStr, t)
+        Logop.errorMsg(panop, urlStr, t)
         HttpResponsePackage(400, Logop.getStackTrace(t), t.localizedMessage)
     }
 }
 
 const val limit = 1000
 
-fun doPostHttp(newURL: URL, dta: String): HttpResponsePackage {
+fun doPostHttp(panop: Panop, newURL: URL, dta: String): HttpResponsePackage {
     val con = establishPostConnection(newURL)
     var conResponseCode = -1
     try {
@@ -87,13 +87,13 @@ fun doPostHttp(newURL: URL, dta: String): HttpResponsePackage {
         closeConnection(con)
         return HttpResponsePackage(conResponseCode, sw.toString())
     } catch (ex: Throwable) {
-        Logop.warn("Error getting response: $newURL, ${ex.message}")
+        Logop.warn(panop, "Error getting response: $newURL, ${ex.message}")
         return HttpResponsePackage(conResponseCode, Logop.getStackTrace(ex), ex.localizedMessage)
     }
 }
 
-fun url2file(f: File) {
-    f.getParentFile().mkdirs()
+fun url2file(panop: Panop, f: File) {
+    f.parentFile.mkdirs()
     try {
         InputStreamReader(establishGetConnection(f.toURI().toURL()).inputStream
         ).use { isr ->
@@ -110,7 +110,7 @@ fun url2file(f: File) {
             }
         }
     } catch (ex: java.lang.Exception) {
-        Logop.errorEx(ex)
+        Logop.errorEx(panop, ex)
     }
 }
 

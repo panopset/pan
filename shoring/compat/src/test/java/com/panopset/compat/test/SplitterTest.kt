@@ -12,7 +12,7 @@ class SplitterTest {
         result = Splitter.fixedLength(1).split("A")
         Assertions.assertEquals(1, result.size)
         Assertions.assertEquals("A", result[0])
-        result = Splitter.fixedLengths("3").split("A")
+        result = Splitter.fixedLengths(3).split("A")
         Assertions.assertEquals(1, result.size)
         Assertions.assertEquals("A", result[0])
         result = Splitter.fixedLength(2).split("ABCD")
@@ -27,11 +27,11 @@ class SplitterTest {
         Assertions.assertEquals(2, result.size)
         Assertions.assertEquals("AB", result[0])
         Assertions.assertEquals("CDE", result[1])
-        result = Splitter.fixedLengths("2,3").split("ABCDE")
+        result = Splitter.fixedLengths(2,3).split("ABCDE")
         Assertions.assertEquals(2, result.size)
         Assertions.assertEquals("AB", result[0])
         Assertions.assertEquals("CDE", result[1])
-        result = Splitter.fixedLengths("2-").split("ABCDE")
+        result = Splitter.fixedLengths(2).split("ABCDE")
         Assertions.assertEquals(0, result.size)
     }
 }

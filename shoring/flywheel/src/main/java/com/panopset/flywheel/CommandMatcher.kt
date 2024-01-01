@@ -2,6 +2,7 @@ package com.panopset.flywheel
 
 import com.panopset.compat.Logop.errorMsg
 import com.panopset.compat.Logop.info
+import com.panopset.compat.Panop
 import java.util.*
 
 /**
@@ -17,8 +18,7 @@ internal object CommandMatcher {
      * @throws FlywheelException
      * Thrown if there is an unmatched quit.
      */
-    @Throws(FlywheelException::class)
-    fun matchQuitCommands(commands: List<Command>): List<Command> {
+    fun matchQuitCommands(panop: Panop, commands: List<Command>): List<Command> {
         var fwe: FlywheelException? = null
         val matchedCommandsForDebugging: MutableList<MatchableCommand> = ArrayList()
         val rtn: MutableList<Command> = ArrayList()
@@ -34,7 +34,7 @@ internal object CommandMatcher {
             } else if (command is CommandQuit) {
                 if (stack.isEmpty()) {
                     for (mc in matchedCommandsForDebugging) {
-                        info(
+                        info(panop,
                             String.format(
                                 "Succussfully matched with quit, before un-matched quit found: %s",
                                 mc.toString()
@@ -48,9 +48,9 @@ internal object CommandMatcher {
             }
         }
         if (fwe != null) {
-            errorMsg("Failed to process the following template commands:")
+            errorMsg(panop, "Failed to process the following template commands:")
             for (cmd in commands) {
-                info(cmd.toString())
+                info(panop, cmd.toString())
             }
             throw fwe
         }
