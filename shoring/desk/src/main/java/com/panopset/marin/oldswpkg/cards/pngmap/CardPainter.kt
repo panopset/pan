@@ -13,20 +13,15 @@ import com.panopset.fxapp.FontManagerFX
  * @author Karl Dinwiddie
  */
 class CardPainter(mapW: Int, mapH: Int, suits: Array<Suit> = DFT_ORDER) {
-    private val aniGrid: AniGrid
-    val order: Array<Suit>
+    private val aniGrid: AniGrid = AniGrid(mapW, mapH, 13, 4, FontManagerFX.svgRatio)
+    val order: Array<Suit> = suits
     val cardHeight: Int
         get() = aniGrid.dspHeight
     val cardWidth: Int
         get() = aniGrid.dspWidth
     private val ofs: MutableMap<Suit, Int> = HashMap()
 
-    init {
-        aniGrid = AniGrid(mapW, mapH, 13, 4, FontManagerFX.svgRatio)
-        order = suits
-    }
-
-    fun getOffset(suit: Suit): Int {
+    private fun getOffset(suit: Suit): Int {
         var rtn = ofs[suit]
         if (rtn == null) {
             var offset = 0

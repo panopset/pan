@@ -65,7 +65,7 @@ class BlackjackGameController(ctls: BlackjackFxControls) {
         dirty = true
     }
 
-    var binding = false
+    private var binding = false
 
     private fun paintFelt(): CycleSnapshot? {
         if (binding) {
