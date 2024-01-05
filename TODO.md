@@ -1,4 +1,3 @@
-* make sure all documents are in ${user.home}/Documents/panopset base path.
 * Log messages should only go to one window.
 * auto complete
 * logop update
@@ -63,3 +62,5 @@ Low priority:
 * Rewrite LayoutDealer
 * platform specific launchers, to get the ico or png.
 * fix privacy policy broken link.
+* Resurrect Droid version of blackjack.
+* verify all documents are in ${user.home}/Documents/panopset base path.

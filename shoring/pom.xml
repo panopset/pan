@@ -17,7 +17,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Also update gradle.properties in the beam project, and deploy.properties. -->
-        <panopset.version>1.2.6</panopset.version>
+        <panopset.version>1.2.9</panopset.version>
         <!-- and docs/setup.md for these two: -->
         <java.version>17</java.version>
         <kotlin.version>1.9.10</kotlin.version>
@@ -36,7 +36,6 @@
 		<module>compat</module>
 		<module>fxapp</module>
 		<module>blackjackEngine</module>
-		<module>lowerclass</module>
 		<module>flywheel</module>
 		<module>desk</module>
     </modules>
@@ -55,11 +54,6 @@
 			<dependency>
 				<groupId>com.panopset</groupId>
 				<artifactId>flywheel</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.panopset</groupId>
-				<artifactId>lowerclass</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

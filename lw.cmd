@@ -17,7 +17,6 @@ set MP=^
 %R%/com/panopset/blackjackEngine/%PV%/blackjackEngine-%PV%.jar;^
 %R%/com/panopset/skyscraper/%PV%/skyscraper-%PV%.jar;^
 %R%/com/panopset/flywheel/%PV%/flywheel-%PV%.jar;^
-%R%/com/panopset/lowerclass/%PV%/lowerclass-%PV%.jar;^
 %R%/com/panopset/fxapp/%PV%/fxapp-%PV%.jar
 
 jpackage ^

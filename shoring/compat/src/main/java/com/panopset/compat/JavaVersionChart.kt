@@ -20,7 +20,6 @@ class JavaVersionChart {
             dspmsg(chart)
         }
 
-        val chart: String
-            get() = JavaVersionChart().print()
+        private val chart = JavaVersionChart().print()
     }
 }

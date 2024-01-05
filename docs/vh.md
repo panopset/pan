@@ -2,8 +2,8 @@
 
 # History
 
-## 1.2.9 (2023.12.30)
-* Minor bug fixes.
+## 1.2.9 (2024.01.06)
+* Maximized window was considered off-screen, and re-centered upon next launch.
 
 ## 1.2.8 (2023.12.29)
 * Move default documents from ${user.home}/temp to ${user.home}/Documents/panopset/temp.

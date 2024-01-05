@@ -1,6 +1,5 @@
 package com.panopset.flywheel
 
-fun main(args: Array<String>) {
+fun main() {
     Driver().doSayHello()
 }
-

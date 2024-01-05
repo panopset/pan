@@ -2,7 +2,7 @@ package com.panopset.desk.utilities
 
 import com.panopset.compat.Logop
 import com.panopset.fxapp.*
-import com.panopset.lowerclass.VersionParser
+import com.panopset.desk.utilities.lowerclass.VersionParser
 import com.panopset.marin.fx.PanopsetBrandedAppTran
 import javafx.application.Platform
 import javafx.scene.control.Button

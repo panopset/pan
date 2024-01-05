@@ -2,7 +2,6 @@ module com.panopset.desk {
   requires transitive com.google.gson;
   requires transitive com.panopset.blackjackEngine;
   requires transitive com.panopset.flywheel;
-  requires transitive com.panopset.lowerclass;
   requires transitive com.panopset.fxapp;
   requires transitive java.desktop;
   requires javafx.web;

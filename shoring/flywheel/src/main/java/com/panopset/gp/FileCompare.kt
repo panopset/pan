@@ -6,7 +6,7 @@ import java.io.File
 import java.io.IOException
 
 object FileCompare {
-    fun filesAreSame(one: File?, two: File?): Boolean {
+    fun filesAreSame(one: File, two: File): Boolean {
         try {
             val tfp1 = TextFileProcessor.textFileIterator(one)
             val tfp2 = TextFileProcessor.textFileIterator(two)

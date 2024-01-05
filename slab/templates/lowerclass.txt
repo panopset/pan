@@ -34,5 +34,30 @@ A lowerclass report looks like this:
 </p><p>
 <img src="/images/lowerclass.png" alt="lowerclass image"/>
 </p>
+
+
+
+
+<h2>Report format</h2>
+
+Each jar will get a line, with the number of classes associated with each found Java version.
+
+<p>
+(jar name) > (Java version name) (number of classes found)
+</p>
+
+<h2>Related Useful Maven Commands</h2>
+
+
+<pre>
+    mvn dependency:tree
+    mvn verify
+</pre>
+
+
+
+
+<p>&nbsp;</p>
+
 </div>
 

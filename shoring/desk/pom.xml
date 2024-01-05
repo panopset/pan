@@ -20,10 +20,6 @@
 		</dependency>
 		<dependency>
 			<groupId>com.panopset</groupId>
-			<artifactId>lowerclass</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.panopset</groupId>
 			<artifactId>fxapp</artifactId>
 		</dependency>
 		<dependency>

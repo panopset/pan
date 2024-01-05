@@ -2,7 +2,6 @@ package com.panopset.compat
 
 import com.panopset.compat.Stringop.getEol
 import java.io.File
-import java.io.IOException
 import java.io.PrintWriter
 import java.io.StringWriter
 import java.util.*
@@ -12,7 +11,6 @@ import java.util.logging.Logger
 
 object Logop {
     val logger: Logger = Logger.getGlobal()
-    var isDebugging = false
     val clearLogEntry = LogEntry(LogopAlert.GREEN, Level.INFO, "")
     const val standardWierdErrorMessage =
         "Unexpected error, if your pull request is accepted, we'll send you 1000 currently worthless Panopset shares."
@@ -23,12 +21,10 @@ object Logop {
      *
      * @param msg Message to log at Level.INFO.
      */
-    @JvmStatic
     fun dspmsg(msg: String?) {
         info(msg)
     }
 
-    @JvmStatic
     fun info(msg: String?) {
         report(
             LogEntry(
@@ -38,7 +34,6 @@ object Logop {
         )
     }
 
-    @JvmStatic
     fun warn(msg: String?) {
         report(
             LogEntry(
@@ -48,7 +43,6 @@ object Logop {
         )
     }
 
-    @JvmStatic
     fun debug(msg: String?) {
         report(
             LogEntry(
@@ -58,7 +52,6 @@ object Logop {
         )
     }
 
-    @JvmStatic
     fun errorMsg(msg: String?) {
         report(
             LogEntry(
@@ -68,38 +61,31 @@ object Logop {
         )
     }
 
-    @JvmStatic
     private fun audit(msg: String?): String? {
         return msg
     }
 
-    @JvmStatic
     fun warn(ex: Exception) {
         warn(ex.message)
     }
 
-    @JvmStatic
     fun errorEx(ex: Exception?) {
         handleException(ex!!)
     }
 
-    @JvmStatic
     fun errorMsg(msg: String?, ex: Throwable?) {
         errorMsg(msg)
         handleException(ex!!)
     }
 
-    @JvmStatic
     fun green(msg: String?) {
         dspmsg(msg)
     }
 
-    @JvmStatic
     fun handle(e: Exception?) {
         handleException(e!!)
     }
 
-    @JvmStatic
     fun errorMsg(message: String?, file: File?) {
         if (file == null) {
             errorMsg("Null file.")
@@ -107,8 +93,7 @@ object Logop {
         }
         errorMsg("$message: ${Fileop.getCanonicalPath(file)}")
     }
-    @JvmStatic
-    @Throws(IOException::class)
+
     fun getStackTrace(throwable: Throwable): String {
         StringWriter().use { sw ->
             PrintWriter(sw).use { pw ->
@@ -133,7 +118,6 @@ object Logop {
         )
         logalog(logEntry)
     }
-    @JvmStatic
     fun report(logRecord: LogEntry) {
         logger.log(logRecord.level, logRecord.message)
         logalog(logRecord)

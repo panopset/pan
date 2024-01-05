@@ -60,7 +60,7 @@ class VersionClassGenerator(private var srcDirectory: String, private var versio
     }
 
     private fun updateAppVersionClass(): Boolean {
-        var vf = File("$srcDirectory/shoring/compat/src/main/java/com/panopset/compat/AppVersion.kt")
+        val vf = File("$srcDirectory/shoring/compat/src/main/java/com/panopset/compat/AppVersion.kt")
         if (!vf.parentFile.exists()) {
             errorMsg("Parent directory not found", vf)
             return false

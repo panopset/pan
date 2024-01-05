@@ -17,7 +17,7 @@ object StageManager : StageIcon {
         setFavIcon(stage, DeskApp4XFactory.appDDSFX)
         var isNew = true
         val dims = arrayOfNulls<Double>(4)
-        var windims: String = fxDoc.persistentMapFile[KEY_WINDOW_DIMS]
+        val windims: String = fxDoc.persistentMapFile[KEY_WINDOW_DIMS]
         if (Stringop.isPopulated(windims)) {
             isNew = false
             var i = 0
@@ -27,7 +27,10 @@ object StageManager : StageIcon {
         }
         val xloc = notNull(dims[0], 20.0)
         val yloc = notNull(dims[1], 20.0)
+        val width = notNull(dims[2], 100.0)
+        val height = notNull(dims[3], 100.0)
         val loc = Point2D(xloc, yloc)
+        val center = Point2D(xloc + (width / 2), yloc + (height / 2))
         val w = notNull(dims[2], java.lang.Double.valueOf(DEFAULT_WIDTH.toDouble()))
         val h = notNull(dims[3], java.lang.Double.valueOf(DEFAULT_HEIGHT.toDouble()))
         stage.width = w
@@ -39,7 +42,7 @@ object StageManager : StageIcon {
         FontManagerFX.updateAllFontSizes()
         var stillVisible = false
         for (screen in Screen.getScreens()) {
-            if (screen.bounds.contains(loc)) {
+            if (screen.bounds.contains(loc) || (screen.bounds.contains(center))) {
                 stillVisible = true
                 break
             }

@@ -1,8 +1,8 @@
-package com.panopset.lowerclass
+package com.panopset.desk.utilities.lowerclass
 
-import com.panopset.compat.Logop.dspmsg
+import com.panopset.compat.Logop
 import com.panopset.compat.StatusListener
-import com.panopset.compat.Stringop.USH
+import com.panopset.compat.Stringop
 import java.io.File
 import java.io.IOException
 
@@ -58,17 +58,17 @@ class VersionParser : StatusListener {
     }
 
     companion object {
-        var DEFAULT_MAVEN_HOME: String = "$USH/.m2"
+        var DEFAULT_MAVEN_HOME: String = "${Stringop.USH}/.m2"
 
         @Throws(IOException::class)
         @JvmStatic
         fun main(args: Array<String>) {
-            dspmsg("*** Entire repository example:")
-            dspmsg(VersionParser().summaryReport)
+            Logop.dspmsg("*** Entire repository example:")
+            Logop.dspmsg(VersionParser().summaryReport)
         }
     }
 
     override fun update(message: String) {
-        dspmsg(message)
+        Logop.dspmsg(message)
     }
 }

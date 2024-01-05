@@ -317,7 +317,7 @@ class FlywheelBuilder {
      * @param replacementsFile file.
      * @return Builder.
      */
-    fun replacements(replacementsFile: File?): FlywheelBuilder {
+    fun replacements(replacementsFile: File): FlywheelBuilder {
         val v: MutableList<Array<String>> = ArrayList()
         try {
             val tfp = TextFileProcessor.textFileIterator(replacementsFile)

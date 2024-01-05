@@ -1,14 +1,6 @@
-package com.panopset.lowerclass
+package com.panopset.desk.utilities.lowerclass
 
-import com.panopset.compat.ClassVersion
-import com.panopset.compat.Fileop.getCanonicalPath
-import com.panopset.compat.Fileop.getExtension
-import com.panopset.compat.Logop.errorEx
-import com.panopset.compat.Logop.errorMsg
-import com.panopset.compat.Logop.green
-import com.panopset.compat.Logop.warn
-import com.panopset.compat.MajorVersion
-import com.panopset.compat.Stringop.isPopulated
+import com.panopset.compat.*
 import java.io.*
 import java.util.*
 import java.util.jar.JarFile
@@ -43,7 +35,7 @@ internal class VersionMakeup {
                 }
                 tp.append("\n")
             }
-            if (isPopulated(classReport.toString())) {
+            if (Stringop.isPopulated(classReport.toString())) {
                 tp.append("\n")
                 tp.append("\n")
                 tp.append(classReport.toString())
@@ -53,27 +45,27 @@ internal class VersionMakeup {
 
     private fun genRpt(fileName: String, file: File?, printDetails: Boolean) {
         if (file == null) {
-            warn("No file selected.")
+            Logop.warn("No file selected.")
             return
         }
         if (!file.exists()) {
-            errorMsg("File doesn't exist.", file)
+            Logop.errorMsg("File doesn't exist.", file)
             return
         }
         if (file.isDirectory()) {
             genDirectoryReport(fileName, file, printDetails)
         } else {
-            val ext = getExtension(file.getName())
+            val ext = Fileop.getExtension(file.getName())
             if ("class" == ext) {
                 genClassReport(fileName, file, printDetails)
             } else if ("jar" == ext) {
                 genJarReport(file, printDetails)
             } else {
-                warn("Selected file is not a jar or class.")
+                Logop.warn("Selected file is not a jar or class.")
                 return
             }
         }
-        green(String.format("genReport complete for: %s", getCanonicalPath(file)))
+        Logop.green(String.format("genReport complete for: %s", Fileop.getCanonicalPath(file)))
     }
 
     private fun genDirectoryReport(fileName: String, file: File, printDetails: Boolean) {
@@ -83,7 +75,7 @@ internal class VersionMakeup {
                 if (f.isDirectory()) {
                     genDirectoryReport(fileName, f, printDetails)
                 } else {
-                    val ext = getExtension(f.getName())
+                    val ext = Fileop.getExtension(f.getName())
                     if ("class" == ext) {
                         genClassReport(fileName, f, printDetails)
                     } else if ("jar" == ext) {
@@ -99,7 +91,7 @@ internal class VersionMakeup {
     }
 
     private fun genJarReport(file: File, printDetails: Boolean) {
-        green(String.format("Processing jar: %s", file.getName()))
+        Logop.green(String.format("Processing jar: %s", file.getName()))
         updateReportMap(file.getName(), updateStatsForJar(file, printDetails))
     }
 
@@ -116,9 +108,9 @@ internal class VersionMakeup {
                 val enumEntries = jar.entries()
                 while (enumEntries.hasMoreElements()) {
                     val entry = enumEntries.nextElement()
-                    val `is` = jar.getInputStream(entry)
+                    val inputStream= jar.getInputStream(entry)
                     try {
-                        DataInputStream(`is`).use { dis ->
+                        DataInputStream(inputStream).use { dis ->
                             val cv = readClassVersion(entry.name, dis, printDetails)
                             val count = jvs[cv.majorVersion]
                             if (count == null) {
@@ -133,7 +125,7 @@ internal class VersionMakeup {
                 }
             }
         } catch (ex: IOException) {
-            errorMsg(getCanonicalPath(dirFile))
+            Logop.errorMsg(Fileop.getCanonicalPath(dirFile))
         }
         return jvs
     }
@@ -143,7 +135,7 @@ internal class VersionMakeup {
         name: String, dirFile: File,
         printDetails: Boolean
     ): Map<MajorVersion, Int> {
-        green(String.format("Processing class: %s", name))
+        Logop.green(String.format("Processing class: %s", name))
         val jvs = createVersionMap()
         try {
             FileInputStream(dirFile).use { fis ->
@@ -153,7 +145,7 @@ internal class VersionMakeup {
                 }
             }
         } catch (ex: IOException) {
-            errorEx(ex)
+            Logop.errorEx(ex)
         }
         return jvs
     }
@@ -161,10 +153,10 @@ internal class VersionMakeup {
     @Throws(IOException::class)
     private fun readClassVersion(name: String, dis: DataInputStream, printDetails: Boolean): ClassVersion {
         if (dis.available() > 0) {
-            if ("class" == getExtension(name)) {
+            if ("class" == Fileop.getExtension(name)) {
                 val magic = dis.readInt()
                 if (magic != -0x35014542) {
-                    errorMsg(
+                    Logop.errorMsg(
                         name + " is not a java class! this should be 0xcafebabe:"
                                 + Integer.toHexString(magic)
                     )
@@ -172,9 +164,9 @@ internal class VersionMakeup {
                     val minor = dis.readUnsignedShort()
                     val major = dis.readUnsignedShort()
                     val classVersion = ClassVersion(
-                            MajorVersion.findFromHexString(Integer.toHexString(major)),
-                            Integer.toHexString(minor)
-                        )
+                        MajorVersion.findFromHexString(Integer.toHexString(major)),
+                        Integer.toHexString(minor)
+                    )
                     if (printDetails) {
                         classReport.append(name)
                         classReport.append(" major: ")
