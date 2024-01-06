@@ -5,7 +5,6 @@ function deployLocalJavadocs () {
   deployLocalDocumentation "$1" compat
   deployLocalDocumentation "$1" fxapp
   deployLocalDocumentation "$1" blackjackEngine
-  deployLocalDocumentation "$1" lowerclass
   deployLocalDocumentation "$1" flywheel
   deployLocalDocumentation "$1" desk
 }

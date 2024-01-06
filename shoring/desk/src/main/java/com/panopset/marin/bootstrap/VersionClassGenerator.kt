@@ -23,7 +23,6 @@ class VersionClassGenerator(private var srcDirectory: String, private var versio
         updatePom("$srcDirectory/shoring/pom.xml")
         updateProject("compat")
         updateProject("blackjackEngine")
-        updateProject("lowerclass")
         updateProject("flywheel")
         updateProject("fxapp")
         updateProject("desk")
