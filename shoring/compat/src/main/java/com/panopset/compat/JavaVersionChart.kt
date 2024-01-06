@@ -1,6 +1,5 @@
 package com.panopset.compat
 
-import com.panopset.compat.Logop.dspmsg
 import com.panopset.compat.Stringop.getEol
 import java.io.StringWriter
 
