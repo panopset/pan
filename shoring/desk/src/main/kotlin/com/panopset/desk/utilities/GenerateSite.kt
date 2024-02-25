@@ -121,5 +121,5 @@ private data class PlatformDownload(
 }
 
 private data class PlatformDownloadCollection(val platformName: String) {
-    val platformDownloads = Collections.synchronizedSortedSet<PlatformDownload>(TreeSet())
+    val platformDownloads: SortedSet<PlatformDownload> = Collections.synchronizedSortedSet(TreeSet())
 }
