@@ -35,13 +35,14 @@ class GenerateDownloadsTable {
             for (platformDownload in e.value.platformDownloads) {
                 val artifactType = platformDownload.artifactType
                 val artifactName = platformDownload.artifactName
+                val relPath = platformDownload.relPath
                 val byteCount = platformDownload.byteCount
                 val sha512 = platformDownload.sha512
 
                 sw.append("\n\n<tr><td nowrap>\n")
                 sw.append(artifactType)
                 sw.append("</td><td>\n")
-                sw.append("<a href=\"/downloads/$artifactName$\">$artifactName</a>")
+                sw.append("<a href=\"/downloads/$relPath$artifactName\">$artifactName</a>")
                 sw.append("</td><td>\n")
                 sw.append(byteCount)
                 sw.append("</td><td class=\"dsw99\"><input class=\"output2\" type=\"text\" value=\"")
@@ -59,10 +60,14 @@ class GenerateDownloadsTable {
         val tempDirDownloads = File(path)
         for (f in tempDirDownloads.listFiles()!!) {
             if (f.isFile && f.extension == "json") {
-                val artifactType = if (f.name.indexOf("OneJar") > -1) {
-                    "jar"
+                var artifactType = ""
+                var relPath = ""
+                val i = f.name.indexOf("OneJar")
+                if (i > -1) {
+                    artifactType = "jar"
+                    relPath = "${f.name.substring(0, i)}/"
                 } else {
-                    "installer"
+                    artifactType = "installer"
                 }
                 val jsonStr = Fileop.readTextFile(f)
                 val mapType: Type = object : TypeToken<HashMap<String, String>>() {}.type
@@ -76,7 +81,7 @@ class GenerateDownloadsTable {
                 val bytes = map["bytes"] ?: return platformDownloadMap
                 val sha512 = map[ChecksumType.SHA512.key] ?: return platformDownloadMap
                 addPlatformIfNecessary(platform, platformDownloadMap).platformDownloads.add(
-                    PlatformDownload(artifactType, ifn, bytes, sha512)
+                    PlatformDownload(artifactType, ifn, relPath, bytes, sha512)
                 )
             }
         }
@@ -99,6 +104,7 @@ private fun addPlatformIfNecessary(
 private data class PlatformDownload(
     val artifactType: String,
     val artifactName: String,
+    val relPath: String,
     val byteCount: String,
     val sha512: String
 ) : Comparable<PlatformDownload> {

@@ -1,14 +1,8 @@
 package com.panopset.desk.utilities
 
-import com.google.gson.reflect.TypeToken
 import com.panopset.compat.*
 import com.panopset.flywheel.FlywheelBuilder
-import com.panopset.marin.secure.checksums.ChecksumType
 import java.io.File
-import java.io.StringWriter
-import java.lang.reflect.Type
-import java.util.*
-import kotlin.collections.HashMap
 
 
 class GenerateSite {
