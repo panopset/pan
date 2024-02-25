@@ -40,9 +40,13 @@ private fun generateJsonFor(file: File) {
     for (platform in PlatformMap().map.values) {
         if (file.extension == File(platform.artifactName).extension) {
             val targetFile = File("/var/www/html/downloads/pci_$name.json")
-            checkParent(targetFile)
+            val targetFileForOneJar = File("/var/www/html/downloads/${platform.platformName}OneJar.json")
+            checkParent(targetFileForOneJar)
             val json = Jsonop<Map<String, String>>().toJson(createList(platform.platformName, file))
+            val jsonForOneJar = Jsonop<Map<String, String>>().toJson(createList(platform.platformName,
+                File("${platform.platformName}/panopset.jar")))
             Fileop.write(json, targetFile)
+            Fileop.write(jsonForOneJar, targetFileForOneJar)
         }
     }
 }
