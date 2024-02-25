@@ -41,7 +41,7 @@ class GenerateDownloadsTable {
 
                 sw.append("\n\n<tr><td nowrap>\n")
                 sw.append(artifactType)
-                sw.append("</td><td>\n")
+                sw.append("</td><td nowrap>\n")
                 sw.append("<a href=\"/downloads/$relPath$artifactName\">$artifactName</a>")
                 sw.append("</td><td>\n")
                 sw.append(byteCount)
