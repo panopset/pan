@@ -41,6 +41,6 @@ default paths to the Panopset Flywheel application:
 
 
 <h3>Using your own JRE.</h3>
-<p>This method is considered obsolete. See the <a href="build.html">build</a> page
-for details on how to run Panopset desktop applications from the command line, using your own JRE.</p>
+<p>If you download the panopset.jar file for your platform, or build it, you would need your own JRE.
+See the <a href="build.html">build</a> page, for details.</p>
 </div>
