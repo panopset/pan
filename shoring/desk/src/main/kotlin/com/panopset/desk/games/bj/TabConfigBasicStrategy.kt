@@ -9,7 +9,7 @@ import javafx.scene.layout.BorderPane
 class TabConfigBasicStrategy(private val ctls: BlackjackFxControls) {
 
     fun createTab(): Tab {
-        val rtn = FontManagerFX.registerTab(ctls.fxDoc, Tab("Basic Strategy"))
+        val rtn = FontManagerFX.registerTab(Tab("Basic Strategy"))
         val bp = BorderPane()
         bp.top = createPanFlowPane(
             createPanButton(ctls.fxDoc, {userReset()}, "Reset", false, "Reset to default values."),

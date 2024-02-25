@@ -8,7 +8,7 @@ import javafx.scene.control.Tab
 
 class TabConfigRules {
     fun createTab(ctls: BlackjackFxControls): Tab {
-        val rtn = FontManagerFX.registerTab(ctls.fxDoc, Tab("Rules"))
+        val rtn = FontManagerFX.registerTab(Tab("Rules"))
         rtn.content = createPanVBox(
             createPanHBox(
                 createPanVBox(

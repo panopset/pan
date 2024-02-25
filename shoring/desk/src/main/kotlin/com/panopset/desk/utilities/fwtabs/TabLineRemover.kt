@@ -20,7 +20,7 @@ class TabLineRemover(val fxDoc: FxDoc) {
             "Text to search for, to determine which lines get deleted, go here.",
             "It is a good idea to back everything up before proceeding."
             )
-        val rtn = FontManagerFX.registerTab(fxDoc, Tab("Line Remover"))
+        val rtn = FontManagerFX.registerTab(Tab("Line Remover"))
         val bp = BorderPane()
         bp.top = createTopVBox()
         bp.center = createPanScrollPane(lrSearchCriteria)

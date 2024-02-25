@@ -8,11 +8,7 @@ If you don't see your platform listed, or if your system doesn't allow unsigned 
 <a href="https://github.com/panopset/pan">source</a>.
 </p>
 
-<table>
-<tr><th>Platform</th><th>Download</th><th>Bytes</th>
-<th>SHA-512</th></tr>
 ${downloadsTable}
-</td></tr></table>
 
 <h1>versions</h1>
 

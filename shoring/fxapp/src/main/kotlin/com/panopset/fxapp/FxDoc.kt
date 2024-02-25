@@ -56,16 +56,16 @@ class FxDoc : Anchor, LogDsiplayer {
         dspmsg(msg)
     }
 
-    override fun errorMsg(message: String, throwable: Throwable) {
-        dspmsg(message)
+    override fun errorMsg(msg: String, throwable: Throwable) {
+        dspmsg(msg)
     }
 
-    override fun errorMsg(message: String, file: File) {
-        dspmsg(message)
+    override fun errorMsg(msg: String, file: File) {
+        dspmsg(msg)
     }
 
-    override fun errorMsg(message: String) {
-        dspmsg(message)
+    override fun errorMsg(msg: String) {
+        dspmsg(msg)
     }
 
     override fun errorMsg(file: File, throwable: Throwable) {
@@ -73,39 +73,10 @@ class FxDoc : Anchor, LogDsiplayer {
     }
 
     override fun errorEx(throwable: Throwable) {
-        dspmsg(throwable.message?: "unfathomable")
+        dspmsg(throwable.message ?: "unfathomable")
     }
 
-    override fun debug(message: String) {
-        dspmsg(message)
+    override fun debug(msg: String) {
+        dspmsg(msg)
     }
-
-
-//    fun setLogLis() {
-//        Logop.setLogListener(object: LogListener {
-//            override fun log(logEntry: LogEntry) {
-//                FontManagerFX.setMenubarLogRecord(
-//                    logEntry,
-//                    menuBarStatusMessage
-//                )
-//            }
-//        })
-//    }
 }
-
-
-
-/*
-
-        application.doAfterLaunch(this)
-        override fun doAfterLaunch(fxDoc: FxDoc) {
-            super.doAfterLaunch(fxDoc)
-            val floor = getFloor(fxDoc)
-            Platform.runLater {
-                updateEnvironmentWithProps(floor, panCheckboxMenu.currentSelection)
-            }
-        }
-
-
-
- */

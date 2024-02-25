@@ -7,8 +7,8 @@ import com.panopset.marin.secure.checksums.ChecksumType
 import java.io.File
 import java.io.StringWriter
 import java.lang.reflect.Type
-import java.util.Collections
-import java.util.TreeMap
+import java.util.*
+import kotlin.collections.HashMap
 
 
 class GenerateSite {
@@ -37,10 +37,16 @@ class GenerateSite {
     }
 
     private fun createDownloadsTable(): String {
+        val platformDownloadMap = Collections.synchronizedSortedMap<String, PlatformDownloadCollection>(TreeMap())
         val sw = StringWriter()
         val tempDirDownloads = File("/var/www/html/downloads")
         for (f in tempDirDownloads.listFiles()!!) {
             if (f.isFile && f.extension == "json") {
+                val artifactType = if (f.name.indexOf("panopset.jar") > -1) {
+                    "jar"
+                } else {
+                    "installer"
+                }
                 val jsonStr = Fileop.readTextFile(f)
                 val mapType: Type = object : TypeToken<HashMap<String, String>>() {}.type
                 val rawMap = Jsonop<HashMap<String, String>>().fromJson(jsonStr, mapType)
@@ -48,21 +54,63 @@ class GenerateSite {
                 for (e in rawMap) {
                     map[e.key] = e.value
                 }
-                val ifn = map["ifn"]
-                val platform = map["platform"]
-                val bytes = map["bytes"]
-                val sha512 = map[ChecksumType.SHA512.key]
+                val ifn = map["ifn"] ?: return standardWierdErrorMessage
+                val platform = map["platform"] ?: return standardWierdErrorMessage
+                val bytes = map["bytes"] ?: return standardWierdErrorMessage
+                val sha512 = map[ChecksumType.SHA512.key] ?: return standardWierdErrorMessage
+                addPlatformIfNecessary(platform, platformDownloadMap).platformDownloads.add(
+                    PlatformDownload(artifactType, ifn, bytes, sha512)
+                )
+            }
+        }
+        for (e in platformDownloadMap.entries) {
+            sw.append("<h2>${e.key}</h2>")
+            sw.append("<table>")
+            sw.append("<tr><th>Type</th><th>Download</th><th>Bytes</th>")
+            sw.append("<th>SHA-512</th></tr>")
+            sw.append("</td></tr>")
+            for (platformDownload in e.value.platformDownloads) {
+                val artifactType = platformDownload.artifactType
+                val artifactName = platformDownload.artifactName
+                val byteCount = platformDownload.byteCount
+                val sha512 = platformDownload.sha512
+
                 sw.append("<tr><td nowrap>\n")
-                sw.append(platform)
+                sw.append(artifactType)
                 sw.append("</td><td>\n")
-                sw.append("<a href=\"/downloads/$ifn\">$ifn</a>")
+                sw.append("<a href=\"/downloads/$artifactName$\">$artifactName</a>")
                 sw.append("</td><td>\n")
-                sw.append(bytes)
+                sw.append(byteCount)
                 sw.append("</td><td class=\"dsw99\"><input class=\"output2\" type=\"text\" value=\"\n")
                 sw.append(sha512)
                 sw.append("\"</input></td></tr>")
+
             }
+            sw.append("</table>")
         }
         return sw.toString()
     }
+}
+
+private fun addPlatformIfNecessary(
+    key: String,
+    platformDownloadCollectionMap: MutableMap<String, PlatformDownloadCollection>
+): PlatformDownloadCollection {
+    if (platformDownloadCollectionMap.containsKey(key)) {
+        return platformDownloadCollectionMap[key]!!
+    }
+    val rtn = PlatformDownloadCollection(key)
+    platformDownloadCollectionMap[key] = rtn
+    return rtn
+}
+
+private data class PlatformDownload(
+    val artifactType: String,
+    val artifactName: String,
+    val byteCount: String,
+    val sha512: String
+)
+
+private data class PlatformDownloadCollection(val platformName: String) {
+    val platformDownloads = Collections.synchronizedSortedSet<PlatformDownload>(TreeSet())
 }

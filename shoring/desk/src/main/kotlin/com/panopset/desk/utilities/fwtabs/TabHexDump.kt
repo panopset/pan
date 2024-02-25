@@ -43,7 +43,7 @@ class TabHexDump(fxDoc: FxDoc): SceneUpdater(fxDoc) {
         hdSpace.onAction = EventHandler { triggerAnUpdate() }
         hdChars.onAction = EventHandler { triggerAnUpdate() }
 
-        val rtn = FontManagerFX.registerTab(fxDoc, Tab("Hex Dump"))
+        val rtn = FontManagerFX.registerTab(Tab("Hex Dump"))
         val bp = BorderPane()
         bp.top = createTopPane()
         bp.center = createCenterPane()

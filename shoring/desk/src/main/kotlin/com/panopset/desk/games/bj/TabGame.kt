@@ -9,7 +9,7 @@ import javafx.scene.layout.BorderPane
 class TabGame {
 
     fun createTab(ctls: BlackjackFxControls): Tab {
-        val rtn = FontManagerFX.registerTab(ctls.fxDoc, Tab("Game"))
+        val rtn = FontManagerFX.registerTab(Tab("Game"))
         val bp = BorderPane()
 
         bp.center = createPanHBox(

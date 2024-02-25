@@ -19,7 +19,7 @@ class TabListAudit(val fxDoc: FxDoc) {
         laRunButton = createPanButton(fxDoc, { process() },
             "_Run", true, "Audit a directory that contains text files of lists.")
 
-        val rtn = FontManagerFX.registerTab(fxDoc, Tab("List Audit"))
+        val rtn = FontManagerFX.registerTab(Tab("List Audit"))
         val bp = BorderPane()
         bp.top = createPanVBox(
             createPanLabel("Select a directory that has list files that you wish to compare.  Then click run to generate a csv formatted report."),

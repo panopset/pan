@@ -111,9 +111,9 @@ abstract class BrandedApp: PanApplication, AppDDSFX {
         val menuBar = MenuBar()
         menuBar.menus.add(createFileMenu(fxDoc))
         addAppMenus(fxDoc, menuBar.menus)
-        menuBar.menus.add(createFontMenu(fxDoc))
+        menuBar.menus.add(createFontMenu())
         menuBar.menus.add(createHelpMenu(fxDoc))
-        FontManagerFX.registerMenubar(fxDoc, menuBar)
+        FontManagerFX.registerMenubar(menuBar)
         return menuBar
     }
 
@@ -124,7 +124,7 @@ abstract class BrandedApp: PanApplication, AppDDSFX {
     private fun createFileMenu(fxDoc: FxDoc): Menu {
         val menu = Menu("_File")
         menu.items.add(createFileMenuItem(fxDoc, { JavaFXapp.newWindow() }, "_New"))
-        menu.items.add(createFileMenuItem(fxDoc, { JavaFXapp.openWindowFromFile(fxDoc) }, "_Open"))
+        menu.items.add(createFileMenuItem(fxDoc, { JavaFXapp.openWindowFromFile() }, "_Open"))
         menu.items.add(createFileMenuItem(fxDoc, { JavaFXapp.saveWindow(fxDoc) }, "_Save"))
         menu.items.add(createFileMenuItem(fxDoc, { JavaFXapp.saveWindowAs(fxDoc) }, "Save as"))
         menu.items.add(createFileMenuItem(fxDoc, { JavaFXapp.closeWindow(fxDoc) }, "_Close"))
@@ -133,7 +133,7 @@ abstract class BrandedApp: PanApplication, AppDDSFX {
         return menu
     }
 
-    private fun createFontMenu(fxDoc: FxDoc): Menu {
+    private fun createFontMenu(): Menu {
         val cmf = object: PanCheckboxMenuFactory("Font") {
             override fun assignAction(
                 panCheckboxMenuItem: PanCheckboxMenuItem,

@@ -40,7 +40,7 @@ class TabStract(val fxDoc: FxDoc) {
         )
         bp.center = createPanSplitPane(fxDoc, "stractSplitLoc",
             createPanScrollPane(stractSrc), createPanScrollPane(stractOut))
-        val rtn = FontManagerFX.registerTab(fxDoc, Tab("Stract"))
+        val rtn = FontManagerFX.registerTab(Tab("Stract"))
         rtn.content = bp
         return rtn
     }

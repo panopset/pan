@@ -120,7 +120,7 @@ object FontManagerFX {
         }
     }
 
-    fun registerTabPane(fxDoc: FxDoc, tabPane: TabPane) {
+    fun registerTabPane(tabPane: TabPane) {
         if (tabPanes.contains(tabPane)) {
             Logz.debug("Ignoring duplicate FontManagerFX registration of tabPane " + tabPane.id)
         } else {
@@ -128,7 +128,7 @@ object FontManagerFX {
         }
     }
 
-    fun registerTab(fxDoc: FxDoc, tab: Tab): Tab {
+    fun registerTab(tab: Tab): Tab {
         if (tabs.contains(tab)) {
             Logz.debug("Ignoring duplicate FontManagerFX registration of tab " + tab.id)
         } else {
@@ -137,7 +137,7 @@ object FontManagerFX {
         return tab
     }
 
-    fun registerMenubar(fxDoc: FxDoc, menuBar: MenuBar) {
+    fun registerMenubar(menuBar: MenuBar) {
         if (mbs.contains(menuBar)) {
             Logz.debug("Ignoring duplicate FontManagerFX registration of menubar " + menuBar.id)
         } else {

@@ -41,7 +41,7 @@ class TabGlobalReplace(val fxDoc: FxDoc) {
             "Enter text that the prior line must contain.", "Text that the prior line must contain, if replacement is to be done.")
         grReplacementLineMustContain = createPanInputTextFieldHGrow(fxDoc, "fxidReplacementLineMustContain",
             "Enter text that the replacement line must contain.", "Text that the replacement line must contain, if replacement is to be done.")
-        val rtn = FontManagerFX.registerTab(fxDoc, Tab("Global Replace"))
+        val rtn = FontManagerFX.registerTab(Tab("Global Replace"))
         val bp = BorderPane()
         bp.center = createMainBox()
         rtn.content = bp

@@ -101,7 +101,7 @@ object JavaFXapp {
         doSave(fxDoc)
     }
 
-    private fun doOpen(fxDoc: FxDoc) {
+    private fun doOpen() {
         val fileChooser = FileChooser()
         fileChooser.title = ("Open a previously saved "
                 + DeskApp4XFactory.panApplication.applicationShortName
@@ -253,8 +253,8 @@ object JavaFXapp {
             doSaveAs(fxDoc)
         }
 
-        fun openWindowFromFile(fxDoc: FxDoc) {
-            doOpen(fxDoc)
+        fun openWindowFromFile() {
+            doOpen()
         }
 
         fun panExit() {

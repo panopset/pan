@@ -7,7 +7,7 @@ import javafx.scene.control.Tab
 
 class TabGlobalOptions {
     fun createTab(fxDoc: FxDoc): Tab {
-        val rtn = FontManagerFX.registerTab(fxDoc, Tab("Options"))
+        val rtn = FontManagerFX.registerTab(Tab("Options"))
         rtn.content = ReturnCharTitledPane(fxDoc).pane
         return rtn
     }

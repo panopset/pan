@@ -71,7 +71,7 @@ class TabFlywheel(fxDoc: FxDoc): SceneUpdater(fxDoc) {
         comboFunctions = ComboBox()
         FxFunctionLoader().loadUpFunctions(comboFunctions, fwTemplate)
 
-        val rtn = FontManagerFX.registerTab(fxDoc, Tab("Flywheel"))
+        val rtn = FontManagerFX.registerTab(Tab("Flywheel"))
         val bp = BorderPane()
         rtn.content = bp
 

@@ -10,7 +10,7 @@ import javafx.scene.layout.BorderPane
 class TabConfigCounting(val ctls: BlackjackFxControls) {
 
     fun createTab(): Tab {
-        val rtn = FontManagerFX.registerTab(ctls.fxDoc, Tab("Counting"))
+        val rtn = FontManagerFX.registerTab(Tab("Counting"))
         val topHbox = createPanHBox(
             createPanVBox(
                 createPanTitledPane("Counting system", ctls.cbCountingSystems),
