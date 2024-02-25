@@ -1,0 +1,14 @@
+index,Panopset
+flywheel,Panopset Flywheel
+skyscraper,Panopset Skyscraper
+scrambler,Panopset Scrambler
+checksum,Panopset Checksum
+lowerclass,Panopset Lowerclass
+blackjack,Panopset Blackjack
+desk,${pdaTitle}
+build,${pdaTitle}
+license,${pdaTitle}
+news,${pdaTitle}
+downloads,${pdaTitle} Downloads
+lynx,links
+

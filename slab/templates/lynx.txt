@@ -1,0 +1,23 @@
+<div class="inset">
+
+<h1>Useful links</h1>
+
+
+    <div>
+
+
+      <ul>
+        <li><a href="https://digitalocean.com">digitalocean.com</a>: where panopset.com is hosted on a $7/month server.</li>
+        <li><a href="https://letsencrypt.org/">letsencrypt.org</a>: where everybody gets the s in https for free.</li>
+        <li><a href="https://github.com/">github.com</a>: where everybody stores their souce code.</li>
+        <li><a href="https://validator.w3.org/">Html Checker</a></li>
+        <li>Google's <a href="https://search.google.com/test/mobile-friendly">Mobile-Friendly Test</a></li>
+        <li><a href="http://selfcss.org/">selfcss.org</a>: css editor.</li>
+        <li><a href="https://bench.cr.yp.to/ebats.html">eBACS</a>: ECRYPT Benchmarking of Cryptographic Systems</li>
+      </ul>
+
+
+    </div>
+  </div>
+
+  <div>

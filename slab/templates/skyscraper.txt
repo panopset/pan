@@ -1,0 +1,20 @@
+<div class="inset">
+
+<h1>Skyscraper</h1>
+
+${deskBlurb}.
+
+<p>
+Controlling the cloudy clouds is better than getting trapped in them.
+</p>
+
+<p>
+<img src="/images/skyscraper.png" alt="skyscraper image"/>
+</p>
+
+<p>
+I wrote Panopset Skyscraper because I want to know exactly what my API tester is doing, especially if I am providing
+it credentials.
+</p>
+
+</div>
