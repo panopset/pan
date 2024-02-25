@@ -37,32 +37,8 @@ class GenerateSite {
     }
 
     private fun createDownloadsTable(): String {
-        val platformDownloadMap = Collections.synchronizedSortedMap<String, PlatformDownloadCollection>(TreeMap())
+        val platformDownloadMap = createPlatformDownloadMap()
         val sw = StringWriter()
-        val tempDirDownloads = File("/var/www/html/downloads")
-        for (f in tempDirDownloads.listFiles()!!) {
-            if (f.isFile && f.extension == "json") {
-                val artifactType = if (f.name.indexOf("panopset.jar") > -1) {
-                    "jar"
-                } else {
-                    "installer"
-                }
-                val jsonStr = Fileop.readTextFile(f)
-                val mapType: Type = object : TypeToken<HashMap<String, String>>() {}.type
-                val rawMap = Jsonop<HashMap<String, String>>().fromJson(jsonStr, mapType)
-                val map = Collections.synchronizedSortedMap(TreeMap<String, String>())
-                for (e in rawMap) {
-                    map[e.key] = e.value
-                }
-                val ifn = map["ifn"] ?: return standardWierdErrorMessage
-                val platform = map["platform"] ?: return standardWierdErrorMessage
-                val bytes = map["bytes"] ?: return standardWierdErrorMessage
-                val sha512 = map[ChecksumType.SHA512.key] ?: return standardWierdErrorMessage
-                addPlatformIfNecessary(platform, platformDownloadMap).platformDownloads.add(
-                    PlatformDownload(artifactType, ifn, bytes, sha512)
-                )
-            }
-        }
         for (e in platformDownloadMap.entries) {
             sw.append("<h2>${e.key}</h2>")
             sw.append("<table>")
@@ -90,6 +66,35 @@ class GenerateSite {
         }
         return sw.toString()
     }
+
+    private fun createPlatformDownloadMap(): Map<String, PlatformDownloadCollection> {
+        val platformDownloadMap = Collections.synchronizedSortedMap<String, PlatformDownloadCollection>(TreeMap())
+        val tempDirDownloads = File("/var/www/html/downloads")
+        for (f in tempDirDownloads.listFiles()!!) {
+            if (f.isFile && f.extension == "json") {
+                val artifactType = if (f.name.indexOf("panopset.jar") > -1) {
+                    "jar"
+                } else {
+                    "installer"
+                }
+                val jsonStr = Fileop.readTextFile(f)
+                val mapType: Type = object : TypeToken<HashMap<String, String>>() {}.type
+                val rawMap = Jsonop<HashMap<String, String>>().fromJson(jsonStr, mapType)
+                val map = Collections.synchronizedSortedMap(TreeMap<String, String>())
+                for (e in rawMap) {
+                    map[e.key] = e.value
+                }
+                val ifn = map["ifn"] ?: return platformDownloadMap
+                val platform = map["platform"] ?: return platformDownloadMap
+                val bytes = map["bytes"] ?: return platformDownloadMap
+                val sha512 = map[ChecksumType.SHA512.key] ?: return platformDownloadMap
+                addPlatformIfNecessary(platform, platformDownloadMap).platformDownloads.add(
+                    PlatformDownload(artifactType, ifn, bytes, sha512)
+                )
+            }
+        }
+        return platformDownloadMap
+    }
 }
 
 private fun addPlatformIfNecessary(
@@ -109,7 +114,11 @@ private data class PlatformDownload(
     val artifactName: String,
     val byteCount: String,
     val sha512: String
-)
+) : Comparable<PlatformDownload> {
+    override fun compareTo(other: PlatformDownload): Int {
+        return artifactType.compareTo(other.artifactType)
+    }
+}
 
 private data class PlatformDownloadCollection(val platformName: String) {
     val platformDownloads = Collections.synchronizedSortedSet<PlatformDownload>(TreeSet())
