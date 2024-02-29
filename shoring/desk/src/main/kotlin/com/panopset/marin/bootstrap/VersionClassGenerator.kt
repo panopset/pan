@@ -28,7 +28,7 @@ class VersionClassGenerator(private val srcDirectory: String, private var versio
     }
 
     private fun updateProject(project: String) {
-        val pp = "$srcDirectory/shoring/$project/pom.xml")
+        val pp = "$srcDirectory/shoring/$project/pom.xml"
         updatePom(pp)
     }
 
