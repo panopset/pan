@@ -24,11 +24,11 @@ class VersionClassGenerator(private val srcDirectory: String, private var versio
         updateProject("flywheel")
         updateProject("fxapp")
         updateProject("desk")
-        updateProject("$srcDirectory/legacy/pom.xml")
+        updateProject("$srcDirectory/legacy")
     }
 
     private fun updateProject(project: String) {
-        val pp = String.format("$srcDirectory/shoring/%s/pom.xml", project)
+        val pp = "$srcDirectory/shoring/$project/pom.xml")
         updatePom(pp)
     }
 
