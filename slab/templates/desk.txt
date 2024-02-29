@@ -30,8 +30,8 @@ Once installed, you will have launchers for each desktop application. On Linux t
 
 <h2>As a maven/gradle dependency.</h2>
 <pre>
-git clone https://github.com/panopset/src.git
-cd <span>src/shoring</span>
+git clone https://github.com/panopset/pan.git
+cd <span>pan/shoring</span>
 mvn install
 </pre>
 <p>
@@ -39,7 +39,7 @@ The above instructions will place all the Panopset maven projects in your local 
 available to your maven and/or gradle projects.
 </p>
 <h2>As any other kind of Java dependency.</h2>
-<p>Since it is open <a href="https://github.com/panopset/src">source</a>, you can do almost anything
+<p>Since it is open <a href="https://github.com/panopset/pan">source</a>, you can do almost anything
 you like with it except...
 </p>
 <ul>
@@ -50,7 +50,7 @@ Publish something that utilizes a closed source enhancement.
 Use blackjackEngine to drive a real money game.
 </li>
 </ul>
-<p>See the Panopset <a href="https://github.com/panopset/src/blob/main/LICENSE">license</a> for details.</p>
+<p>See the Panopset <a href="https://github.com/panopset/pan/blob/main/LICENSE">license</a> for details.</p>
 
 
 </div>

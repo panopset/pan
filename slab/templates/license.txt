@@ -26,7 +26,7 @@ memory solely for the purpose of your immediate data processing cycle.  That inf
 stored anywhere.  When using Panopset desktop applications, nothing is transmitted outbound except
 a request for version information, from the server to your application, so that it may flag you if you need an 
 upgrade.  All other Panopset desktop software processing is done using files that you select, and in local RAM.
-All of this is <a href="https://github.com/panopset/src">open source</a>, allowing for easy verification.
+All of this is <a href="https://github.com/panopset/pan">open source</a>, allowing for easy verification.
 </p>
 <p>
 Panopset Android applications also fall under Google's privacy policy, and don't transmit any information to Panopset.
@@ -38,7 +38,7 @@ In summary, other than whatever Google is up to with the services noted above,
 
 <h2>Documentation</h2>
 
-    <p>See the Panopset source code, <a href="https://github.com/panopset/src">src</a>,
+    <p>See the Panopset <a href="https://github.com/panopset/pan">source code</a>,
         for documentation of active Panopset projects.</p>
 
 <h1>Financials</h1>
