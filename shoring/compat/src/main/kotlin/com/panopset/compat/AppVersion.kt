@@ -8,11 +8,11 @@ package com.panopset.compat
 object AppVersion {
 
     fun getVersion(): String {
-        return "1.3.1"
+        return "1.3.2"
     }
 
     fun getBuildNumber(): String {
-        return "202402292231"
+        return "202402292243"
     }
 
     @JvmStatic
