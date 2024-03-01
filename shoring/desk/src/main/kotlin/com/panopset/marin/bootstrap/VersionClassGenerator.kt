@@ -33,6 +33,7 @@ class VersionClassGenerator(private val srcDirectory: String, private var versio
     }
 
     private fun updatePom(pp: String) {
+        println("Updating: $pp")
         val fr = "<version>"
         val tm = "<version>%s</version>"
         val vr = getVersionString()
