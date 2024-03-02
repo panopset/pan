@@ -1,10 +1,10 @@
-[home](../README.md) ~ [build](build.md) ~ setup ~ [publish](publish.md) ~ [deploy](deploy.md) ~ [verify](verify.md)
+[home](../README.md) ~ [build](build.md) ~ setup ~ [publish](publish.md) ~ [deploy](deploy.md) ~ [verify](verify.md) ~ [upgrade](./upgrade.md)
 
 # PC Requirements
 ## General Development
 
 * Kotlin 1.9.20
-* Java 17
+* Java 21
 
 ### beam
 * Gradle 8.6
@@ -19,7 +19,7 @@
 
 ## Environment Variables
 
-Set up these variables on your development PC, create a file called user.home/Documents/panopset/env.properties:
+Set up these variables on your development PC, create a file called ~/Documents/panopset/dev.properties:
 
 Adjust for your environment:
 

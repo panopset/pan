@@ -1,5 +1,5 @@
 #!/bin/bash
-# To just create the installer, during development cycles, you can run bald.sh.
+# Build application for Linux.
 . ./checkProps4Linux.sh
 mvn -f shoring clean install
 mvn -f legacy clean install

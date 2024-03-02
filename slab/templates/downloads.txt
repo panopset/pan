@@ -10,11 +10,6 @@ If you don't see your platform listed, or if your system doesn't allow unsigned 
 
 ${downloadsTable}
 
-<p>
-If it is before 6:00 AM Pacific time in the morning, and you don't see links above for three platforms, it could be
-due to an update being published.
-</p>
-
 <h1>versions</h1>
 
 <p>

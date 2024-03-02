@@ -1,11 +1,15 @@
-[home](../README.md) ~ build ~ [setup](setup.md) ~ [publish](publish.md) ~ [deploy](deploy.md) ~ [verify](verify.md)
+[home](../README.md) ~ build ~ [setup](setup.md) ~ [publish](publish.md) ~ [deploy](deploy.md) ~ [verify](verify.md) ~ [upgrade](./upgrade.md)
 
-Those who wish to build the application from the source, would run one of these scripts.
+Those who wish to build the Panopset Desktop application from the source, would run one of these scripts.
+It will deploy:
 
-If your platform doesn't exactly match, it would probably be best to make adjustments to the scripts most closely matching your system:
-# Linux Mint x86 64bit
+* an all-in one panopset.jar to your home directory, and
+* an application installer for your system in the target directory.
 
-Build Application Linux Mint:
+
+# Linux
+
+Build application for Linux:
 
 
     ./bal.sh
@@ -13,7 +17,9 @@ Build Application Linux Mint:
 
 Make whatever adjustments are needed for other Linux distros.
 
-# Apple Macintosh x86 64 bit
+# Apple Macintosh
+
+Build application for Apple Macintosh:
 
 
     ./bam.sh
@@ -22,13 +28,11 @@ Make whatever adjustments are needed for other Linux distros.
 Make whatever adjustments are needed, for newer Macintosh systems.
 
 
-# Microsoft Windows x86 64 bit
+# Microsoft Windows
 
+Build application for Windows:
 
     ./baw.cmd
-
-
-Make whatever adjustments are needed, for other Windows platforms.
 
 
 The remaining setup, publish, deploy, and verify pages are for those who wish to mirror panopset.com.

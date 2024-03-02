@@ -1,4 +1,4 @@
-[home](../README.md) ~ [build](build.md) ~ [setup](setup.md) ~ [publish](publish.md) ~ [deploy](./deploy.md) ~ verify
+[home](../README.md) ~ [build](build.md) ~ [setup](setup.md) ~ [publish](publish.md) ~ [deploy](./deploy.md) ~ verify ~ [upgrade](./upgrade.md)
 
 For
 

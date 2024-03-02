@@ -1,3 +1,6 @@
+* Two system update to 1.2.4, with no broken links during upgrade.
+  * Document procedure. 
+* Duplicate version warnings.
 * registerMonitorLizardProcessor 
 * Log messages should only go to one window.
 * auto complete

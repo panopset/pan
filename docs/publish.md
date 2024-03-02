@@ -1,4 +1,4 @@
-[home](../README.md) ~ [build](build.md) ~ [setup](setup.md) ~ publish ~ [deploy](deploy.md) ~ [verify](verify.md)
+[home](../README.md) ~ [build](build.md) ~ [setup](setup.md) ~ publish ~ [deploy](deploy.md) ~ [verify](verify.md) ~ [upgrade](./upgrade.md)
 
 
 One time service deployment on your workstation:

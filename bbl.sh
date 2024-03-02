@@ -1,4 +1,5 @@
 #!/bin/bash
+# Build Beam for Linux
 . ./checkProps4Linux.sh
 /opt/panopset/bin/fw ./slab/templates/beam/beamService.txt ~/temp/beam/
 gradle -p beam clean build

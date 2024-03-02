@@ -1,4 +1,5 @@
 #!/bin/bash
+# Build and publish application for Apple Macintosh.
 git pull
 . ./checkProps4Mac.sh
 

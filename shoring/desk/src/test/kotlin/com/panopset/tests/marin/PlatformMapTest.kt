@@ -13,7 +13,7 @@ class PlatformMapTest {
         if (linuxPlatform == null) {
             return
         }
-        Assertions.assertEquals("Linux Mint x86 64bit", linuxPlatform.platformName  )
+        Assertions.assertEquals("Linux", linuxPlatform.platformName  )
         Assertions.assertEquals("panopset_${AppVersion.getVersion()}_amd64.deb", linuxPlatform.artifactName )
     }
 }

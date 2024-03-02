@@ -1,4 +1,4 @@
-[home](../README.md) ~ [build](build.md) ~ [setup](setup.md) ~ [publish](publish.md) ~ deploy ~ [verify](verify.md)
+[home](../README.md) ~ [build](build.md) ~ [setup](setup.md) ~ [publish](publish.md) ~ deploy ~ [verify](verify.md) ~ [upgrade](./upgrade.md)
 
 
 Once you have your development system all set up with the environment variables
