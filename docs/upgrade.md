@@ -1,5 +1,7 @@
 [home](../README.md) ~ [build](build.md) ~ [setup](setup.md) ~ [publish](publish.md) ~ [deploy](deploy.md) ~ [verify](verify.md) ~ upgrade
 
+
+
 To ensure that there are no broken links, this is the upgrade process:
 
 
@@ -44,7 +46,7 @@ Then, they are copied over to panopset.com, directly on the server:
     rsync -avuzh /var/www/panopset.net/html/downloads /var/www/panopset.com/html/downloads
 
 
-Then, back on your Linux workstation, update your ~/Documents/panopset/dev.properties SITE_DN to point to panopset.com, and run 
+Then, back on the Linux workstation, update ~/Documents/panopset/dev.properties SITE_DN to point to panopset.com, and run 
 
 
 
@@ -53,12 +55,12 @@ Then, back on your Linux workstation, update your ~/Documents/panopset/dev.prope
     ./updateContent.sh
 
 
-Once you are satisfied that the new downloads are ready, delete the old versions from /var/www/panopset.com/html/downloads on the server, and locally in:
+Once the new downloads are ready, delete the old versions from /var/www/panopset.com/html/downloads on the server, and locally in:
 
     /var/www/html/downloads
     ~/temp/downloads
 
 
 
-Final steps are to update your ~/Documents/panopset/dev.properties SITE_DN to point to panopset.net, and start working on the new version.
+Final steps are to update ~/Documents/panopset/dev.properties SITE_DN to point to panopset.net, and start working on the new [version](../deploy.properties).
 

@@ -39,12 +39,12 @@ To run the apps directly from your system java command, include panopset.jar in 
 the application class you wish to run:
 
 <pre>
-java -jar cp %USERPROFILE%/panopset.jar checksum
-java -jar cp %USERPROFILE%/panopset.jar scrambler
-java -jar cp %USERPROFILE%/panopset.jar lowerclass
-java -jar cp %USERPROFILE%/panopset.jar flywheel
-java -jar cp %USERPROFILE%/panopset.jar skyscraper
-java -jar cp %USERPROFILE%/panopset.jar blackjack
+java -jar cp ~/panopset.jar checksum
+java -jar cp ~/panopset.jar scrambler
+java -jar cp ~/panopset.jar lowerclass
+java -jar cp ~/panopset.jar flywheel
+java -jar cp ~/panopset.jar skyscraper
+java -jar cp ~/panopset.jar blackjack
 </pre>
 
 <p>
@@ -52,9 +52,11 @@ java -jar cp %USERPROFILE%/panopset.jar blackjack
 </p>
 
 <pre>
-java -jar cp %USERPROFILE%/panopset.jar flywheel myScript.txt
+java -jar cp ~/panopset.jar fw myScript.txt
 </pre>
 
+
+Substitute <b>~</b> with <b>%USERPROFILE%</b> above, for Windows.
 
 <div>
 <h1>terms of use</h1>
