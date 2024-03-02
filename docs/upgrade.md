@@ -58,6 +58,7 @@ Once you are satisfied that the new downloads are ready, delete the old versions
     /var/www/html/downloads
     ~/temp/downloads
 
- and repeat the above commands again.
 
-That way, the only way someone can get a broken link, is if they purposefully try to download an older version, during the brief time between deleting the old versions and running al.sh again.
+
+Final steps are to update your ~/Documents/panopset/dev.properties SITE_DN to point to panopset.net, and start working on the new version.
+
