@@ -41,7 +41,7 @@ Run:
 Then, they are copied over to panopset.com, directly on the server:
 
 
-    rsync -avuzh /var/www/panospet.net/html/downloads /var/www/panopset.com/html/downloads
+    rsync -avuzh /var/www/panopset.net/html/downloads /var/www/panopset.com/html/downloads
 
 
 Then, back on your Linux workstation, update your ~/Documents/panopset/dev.properties SITE_DN to point to panopset.com, and run 

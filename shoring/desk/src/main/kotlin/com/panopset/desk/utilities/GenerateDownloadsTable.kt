@@ -61,7 +61,7 @@ class GenerateDownloadsTable {
         val tempDirDownloads = File(path)
         for (f in tempDirDownloads.listFiles()!!) {
             if (f.isFile && f.extension == "json") {
-                var artifactType = ""
+                var artifactType: String
                 var relPath = ""
                 val i = f.name.indexOf("OneJar")
                 if (i > -1) {
