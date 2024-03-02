@@ -1,10 +1,5 @@
 #!/bin/bash
-# See aw.cmd for Windows, and am.sh for Macintosh.
+# Build, Deploy locally, and Publish the website to the system in ~/Documents/panopset/dev.properties SITE_NAME, SITE_DN.
 
-git pull
-. ./push.sh
-. ./checkProps4Linux.sh
-
-. ./bwl.sh
-. ./dwl.sh
+. /updateContentLocal.sh
 . ./pwl.sh

@@ -1,4 +1,5 @@
 #!/bin/bash
+# All Linux
 # See aw.cmd for Windows, and am.sh for Macinthosh.
 
 echo dev.properties:
