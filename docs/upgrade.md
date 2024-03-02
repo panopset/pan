@@ -49,6 +49,7 @@ Then, back on your Linux workstation, update your ~/Documents/panopset/dev.prope
 
 
     ./synchDownloads.sh
+    ./bcl.sh
     ./updateContent.sh
 
 
