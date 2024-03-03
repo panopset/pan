@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.panopset</groupId>
         <artifactId>shoring</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
     </parent>
     <artifactId>compat</artifactId>
     <description>Panopset Droid compatible functions.</description>
