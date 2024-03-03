@@ -6,6 +6,12 @@ It will deploy:
 * an all-in one panopset.jar to your home directory, and
 * an application installer for your system in the target directory.
 
+# Requirements
+
+* (Java 21 JDK)[https://adoptium.net/]
+* (Maven 3.9.6)[https://maven.apache.org/download.cgi]
+* (git)[https://git-scm.com/]
+
 
 # Linux
 
