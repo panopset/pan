@@ -8,9 +8,9 @@ It will deploy:
 
 # Requirements
 
-* (Java 21 JDK)[https://adoptium.net/]
-* (Maven 3.9.6)[https://maven.apache.org/download.cgi]
-* (git)[https://git-scm.com/]
+* [Java 21 JDK](https://adoptium.net/)
+* [Maven 3.9.6](https://maven.apache.org/download.cgi)
+* [git](https://git-scm.com/)
 
 
 # Linux
