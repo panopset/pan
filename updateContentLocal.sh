@@ -2,5 +2,5 @@
 # Build and Deploy the Panopset website content only, locally.
 
 . ./checkProps4Linux.sh
-. ./pwl.sh
+. ./bwl.sh
 
