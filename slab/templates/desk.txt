@@ -24,7 +24,8 @@ This is the best way, for most people.  You may either...
 <a href="/build.html">Build</a> your own Panopset desktop applications installer, for your personal computer.
 </li></ul>
 <p>
-Once installed, you will have launchers for each desktop application. On Linux they'll be in /opt/panopset/bin.
+Once installed, you will have launchers for each desktop application. See the <a href="/downloads.html">downloads</a>
+page, for the path for your system.
 </p>
 
 
