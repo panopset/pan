@@ -1,5 +1,7 @@
+import com.panopset.compat.AppVersion;
+
 public class version {
     public static void main(String... s) {
-        com.panopset.compat.AppVersion.main(s);
+        System.out.println(AppVersion.INSTANCE.getVersion());
     }
 }
