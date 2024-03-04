@@ -7,7 +7,7 @@ described on the [setup](setup.md) page, you're ready to deploy your server.
 These instructions were tested using [Digitalocean](https://digitalocean.com)* Ubuntu Linux.
 
 
-Create a digitalocean server, and do the following manually. 
+Create a digitalocean server, and do the following: 
 
 
     apt-get -y update

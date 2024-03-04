@@ -27,6 +27,7 @@ jpackage ^
   --copyright "1996-2024 Karl Dinwiddie" ^
   --license-file LICENSE ^
   --description "Panopset desktop applications." ^
+  --add-launcher version=launchers/version.properties ^
   --add-launcher flywheel=launchers/flywheel.properties ^
   --add-launcher blackjack=launchers/blackjack.properties ^
   --add-launcher skyscraper=launchers/skyscraper.properties ^

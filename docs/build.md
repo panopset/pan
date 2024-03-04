@@ -21,7 +21,8 @@ Build application for Linux:
     ./bal.sh
 
 
-Make whatever adjustments are needed for other Linux distros.
+You can use [sdkman](https://sdkman.io/) to install the requirements.
+
 
 # Apple Macintosh
 
@@ -31,7 +32,7 @@ Build application for Apple Macintosh:
     ./bam.sh
 
 
-Make whatever adjustments are needed, for newer Macintosh systems.
+You can use [brew](https://brew.sh/) to install the requirements.
 
 
 # Microsoft Windows
@@ -40,6 +41,13 @@ Build application for Windows:
 
     ./baw.cmd
 
+On Windows systems, you can place a script in your home directory (%USERPROFILE%), to set your %PATH% to point
+to the requirements. Here is what mine looks like:  [setenv.cmd](platforms/win/setenv.cmd). You would make adjustments
+for your installation directories, unless you follow the same conventions. Keeping versions out of the path
+makes your upgrades a much simpler process.
 
-The remaining setup, publish, deploy, and verify pages are for those who wish to mirror panopset.com.
 
+# Note
+
+The remaining pages are for those who wish to mirror panopset.com, this is the only documentation page you need,
+for building the Panopset desktop applications from source.

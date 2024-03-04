@@ -30,6 +30,7 @@ jpackage \
   --copyright "1996-2024 Karl Dinwiddie" \
   --license-file LICENSE \
   --description "Panopset desktop applications." \
+  --add-launcher version=launchers/version.properties \
   --add-launcher gs=launchers/gs.properties \
   --add-launcher gi=launchers/gi.properties \
   --add-launcher gv=launchers/gv.properties \
