@@ -1,10 +1,6 @@
 [home](../README.md) ~ [build](build.md) ~ setup ~ [publish](publish.md) ~ [deploy](deploy.md) ~ [verify](verify.md) ~ [upgrade](./upgrade.md)
 
 # Additional Requirements
-## General Development
-
-* Kotlin 1.9.20
-* Java 21
 
 ### beam
 * Gradle 8.6
