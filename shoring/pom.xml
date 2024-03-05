@@ -16,8 +16,6 @@
     <packaging>pom</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- Also update gradle.properties in the beam project, and deploy.properties. -->
-        <panopset.version>1.2.9</panopset.version>
         <!-- and docs/setup.md for these two: -->
         <java.version>17</java.version>
         <kotlin.version>1.9.20</kotlin.version>
@@ -145,6 +143,7 @@
                         <additionalOptions>-package</additionalOptions>
                     </configuration>
                 </plugin>
+                <!--
                 <plugin>
                     <groupId>org.jetbrains.dokka</groupId>
                     <artifactId>dokka-maven-plugin</artifactId>
@@ -158,6 +157,7 @@
                         </execution>
                     </executions>
                 </plugin>
+                -->
             </plugins>
         </pluginManagement>
         <plugins>
@@ -185,11 +185,13 @@
                     <jvmTarget>${java.version}</jvmTarget>
                 </configuration>
             </plugin>
+            <!--
             <plugin>
                 <groupId>org.jetbrains.dokka</groupId>
                 <artifactId>dokka-maven-plugin</artifactId>
                 <version>${dokka.version}</version>
             </plugin>
+            -->
         </plugins>
     </build>
     <licenses>
