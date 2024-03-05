@@ -16,10 +16,17 @@
     <packaging>pom</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- and docs/setup.md for these two: -->
-        <java.version>17</java.version>
-        <kotlin.version>1.9.20</kotlin.version>
+        <!-- Keep this entire section in synch with
+           docs/setup.md
+           ~/Documents/panopset/dev.properties
+           ../beam/gradle.properties
+           ../beam/build.gradle
+        -->
+        <java.version>21</java.version>
+        <kotlin.version>1.9.22</kotlin.version>
+        <!--
         <dokka.version>1.9.10</dokka.version>
+        -->
         <fx.v>23-ea+3</fx.v>
         <gson.version>2.10.1</gson.version>
 
