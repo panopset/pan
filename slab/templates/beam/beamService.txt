@@ -15,7 +15,7 @@ SITE_REDIS_URL="${SITE_REDIS_URL}"
 SITE_REDIS_PWD="${SITE_REDIS_PWD}"
 DP=${DP}
 
-${@p sudo}echo ${SITE_PWD} | sudo -S ${@q}${@f installservice.sh}${sudo} mv panopsetweb.service /etc/systemd/system/
+${@p sudo}echo ${WKSN_PWD} | sudo -S ${@q}${@f installservice.sh}${sudo} mv panopsetweb.service /etc/systemd/system/
 ${sudo} mkdir -p /etc/panopsetweb
 ${sudo} mv panopsetweb.conf /etc/panopsetweb/
 ${sudo} systemctl enable panopsetweb
