@@ -5,6 +5,16 @@
 ### beam
 * Gradle 8.6
 
+Gradle expects JAVA_HOME to be set, so put this at the end of your ~/.profile file:
+
+
+    export JAVA_HOME="/usr/lib/jvm/java-1.21.0-openjdk-amd64"
+
+
+... make adjustments to the path to match your system.
+
+
+
 ### git
 
     git config user.email <your email address>

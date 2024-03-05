@@ -1,3 +1,4 @@
+${@p DEVPROPS}${user.home}/Documents/panopset/dev.properties${@q}${@m DEVPROPS}
 # https://stackoverflow.com/questions/2150882
 ${@f crtusr.sh}adduser --gecos "" --disabled-password ${SITE_USR}
 chpasswd <<<"${SITE_USR}:${SITE_PWD}"

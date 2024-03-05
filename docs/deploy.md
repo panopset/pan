@@ -1,27 +1,19 @@
 [home](../README.md) ~ [build](build.md) ~ [setup](setup.md) ~ [publish](publish.md) ~ deploy ~ [verify](verify.md) ~ [upgrade](./upgrade.md)
 
 
+Edit/verify your ~/Documents/panopset/dev.properties file:
+
+
+    ./e.sh
+
+
 Once you have your development system all set up with the environment variables
 described on the [setup](setup.md) page, you're ready to deploy your server.
 
 These instructions were tested using [Digitalocean](https://digitalocean.com)* Ubuntu Linux.
 
 
-Create a digitalocean server, and do the following: 
-
-
-    apt-get -y update
-    apt-get -y install nginx vim net-tools certbot python3-certbot-nginx openjdk-21-jre-headless default-jdk
-    apt-get -y upgrade
-    ufw allow OpenSSH
-    ufw allow 'Nginx Full'
-    ufw enable
-    export HOSTNAME=$(curl -s http://169.254.169.254/metadata/v1/hostname)
-    export PUBLIC_IPV4=$(curl -s http://169.254.169.254/metadata/v1/interfaces/public/0/ipv4/address)
-    echo Droplet: $HOSTNAME, IP Address: $PUBLIC_IPV4 > /usr/share/nginx/html/index.html
-    sed -i 's/# server_names_hash_bucket_size/server_names_hash_bucket_size/g' /etc/nginx/nginx.conf
-
-Running this in an initialization script used to work, but now there are user interactions.
+Create a digitalocean server.
 
 
 Edit your ssh config file, on your PC
@@ -44,8 +36,22 @@ Now, ssh out there (after cd'ing back into this project's directory):
 
     ./s.sh
 
+Do the following, on your new server:
 
-Make sure the digitalocean initialization script executed successfully:
+
+    apt-get -y update
+    apt-get -y install nginx vim net-tools certbot python3-certbot-nginx openjdk-21-jre-headless default-jdk
+    apt-get -y upgrade
+    ufw allow OpenSSH
+    ufw allow 'Nginx Full'
+    ufw enable
+    export HOSTNAME=$(curl -s http://169.254.169.254/metadata/v1/hostname)
+    export PUBLIC_IPV4=$(curl -s http://169.254.169.254/metadata/v1/interfaces/public/0/ipv4/address)
+    echo Droplet: $HOSTNAME, IP Address: $PUBLIC_IPV4 > /usr/share/nginx/html/index.html
+    sed -i 's/# server_names_hash_bucket_size/server_names_hash_bucket_size/g' /etc/nginx/nginx.conf
+
+
+Make sure the above steps executed successfully:
 
 
     echo $HOSTNAME

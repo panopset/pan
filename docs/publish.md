@@ -14,10 +14,9 @@ In your nginx config file (default, or your domain), in /etc/nginx/sites-availab
      proxy_pass http://127.0.0.1:8090/beam;
     }
 
-... and then (not sure if reload and/or restart is better, including both for now.):
+... and then
 
     sudo nginx -t
-    sudo nginx -s reload
     sudo systemctl restart nginx
     sudo netstat -tulpn | grep 8090
 
@@ -26,6 +25,6 @@ In your nginx config file (default, or your domain), in /etc/nginx/sites-availab
     tcp6  0 0 :::8090    :::*   LISTEN   780/java
 
 
-You may use a different port on your local system, just change it in beam/src/main/resources/application-DEV.yaLogz.
+You may use a different port on your local system, just change it in beam/src/main/resources/application-DEV.yaml.
 
 
