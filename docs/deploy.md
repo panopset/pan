@@ -118,7 +118,10 @@ short break and then...
 ## Beam API deployment
 
 
-
+    exit
+    ./al.sh
+    ./s.sh
+    
 
 References
 
