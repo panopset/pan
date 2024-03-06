@@ -121,6 +121,8 @@ short break and then...
     exit
     ./al.sh
     ./s.sh
+    chmod +x *.sh
+    ./installservicesite.sh
     
 
 References
