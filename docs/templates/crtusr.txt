@@ -27,7 +27,9 @@ ${@f SITE_DN}server {
  error_page 404 =200 /error.html;
 }
 
-${@f createDomain.sh}sudo mkdir -p /var/www/${SITE_DN}/html/downloads
+${@f createDomain.sh}sudo mkdir -p /var/www/${SITE_DN}/html/downloads/linux
+sudo mkdir -p /var/www/${SITE_DN}/html/downloads/mac
+sudo mkdir -p /var/www/${SITE_DN}/html/downloads/win
 sudo chown -R ${SITE_USR}:${SITE_USR} /var/www/${SITE_DN}/html
 sudo chmod -R 755 /var/www/${SITE_DN}
 sudo mv ${SITE_DN} /etc/nginx/sites-available/

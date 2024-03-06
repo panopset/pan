@@ -23,7 +23,7 @@ object Logz {
     }
 
     fun info(msg: String) {
-        logzDsiplayer.warn(msg)
+        logzDsiplayer.dspmsg(msg)
     }
 
     fun debug(msg: String) {

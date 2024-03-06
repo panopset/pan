@@ -1,5 +1,8 @@
 [home](../README.md) ~ [build](build.md) ~ [setup](setup.md) ~ [publish](publish.md) ~ deploy ~ [verify](verify.md) ~ [upgrade](./upgrade.md)
 
+# Site Deployment
+
+## Create and configure the server
 
 Edit/verify your ~/Documents/panopset/dev.properties file:
 
@@ -111,6 +114,10 @@ short break and then...
 
     ./s.sh
     ./createDomain.sh
+
+## Beam API deployment
+
+
 
 
 References
