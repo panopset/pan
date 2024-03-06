@@ -24,6 +24,7 @@ ${@f SITE_DN}server {
  location / {
   try_files $uri $uri/ =404;
  }
+ error_page 404 =200 /error.html;
 }
 
 ${@f createDomain.sh}sudo mkdir -p /var/www/${SITE_DN}/html/downloads

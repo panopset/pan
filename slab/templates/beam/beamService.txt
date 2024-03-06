@@ -19,20 +19,3 @@ ${@p sudo}echo ${WKSN_PWD} | sudo -S ${@q}${@f installservice.sh}${sudo} mv pano
 ${sudo} mkdir -p /etc/panopsetweb
 ${sudo} mv panopsetweb.conf /etc/panopsetweb/
 ${sudo} systemctl enable panopsetweb
-
-${@f SITE_DN}server {
- listen 80;
- listen [::]:80;
-
- root /var/www/${SITE_DN}/html;
- index index.html index.htm index.nginx-debian.html;
-
- server_name ${SITE_DN} www.${SITE_DN};
-
- location / {
-  try_files $uri $uri/ =404;
- }
-
- error_page 404 =200 /error.html;
-
-}

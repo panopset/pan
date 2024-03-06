@@ -1,5 +1,7 @@
+  * Make sure we don't lose the error_page in /etc/nginx/sites-available/panopset.com after setting up the site domains.
 * Two system update to 1.2.4, with no broken links during upgrade.
   * Document procedure. 
+* Redirect (proxy?) panopset.com/flywheel to panopset.com/flywheel.html
 * Duplicate version warnings.
 * registerMonitorLizardProcessor 
 * Log messages should only go to one window.
