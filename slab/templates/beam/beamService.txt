@@ -14,5 +14,5 @@ ${@f panopsetweb.conf}
 SITE_REDIS_URL="${SITE_REDIS_URL}"
 SITE_REDIS_PWD="${SITE_REDIS_PWD}"
 DP=${DP}
-${@p ispwd}${WKSN_PWD}${@q}${@f installservice.sh}${@t istmplt.txt}
-${@p ispwd}${SITE_PWD}${@q}${@f installservicesite.sh}${@t istmplt.txt}
+${@f installservice.sh}${@p ispwd}${WKSN_PWD}${@q}${@t istmplt.txt}
+${@f installservicesite.sh}${@p ispwd}${SITE_PWD}${@q}${@t istmplt.txt}

@@ -20,10 +20,21 @@ class CommandPush(
                   templateLine: TemplateLine, innerPiece: String,
                   template: Template
 ) : MatchableCommand( templateLine, innerPiece, template), UserMatchableCommand {
+
+    init {
+        println("******************************************************************v")
+        println("templateLine.line: ${templateLine.line}")
+        println("innerPiece: $innerPiece")
+        println("******************************************************************^")
+    }
+
+
     override fun resolve(sw: StringWriter) {
         val tsw = StringWriter()
         resolveMatchedCommands(tsw)
-        template.flywheel.put(getParams(), tsw.toString())
+        val key = getParams()
+        val value = tsw.toString()
+        template.flywheel.put(key, value)
         Logz.info("Push command defined ${getParams()} as $tsw.")
     }
 
