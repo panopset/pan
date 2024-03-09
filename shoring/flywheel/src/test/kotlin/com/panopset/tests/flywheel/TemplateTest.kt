@@ -1,12 +1,12 @@
 package com.panopset.tests.flywheel
 
-import java.io.IOException
+import org.junit.jupiter.api.Test
 
 class TemplateTest {
     /**
      * Test template command. See **templateTest01.txt**.
      */
-    @Throws(IOException::class)
+    @Test
     fun testTemplateCommand() {
         SimpleTest().comparisonTest(
             "templateTest01.txt", "templateTest.txt",

@@ -24,4 +24,8 @@ abstract class TemplateCommand internal constructor(
         }
         return parms
     }
+
+    override fun toString(): String {
+        return "${super.toString()} params: ${getParams()}"
+    }
 }

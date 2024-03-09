@@ -1,9 +1,5 @@
+* Template source preload.
 
-
-
-
-* 
-* 
 * Kotlin/Java21: Pure virtual method called.
 * Check functionality of error.html.
 * Two system update to 1.2.4, with no broken links during upgrade.

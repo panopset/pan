@@ -26,7 +26,7 @@ class ReportFileTransformerTest {
         Assertions.assertEquals(Stringop.appendEol(Stringop.FOO), result)
         ReportFileTransformer(temp, Transformer()).withByLineFilters(barFilter).exec()
         result = Fileop.readTextFile(temp)
-        Assertions.assertEquals(Stringop.appendEol(Stringop.BAR), result)
+        Assertions.assertEquals(Stringop.BAR, result)
         cleanup()
     }
 
@@ -37,7 +37,7 @@ class ReportFileTransformerTest {
         Assertions.assertEquals(Stringop.appendEol(Stringop.FOO), result)
         ReportFileTransformer(temp, Transformer()).withByLineFilters(fooFilter).exec()
         result = Fileop.readTextFile(temp)
-        Assertions.assertEquals(Stringop.appendEol(Stringop.FOO), result)
+        Assertions.assertEquals(Stringop.FOO, result)
         cleanup()
     }
 

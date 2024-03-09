@@ -13,15 +13,10 @@ class RezopTest {
         )
         Assertions.assertEquals("/com/panopset/compat/test/", Rezop.pkg2resourcePath(this.javaClass))
         Rezop.copyTextResourceToFile(this.javaClass, REZPATH, Fileop.getCanonicalPath(tempFile))
-        Assertions.assertEquals(
-            String.format("x%s", Stringop.getEol()),
-            Fileop.readTextFile(tempFile)
+        Assertions.assertEquals("x", Fileop.readTextFile(tempFile)
         )
         Rezop.copyTextResourceToFile(this.javaClass, REZPATH, tempFile)
-        Assertions.assertEquals(
-            String.format("x%s", Stringop.getEol()),
-            Fileop.readTextFile(tempFile)
-        )
+        Assertions.assertEquals("x", Fileop.readTextFile(tempFile))
         Assertions.assertEquals("com/panopset/foo", Rezop.pkg2path("com.panopset.foo"))
         Assertions.assertEquals("/com/panopset/compat/test", Rezop.getPackageResourcePath(this.javaClass.getPackage()))
     }

@@ -1,11 +1,9 @@
 package com.panopset.tests.flywheel
 
 import org.junit.jupiter.api.Test
-import java.io.IOException
 
 class DepthTest {
     @Test
-    @Throws(IOException::class)
     fun testDepth() {
         SimpleTest().comparisonTest(
             "depthTest.txt", "depthTest01.txt",
@@ -18,7 +16,6 @@ class DepthTest {
     }
 
     @Test
-    @Throws(IOException::class)
     fun testDeeper() {
         SimpleTest().comparisonTest(
             "deepTest.txt", "deepTest.txt",

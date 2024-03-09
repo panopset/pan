@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test
 
 class SourceFileTest {
     @Test
-    @Throws(Exception::class)
     fun testSourceFileConstructor() {
         val file = StandardPackagePath(javaClass.packageName).getFile(SimpleTest.SIMPLETEST)
         val flywheel = FlywheelBuilder()

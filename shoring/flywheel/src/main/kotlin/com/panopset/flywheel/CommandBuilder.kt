@@ -40,7 +40,7 @@ class CommandBuilder() {
                 Commands.REPLACE.charCode -> CommandReplace( templateLine, innerPiece, template)
                 Commands.LIST.charCode -> CommandList( templateLine, innerPiece, template)
                 Commands.QUIT.charCode -> CommandQuit( templateLine, template)
-                Commands.TEMPLATE.charCode -> CommandTemplate( templateLine, innerPiece, template)
+                Commands.TEMPLATE.charCode -> CommandTplt( templateLine, innerPiece, template)
                 Commands.EXECUTE.charCode -> CommandExecute( templateLine, innerPiece, template)
                 Commands.RAW.charCode -> CommandRaw( templateLine, innerPiece, template)
                 Commands.MAP.charCode -> CommandMap( templateLine, innerPiece, template)

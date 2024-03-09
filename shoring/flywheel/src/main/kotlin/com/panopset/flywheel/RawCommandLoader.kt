@@ -5,18 +5,15 @@ import com.panopset.compat.Stringop
 import java.util.*
 
 internal class RawCommandLoader(val template: Template) {
-    private val tmplt: Template
+    private val tmplt: Template = template
     private val queue: Deque<TemplateLine> = ArrayDeque()
     private val commands: MutableList<Command> = ArrayList()
-
-    init {
-        tmplt = template
-    }
 
     fun load(): List<Command> {
         tmplt.templateSource.reset()
         var templateIndex = 0
         var lineNumber = 0
+        var firstTime = true
         while (!tmplt.templateSource.isDone) {
             if (tmplt.flywheel.isStopped) {
                 return ArrayList()
@@ -25,9 +22,13 @@ internal class RawCommandLoader(val template: Template) {
             if (tmplt.flywheel.isStopped) {
                 return ArrayList()
             }
-            var line = tmplt.templateSource.next()
-            if (tmplt.templateRules.lineBreaks) {
-                line = String.format("%s%s", line, Stringop.getEol())
+            var line = tmplt.templateSource.nextTemplateSourceLine()
+            if (firstTime) {
+                firstTime = false
+            } else {
+                if (tmplt.templateRules.lineBreaks) {
+                    line = String.format("%s%s", Stringop.getEol(), line)
+                }
             }
             process(TemplateLine(line, templateIndex, lineNumber++))
             templateIndex += line.length

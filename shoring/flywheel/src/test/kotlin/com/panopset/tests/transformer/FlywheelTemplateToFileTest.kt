@@ -26,7 +26,6 @@ class FlywheelTemplateToFileTest(
 
     private fun getActualResults(): String {
         flywheel.exec()
-        //				File generatedFile = new File(String.format("temp/%s", tempFileName));
         val generatedFile = File(
             Fileop.combinePaths(
                 TEST_DIRECTORY,

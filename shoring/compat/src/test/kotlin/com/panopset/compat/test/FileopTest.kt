@@ -75,7 +75,7 @@ class FileopTest {
         Assertions.assertFalse(tempFile.exists())
         val inp: InputStream = ByteArrayInputStream(Stringop.FOO.toByteArray())
         Fileop.copyInputStreamToFile(inp, "./temp.txt")
-        Assertions.assertEquals(fooWithReturnChar, Fileop.readTextFile(tempFile))
+        Assertions.assertEquals(Stringop.FOO, Fileop.readTextFile(tempFile))
     }
 
     @Test
@@ -83,15 +83,15 @@ class FileopTest {
         Stringop.setEol(Stringop.DOS_RTN)
         Fileop.write("foo\r\nbar\r\nbat", tempFile)
         deleteLines(tempFile, "bar")
-        Assertions.assertEquals("foo\r\nbat\r\n", Fileop.readTextFile(tempFile))
+        Assertions.assertEquals("foo\r\nbat", Fileop.readTextFile(tempFile))
         Fileop.write("foo\r\nbar\r\nbat", tempFile)
-        Assertions.assertEquals("foo\r\nbar\r\nbat\r\n", Fileop.readTextFile(tempFile))
+        Assertions.assertEquals("foo\r\nbar\r\nbat", Fileop.readTextFile(tempFile))
         Fileop.write("foo\r\nbar\r\nbat", deepFile)
         deleteLines(tempDir, "bar")
-        Assertions.assertEquals("foo\r\nbat\r\n", Fileop.readTextFile(deepFile))
+        Assertions.assertEquals("foo\r\nbat", Fileop.readTextFile(deepFile))
         Fileop.write("foo\r\nbar\r\nbat", tempFile)
         deleteLines(tempFile, "")
-        Assertions.assertEquals("foo\r\nbar\r\nbat\r\n", Fileop.readTextFile(tempFile))
+        Assertions.assertEquals("foo\r\nbar\r\nbat", Fileop.readTextFile(tempFile))
         Stringop.setEol("\n")
     }
 

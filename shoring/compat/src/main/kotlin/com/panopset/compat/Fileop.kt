@@ -224,7 +224,7 @@ object Fileop {
         }
     }
 
-    val TEMP_DIRECTORY = File(Stringop.USH + "/temp")
+    val TEMP_DIRECTORY = File(Stringop.USH + "/Documents/temp")
 
     fun removeExtension(str: String): String {
         val i = str.lastIndexOf(".")

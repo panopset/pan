@@ -9,7 +9,9 @@ import java.io.StringWriter
 /**
  * Command to handle normal text entry.
  */
-class CommandText(template: Template, templateLine: TemplateLine, private val text: String):
+class CommandText(template: Template, templateLine: TemplateLine,
+    private val text: String
+):
     Command(template, templateLine) {
     override fun getDescription(): String {
         val sr = StringReader(text)

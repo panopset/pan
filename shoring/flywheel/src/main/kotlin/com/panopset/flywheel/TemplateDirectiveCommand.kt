@@ -17,12 +17,13 @@ open class TemplateDirectiveCommand(
         if (innerPiece.length > 2) {
             params = innerPiece.substring(Syntax.getDirective().length + 2)
         }
-        val replacement = template.flywheel.getEntry(params)
-        parms = if (Stringop.isPopulated(replacement)) {
-            replacement
-        } else {
-            params
-        }
+//        val replacement = template.flywheel.getEntry(params)
+//        parms = if (Stringop.isPopulated(replacement)) {
+//            replacement
+//        } else {
+//            params
+//        }
+        parms = params
     }
 
     override fun resolve(sw: StringWriter) {

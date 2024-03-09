@@ -3,6 +3,7 @@ package com.panopset.flywheel
 import java.io.StringWriter
 
 abstract class Command(val template: Template, val templateLine: TemplateLine) {
+    val id = UniqueIdFactory.getId()
     var next: Command? = null
     var prev: Command? = null
 
@@ -14,10 +15,7 @@ abstract class Command(val template: Template, val templateLine: TemplateLine) {
     abstract fun getDescription(): String
 
     override fun toString(): String {
-        val sw = StringWriter()
-        sw.append(template.relativePath)
-        sw.append(" ")
-        sw.append(templateLine.toString())
-        return sw.toString()
+        val cn = this.javaClass.simpleName
+        return "$id: ${cn.substring(7)} ${getDescription()}".replace("\n","")
     }
 }

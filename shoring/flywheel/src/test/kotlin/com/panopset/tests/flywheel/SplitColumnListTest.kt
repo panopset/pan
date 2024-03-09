@@ -14,7 +14,7 @@ class SplitColumnListTest {
     @Test
     fun testSplitColumns() {
         setEol("\n")
-        val expected = "6#Zonk7#Bonk\n"
+        val expected = "6#Zonk7#Bonk"
         val inp = arrayOf<String?>("\${@l splitList.txt}\${2}#\${3}\${@q}")
         val results = FlywheelBuilder().withLineFeedRules(LINE_BREAKS) // TODO use testing framework.
             .baseDirectoryPath("src/test/resources/com/panopset/tests/flywheel")

@@ -26,12 +26,17 @@ object Streamop {
     }
 
     fun copyChars(reader: Reader, writer: Writer) {
+        var firstTime = true
         BufferedReader(reader).use { br ->
             BufferedWriter(writer).use { bw ->
                 var line = br.readLine()
                 while (line != null) {
+                    if (firstTime) {
+                        firstTime = false
+                    } else {
+                        bw.write(getEol())
+                    }
                     bw.write(line)
-                    bw.write(getEol())
                     line = br.readLine()
                 }
             }

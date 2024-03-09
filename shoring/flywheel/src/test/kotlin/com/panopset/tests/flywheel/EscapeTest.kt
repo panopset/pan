@@ -11,13 +11,13 @@ class EscapeTest {
     @Test
     fun testEscapeNewLine() {
         Assertions.assertEquals(
-            "foobar\n",
+            "foobar",
             applyTemplate(Arrays.asList(*arrayOf("foo\\", "bar")))
         )
-        Assertions.assertEquals("\n", applyTemplate(Arrays.asList(*arrayOf("\\", ""))))
-        Assertions.assertEquals("\\\n\n", applyTemplate(Arrays.asList(*arrayOf("\\\\", ""))))
-        Assertions.assertEquals("\\\n", applyTemplate(Arrays.asList(*arrayOf("\\\\"))))
-        Assertions.assertEquals("foobar\n", applyTemplate(Arrays.asList(*arrayOf("\${@p x}foo\\", "bar\${@q}\${x}"))))
+        Assertions.assertEquals("", applyTemplate(Arrays.asList(*arrayOf("\\", ""))))
+        Assertions.assertEquals("\\\n", applyTemplate(Arrays.asList(*arrayOf("\\\\", ""))))
+        Assertions.assertEquals("\\", applyTemplate(Arrays.asList(*arrayOf("\\\\"))))
+        Assertions.assertEquals("foobar", applyTemplate(Arrays.asList(*arrayOf("\${@p x}foo\\", "bar\${@q}\${x}"))))
     }
 
     private fun applyTemplate(input: List<String>): String {

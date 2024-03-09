@@ -7,21 +7,17 @@ import com.panopset.tests.TEST_DIRECTORY
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import java.io.File
-import java.io.IOException
 
 class SimpleTest {
     @Test
-    @Throws(IOException::class)
     fun testSimpleScript() {
         SimpleTest().comparisonTest(SIMPLETEST, SIMPLEOUT, EXPECTED)
     }
 
-    @Throws(IOException::class)
     fun comparisonTest(scriptName: String?, generatedFileName: String, expected: String) {
         comparisonTest(scriptName, arrayOf(generatedFileName), arrayOf(expected))
     }
 
-    @Throws(IOException::class)
     fun comparisonTest(scriptName: String?, generatedFileNames: Array<String>, expecteds: Array<String>) {
         Assertions.assertEquals(expecteds.size, generatedFileNames.size)
         for ((incr, generatedFileName) in generatedFileNames.withIndex()) {

@@ -1,6 +1,7 @@
 package com.panopset.flywheel
 
 import com.panopset.compat.Logz
+import com.panopset.compat.Stringop.getEol
 import com.panopset.compat.standardWierdErrorMessage
 import java.io.StringWriter
 
@@ -21,7 +22,15 @@ class Template(val flywheel: Flywheel, val templateSource: TemplateSource, val t
     init {
         addStructure(rawCommands)
         val commands = ImpliedQuitFilter().addImpliedQuits(rawCommands)
-        topCommands = CommandMatcher.matchQuitCommands( commands)
+        println("************************************************************")
+        println("============================================================")
+        println("Template name: ${this.templateSource.name}")
+        printTemplateStructure(commands)
+        topCommands = CommandMatcher.matchQuitCommands(commands)
+        println("****** Command Structure: **********************************")
+        printTemplateStructure(topCommands)
+        println("============================================================")
+        println("************************************************************")
     }
 
 
@@ -67,4 +76,17 @@ class Template(val flywheel: Flywheel, val templateSource: TemplateSource, val t
 
     val relativePath: String
         get() = sf?.relativePath ?: ""
+}
+
+
+fun printTemplateStructure(commands: List<Command>) {
+    for (c in commands) {
+        println(c.toString())
+        if (c is MatchableCommand) {
+            val mc: MatchableCommand = c
+            for (d in mc.commands) {
+                println(" $d")
+            }
+        }
+    }
 }

@@ -30,7 +30,7 @@ import java.io.StringWriter
  * Continue execution using the supplied template file.
  *
  */
-class CommandTemplate(
+class CommandTplt(
     templateLine: TemplateLine, innerPiece: String,
     template: Template
 ) : TemplateDirectiveCommand( templateLine, innerPiece, template) {

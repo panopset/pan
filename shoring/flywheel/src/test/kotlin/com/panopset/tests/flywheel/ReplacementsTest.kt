@@ -5,12 +5,10 @@ import com.panopset.flywheel.FlywheelBuilder
 import com.panopset.flywheel.LFR_FLATTEN
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
-import java.io.IOException
 import java.util.*
 
 class ReplacementsTest {
     @Test
-    @Throws(IOException::class)
     fun testReplacements() {
         Assertions.assertEquals(
             Stringop.BAR,
@@ -21,7 +19,6 @@ class ReplacementsTest {
     }
 
     @Test
-    @Throws(IOException::class)
     fun testReplacementsUsingProps() {
         val props = Properties()
         props[Stringop.FOO] = Stringop.BAR

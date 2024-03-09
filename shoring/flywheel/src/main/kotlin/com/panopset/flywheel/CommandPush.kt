@@ -21,13 +21,6 @@ class CommandPush(
                   template: Template
 ) : MatchableCommand( templateLine, innerPiece, template), UserMatchableCommand {
 
-    init {
-        println("******************************************************************v")
-        println("templateLine.line: ${templateLine.line}")
-        println("innerPiece: $innerPiece")
-        println("******************************************************************^")
-    }
-
 
     override fun resolve(sw: StringWriter) {
         val tsw = StringWriter()

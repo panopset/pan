@@ -15,7 +15,7 @@ class FileProcessorTest {
         val fp = FileProcessor(file).withLineFilter(MyLineFilter())
         fp.exec()
         val result = Fileop.readTextFile(file)
-        Assertions.assertEquals(Stringop.appendEol(Stringop.BAR), result)
+        Assertions.assertEquals(Stringop.BAR, result)
         FileopTest.cleanup()
     }
 }

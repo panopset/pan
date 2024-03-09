@@ -4,7 +4,14 @@
 
 ## 1.3.x (current)
 
-* Dependency updates, ongoing work on Skyscraper.
+* Dependency updates. 
+* Ongoing work on Skyscraper.
+
+## 1.3.4 (2024.03.09)
+
+* Moved default documents from ~/temp to ~/Documents/temp.
+* Minor Flywheel new line adjustments for more control and consistency.
+  * Called templates no longer have a trailing return char, that is now the responsibility of the calling template. 
 
 ## 1.2.9 (2024.01.06)
 
