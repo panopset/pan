@@ -9,7 +9,6 @@ import java.io.File
 import java.io.InputStream
 
 class FileopTest {
-    private val fooWithReturnChar = String.format("%s%s", Stringop.FOO, Stringop.getEol())
     @BeforeEach
     fun beforeEach() {
         cleanup()
@@ -44,8 +43,36 @@ class FileopTest {
         Assertions.assertEquals("", Fileop.readTextFile(file))
         Assertions.assertEquals(Fileop.getCanonicalPath(deepFile), Fileop.getCanonicalPath(file))
         Fileop.write(Stringop.FOO, file)
-        Assertions.assertEquals(fooWithReturnChar, Fileop.readTextFile(file))
-        Assertions.assertEquals(fooWithReturnChar, Fileop.readTextFile("./temp/temp.txt"))
+        Assertions.assertEquals(Stringop.FOO, Fileop.readTextFile(file))
+        Assertions.assertEquals(Stringop.FOO, Fileop.readTextFile("./temp/temp.txt"))
+    }
+
+    @Test
+    fun combinePathsWithReturnCharTestCRLF() {
+        val existingEol = Stringop.getEol()
+        Stringop.setEol(Stringop.DOS_RTN)
+        val file = File(Fileop.combinePaths("./temp", "temp.txt"))
+        Assertions.assertEquals("", Fileop.readTextFile(file))
+        Assertions.assertEquals(Fileop.getCanonicalPath(deepFile), Fileop.getCanonicalPath(file))
+        // https://stackoverflow.com/questions/70781328/bufferedreader-in-java-is-skipping-the-last-empty-line-in-file
+        Assertions.assertEquals("\r\n", Stringop.DOS_RTN)
+        Fileop.write("${Stringop.FOO}${Stringop.getEol()}${Stringop.getEol()}", file)
+        Assertions.assertEquals("foo\r\n", Fileop.readTextFile(file))
+        Assertions.assertEquals("foo\r\n", Fileop.readTextFile("./temp/temp.txt"))
+        Stringop.setEol(existingEol)
+    }
+
+    @Test
+    fun combinePathsWithReturnCharTestLF() {
+        val existingEol = Stringop.getEol()
+        Stringop.setEol("\n")
+        val file = File(Fileop.combinePaths("./temp", "temp.txt"))
+        Assertions.assertEquals("", Fileop.readTextFile(file))
+        Assertions.assertEquals(Fileop.getCanonicalPath(deepFile), Fileop.getCanonicalPath(file))
+        Fileop.write("${Stringop.FOO}${Stringop.getEol()}${Stringop.getEol()}", file)
+        Assertions.assertEquals("foo\n", Fileop.readTextFile(file))
+        Assertions.assertEquals("foo\n", Fileop.readTextFile("./temp/temp.txt"))
+        Stringop.setEol(existingEol)
     }
 
     @Test

@@ -10,12 +10,12 @@ class ReportFileTransformerTest {
     fun test() {
         Fileop.write(Stringop.FOO, temp)
         var result = Fileop.readTextFile(temp)
-        Assertions.assertEquals(FOOEOL, result)
+        Assertions.assertEquals("foo", result)
         ReportFileTransformer(temp, temp0, Transformer()).withByLineFilters(barFilter).exec()
         result = Fileop.readTextFile(temp)
-        Assertions.assertEquals(FOOEOL, result)
+        Assertions.assertEquals("foo", result)
         result = Fileop.readTextFile(temp0)
-        Assertions.assertEquals(BAREOL, result)
+        Assertions.assertEquals("bar", result)
         cleanup()
     }
 
@@ -23,7 +23,7 @@ class ReportFileTransformerTest {
     fun testSingleFilter() {
         Fileop.write(Stringop.FOO, temp)
         var result = Fileop.readTextFile(temp)
-        Assertions.assertEquals(Stringop.appendEol(Stringop.FOO), result)
+        Assertions.assertEquals(Stringop.FOO, result)
         ReportFileTransformer(temp, Transformer()).withByLineFilters(barFilter).exec()
         result = Fileop.readTextFile(temp)
         Assertions.assertEquals(Stringop.BAR, result)
@@ -34,7 +34,7 @@ class ReportFileTransformerTest {
     fun testSameFilter() {
         Fileop.write(Stringop.FOO, temp)
         var result = Fileop.readTextFile(temp)
-        Assertions.assertEquals(Stringop.appendEol(Stringop.FOO), result)
+        Assertions.assertEquals(Stringop.FOO, result)
         ReportFileTransformer(temp, Transformer()).withByLineFilters(fooFilter).exec()
         result = Fileop.readTextFile(temp)
         Assertions.assertEquals(Stringop.FOO, result)
