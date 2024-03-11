@@ -123,6 +123,9 @@ short break and then...
     ./s.sh
     chmod +x *.sh
     ./installservicesite.sh
+
+
+
     
 
 References
@@ -131,9 +134,3 @@ References
 * https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04
 * https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-reverse-proxy-on-ubuntu-22-04
 
-
-
-<sub><sup>* Disclaimer, while I try to be as platform neutral as possible, 
-the author owns [DOCN](https://digitalocean.com) shares. That said, it's just an ISP, you can
-still host this anywhere, you'd just have to make the necessary, and hopefully
-obvious, modifications to this process.</sub></sup>
