@@ -13,13 +13,13 @@ It will deploy:
 * [git](https://git-scm.com/)
 
 
-Git command to clone this project:
+To clone this project:
 
 
     git clone https://github.com/panopset/pan
 
 
-Git commands to set up your git environment:
+To set up your git environment:
 
 
     git config --global user.email <email>
