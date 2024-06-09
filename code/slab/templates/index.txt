@@ -4,12 +4,15 @@ ${previewBlurb}
 
 <div class="inset">
 
-
-<h1 class="menuBar">&nbsp;Product Map</h1>
 <p>
 100% open <a href="https://github.com/panopset/pan">source</a>,
 and free for anyone who can't afford the <a href="/license.html">license</a>.
+</p><p>
+<b>Too small to fail, since 1996.</b>
 </p>
+
+
+<h1 class="menuBar">&nbsp;Product Map</h1>
 
   <table>
 
