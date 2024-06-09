@@ -12,7 +12,7 @@ and free for anyone who can't afford the <a href="/license.html">license</a>.
 </p>
 
 
-<h1 class="menuBar">&nbsp;Product Map</h1>
+<h1 class="menuBar">&nbsp;Product Overview</h1>
 
   <table>
 
