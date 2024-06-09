@@ -3,30 +3,11 @@
 <p>
 
 Using the open <a href="https://github.com/panopset/pan">source code</a>, you may
-
-<ul><li>
-build a platform installer,
-</li><li>
-an all-in-one jar,
-</li><li>
-or run it directly from an IDE.
-</li></ul>
-
+<a href="https://github.com/panopset/pan/blob/main/docs/build.md">build</a> a platform installer,
+an all-in-one jar, or run it directly from an IDE.
 
 </p>
 
-<h2>Platform installer</h2>
-
-<p>
-To place an installer in the target directory, run
-</p>
-<ul><li>
- <b>./bal.sh</b> on Linux, or
-</li><li>
- <b>./bam.sh</b> on Apple Macintosh, or
-</li><li>
- <b>baw.cmd</b> on Microsoft Windows systems.
-</li></ul>
 <p>
 If you don't want to build your own, the installers are also available on the <a href="/downloads.html">downloads</a> page.
 </p>
