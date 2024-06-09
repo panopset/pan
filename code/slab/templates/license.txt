@@ -1,0 +1,43 @@
+<div class="inset">
+
+<h1>Desktop Application License</h1>
+<p>
+Panopset desktop software is currently free, for anyone who can't afford it, and <a href="https://github.com/panopset/pan">open source</a>.
+</p><p>
+If you and/or your business is doing fine, it is $25.00 per year.  Proof of <a href="mailto:karldinwiddie@gmail.com">payment</a> is the license.
+</p><p>
+Limited offer: $100.00 for a lifetime license, per user.
+The first 1,000 who pay for a special permanent license, also get a numbered signed certificate
+that they'll want to save in case Panopset ever goes public, or is sold.
+</p>
+
+<h1>Privacy Policy</h1>
+<p>
+While using the tools available on this site, information that you enter into fields is 100% transmitted 
+through <a href="https://letsencrypt.org/">letsencrypt</a> secured https, and processed in server
+memory solely for the purpose of your immediate data processing cycle.  That information is not
+stored anywhere.  When using Panopset desktop applications, nothing is transmitted outbound behind the scenes, except
+a request for version information, from the server to your application, so that it may flag you if you need an 
+upgrade.  All other Panopset desktop software processing is done using web traffic and files that you select, and in
+local RAM. All of this is <a href="https://github.com/panopset/pan">open source</a>, allowing for easy verification.
+</p>
+
+<h2>Documentation</h2>
+
+    <p>See the Panopset <a href="https://github.com/panopset/pan">source code</a>,
+        for documentation of active Panopset projects.</p>
+
+<h1>Financials</h1>
+<p>Panopset is privately held, has never had debt, and operates on a sustainable cost model.</p>
+
+<h2>Taxes</h2>
+<p>
+<img src="/images/smFlag.png" alt="US Flag"/>&nbsp;&nbsp;No overseas accounts, nothing under the table, and no creative accounting.
+Panopset is proud to always pay our fair share of taxes.
+</p>
+<h2>Contact</h2>
+<ul><li>
+<a href="https://www.linkedin.com/in/karldinwiddie/">Karl Dinwiddie</a>, <a href="mailto:karldinwiddie@gmail.com"><b>CEO</b></a> and founder.
+</li></ul>
+</div>
+

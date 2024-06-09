@@ -1,0 +1,9 @@
+SITE_DN=panopset.net
+SITE_NAME=p
+SITE_USR=karl
+WKSN_USR=karl
+SITE_PWD=mp#kc25J
+WKSN_PWD=kiloj8
+SITE_REDIS_URL=redis-18342.c280.us-central1-2.gce.cloud.redislabs.com:18342
+SITE_REDIS_PWD=Fr1n5t6AesyWg532HapoURooAtrIaliP
+

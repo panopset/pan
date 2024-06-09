@@ -1,0 +1,69 @@
+<div class="inset">
+<h1>Build</h1>
+<p>
+
+Using the open <a href="https://github.com/panopset/pan">source code</a>, you may
+
+<ul><li>
+build a platform installer,
+</li><li>
+an all-in-one jar,
+</li><li>
+or run it directly from an IDE.
+</li></ul>
+
+
+</p>
+
+<h2>Platform installer</h2>
+
+<p>
+To place an installer in the target directory, run
+</p>
+<ul><li>
+ <b>./bal.sh</b> on Linux, or
+</li><li>
+ <b>./bam.sh</b> on Apple Macintosh, or
+</li><li>
+ <b>baw.cmd</b> on Microsoft Windows systems.
+</li></ul>
+<p>
+If you don't want to build your own, the installers are also available on the <a href="/downloads.html">downloads</a> page.
+</p>
+
+<h2>All-in one jar</h2>
+
+<p>
+The build script will also place panopset.jar in your home directory.
+To run the apps directly from your system java command, include panopset.jar in your classpath, and specify
+the application class you wish to run:
+
+<pre>
+java -jar cp ~/panopset.jar checksum
+java -jar cp ~/panopset.jar scrambler
+java -jar cp ~/panopset.jar lowerclass
+java -jar cp ~/panopset.jar flywheel
+java -jar cp ~/panopset.jar skyscraper
+java -jar cp ~/panopset.jar blackjack
+</pre>
+
+<p>
+ or Flywheel on a script like this:
+</p>
+
+<pre>
+java -jar cp ~/panopset.jar fw myScript.txt
+</pre>
+
+
+Substitute &quot;<b>~/</b>&quot; with &quot;<b>%USERPROFILE%\</b>&quot; above, for Windows.
+
+<div>
+<h1>terms of use</h1>
+<p>
+For terms of use, please see the <a href="/license.html">License</a> page.
+</p>
+<p>
+&nbsp;
+</p>
+</div>

@@ -1,0 +1,121 @@
+<div class="inset">
+
+${previewBlurb}
+
+<div class="inset">
+
+
+<h1 class="menuBar">&nbsp;Product Map</h1>
+<p>
+100% open <a href="https://github.com/panopset/pan">source</a>,
+and free for anyone who can't afford the <a href="/license.html">license</a>.
+</p>
+
+  <table>
+
+   <tr>
+    <th>Utilities</th><th>Web</th>
+    <th><a href="/downloads.html">Desk</a></th><th>Script</th>
+    <th>Description</th>
+   </tr>
+
+
+   <tr>
+    <td><a href="/flywheel.html">flywheel</a></td>
+    <td>&bull;</td>
+    <td>&bull;</td>
+    <td>&nbsp;</td>
+    <td>Freeform template processing engine.</td>
+   </tr>
+
+
+   <tr>
+    <td>fw</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&bull;</td>
+    <td>Used to execute Flywheel scripts from the command line.
+    </td>
+   </tr>
+
+   <tr>
+    <td><a href="/skyscraper.html">skyscraper</a> <b>New!</b></td>
+    <td>&nbsp;</td>
+    <td>&bull;</td>
+    <td>&nbsp;</td>
+    <td>Skyscraper API client.</td>
+   </tr>
+
+   <tr>
+    <td><a href="/lowerclass.html">lowerclass</a></td>
+    <td>&nbsp;</td>
+    <td>&bull;</td>
+    <td>&nbsp;</td>
+    <td>Determine minimum Java Version for a class, jar, or repository.</td>
+   </tr>
+
+   <tr>
+    <th>Security</th><th>Web</th><th><a href="/downloads.html">Desk</a></th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th>
+   </tr>
+
+   <tr>
+    <td><a href="/scrambler.html">scrambler</a></td>
+    <td>&bull;</td>
+    <td>&bull;</td>
+    <td>&nbsp;</td>
+    <td>Password or pass phrase based text scrambler.</td>
+   </tr>
+
+   <tr>
+    <td><a href="/checksum.html">checksum</a></td>
+    <td>&nbsp;</td>
+    <td>&bull;</td>
+    <td>&nbsp;</td>
+    <td>File checksum verification.</td>
+   </tr>
+
+   <tr>
+    <th>Games</th><th>&nbsp;</th><th><a href="/downloads.html">Desk</a></th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th>
+   </tr>
+
+   <tr>
+    <td><a href="/blackjack.html">blackjack</a></td>
+    <td>&nbsp;</td>
+    <td>&bull;</td>
+    <td>&nbsp;</td>
+    <td>Blackjack simulation, with fast deal option.</td>
+   </tr>
+
+  </table>
+
+  <hr>
+
+  <h2>Featured feature</h2>
+  <ul><li>
+   <a href="https://github.com/panopset/pan/blob/main/docs/uses/gblrpl/priorLineCheck.md">Global Replace Prior Line Check</a>.
+  </li></ul>
+  <hr>
+
+
+  <p>
+   <a href="dox/site/index.html">Documentation.</a>
+  </p>
+
+  <p>
+   <a href="https://panopset.net">Preview of next release, for those who like to live on the cutting edge.</a>
+   For those who like to live on the bleeding edge (or merely want the absolute latest
+   <a href="https://github.com/panopset/pan/blob/main/docs/vh.md">bug fixes</a>),
+   build it from the main branch of the <a href="https://github.com/panopset/pan">source</a>.
+  </p>
+<!--
+  <h2>Coming later...</h2>
+  <ul><li>
+   <a href="/denebola">Denebola</a>, an original video game.
+  </li></ul>
+  -->
+<p>
+&nbsp;
+</p>
+
+</div>
+

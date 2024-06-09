@@ -1,0 +1,18 @@
+${@p DP}${user.home}/Documents/panopset/dev.properties${@q}${@m DP}${@f panopsetweb.service}[Unit]
+Description=Panopset Web Spring boot application
+
+[Service]
+User=${SITE_USR}
+Type=simple
+ExecStart=/usr/bin/java -jar /home/${SITE_USR}/beam.jar --spring.profiles.active=prod
+SuccessExitStatus=143
+EnvironmentFile=/etc/panopsetweb/panopsetweb.conf
+
+[Install]
+WantedBy=multi-user.target
+${@f panopsetweb.conf}
+SITE_REDIS_URL="${SITE_REDIS_URL}"
+SITE_REDIS_PWD="${SITE_REDIS_PWD}"
+DP=${DP}
+${@f installservice.sh}${@p ispwd}${WKSN_PWD}${@q}${@t istmplt.txt}
+${@f installservicesite.sh}${@p ispwd}${SITE_PWD}${@q}${@t istmplt.txt}

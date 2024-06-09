@@ -1,0 +1,46 @@
+<div class="inset">
+
+<h1>Desktop Application Downloads</h1>
+
+<p>
+If you don't see your platform listed, or if your system doesn't allow unsigned installers, you may
+<a href="/build.html">build</a> your own, or run it directly from the
+<a href="https://github.com/panopset/pan">source</a>.
+</p>
+
+${downloadsTable}
+
+<h1>versions</h1>
+
+<p>
+help-&gt;about, from any Panopset desktop application, will give you the <a href="https://github.com/panopset/pan/blob/main/docs/vh.md">version</a>.
+</p>
+<h2>Running Panopset Desktop Applications</h2>
+
+<h3>Using a platform specific installer.</h3>
+
+<p>
+Substitute flywheel, with the <a href="https://panopset.com">Panopset</a> application name of your choice.
+Here are the
+default paths to the Panopset Flywheel application, for these PC platforms:
+</p>
+
+<h2>Linux</h2>
+<pre>
+/opt/panopset/bin/flywheel
+</pre>
+<h2>Macintosh</h2>
+<pre>
+/Applications/panopset.app/Contents/MacOS/flywheel
+</pre>
+<h2>Windows</h2>
+<pre>
+&quot;c:\Program Files\panopset\flywheel.exe&quot;
+</pre>
+&nbsp;
+
+
+<h3>Using your own JRE.</h3>
+<p>If you download the panopset.jar file for your platform, or build it, you would need your own JRE.
+See the <a href="build.html">build</a> page, for details.</p>
+</div>

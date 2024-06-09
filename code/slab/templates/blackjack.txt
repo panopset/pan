@@ -1,0 +1,32 @@
+<div class="inset">
+<div class="dsline">
+
+<h1>Blackjack</h1>
+ <p>
+  ${deskBlurb}.
+ </p>
+<p>
+I wrote Panopset Blackjack because none of the simulators
+I could find had a fast deal feature.  When practicing the
+basic strategy, I don't care about the outcome of the hand,
+just whether or not I made the correct decision.
+</p><p>
+It is entirely your responsibility to independently 
+<a href="https://github.com/panopset/pan/tree/main/shoring/blackjackEngine">verify</a>
+its accuracy.
+</p><h2>
+The only claim made about this game is that it will only lead you to ruin, whether or not it has any bugs.
+</h2><p>
+That said, a link to 
+<a href="http://gamblersanonymous.com">Gamblers Anonymous</a>
+should serve to provide a far better disclaimer, than the 
+poor words of an old gambler.
+</p>
+
+ <hr/>
+
+
+</div>
+
+</div>
+
