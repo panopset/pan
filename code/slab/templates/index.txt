@@ -110,6 +110,7 @@ and free for anyone who can't afford the <a href="/license.html">license</a>.
    <a href="https://github.com/panopset/pan/blob/main/docs/vh.md">bug fixes</a>),
    build it from the main branch of the <a href="https://github.com/panopset/pan">source</a>.
   </p>
+
 <!--
   <h2>Coming later...</h2>
   <ul><li>
