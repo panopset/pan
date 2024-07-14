@@ -102,21 +102,17 @@ and free for anyone who can't afford the <a href="/license.html">license</a>.
 
   <ul><li>
    <a href="dox/site/index.html">Kotlin documentation.</a>
+  </li><li>
+   Entire Panopset <a href="https://github.com/panopset/pan">source</a>, in one repository.
   </li></ul>
 
   <p>
-   <a href="https://panopset.net">Preview of next release, for those who like to live on the cutting edge.</a>
-   For those who like to live on the bleeding edge (or merely want the absolute latest
-   <a href="https://github.com/panopset/pan/blob/main/docs/vh.md">bug fixes</a>),
-   build it from the main branch of the <a href="https://github.com/panopset/pan">source</a>.
+   <a href="https://panopset.net">Preview of next release.</a>
+   For those who want the absolute latest
+   <a href="https://github.com/panopset/pan/blob/main/docs/vh.md">bug fixes</a>) and/or features
+   right away, build it from the main branch of the source.
   </p>
 
-<!--
-  <h2>Coming later...</h2>
-  <ul><li>
-   <a href="/denebola">Denebola</a>, an original video game.
-  </li></ul>
-  -->
 <p>
 &nbsp;
 </p>

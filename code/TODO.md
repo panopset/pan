@@ -76,3 +76,4 @@ Low priority:
 * fix privacy policy broken link.
 * Try JavaFX mobile options. 
 * verify all documents are in ${user.home}/Documents/panopset base path.
+* Denebola
