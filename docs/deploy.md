@@ -72,7 +72,11 @@ While you are waiting for the server to reboot, on your workstation:
 ## Install Flywheel
 
 
-If you do not have Panopset desktop application software installed, go into target and install it using the .deb file you see there.
+If you do not have Panopset desktop application software installed, 
+build it using the [Desktop Applications Build Manual](build.md).
+
+
+Then, go into target and install it using the .deb file you see there.
 
 
 ## Create user:
@@ -129,7 +133,9 @@ short break and then...
     ./al.sh
     ./s.sh
     chmod +x *.sh
+    sudo su
     ./installservicesite.sh
+    reboot 0
 
 
 ## Platform specific deployment
