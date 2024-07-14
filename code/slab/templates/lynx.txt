@@ -8,7 +8,7 @@
 
       <ul>
         <li><a href="https://digitalocean.com">digitalocean.com</a>: where panopset.com is hosted on a $7/month server.</li>
-        <li><a href="https://letsencrypt.org/">letsencrypt.org</a>: where everybody gets the s in https for free.</li>
+        <li><a href="https://letsencrypt.org/">letsencrypt.org</a>: where everybody gets the s, in https, for free.</li>
         <li><a href="https://github.com/">github.com</a>: where everybody stores their souce code.</li>
         <li><a href="https://validator.w3.org/">Html Checker</a></li>
         <li><a href="https://www.abuseipdb.com/">abuseipdb.com</a>: when I see suspicious activity in my access logs, I go here to check IP addresses for reported abuse.</li>
