@@ -4,9 +4,6 @@
 
 * Get a decent 415 error message.
 
-
-
-delete docs/deploy.md
 remove deploy from build
 
 
