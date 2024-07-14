@@ -3,7 +3,6 @@
 <h1>Useful links</h1>
 
 
-    <div>
 
 
       <ul>
@@ -18,7 +17,5 @@
       </ul>
 
 
-    </div>
-  </div>
 
-  <div>
+</div>

@@ -28,7 +28,7 @@ class GenerateDownloadsTable {
         val sw = StringWriter()
         sw.append("<table>")
         for (e in platformDownloadMap.entries) {
-            sw.append("<td colspan=\"4\" class=\"menuBar\"><b>${e.key}</b></td>\n")
+            sw.append("<tr><td colspan=\"4\" class=\"menuBar\"><b>${e.key}</b></td>\n")
             sw.append("<tr><th>Type</th><th>Download</th><th>Bytes</th>")
             sw.append("<th>SHA-512</th></tr>")
             sw.append("</td></tr>")
