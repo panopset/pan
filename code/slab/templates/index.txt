@@ -1,5 +1,3 @@
-<div class="inset">
-
 ${previewBlurb}
 
 <div class="inset">
@@ -58,7 +56,7 @@ and free for anyone who can't afford the <a href="/license.html">license</a>.
    </tr>
 
    <tr>
-    <th>Security</th><th>Web</th><th><a href="/downloads.html">Desk</a></th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th>
+    <th>Security</th><th>Web</th><th><a href="/downloads.html">Desk</a></th><th>&nbsp;</th><th>&nbsp;</th>
    </tr>
 
    <tr>
@@ -78,7 +76,7 @@ and free for anyone who can't afford the <a href="/license.html">license</a>.
    </tr>
 
    <tr>
-    <th>Games</th><th>&nbsp;</th><th><a href="/downloads.html">Desk</a></th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th>
+    <th>Games</th><th>&nbsp;</th><th><a href="/downloads.html">Desk</a></th><th>&nbsp;</th><th>&nbsp;</th>
    </tr>
 
    <tr>
