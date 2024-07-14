@@ -100,9 +100,9 @@ and free for anyone who can't afford the <a href="/license.html">license</a>.
   <hr>
 
 
-  <p>
-   <a href="dox/site/index.html">Documentation.</a>
-  </p>
+  <ul><li>
+   <a href="dox/site/index.html">Kotlin documentation.</a>
+  </li></ul>
 
   <p>
    <a href="https://panopset.net">Preview of next release, for those who like to live on the cutting edge.</a>
