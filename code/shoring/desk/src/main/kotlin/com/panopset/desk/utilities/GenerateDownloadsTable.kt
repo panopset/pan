@@ -31,7 +31,6 @@ class GenerateDownloadsTable {
             sw.append("<tr><td colspan=\"4\" class=\"menuBar\"><b>${e.key}</b></td>\n")
             sw.append("<tr><th>Type</th><th>Download</th><th>Bytes</th>")
             sw.append("<th>SHA-512</th></tr>")
-            sw.append("</td></tr>")
             for (platformDownload in e.value.platformDownloads) {
                 val artifactType = platformDownload.artifactType
                 val artifactName = platformDownload.artifactName
