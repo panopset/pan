@@ -107,7 +107,7 @@ and free for anyone who can't afford the <a href="/license.html">license</a>.
   <p>
    <a href="https://panopset.net">Preview of next release.</a>
    For those who want the absolute latest
-   <a href="https://github.com/panopset/pan/blob/main/docs/vh.md">bug fixes</a>) and/or features
+   <a href="https://github.com/panopset/pan/blob/main/docs/vh.md">bug fixes</a> and/or features
    right away, build it from the main branch of the source.
   </p>
 
