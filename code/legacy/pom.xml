@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.panopset</groupId>
     <artifactId>axe</artifactId>
-    <version>1.3.8</version>
+    <version>1.3.9</version>
     <packaging>jar</packaging>
     <description>Panopset desktop applications.</description>
     <properties>
