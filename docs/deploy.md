@@ -151,6 +151,24 @@ On a mac it is:
 
     paw.sh
 
+
+# Multiple domains on one server
+
+
+    ./e.sh
+
+
+Update SITE_DN
+
+
+    ./userprep.sh
+    ./s.sh
+    sudo su
+    cd
+    ./createDomain.sh
+
+
+
     
 
 References

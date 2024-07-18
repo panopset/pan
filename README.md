@@ -27,6 +27,7 @@ All build scripts, referred to in the manuals, are in the pan/code directory:
 
 * [Desktop Applications Build Manual](docs/build.md).
 * [Website Deployment Manual](docs/deploy.md).
+* [Continuous Integration Manual](docs/ci.md)
 
 
 
