@@ -23,5 +23,5 @@ Verify SITE_DN is where you want to publish.
     
 
 
-* To get started with changes for next revision, update dependency versions in deploy.properties.
+* To get started with changes for next revision, update dependency versions in deploy.properties, shoring/pom.xml, and beam/build.gradle.
 * [javafx](https://mvnrepository.com/artifact/org.openjfx/javafx-fxml) usually has a new version fairly frequently.
