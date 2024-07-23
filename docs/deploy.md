@@ -155,7 +155,7 @@ On a mac it is:
 # Multiple domains on one server
 
 
-    ./e.sh
+    ../p.sh
 
 
 Update SITE_DN

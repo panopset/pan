@@ -99,9 +99,9 @@ and free for anyone who can't afford the <a href="/license.html">license</a>.
 
 
   <ul><li>
-   <a href="dox/site/index.html">Kotlin documentation.</a>
+   <a href="https://github.com/panopset/pan">Source</a>.
   </li><li>
-   Entire Panopset <a href="https://github.com/panopset/pan">source</a>, in one repository.
+   <a href="dox/site/index.html">Kotlin documentation.</a>
   </li></ul>
 
   <p>
